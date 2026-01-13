@@ -3,6 +3,8 @@ import { writeFile, mkdir, readFile } from 'fs/promises'
 import { existsSync } from 'fs'
 import path from 'path'
 
+const FORM_ACCESS_KEY = process.env.FORM_ACCESS_KEY || 'cc2a600a-378f-4b13-819f-b44b924ef328'
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -39,7 +41,38 @@ export async function POST(request: NextRequest) {
     // Log to console (for development)
     console.log('Contact Form Submission:', submission)
 
-    // Optionally save to JSON file (for development/testing)
+    // Send to Web3Forms
+    try {
+      const formData = new FormData()
+      formData.append('access_key', FORM_ACCESS_KEY)
+      formData.append('name', name)
+      formData.append('phone', phone)
+      formData.append('email', email)
+      formData.append('city', city || 'Not specified')
+      formData.append('service', service || 'Not specified')
+      formData.append('message', message || '')
+      formData.append('subject', `New Contact Form Submission from ${name}`)
+      formData.append('from_name', 'Arizona Window Washing Pros Website')
+
+      const formResponse = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const formResult = await formResponse.json()
+
+      if (!formResponse.ok || !formResult.success) {
+        console.error('Web3Forms submission failed:', formResult)
+        // Continue to save locally even if email fails
+      } else {
+        console.log('Form submitted successfully via Web3Forms')
+      }
+    } catch (formError) {
+      console.error('Error submitting to Web3Forms:', formError)
+      // Continue to save locally even if email fails
+    }
+
+    // Optionally save to JSON file (for backup/development)
     try {
       const dataDir = path.join(process.cwd(), 'data')
       if (!existsSync(dataDir)) {
@@ -65,13 +98,8 @@ export async function POST(request: NextRequest) {
       console.error('Failed to save submission to file:', fileError)
     }
 
-    // In production, you would typically:
-    // - Send an email notification
-    // - Save to a database
-    // - Integrate with a CRM
-
     return NextResponse.json(
-      { success: true, message: 'Thank you for your submission!' },
+      { success: true, message: 'Thank you for your submission! We\'ll contact you soon.' },
       { status: 200 }
     )
   } catch (error) {
