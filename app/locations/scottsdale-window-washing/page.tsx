@@ -8,35 +8,35 @@ import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Mesa Window Washing',
-  description: 'Professional exterior and interior window cleaning services in Mesa, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
-  path: '/locations/mesa-window-washing',
+  title: 'Scottsdale Window Washing',
+  description: 'Professional exterior and interior window cleaning services in Scottsdale, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
+  path: '/locations/scottsdale-window-washing',
 })
 
 const faqs = [
   {
-    question: 'How much does exterior window cleaning cost in Mesa?',
-    answer: 'Exterior window cleaning prices in Mesa start at $150 for 1-story homes and $180 for 2-story homes. Most Mesa homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
+    question: 'How much does exterior window cleaning cost in Scottsdale?',
+    answer: 'Exterior window cleaning prices in Scottsdale start at $150 for 1-story homes and $180 for 2-story homes. Most Scottsdale homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
   },
   {
-    question: 'How often should I have my windows cleaned in Mesa?',
-    answer: 'Given Mesa\'s desert climate with dust storms and intense sun, we recommend window cleaning every 3-4 months to maintain optimal clarity and prevent hard water spot buildup.',
+    question: 'How often should I have my windows cleaned in Scottsdale?',
+    answer: 'Given Scottsdale\'s desert climate with dust storms and intense sun, we recommend window cleaning every 3-4 months to maintain optimal clarity and prevent hard water spot buildup.',
   },
   {
-    question: 'Do you clean both interior and exterior windows in Mesa?',
-    answer: 'Yes, we offer both interior and exterior window cleaning services in Mesa. You can choose one or both depending on your needs.',
+    question: 'Do you clean both interior and exterior windows in Scottsdale?',
+    answer: 'Yes, we offer both interior and exterior window cleaning services in Scottsdale. You can choose one or both depending on your needs.',
   },
   {
-    question: 'What areas of Mesa do you serve?',
-    answer: 'We serve all areas of Mesa, Arizona, including downtown Mesa, East Mesa, West Mesa, and surrounding neighborhoods.',
+    question: 'What areas of Scottsdale do you serve?',
+    answer: 'We serve all areas of Scottsdale, Arizona, including Old Town Scottsdale, North Scottsdale, and surrounding neighborhoods.',
   },
 ]
 
-export default function MesaWindowWashingPage() {
+export default function ScottsdaleWindowWashingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://arizonawindowwashingpros.com' },
     { name: 'Locations', url: 'https://arizonawindowwashingpros.com/locations' },
-    { name: 'Mesa Window Washing', url: 'https://arizonawindowwashingpros.com/locations/mesa-window-washing' },
+    { name: 'Scottsdale Window Washing', url: 'https://arizonawindowwashingpros.com/locations/scottsdale-window-washing' },
   ])
 
   return (
@@ -46,8 +46,8 @@ export default function MesaWindowWashingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <HeroVideo
-        title="Mesa Window Washing"
-        subtitle="Professional window cleaning services in Mesa, Arizona"
+        title="Scottsdale Window Washing"
+        subtitle="Professional window cleaning services in Scottsdale, Arizona"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -67,13 +67,13 @@ export default function MesaWindowWashingPage() {
         <div className="container-custom max-w-5xl">
           <div className="content-section">
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed text-center">
-              Looking for professional Mesa window washing services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for Mesa homeowners and businesses.
+              Looking for professional Scottsdale window washing services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for Scottsdale homeowners and businesses.
             </p>
           </div>
 
           {/* What's Included */}
           <div className="content-section">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s Included in Our Mesa Window Washing Service</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s Included in Our Scottsdale Window Washing Service</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 'Complete exterior window cleaning (all accessible windows)',
@@ -97,22 +97,22 @@ export default function MesaWindowWashingPage() {
 
           {/* Why Choose Us */}
           <div className="content-section">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Us for Mesa Window Washing?</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Us for Scottsdale Window Washing?</h2>
             <div className="space-y-6">
               <p className="text-gray-700 leading-relaxed text-lg">
-                Mesa&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Mesa and knows exactly how to handle these conditions.
+                Scottsdale&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Scottsdale and knows exactly how to handle these conditions.
               </p>
               <p className="text-gray-700 leading-relaxed text-lg">
-                We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Mesa home&apos;s windows are spotless and streak-free. Our local team understands Mesa neighborhoods and works efficiently to minimize disruption to your day.
+                We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Scottsdale home&apos;s windows are spotless and streak-free. Our local team understands Scottsdale neighborhoods and works efficiently to minimize disruption to your day.
               </p>
             </div>
           </div>
 
           {/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing Guidance for Mesa Window Washing</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing Guidance for Scottsdale Window Washing</h2>
             <p className="text-gray-700 mb-6 text-lg">
-              Window washing prices in Mesa typically range from:
+              Window washing prices in Scottsdale typically range from:
             </p>
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               {[
@@ -134,11 +134,11 @@ export default function MesaWindowWashingPage() {
             </div>
           </div>
 
-          {/* Our Services in Mesa */}
+          {/* Our Services in Scottsdale */}
           <div className="content-section">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Services in Mesa</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Services in Scottsdale</h2>
             <p className="text-gray-700 mb-6 text-lg">
-              We offer comprehensive window cleaning services throughout Mesa:
+              We offer comprehensive window cleaning services throughout Scottsdale:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {SERVICES.map((service) => (
@@ -162,7 +162,7 @@ export default function MesaWindowWashingPage() {
               We also serve these nearby areas:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {LOCATIONS.filter((loc) => loc.id !== 'mesa').map((location) => (
+              {LOCATIONS.filter((loc) => loc.id !== 'scottsdale').map((location) => (
                 <Link
                   key={location.id}
                   href={`/locations/${location.slug}`}
@@ -183,23 +183,23 @@ export default function MesaWindowWashingPage() {
         <div className="container-custom max-w-5xl">
           <div className="content-section">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Professional Window Washing in Mesa, Arizona</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Professional Window Washing in Scottsdale, Arizona</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
             </div>
             <div className="space-y-6">
               <p className="text-xl text-gray-700 leading-relaxed">
-                Mesa homeowners know that maintaining clean windows in Arizona&apos;s desert climate requires specialized expertise. With intense sun, frequent dust storms, and hard water challenges, Mesa windows need professional care to stay crystal clear. Arizona Window Washing Pros brings years of local experience to every Mesa home we serve.
+                Scottsdale homeowners know that maintaining clean windows in Arizona&apos;s desert climate requires specialized expertise. With intense sun, frequent dust storms, and hard water challenges, Scottsdale windows need professional care to stay crystal clear. Arizona Window Washing Pros brings years of local experience to every Scottsdale home we serve.
               </p>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Whether you live in downtown Mesa, East Mesa, West Mesa, or any of the surrounding neighborhoods, we understand the unique window cleaning challenges in your area. Our team uses proven techniques and professional-grade equipment specifically suited for Mesa&apos;s climate conditions.
+                Whether you live in Old Town Scottsdale, North Scottsdale, or any of the surrounding neighborhoods, we understand the unique window cleaning challenges in your area. Our team uses proven techniques and professional-grade equipment specifically suited for Scottsdale&apos;s climate conditions.
               </p>
               <div className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-2xl border border-primary-100 mt-8">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Why Mesa Homeowners Choose Us</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Why Scottsdale Homeowners Choose Us</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Mesa is a diverse community with homes ranging from historic properties to new developments. We&apos;ve worked on all types of Mesa homes and understand the specific needs of each. Our flexible scheduling and competitive pricing make professional window cleaning accessible to all Mesa residents.
+                  Scottsdale is a diverse community with homes ranging from luxury properties to new developments. We&apos;ve worked on all types of Scottsdale homes and understand the specific needs of each. Our flexible scheduling and competitive pricing make professional window cleaning accessible to all Scottsdale residents.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  We&apos;re committed to providing exceptional service to the Mesa community. As your local window cleaning experts, we take pride in helping Mesa homeowners maintain beautiful, clear windows that enhance their home&apos;s appearance and their enjoyment of Arizona&apos;s beautiful weather.
+                  We&apos;re committed to providing exceptional service to the Scottsdale community. As your local window cleaning experts, we take pride in helping Scottsdale homeowners maintain beautiful, clear windows that enhance their home&apos;s appearance and their enjoyment of Arizona&apos;s beautiful weather.
                 </p>
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function MesaWindowWashingPage() {
 
       <section id="contact-form" className="section-padding bg-white">
         <div className="container-custom max-w-2xl">
-          <ContactForm defaultCity="Mesa" />
+          <ContactForm defaultCity="Scottsdale" />
         </div>
       </section>
     </>

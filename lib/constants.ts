@@ -4,7 +4,7 @@ export const BUSINESS_INFO = {
   phone: '(480) 737-0850',
   phoneFormatted: '4807370850',
   email: 'info@arizonawindowwashingpros.com',
-  serviceArea: ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'AZ'],
+  serviceArea: ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'AZ'],
   address: {
     street: 'Arizona',
     city: 'Mesa',
@@ -48,6 +48,12 @@ export const SERVICES = [
     slug: 'screen-cleaning',
     description: 'Thorough screen cleaning to remove dust, pollen, and debris. Available as an add-on service.',
   },
+  {
+    id: 'track-sill-cleaning',
+    name: 'Track & Sill Cleaning',
+    slug: 'track-sill-cleaning',
+    description: 'Deep cleaning of window tracks and sills to remove dirt, debris, and buildup.',
+  },
 ]
 
 // Locations
@@ -80,8 +86,22 @@ export const LOCATIONS = [
     keyword: 'chandler window washing',
     description: 'Reliable window cleaning services in Chandler, Arizona.',
   },
+  {
+    id: 'scottsdale',
+    name: 'Scottsdale',
+    slug: 'scottsdale-window-washing',
+    keyword: 'window washing scottsdale az',
+    description: 'Premium window cleaning services in Scottsdale, Arizona.',
+  },
+  {
+    id: 'tempe',
+    name: 'Tempe',
+    slug: 'tempe-window-washing',
+    keyword: 'tempe window washing',
+    description: 'Professional window cleaning services in Tempe, Arizona.',
+  },
 ]
 
 // Cities for contact form dropdown
-export const CITIES = ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Other']
+export const CITIES = ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'Other']
 

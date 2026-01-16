@@ -74,6 +74,7 @@ export default function ChandlerWindowWashingPage() {
               <li>Complete exterior window cleaning (all accessible windows)</li>
               <li>Interior window cleaning (optional)</li>
               <li>Screen cleaning (optional add-on)</li>
+              <li>Track and sill cleaning</li>
               <li>Frame and edge cleaning</li>
               <li>Streak-free finish guarantee</li>
             </ul>
