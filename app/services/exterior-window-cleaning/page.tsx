@@ -107,13 +107,6 @@ export default function ExteriorWindowCleaningPage() {
           {/* Pricing Section */}
           <div className="content-section">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing</h2>
-            <div className="mb-6">
-              <img 
-                src="/exterior-pricing.png" 
-                alt="Exterior Window Cleaning Pricing" 
-                className="w-full max-w-2xl mx-auto rounded-xl shadow-lg"
-              />
-            </div>
             <p className="text-gray-700 mb-6 text-lg leading-relaxed">
               Pricing is based on number of windows and home height. We provide free estimates before scheduling so you know exactly what to expect.
             </p>

@@ -3,7 +3,7 @@ import { writeFile, mkdir, readFile } from 'fs/promises'
 import { existsSync } from 'fs'
 import path from 'path'
 
-const FORM_ACCESS_KEY = process.env.FORM_ACCESS_KEY || 'cc2a600a-378f-4b13-819f-b44b924ef328'
+const FORM_ACCESS_KEY = 'cc2a600a-378f-4b13-819f-b44b924ef328'
 
 export async function POST(request: NextRequest) {
   try {

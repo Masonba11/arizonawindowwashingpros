@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+import { useRouter } from 'next/navigation'
 import { CITIES, SERVICES } from '@/lib/constants'
 
 interface ContactFormProps {
@@ -25,6 +26,7 @@ export default function ContactForm({
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const router = useRouter()
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -60,16 +62,9 @@ export default function ContactForm({
       })
 
       if (response.ok) {
-        setSubmitStatus('success')
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          city: defaultCity,
-          service: defaultService,
-          message: '',
-          company: '',
-        })
+        const data = await response.json()
+        // Redirect to thank-you page on success
+        router.push('/thank-you')
       } else {
         setSubmitStatus('error')
       }

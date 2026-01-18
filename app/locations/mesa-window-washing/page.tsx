@@ -111,22 +111,6 @@ export default function MesaWindowWashingPage() {
           {/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing Guidance for Mesa Window Washing</h2>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <img 
-                  src="/exterior-pricing.png" 
-                  alt="Exterior Window Cleaning Pricing" 
-                  className="w-full rounded-xl shadow-lg"
-                />
-              </div>
-              <div>
-                <img 
-                  src="/interior-pricing.png" 
-                  alt="Interior Window Cleaning Pricing" 
-                  className="w-full rounded-xl shadow-lg"
-                />
-              </div>
-            </div>
             <p className="text-gray-700 mb-6 text-lg">
               Window washing prices in Mesa typically range from:
             </p>
