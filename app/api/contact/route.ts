@@ -42,6 +42,7 @@ export async function POST(request: NextRequest) {
     console.log('Contact Form Submission:', submission)
 
     // Send to Web3Forms
+    let web3formsStatus: { success: boolean; error: string | null } = { success: false, error: null }
     try {
       // Use URLSearchParams for better compatibility with serverless functions
       const params = new URLSearchParams()
@@ -55,7 +56,9 @@ export async function POST(request: NextRequest) {
       params.append('subject', `New Contact Form Submission from ${name}`)
       params.append('from_name', 'Arizona Window Washing Pros Website')
 
-      console.log('Submitting to Web3Forms with access key:', FORM_ACCESS_KEY.substring(0, 8) + '...')
+      console.log('=== Submitting to Web3Forms ===')
+      console.log('Access key:', FORM_ACCESS_KEY.substring(0, 8) + '...')
+      console.log('Data being sent:', { name, email, phone, city, service })
 
       const formResponse = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -67,27 +70,32 @@ export async function POST(request: NextRequest) {
       })
 
       const formResult = await formResponse.json()
-      console.log('Web3Forms response status:', formResponse.status)
-      console.log('Web3Forms response:', JSON.stringify(formResult))
+      console.log('=== Web3Forms Response ===')
+      console.log('HTTP Status:', formResponse.status, formResponse.statusText)
+      console.log('Success:', formResult.success)
+      console.log('Message:', formResult.message)
+      console.log('Full response:', JSON.stringify(formResult, null, 2))
 
       if (!formResponse.ok) {
-        console.error('Web3Forms HTTP error:', formResponse.status, formResult)
-        throw new Error(`Web3Forms API error: ${formResponse.status} - ${JSON.stringify(formResult)}`)
-      }
-
-      if (!formResult.success) {
-        console.error('Web3Forms submission failed:', formResult)
-        throw new Error(`Web3Forms submission failed: ${formResult.message || JSON.stringify(formResult)}`)
+        console.error('❌ Web3Forms HTTP error:', formResponse.status, formResult)
+        web3formsStatus = { success: false, error: `HTTP ${formResponse.status}: ${formResult.message || JSON.stringify(formResult)}` }
+      } else if (!formResult.success) {
+        console.error('❌ Web3Forms submission failed:', formResult)
+        console.error('Error message:', formResult.message)
+        web3formsStatus = { success: false, error: formResult.message || 'Unknown error' }
       } else {
-        console.log('Form submitted successfully via Web3Forms:', formResult)
+        console.log('✅ Form submitted successfully via Web3Forms!')
+        console.log('Submission ID:', formResult.message || 'N/A')
+        web3formsStatus = { success: true, error: null }
       }
     } catch (formError: any) {
-      console.error('Error submitting to Web3Forms:', formError)
-      console.error('Web3Forms error details:', {
+      console.error('❌ Error submitting to Web3Forms:', formError)
+      console.error('Error details:', {
         message: formError?.message,
         stack: formError?.stack,
         name: formError?.name,
       })
+      web3formsStatus = { success: false, error: formError?.message || 'Network error' }
       // Don't throw - we still want to save the submission locally and return success to user
     }
 
@@ -120,7 +128,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { 
         success: true, 
-        message: 'Thank you for your submission! We\'ll contact you soon.' 
+        message: 'Thank you for your submission! We\'ll contact you soon.',
+        web3forms: web3formsStatus
       },
       { 
         status: 200,

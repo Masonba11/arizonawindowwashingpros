@@ -75,10 +75,16 @@ export default function ContactForm({
         return
       }
 
-      console.log('API Response:', { status: response.status, data })
+      console.log('API Response:', { 
+        status: response.status, 
+        statusText: response.statusText,
+        data: data,
+        success: data.success 
+      })
 
       if (response.ok && data.success) {
-        console.log('Form submitted successfully, redirecting...')
+        console.log('✅ Form submitted successfully, redirecting...')
+        console.log('Response message:', data.message)
         // Clear form data
         setFormData({
           name: '',
