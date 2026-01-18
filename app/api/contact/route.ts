@@ -66,9 +66,23 @@ export async function POST(request: NextRequest) {
         body: params.toString(),
       })
 
-      const formResult = await formResponse.json()
+      // Check content type before parsing JSON
+      const contentType = formResponse.headers.get('content-type') || ''
       console.log('=== Web3Forms Response ===')
       console.log('HTTP Status:', formResponse.status, formResponse.statusText)
+      console.log('Content-Type:', contentType)
+
+      let formResult
+      if (contentType.includes('application/json')) {
+        formResult = await formResponse.json()
+      } else {
+        // If not JSON, get text to see what we actually received
+        const textResponse = await formResponse.text()
+        console.error('⚠️ Web3Forms returned non-JSON response (HTML?):')
+        console.error('First 200 chars:', textResponse.substring(0, 200))
+        throw new Error(`Web3Forms returned ${contentType} instead of JSON. Status: ${formResponse.status}`)
+      }
+
       console.log('Success:', formResult.success)
       console.log('Message:', formResult.message)
       console.log('Full response:', JSON.stringify(formResult, null, 2))
