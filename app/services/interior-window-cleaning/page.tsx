@@ -106,6 +106,13 @@ export default function InteriorWindowCleaningPage() {
           {/* Pricing Section */}
           <div className="content-section">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing</h2>
+            <div className="mb-6">
+              <img 
+                src="/interior-pricing.png" 
+                alt="Interior Window Cleaning Pricing" 
+                className="w-full max-w-2xl mx-auto rounded-xl shadow-lg"
+              />
+            </div>
             <p className="text-gray-700 mb-6 text-lg leading-relaxed">
               Interior window cleaning is an optional add-on service. It&apos;s priced separately because it requires additional time and care inside your home.
             </p>

@@ -223,6 +223,23 @@ export default function HomePage() {
               </div>
             </div>
             
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <img 
+                  src="/exterior-pricing.png" 
+                  alt="Exterior Window Cleaning Pricing" 
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
+              <div>
+                <img 
+                  src="/interior-pricing.png" 
+                  alt="Interior Window Cleaning Pricing" 
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
+            </div>
+            
             <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 border border-primary-200">
               <p className="text-lg text-gray-700 leading-relaxed text-center">
                 <strong className="text-primary-700">Arizona&apos;s unique climate</strong> presents specific challenges, from intense desert sun creating hard water spots to frequent dust storms. Our team has the expertise and specialized equipment to handle it all, delivering results that last.

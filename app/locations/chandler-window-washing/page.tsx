@@ -88,6 +88,22 @@ export default function ChandlerWindowWashingPage() {
             </p>
 
             <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Chandler Window Washing</h2>
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
+              <div>
+                <img 
+                  src="/exterior-pricing.png" 
+                  alt="Exterior Window Cleaning Pricing" 
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
+              <div>
+                <img 
+                  src="/interior-pricing.png" 
+                  alt="Interior Window Cleaning Pricing" 
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </div>
+            </div>
             <p className="text-gray-700 mb-4">
               Window washing prices in Chandler typically range from:
             </p>

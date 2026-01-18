@@ -75,6 +75,29 @@ export default function ReviewsPage() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Pricing</h2>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div>
+              <img 
+                src="/exterior-pricing.png" 
+                alt="Exterior Window Cleaning Pricing" 
+                className="w-full rounded-xl shadow-lg"
+              />
+            </div>
+            <div>
+              <img 
+                src="/interior-pricing.png" 
+                alt="Interior Window Cleaning Pricing" 
+                className="w-full rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Rich Content Section */}
       <section className="bg-gray-50 section-padding">
         <div className="container-custom max-w-4xl">
