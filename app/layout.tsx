@@ -41,6 +41,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script
+          src="https://link.msgsndr.com/js/external-tracking.js"
+          data-tracking-id="tk_49e1c696121549738e0bd78b6017394b"
+          async
+        />
       </head>
       <body className={inter.className}>
         <Layout>{children}</Layout>
