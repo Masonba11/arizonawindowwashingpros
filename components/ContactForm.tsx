@@ -33,17 +33,21 @@ export default function ContactForm({
 
     // Honeypot check
     if (formData.company) {
+      console.log('Bot detected via honeypot')
       return // Silent fail for bots
     }
 
     // Basic validation
     if (!formData.name || !formData.phone || !formData.email) {
+      console.log('Validation failed:', { name: formData.name, phone: formData.phone, email: formData.email })
       setSubmitStatus('error')
       return
     }
 
     setIsSubmitting(true)
     setSubmitStatus('idle')
+    
+    console.log('Submitting form...', { name: formData.name, email: formData.email })
 
     try {
       const response = await fetch('/api/contact', {
@@ -61,17 +65,40 @@ export default function ContactForm({
         }),
       })
 
-      if (response.ok) {
-        const data = await response.json()
+      let data
+      try {
+        data = await response.json()
+      } catch (parseError) {
+        console.error('Failed to parse response:', parseError)
+        setSubmitStatus('error')
+        setIsSubmitting(false)
+        return
+      }
+
+      console.log('API Response:', { status: response.status, data })
+
+      if (response.ok && data.success) {
+        console.log('Form submitted successfully, redirecting...')
+        // Clear form data
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          city: defaultCity,
+          service: defaultService,
+          message: '',
+          company: '',
+        })
         // Redirect to thank-you page on success
         router.push('/thank-you')
       } else {
+        console.error('Form submission failed:', { status: response.status, data })
         setSubmitStatus('error')
+        setIsSubmitting(false)
       }
     } catch (error) {
       console.error('Form submission error:', error)
       setSubmitStatus('error')
-    } finally {
       setIsSubmitting(false)
     }
   }

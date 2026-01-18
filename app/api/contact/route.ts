@@ -99,14 +99,30 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { success: true, message: 'Thank you for your submission! We\'ll contact you soon.' },
-      { status: 200 }
+      { 
+        success: true, 
+        message: 'Thank you for your submission! We\'ll contact you soon.' 
+      },
+      { 
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
     )
-  } catch (error) {
+  } catch (error: any) {
     console.error('Contact form error:', error)
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      { 
+        success: false,
+        error: error?.message || 'Internal server error' 
+      },
+      { 
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
     )
   }
 }
