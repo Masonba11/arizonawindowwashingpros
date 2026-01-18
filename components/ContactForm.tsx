@@ -89,8 +89,15 @@ export default function ContactForm({
           message: '',
           company: '',
         })
+        // Set success status
+        setSubmitStatus('success')
         // Redirect to thank-you page on success
-        router.push('/thank-you')
+        try {
+          router.push('/thank-you')
+        } catch (redirectError) {
+          console.error('Redirect error:', redirectError)
+          // If redirect fails, the success message will show
+        }
       } else {
         console.error('Form submission failed:', { status: response.status, data })
         setSubmitStatus('error')
