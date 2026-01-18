@@ -43,6 +43,7 @@ export async function POST(request: NextRequest) {
 
     // Send to Web3Forms
     try {
+      // Try FormData approach first (standard for Web3Forms)
       const formData = new FormData()
       formData.append('access_key', FORM_ACCESS_KEY)
       formData.append('name', name)
@@ -54,22 +55,38 @@ export async function POST(request: NextRequest) {
       formData.append('subject', `New Contact Form Submission from ${name}`)
       formData.append('from_name', 'Arizona Window Washing Pros Website')
 
+      console.log('Submitting to Web3Forms with access key:', FORM_ACCESS_KEY.substring(0, 8) + '...')
+
       const formResponse = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+        },
         body: formData,
       })
 
       const formResult = await formResponse.json()
+      console.log('Web3Forms response status:', formResponse.status)
+      console.log('Web3Forms response:', formResult)
 
-      if (!formResponse.ok || !formResult.success) {
-        console.error('Web3Forms submission failed:', formResult)
-        // Continue to save locally even if email fails
-      } else {
-        console.log('Form submitted successfully via Web3Forms')
+      if (!formResponse.ok) {
+        console.error('Web3Forms HTTP error:', formResponse.status, formResult)
+        throw new Error(`Web3Forms API error: ${formResponse.status}`)
       }
-    } catch (formError) {
+
+      if (!formResult.success) {
+        console.error('Web3Forms submission failed:', formResult)
+        throw new Error(formResult.message || 'Web3Forms submission failed')
+      }
+
+      console.log('Form submitted successfully via Web3Forms:', formResult)
+    } catch (formError: any) {
       console.error('Error submitting to Web3Forms:', formError)
-      // Continue to save locally even if email fails
+      // Continue to save locally even if email fails, but log the error
+      console.error('Web3Forms error details:', {
+        message: formError?.message,
+        stack: formError?.stack,
+      })
     }
 
     // Optionally save to JSON file (for backup/development)
