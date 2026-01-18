@@ -76,10 +76,11 @@ export async function POST(request: NextRequest) {
 
       if (!formResult.success) {
         console.error('Web3Forms submission failed:', formResult)
-        throw new Error(formResult.message || 'Web3Forms submission failed')
+        // Log the error but don't throw - still save the submission locally
+        // The form will still show success to user, but we'll have the data
+      } else {
+        console.log('Form submitted successfully via Web3Forms:', formResult)
       }
-
-      console.log('Form submitted successfully via Web3Forms:', formResult)
     } catch (formError: any) {
       console.error('Error submitting to Web3Forms:', formError)
       // Continue to save locally even if email fails, but log the error
@@ -87,6 +88,7 @@ export async function POST(request: NextRequest) {
         message: formError?.message,
         stack: formError?.stack,
       })
+      // Don't throw - we still want to save the submission locally
     }
 
     // Optionally save to JSON file (for backup/development)
