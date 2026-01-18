@@ -1,7 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { writeFile, mkdir, readFile } from 'fs/promises'
-import { existsSync } from 'fs'
-import path from 'path'
 
 const FORM_ACCESS_KEY = '0f32ed52-78cd-4ae4-8e56-df6c2b533b71'
 
@@ -99,31 +96,9 @@ export async function POST(request: NextRequest) {
       // Don't throw - we still want to save the submission locally and return success to user
     }
 
-    // Optionally save to JSON file (for backup/development)
-    try {
-      const dataDir = path.join(process.cwd(), 'data')
-      if (!existsSync(dataDir)) {
-        await mkdir(dataDir, { recursive: true })
-      }
-
-      const filePath = path.join(dataDir, 'contact-submissions.json')
-      let submissions: any[] = []
-
-      // Read existing submissions if file exists
-      if (existsSync(filePath)) {
-        const fileContent = await readFile(filePath, 'utf-8')
-        submissions = JSON.parse(fileContent)
-      }
-
-      // Add new submission
-      submissions.push(submission)
-
-      // Write back to file
-      await writeFile(filePath, JSON.stringify(submissions, null, 2))
-    } catch (fileError) {
-      // If file writing fails, just log it (non-critical)
-      console.error('Failed to save submission to file:', fileError)
-    }
+    // Skip local file save in serverless environments (Vercel, etc.)
+    // File writes don't work in read-only filesystems
+    // Submissions are sent to Web3Forms instead
 
     return NextResponse.json(
       { 
