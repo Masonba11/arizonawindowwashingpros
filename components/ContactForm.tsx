@@ -50,6 +50,47 @@ export default function ContactForm({
     console.log('Submitting form...', { name: formData.name, email: formData.email })
 
     try {
+      // Send to both our API (for backup) and Web3Forms (for email)
+      // Web3Forms requires client-side calls on free plan
+      const FORM_ACCESS_KEY = '0f32ed52-78cd-4ae4-8e56-df6c2b533b71'
+      
+      // Submit to Web3Forms directly from client (required for free plan)
+      try {
+        const web3formsParams = new URLSearchParams()
+        web3formsParams.append('access_key', FORM_ACCESS_KEY)
+        web3formsParams.append('name', formData.name)
+        web3formsParams.append('phone', formData.phone)
+        web3formsParams.append('email', formData.email)
+        web3formsParams.append('city', formData.city || 'Not specified')
+        web3formsParams.append('service', formData.service || 'Not specified')
+        web3formsParams.append('message', formData.message || '')
+        web3formsParams.append('subject', `New Contact Form Submission from ${formData.name}`)
+        web3formsParams.append('from_name', 'Arizona Window Washing Pros Website')
+
+        console.log('Submitting to Web3Forms from client...')
+        const web3formsResponse = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json',
+          },
+          body: web3formsParams.toString(),
+        })
+
+        const web3formsResult = await web3formsResponse.json()
+        console.log('Web3Forms response:', web3formsResult)
+        
+        if (web3formsResult.success) {
+          console.log('✅ Web3Forms submission successful!')
+        } else {
+          console.warn('⚠️ Web3Forms returned:', web3formsResult)
+        }
+      } catch (web3formsError) {
+        console.error('Web3Forms error (non-critical):', web3formsError)
+        // Continue - we'll also save to our API
+      }
+
+      // Also save to our API route for backup
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
