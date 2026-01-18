@@ -46,6 +46,10 @@ export default function RootLayout({
           data-tracking-id="tk_49e1c696121549738e0bd78b6017394b"
           async
         />
+        <script
+          src="https://link.msgsndr.com/js/form_embed.js"
+          async
+        />
       </head>
       <body className={inter.className}>
         <Layout>{children}</Layout>
