@@ -1,16 +1,12 @@
 import Link from 'next/link'
 import { BUSINESS_INFO } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
-import FAQSection from '@/components/FAQSection'
-import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
-import { generalFAQs } from '@/lib/faqs'
-import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'About Us',
-  description: `Learn about ${BUSINESS_INFO.name} - your trusted local window washing professionals serving Mesa, Gilbert, Queen Creek, and Chandler, Arizona.`,
+  description: `Learn about ${BUSINESS_INFO.name} - founded in 2026 by Mason Ball, Chansyn Mapa, and Dane Howard. Three friends who built a window washing business on discipline, reliability, and genuine care for Arizona homeowners.`,
   path: '/about',
 })
 
@@ -20,7 +16,7 @@ export default function AboutPage() {
       {/* Hero */}
       <HeroVideo
         title="About Arizona Window Washing Pros"
-        subtitle="Your trusted local window cleaning experts"
+        subtitle="Three friends. A shared vision. Built on trust."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -35,116 +31,132 @@ export default function AboutPage() {
         </div>
       </HeroVideo>
 
-      {/* Company Story */}
+      {/* Opening Section - Why We Started */}
       <section className="section-padding bg-white">
-        <div className="container-custom max-w-5xl">
-          <div className="content-section">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Story</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
-            </div>
-            <div className="space-y-6">
-              <p className="text-xl text-gray-700 leading-relaxed">
-                {BUSINESS_INFO.name} has been serving homeowners and businesses throughout the East Valley for years. We started with a simple mission: to provide exceptional window cleaning services that make a real difference in how your property looks and feels.
-              </p>
-              <p className="text-gray-700 leading-relaxed text-lg">
-                As a locally owned and operated business, we understand the unique needs of Arizona homeowners. From the intense sun that creates hard water spots to the dust storms that leave windows dirty, we&apos;ve seen it all and know exactly how to handle it.
-              </p>
-              <p className="text-gray-700 leading-relaxed text-lg">
-                What sets us apart is our commitment to quality, reliability, and customer satisfaction. Every member of our team is trained in the latest window cleaning techniques and uses professional-grade equipment to ensure your windows sparkle.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="section-padding gradient-bg">
-        <div className="container-custom max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Why Choose Us</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto mt-4 rounded-full"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: '🏆', title: 'Experienced Professionals', desc: 'Our team has years of experience cleaning windows in Arizona\'s unique climate conditions.' },
-              { icon: '✨', title: 'Quality Guaranteed', desc: 'We stand behind our work. If you\'re not satisfied, we\'ll make it right.' },
-              { icon: '🏠', title: 'Local & Trusted', desc: 'As a local business, we\'re invested in our community and your satisfaction.' },
-              { icon: '⚡', title: 'Fast & Reliable', desc: 'We show up on time, work efficiently, and leave your property looking its best.' },
-              { icon: '💰', title: 'Fair Pricing', desc: 'Transparent, competitive pricing with no hidden fees. Free quotes for every job.' },
-              { icon: '🛡️', title: 'Fully Insured', desc: 'We\'re fully licensed and insured for your peace of mind.' },
-            ].map((item, index) => (
-              <div key={index} className="card card-hover">
-                <div className="p-6">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team / Values */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Our Values</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto mt-4 rounded-full"></div>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: 'Excellence in Every Detail', desc: 'We don\'t just clean windows. We ensure every pane, track, and sill is spotless. Our attention to detail is what makes us stand out.' },
-              { title: 'Customer-First Approach', desc: 'Your satisfaction is our top priority. We listen to your needs, answer your questions, and deliver results that exceed expectations.' },
-              { title: 'Community Commitment', desc: 'As part of the East Valley community, we\'re committed to supporting our neighbors and building lasting relationships.' },
-            ].map((item, index) => (
-              <div key={index} className="card">
-                <div className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-900">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Rich Content Section */}
-      <section className="bg-gray-50 section-padding">
         <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Our Commitment to Excellence</h2>
-            <p className="text-xl text-gray-700 mb-6">
-              At Arizona Window Washing Pros, we believe that clean windows are more than just a cosmetic improvement. They enhance your quality of life by bringing more natural light into your home and improving your view of the beautiful Arizona landscape.
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why We Started</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+          </div>
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p className="text-xl leading-relaxed">
+              Arizona Window Washing Pros was founded in 2026 by three friends: Mason Ball, Chansyn Mapa, and Dane Howard. But our story didn't start in 2026. It started years earlier, in middle school, when we met and became close friends.
             </p>
-            <p className="text-gray-700 mb-6">
-              We&apos;ve built our reputation on reliability, quality, and customer satisfaction. Every job is completed with meticulous attention to detail, using professional-grade equipment and eco-friendly cleaning solutions. Our team members are not just employees. They&apos;re trained professionals who take pride in their work.
+            <p className="leading-relaxed">
+              Our bond was built through football—those early morning practices, grueling workouts, and the lessons that came with being part of a team. We learned discipline. We learned accountability. We learned what it means to show up, even when it's hard.
             </p>
-            <h3 className="text-2xl font-bold mb-4 mt-8">Local Expertise, Professional Results</h3>
-            <p className="text-gray-700 mb-4">
-              Living and working in Arizona has given us unique insights into the challenges local homeowners face. We know how to effectively remove hard water spots caused by mineral-rich water, how to clean windows after dust storms, and how to maintain windows in extreme heat conditions.
+            <p className="leading-relaxed">
+              As life moved forward, we took that same drive, that same work ethic, and that same commitment to doing things right, and we repurposed it into building something together.
             </p>
-            <p className="text-gray-700 mb-6">
-              Our local knowledge, combined with professional training and the best equipment, ensures that your windows receive the care they need to look their best year-round. We&apos;re not just a cleaning service. We&apos;re your neighbors, committed to helping you maintain a beautiful home.
+            <p className="leading-relaxed font-medium">
+              Arizona Window Washing Pros exists because we wanted to bring something different to Arizona homeowners—professional, dependable service from people who genuinely care about the work and the community they serve.
+            </p>
+            <p className="leading-relaxed">
+              We created this business for homeowners who are tired of no-shows, rushed jobs, and inconsistent quality. We wanted to be the people you could count on, every single time.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <ReviewsSection reviews={reviews} maxReviews={6} />
+      {/* Our Background */}
+      <section className="section-padding gradient-bg">
+        <div className="container-custom max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Background</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+          </div>
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p className="leading-relaxed">
+              Football taught us more than just how to play a game. It taught us how to show up consistently, day after day, even when you don't feel like it. It taught us that every detail matters, from how you prepare to how you finish.
+            </p>
+            <p className="leading-relaxed">
+              That mindset translates directly to how we approach every window washing job. We show up on time. We communicate clearly. We do the job right, without cutting corners.
+            </p>
+            <p className="leading-relaxed">
+              When you've learned to be accountable to your teammates, you understand what it means to be accountable to your customers. When you've spent years pushing through when things get tough, you don't walk away from a job when it's challenging. You figure it out.
+            </p>
+            <p className="leading-relaxed">
+              That's where our reliability comes from. It's not a marketing promise—it's who we are. It's built into how we operate because it's how we've learned to live.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* FAQ Section */}
-      <FAQSection faqs={generalFAQs} />
+      {/* How We Treat Our Customers */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">How We Treat Our Customers</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+          </div>
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p className="leading-relaxed">
+              We treat your home with respect. We understand that inviting someone into your space requires trust, and we work hard to earn and keep that trust every single time.
+            </p>
+            <p className="leading-relaxed">
+              Clear communication matters to us. If we're going to be late, we'll let you know. If there's something we notice about your windows that needs attention, we'll point it out. If you have questions, we'll give you honest answers.
+            </p>
+            <p className="leading-relaxed">
+              We show up on time. It's a simple thing, but it's not always a given. We know your time is valuable, and we respect that by being where we say we'll be when we say we'll be there.
+            </p>
+            <p className="leading-relaxed">
+              Most importantly, we don't cut corners. We take pride in our work because the quality of what we do reflects who we are. Every window, every track, every sill gets the attention it deserves. We wouldn't have it any other way.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Arizona Window Washing Pros Exists */}
+      <section className="section-padding gradient-bg">
+        <div className="container-custom max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Arizona Window Washing Pros Exists</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+          </div>
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p className="leading-relaxed">
+              We're a local business, built to serve Arizona homeowners with quality window washing services. But we're also built to last—not just as a company, but as part of this community.
+            </p>
+            <p className="leading-relaxed">
+              We're not interested in quick wins or shortcuts. We're interested in building long-term relationships with people who live here, work here, and care about this place as much as we do.
+            </p>
+            <p className="leading-relaxed">
+              Everything we do is built on trust, not shortcuts. When you choose Arizona Window Washing Pros, you're choosing people who genuinely care about the work and the community they serve.
+            </p>
+            <p className="leading-relaxed">
+              We take pride in what we do because we understand that when you trust us with your home, that's not something we take lightly. It's a responsibility we're honored to have.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing Statement */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+            <p className="leading-relaxed text-xl">
+              We're grateful for every customer who trusts us with their window washing needs. This isn't just our business—it's our commitment to showing up and doing things the right way, for the long haul.
+            </p>
+            <p className="leading-relaxed">
+              When you choose Arizona Window Washing Pros, you're choosing people who genuinely care about the work and the community they serve.
+            </p>
+            <p className="leading-relaxed">
+              Thank you for considering us. We'd be honored to earn your trust.
+            </p>
+            <div className="mt-8 pt-8 border-t border-gray-200">
+              <p className="text-gray-600 text-base">
+                — Mason Ball, Chansyn Mapa, and Dane Howard
+              </p>
+              <p className="text-gray-600 text-base mt-2">
+                Founders, Arizona Window Washing Pros
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Contact Form */}
-      <section id="contact-form" className="section-padding bg-white">
+      <section id="contact-form" className="section-padding bg-gray-50">
         <div className="container-custom max-w-2xl">
           <ContactForm />
         </div>
@@ -152,4 +164,3 @@ export default function AboutPage() {
     </>
   )
 }
-
