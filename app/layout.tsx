@@ -50,6 +50,21 @@ export default function RootLayout({
           src="https://link.msgsndr.com/js/form_embed.js"
           async
         />
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17892178683"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17892178683');
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>
         <Layout>{children}</Layout>
