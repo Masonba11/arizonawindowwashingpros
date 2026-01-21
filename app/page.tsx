@@ -9,7 +9,7 @@ import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Professional Window Washing in Mesa, Gilbert, Queen Creek & Chandler',
+  title: 'Professional Window Washing in Mesa, Gilbert, Queen Creek Chandler, Tempe & Scottsdale',
   description: `Expert exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Professional window cleaning and screen cleaning. Starting at $150. Free quotes available.`,
 })
 
@@ -18,7 +18,7 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <HeroVideo
-        title="Professional Window Washing in Mesa, Gilbert, Queen Creek & Chandler"
+        title="Professional Window Washing in Mesa, Gilbert, Queen Creek Chandler, Tempe & Scottsdale"
         subtitle="Crystal-clear windows that make your home shine. Expert service you can trust."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: `${BUSINESS_INFO.name} | Professional Window Washing in Mesa, Gilbert, Queen Creek & Chandler`,
+    default: `${BUSINESS_INFO.name} | Professional Window Washing in Mesa, Gilbert, Queen Creek Chandler, Tempe & Scottsdale`,
     template: `%s | ${BUSINESS_INFO.name}`,
   },
   description: `Professional exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Expert window cleaning and screen cleaning. Starting at $150.`,
