@@ -18,7 +18,7 @@ export default function HeroVideo({ title, subtitle, children }: HeroVideoProps)
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/AZQP.mp4" type="video/mp4" />
+          <source src="/hero-video.mov" type="video/quicktime" />
         </video>
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20"></div>
