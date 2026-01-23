@@ -4,6 +4,7 @@ import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
+import PricingImages from '@/components/PricingImages'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -204,6 +205,13 @@ export default function TrackSillCleaningPage() {
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
 
+      {/* Pricing Images Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-5xl">
+          <PricingImages />
+        </div>
+      </section>
+
       <section id="contact-form" className="section-padding bg-white">
         <div className="container-custom max-w-2xl">
           <ContactForm />
@@ -212,4 +220,7 @@ export default function TrackSillCleaningPage() {
     </>
   )
 }
+
+
+
 

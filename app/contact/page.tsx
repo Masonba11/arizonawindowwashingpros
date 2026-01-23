@@ -4,6 +4,7 @@ import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
+import PricingImages from '@/components/PricingImages'
 import { generalFAQs } from '@/lib/faqs'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
@@ -159,6 +160,13 @@ export default function ContactPage() {
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />
+
+      {/* Pricing Images Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-5xl">
+          <PricingImages />
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <FAQSection faqs={generalFAQs} />

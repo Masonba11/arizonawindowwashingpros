@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { BUSINESS_INFO } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
 import HeroVideo from '@/components/HeroVideo'
+import PricingImages from '@/components/PricingImages'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
@@ -152,6 +153,13 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Pricing Images Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-5xl">
+          <PricingImages />
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import HeroVideo from '@/components/HeroVideo'
+import PricingImages from '@/components/PricingImages'
 import { generalFAQs } from '@/lib/faqs'
 import { reviews as allReviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
@@ -126,6 +127,13 @@ export default function ReviewsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Pricing Images Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-5xl">
+          <PricingImages />
         </div>
       </section>
 

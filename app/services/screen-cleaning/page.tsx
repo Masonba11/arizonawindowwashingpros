@@ -5,6 +5,7 @@ import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingReference from '@/components/PricingReference'
+import PricingImages from '@/components/PricingImages'
 import { generalFAQs } from '@/lib/faqs'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
@@ -161,6 +162,13 @@ export default function ScreenCleaningPage() {
 
       {/* FAQ Section */}
       <FAQSection faqs={generalFAQs} />
+
+      {/* Pricing Images Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-5xl">
+          <PricingImages />
+        </div>
+      </section>
 
       {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
