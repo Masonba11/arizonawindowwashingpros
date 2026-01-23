@@ -9,19 +9,15 @@ interface HeroVideoProps {
 export default function HeroVideo({ title, subtitle, children }: HeroVideoProps) {
   return (
     <section className="relative section-padding overflow-hidden min-h-[400px] md:min-h-[500px] flex items-center">
-      {/* Video Background */}
+      {/* Image Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          src="/hero-image.png"
+          alt="Professional window cleaning service"
           className="w-full h-full object-cover"
-        >
-          <source src="/AZQP.mp4" type="video/mp4" />
-        </video>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        />
+        {/* Overlay for better text readability - dimmed */}
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       {/* Content */}
