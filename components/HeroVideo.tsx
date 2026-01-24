@@ -20,17 +20,17 @@ export default function HeroVideo({ title, subtitle, children }: HeroVideoProps)
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        {/* Overlay for better text readability - dimmed */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Overlay for better text readability - darker */}
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 container-custom text-center w-full">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-2xl leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-2xl leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
           {title}
         </h1>
         {subtitle && (
-          <p className="text-xl md:text-2xl text-white/95 mb-10 drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl font-semibold text-white mb-10 drop-shadow-lg max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
             {subtitle}
           </p>
         )}
