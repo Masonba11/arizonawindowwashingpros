@@ -104,6 +104,14 @@ export default function Footer() {
                   <span>Contact</span>
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors flex items-center space-x-2 group">
+                  <svg className="w-4 h-4 text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Privacy Policy</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
