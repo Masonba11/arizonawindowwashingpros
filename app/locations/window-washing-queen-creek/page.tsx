@@ -63,38 +63,6 @@ export default function WindowWashingQueenCreekPage() {
         </div>
       </HeroVideo>
 
-      {/* YouTube Videos Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">See Us In Action</h2>
-            <p className="section-subtitle">
-              Watch our professional window cleaning team at work
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona Window Washing Pros - Video 1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona Window Washing Pros - Video 2"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="section-padding">
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg max-w-none">
@@ -189,6 +157,38 @@ export default function WindowWashingQueenCreekPage() {
             <p className="text-gray-700">
               Whether you&apos;re in the heart of Queen Creek or in the surrounding San Tan Valley area, you can count on Arizona Window Washing Pros for reliable, professional service. We&apos;re your local window cleaning experts, dedicated to helping Queen Creek homeowners enjoy crystal-clear windows year-round.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* YouTube Videos Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="section-title">See Us In Action</h2>
+            <p className="section-subtitle">
+              Watch our professional window cleaning team at work
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative w-full h-[400px] max-w-md mx-auto">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/TpGGKeABfCI"
+                title="Arizona Window Washing Pros - Video 1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="relative w-full h-[400px] max-w-md mx-auto">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/GdNlH8GPhL0"
+                title="Arizona Window Washing Pros - Video 2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -63,38 +63,6 @@ export default function TempeWindowWashingPage() {
         </div>
       </HeroVideo>
 
-      {/* YouTube Videos Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">See Us In Action</h2>
-            <p className="section-subtitle">
-              Watch our professional window cleaning team at work
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona Window Washing Pros - Video 1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona Window Washing Pros - Video 2"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Main Content Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-5xl">
@@ -235,6 +203,38 @@ export default function TempeWindowWashingPage() {
                   We&apos;re committed to providing exceptional service to the Tempe community. As your local window cleaning experts, we take pride in helping Tempe homeowners maintain beautiful, clear windows that enhance their home&apos;s appearance and their enjoyment of Arizona&apos;s beautiful weather.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* YouTube Videos Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="section-title">See Us In Action</h2>
+            <p className="section-subtitle">
+              Watch our professional window cleaning team at work
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative w-full h-[400px] max-w-md mx-auto">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/TpGGKeABfCI"
+                title="Arizona Window Washing Pros - Video 1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="relative w-full h-[400px] max-w-md mx-auto">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/GdNlH8GPhL0"
+                title="Arizona Window Washing Pros - Video 2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>

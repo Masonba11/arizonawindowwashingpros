@@ -9,21 +9,17 @@ interface HeroVideoProps {
 export default function HeroVideo({ title, subtitle, children }: HeroVideoProps) {
   return (
     <section className="relative section-padding overflow-hidden min-h-[400px] md:min-h-[500px] flex items-center">
-      {/* YouTube Video Background */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <iframe
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            pointerEvents: 'none',
-          }}
-          src="https://www.youtube.com/embed/GdNlH8GPhL0?autoplay=1&mute=1&loop=1&playlist=GdNlH8GPhL0&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-          title="Arizona Window Washing Pros Background Video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen={false}
-        />
+        >
+          <source src="/hero-video.mov" type="video/quicktime" />
+        </video>
         {/* Overlay for better text readability - dimmed */}
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
