@@ -73,7 +73,7 @@ export default function WindowWashingQueenCreekPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative w-full aspect-[9/16] max-w-md mx-auto">
+            <div className="relative w-full h-[400px] max-w-md mx-auto">
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/TpGGKeABfCI"
@@ -82,7 +82,7 @@ export default function WindowWashingQueenCreekPage() {
                 allowFullScreen
               />
             </div>
-            <div className="relative w-full aspect-[9/16] max-w-md mx-auto">
+            <div className="relative w-full h-[400px] max-w-md mx-auto">
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/GdNlH8GPhL0"
