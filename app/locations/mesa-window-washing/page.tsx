@@ -29,9 +29,6 @@ export const metadata = generateMetadata({
 const city = 'Mesa'
 const faqs = generateLocationFAQs(city)
 
-// Force static generation to prevent build timeouts
-export const dynamic = 'force-static'
-
 export default function MesaWindowWashingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://arizonawindowwashingpros.com' },

@@ -24,9 +24,6 @@ export const metadata = generateMetadata({
 
 const faqs = generateServiceFAQs('Exterior Window Cleaning')
 
-// Force static generation to prevent build timeouts
-export const dynamic = 'force-static'
-
 export default function ExteriorWindowCleaningPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://arizonawindowwashingpros.com' },
