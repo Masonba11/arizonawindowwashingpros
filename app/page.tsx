@@ -5,6 +5,7 @@ import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
+import LazyYouTube from '@/components/LazyYouTube'
 import { generalFAQs } from '@/lib/faqs'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
@@ -153,7 +154,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* YouTube Videos Section */}
+      {/* YouTube Videos Section - Lazy Loaded */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
           <div className="text-center mb-12">
@@ -163,24 +164,16 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona Window Washing Pros - Video 1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona Window Washing Pros - Video 2"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
+            <LazyYouTube
+              videoId="TpGGKeABfCI"
+              title="Arizona Window Washing Pros - Video 1"
+              className="max-w-md mx-auto"
+            />
+            <LazyYouTube
+              videoId="GdNlH8GPhL0"
+              title="Arizona Window Washing Pros - Video 2"
+              className="max-w-md mx-auto"
+            />
           </div>
         </div>
       </section>

@@ -1,42 +1,27 @@
 import Link from 'next/link'
-import { BUSINESS_INFO, LOCATIONS } from '@/lib/constants'
+import { BUSINESS_INFO, LOCATIONS, SERVICES } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
-import PricingReference from '@/components/PricingReference'
 import PricingImages from '@/components/PricingImages'
+import StickyCTA from '@/components/StickyCTA'
+import BeforeAfter from '@/components/BeforeAfter'
+import TrustSection from '@/components/TrustSection'
+import OfferBanner from '@/components/OfferBanner'
+import QuoteForm from '@/components/QuoteForm'
+import WorkVideo from '@/components/WorkVideo'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
+import { generateServiceFAQs } from '@/lib/enhancedFAQs'
 
 export const metadata = generateMetadata({
-  title: 'Exterior Window Cleaning Services in Mesa, Gilbert, Queen Creek & Chandler',
-  description: 'Professional exterior window cleaning services. Hand-washed windows with professional squeegee finish. Starting at $150 for 1-story homes, $180 for 2-story homes. Free estimates.',
+  title: 'Exterior Window Cleaning Services in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale',
+  description: 'Professional exterior window cleaning services. Hand-washed windows with professional squeegee finish. Starting at $150 for 1-story homes, $180 for 2-story homes. Free estimates. Licensed & insured.',
   path: '/services/exterior-window-cleaning',
 })
 
-const faqs = [
-  {
-    question: 'How much does exterior window cleaning cost?',
-    answer: 'Pricing is based on the number of windows and home height. 1-story homes start at $150, 2-story homes start at $180. Most homes fall between $150-$350. We provide free estimates before scheduling.',
-  },
-  {
-    question: 'What is included in exterior window cleaning?',
-    answer: 'Our exterior window cleaning includes hand-washed exterior window glass, professional squeegee finish, light wipe-down of window frames, and safe ladder work for two-story homes.',
-  },
-  {
-    question: 'How long does exterior window cleaning take?',
-    answer: 'Most homes take 1-2 hours depending on the number of windows and home size. We work efficiently while maintaining our high quality standards.',
-  },
-  {
-    question: 'Do you clean windows on two-story homes?',
-    answer: 'Yes, we safely clean windows on two-story homes using professional ladders and safety equipment. Two-story homes start at $180.',
-  },
-  {
-    question: 'How often should I have my exterior windows cleaned?',
-    answer: 'In Arizona\'s climate with dust storms and intense sun, we recommend exterior window cleaning every 3-4 months to maintain optimal clarity and prevent buildup.',
-  },
-]
+const faqs = generateServiceFAQs('Exterior Window Cleaning')
 
 export default function ExteriorWindowCleaningPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -57,22 +42,65 @@ export default function ExteriorWindowCleaningPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <StickyCTA />
       <HeroVideo
-        title="Exterior Window Cleaning Services in Mesa, Gilbert, Queen Creek & Chandler"
+        title="Exterior Window Cleaning Services in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale"
         subtitle="Professional exterior window cleaning. Our most popular and cost-effective service."
-      >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        service="Exterior Window Cleaning"
+      />
+      
+      {/* Quote Form in Hero Area */}
+      <section className="section-padding bg-white -mt-20 relative z-20">
+        <div className="container-custom max-w-2xl">
+          <QuoteForm defaultService="Exterior Window Cleaning" compact />
+        </div>
+      </section>
+
+      {/* Click-to-Call CTA */}
+      <section className="section-padding bg-gradient-to-r from-primary-600 to-primary-700">
+        <div className="container-custom max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Ready for Crystal-Clear Windows?
+          </h2>
+          <p className="text-xl text-white/90 mb-6">
+            Call now for fastest scheduling or get your free quote below
+          </p>
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            className="btn-primary text-lg"
+            className="inline-block btn-secondary text-xl font-bold px-8 py-4 bg-white text-primary-600 hover:bg-primary-50 shadow-2xl"
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).gtag) {
+                (window as any).gtag('event', 'phone_click', {
+                  event_category: 'engagement',
+                  event_label: 'mid_page_call',
+                })
+              }
+            }}
           >
-            Call Now: {BUSINESS_INFO.phone}
-          </a>
-          <a href="#contact-form" className="btn-secondary text-lg bg-white text-primary-600 border-2 border-white hover:bg-primary-50">
-            Get Free Quote
+            📞 Call {BUSINESS_INFO.phone}
           </a>
         </div>
-      </HeroVideo>
+      </section>
+
+      {/* Before & After Section */}
+      <BeforeAfter service="Exterior Window Cleaning" />
+
+      {/* Work Video Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="section-title">See Our Work in Action</h2>
+            <p className="section-subtitle">
+              Watch our professional team deliver streak-free results
+            </p>
+          </div>
+          <WorkVideo
+            src="/videos/work-video-1.mp4"
+            poster="/before-after-1.jpg"
+            alt="Professional window cleaning in action"
+          />
+        </div>
+      </section>
 
       {/* Main Content Section */}
       <section className="section-padding bg-white">
@@ -183,6 +211,12 @@ export default function ExteriorWindowCleaningPage() {
         </div>
       </section>
 
+      {/* Trust Section */}
+      <TrustSection />
+
+      {/* Offer Banner */}
+      <OfferBanner />
+
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />
 
@@ -196,11 +230,62 @@ export default function ExteriorWindowCleaningPage() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Related Services</h2>
+            <p className="section-subtitle">
+              Complete your window cleaning with these additional services
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.filter(s => s.slug !== 'exterior-window-cleaning').map((service) => (
+              <Link
+                key={service.id}
+                href={`/services/${service.slug}`}
+                className="card card-hover p-6 text-center group"
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  {service.name}
+                </h3>
+                <p className="text-gray-600">{service.description}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Click-to-Call CTA Before Form */}
+      <section className="section-padding bg-primary-600">
+        <div className="container-custom max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Get Your Free Quote Today
+          </h2>
+          <p className="text-xl text-white/90 mb-6">
+            Or call us directly for fastest response
+          </p>
+          <a
+            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+            className="inline-block btn-secondary text-xl font-bold px-8 py-4 bg-white text-primary-600 hover:bg-primary-50 shadow-2xl mb-6"
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).gtag) {
+                (window as any).gtag('event', 'phone_click', {
+                  event_category: 'engagement',
+                  event_label: 'pre_form_call',
+                })
+              }
+            }}
+          >
+            📞 Call {BUSINESS_INFO.phone}
+          </a>
+        </div>
+      </section>
+
       {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
         <div className="container-custom max-w-2xl">
-          <PricingReference />
-          <ContactForm defaultService="Exterior Window Cleaning" />
+          <QuoteForm defaultService="Exterior Window Cleaning" />
         </div>
       </section>
     </>

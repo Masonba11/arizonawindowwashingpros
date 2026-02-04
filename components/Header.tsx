@@ -102,12 +102,20 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Phone CTA Button */}
+          {/* Phone CTA Button - More Visible */}
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            className="hidden md:flex btn-primary text-sm"
+            className="hidden md:flex btn-primary text-base font-bold px-6 py-3 shadow-lg hover:shadow-xl transition-shadow"
+            onClick={() => {
+              if (typeof window !== 'undefined' && (window as any).gtag) {
+                (window as any).gtag('event', 'phone_click', {
+                  event_category: 'engagement',
+                  event_label: 'header_call',
+                })
+              }
+            }}
           >
-            {BUSINESS_INFO.phone}
+            📞 {BUSINESS_INFO.phone}
           </a>
 
           {/* Mobile Menu Button */}

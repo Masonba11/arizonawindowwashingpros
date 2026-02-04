@@ -41,21 +41,23 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        {/* Defer non-critical tracking scripts */}
         <script
           src="https://link.msgsndr.com/js/external-tracking.js"
           data-tracking-id="tk_49e1c696121549738e0bd78b6017394b"
-          async
+          defer
         />
         <script
           src="https://link.msgsndr.com/js/form_embed.js"
-          async
+          defer
         />
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js) - Deferred for performance */}
         <script
-          async
+          defer
           src="https://www.googletagmanager.com/gtag/js?id=AW-17892178683"
         />
         <script
+          defer
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -65,8 +67,9 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Meta Pixel Code */}
+        {/* Meta Pixel Code - Deferred */}
         <script
+          defer
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)

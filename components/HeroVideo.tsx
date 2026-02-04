@@ -43,16 +43,20 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
 
   return (
     <section className="relative section-padding overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
-      {/* Image Background */}
+      {/* Image Background - Optimized for LCP */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero-image.jpg"
-          alt="Arizona Window Washing Pros"
-          fill
-          className="object-cover"
-          priority
-          quality={90}
-        />
+        <picture>
+          <source srcSet="/hero-image.webp" type="image/webp" />
+          <Image
+            src="/hero-image-optimized.jpg"
+            alt="Arizona Window Washing Pros"
+            fill
+            className="object-cover"
+            priority
+            quality={65}
+            sizes="100vw"
+          />
+        </picture>
         {/* Overlay for better text readability - dimmed */}
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
