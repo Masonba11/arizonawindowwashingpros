@@ -36,6 +36,7 @@ const faqs = [
 ]
 
 export default function MesaWindowWashingPage() {
+  const city = "Mesa"
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://arizonawindowwashingpros.com' },
     { name: 'Locations', url: 'https://arizonawindowwashingpros.com/locations' },
@@ -71,22 +72,6 @@ export default function MesaWindowWashingPage() {
       {/* Gallery Section */}
       <GallerySection city="Mesa" />
 
-      {/* Work Video Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">See Our Work in {city}</h2>
-            <p className="section-subtitle">
-              Watch our professional team deliver streak-free results
-            </p>
-          </div>
-          <WorkVideo
-            src="/videos/work-video-1.mp4"
-            poster="/before-after-1.jpg"
-            alt={`Professional window cleaning in ${city}`}
-          />
-        </div>
-      </section>
 
       {/* Main Content Section */}
       <section className="section-padding bg-white">
