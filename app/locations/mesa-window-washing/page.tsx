@@ -5,14 +5,17 @@ import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
-import StickyCTA from '@/components/StickyCTA'
+import dynamic from 'next/dynamic'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TrustSection from '@/components/TrustSection'
-import OfferBanner from '@/components/OfferBanner'
-import QuoteForm from '@/components/QuoteForm'
-import WorkVideo from '@/components/WorkVideo'
-import LazyYouTube from '@/components/LazyYouTube'
+
+// Dynamically import client components to prevent build timeouts
+const StickyCTA = dynamic(() => import('@/components/StickyCTA'), { ssr: false })
+const OfferBanner = dynamic(() => import('@/components/OfferBanner'), { ssr: false })
+const QuoteForm = dynamic(() => import('@/components/QuoteForm'), { ssr: false })
+const WorkVideo = dynamic(() => import('@/components/WorkVideo'), { ssr: false })
+const LazyYouTube = dynamic(() => import('@/components/LazyYouTube'), { ssr: false })
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { generateLocationFAQs } from '@/lib/enhancedFAQs'
