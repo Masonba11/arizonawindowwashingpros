@@ -28,8 +28,8 @@ export const metadata = generateMetadata({
 const city = 'Mesa'
 const faqs = generateLocationFAQs(city)
 
-// Use dynamic rendering to prevent build timeouts
-export const dynamic = 'force-dynamic'
+// Force dynamic rendering to prevent build timeouts
+export const revalidate = 0
 
 export default function MesaWindowWashingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
