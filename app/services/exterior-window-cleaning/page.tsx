@@ -12,6 +12,7 @@ import TrustSection from '@/components/TrustSection'
 import OfferBanner from '@/components/OfferBanner'
 import QuoteForm from '@/components/QuoteForm'
 import WorkVideo from '@/components/WorkVideo'
+import ClickToCall from '@/components/ClickToCall'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { generateServiceFAQs } from '@/lib/enhancedFAQs'
@@ -66,20 +67,10 @@ export default function ExteriorWindowCleaningPage() {
           <p className="text-xl text-white/90 mb-6">
             Call now for fastest scheduling or get your free quote below
           </p>
-          <a
-            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+          <ClickToCall
             className="inline-block btn-secondary text-xl font-bold px-8 py-4 bg-white text-primary-600 hover:bg-primary-50 shadow-2xl"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'phone_click', {
-                  event_category: 'engagement',
-                  event_label: 'mid_page_call',
-                })
-              }
-            }}
-          >
-            📞 Call {BUSINESS_INFO.phone}
-          </a>
+            eventLabel="mid_page_call"
+          />
         </div>
       </section>
 
@@ -269,20 +260,10 @@ export default function ExteriorWindowCleaningPage() {
           <p className="text-xl text-white/90 mb-6">
             Or call us directly for fastest response
           </p>
-          <a
-            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+          <ClickToCall
             className="inline-block btn-secondary text-xl font-bold px-8 py-4 bg-white text-primary-600 hover:bg-primary-50 shadow-2xl mb-6"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'phone_click', {
-                  event_category: 'engagement',
-                  event_label: 'pre_form_call',
-                })
-              }
-            }}
-          >
-            📞 Call {BUSINESS_INFO.phone}
-          </a>
+            eventLabel="pre_form_call"
+          />
         </div>
       </section>
 
