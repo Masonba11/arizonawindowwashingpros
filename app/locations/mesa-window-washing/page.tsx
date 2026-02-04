@@ -6,7 +6,8 @@ import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import StickyCTA from '@/components/StickyCTA'
-import BeforeAfter from '@/components/BeforeAfter'
+import BeforeAfterSection from '@/components/BeforeAfterSection'
+import GallerySection from '@/components/GallerySection'
 import TrustSection from '@/components/TrustSection'
 import OfferBanner from '@/components/OfferBanner'
 import QuoteForm from '@/components/QuoteForm'
@@ -24,6 +25,9 @@ export const metadata = generateMetadata({
 
 const city = 'Mesa'
 const faqs = generateLocationFAQs(city)
+
+// Force static generation to prevent build timeouts
+export const dynamic = 'force-static'
 
 export default function MesaWindowWashingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -85,7 +89,10 @@ export default function MesaWindowWashingPage() {
       </section>
 
       {/* Before & After Section */}
-      <BeforeAfter city={city} />
+      <BeforeAfterSection city={city} />
+
+      {/* Gallery Section */}
+      <GallerySection city={city} />
 
       {/* Work Video Section */}
       <section className="section-padding bg-gray-50">
