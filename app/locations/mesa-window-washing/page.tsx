@@ -1,35 +1,39 @@
 import Link from 'next/link'
 import { BUSINESS_INFO, SERVICES, LOCATIONS } from '@/lib/constants'
-import dynamic from 'next/dynamic'
+import ContactForm from '@/components/ContactForm'
+import FAQSection from '@/components/FAQSection'
+import ReviewsSection from '@/components/ReviewsSection'
+import HeroVideo from '@/components/HeroVideo'
+import PricingImages from '@/components/PricingImages'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
-import TrustSection from '@/components/TrustSection'
-
-// Dynamically import all components to prevent build timeouts
-const StickyCTA = dynamic(() => import('@/components/StickyCTA'), { ssr: false })
-const HeroVideo = dynamic(() => import('@/components/HeroVideo'), { ssr: false })
-const OfferBanner = dynamic(() => import('@/components/OfferBanner'), { ssr: false })
-const QuoteForm = dynamic(() => import('@/components/QuoteForm'), { ssr: false })
-const WorkVideo = dynamic(() => import('@/components/WorkVideo'), { ssr: false })
-const LazyYouTube = dynamic(() => import('@/components/LazyYouTube'), { ssr: false })
-const FAQSection = dynamic(() => import('@/components/FAQSection'), { ssr: false })
-const ReviewsSection = dynamic(() => import('@/components/ReviewsSection'), { ssr: false })
-const PricingImages = dynamic(() => import('@/components/PricingImages'), { ssr: false })
 import { reviews } from '@/lib/reviews'
-import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
-import { generateLocationFAQs } from '@/lib/enhancedFAQs'
+import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Mesa Window Washing | Professional Window Cleaning Services',
-  description: 'Professional exterior and interior window cleaning services in Mesa, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Licensed & insured. Free quotes available.',
+  title: 'Mesa Window Washing',
+  description: 'Professional exterior and interior window cleaning services in Mesa, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
   path: '/locations/mesa-window-washing',
 })
 
-const city = 'Mesa'
-const faqs = generateLocationFAQs(city)
-
-// Force dynamic rendering to prevent build timeouts
-export const revalidate = 0
+const faqs = [
+  {
+    question: 'How much does exterior window cleaning cost in Mesa?',
+    answer: 'Exterior window cleaning prices in Mesa start at $150 for 1-story homes and $180 for 2-story homes. Most Mesa homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
+  },
+  {
+    question: 'How often should I have my windows cleaned in Mesa?',
+    answer: 'Given Mesa\'s desert climate with dust storms and intense sun, we recommend window cleaning every 3-4 months to maintain optimal clarity and prevent hard water spot buildup.',
+  },
+  {
+    question: 'Do you clean both interior and exterior windows in Mesa?',
+    answer: 'Yes, we offer both interior and exterior window cleaning services in Mesa. You can choose one or both depending on your needs.',
+  },
+  {
+    question: 'What areas of Mesa do you serve?',
+    answer: 'We serve all areas of Mesa, Arizona, including downtown Mesa, East Mesa, West Mesa, and surrounding neighborhoods.',
+  },
+]
 
 export default function MesaWindowWashingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -38,63 +42,34 @@ export default function MesaWindowWashingPage() {
     { name: 'Mesa Window Washing', url: 'https://arizonawindowwashingpros.com/locations/mesa-window-washing' },
   ])
 
-  const faqSchema = generateFAQSchema(faqs)
-
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <StickyCTA />
       <HeroVideo
-        title={`Window Washing in ${city}, Arizona`}
-        subtitle="Professional window cleaning services. Licensed, insured, and locally owned."
-        city={city}
-      />
-      
-      {/* Quote Form in Hero Area */}
-      <section className="section-padding bg-white -mt-20 relative z-20">
-        <div className="container-custom max-w-2xl">
-          <QuoteForm defaultCity={city} compact />
-        </div>
-      </section>
-
-      {/* Click-to-Call CTA */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-primary-700">
-        <div className="container-custom max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready for Crystal-Clear Windows in {city}?
-          </h2>
-          <p className="text-xl text-white/90 mb-6">
-            Call now for fastest scheduling or get your free quote below
-          </p>
+        title="Mesa Window Washing"
+        subtitle="Professional window cleaning services in Mesa, Arizona"
+      >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            className="inline-block btn-secondary text-xl font-bold px-8 py-4 bg-white text-primary-600 hover:bg-primary-50 shadow-2xl"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'phone_click', {
-                  event_category: 'engagement',
-                  event_label: 'mid_page_call',
-                })
-              }
-            }}
+            className="btn-primary text-lg"
           >
-            📞 Call {BUSINESS_INFO.phone}
+            Call Now: {BUSINESS_INFO.phone}
+          </a>
+          <a href="#contact-form" className="btn-secondary text-lg bg-white text-primary-600 border-2 border-white hover:bg-primary-50">
+            Get Free Quote
           </a>
         </div>
-      </section>
+      </HeroVideo>
 
       {/* Before & After Section */}
-      <BeforeAfterSection city={city} />
+      <BeforeAfterSection city="Mesa" />
 
       {/* Gallery Section */}
-      <GallerySection city={city} />
+      <GallerySection city="Mesa" />
 
       {/* Work Video Section */}
       <section className="section-padding bg-gray-50">
@@ -118,7 +93,7 @@ export default function MesaWindowWashingPage() {
         <div className="container-custom max-w-5xl">
           <div className="content-section">
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed text-center">
-              Looking for professional {city} window washing services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for {city} homeowners and businesses.
+              Looking for professional Mesa window washing services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for Mesa homeowners and businesses.
             </p>
           </div>
 
@@ -258,7 +233,7 @@ export default function MesaWindowWashingPage() {
         </div>
       </section>
 
-      {/* YouTube Videos Section - Lazy Loaded */}
+      {/* YouTube Videos Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
           <div className="text-center mb-12">
@@ -268,25 +243,29 @@ export default function MesaWindowWashingPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <LazyYouTube
-              videoId="TpGGKeABfCI"
-              title="Arizona Window Washing Pros - Video 1"
-              className="max-w-md mx-auto"
-            />
-            <LazyYouTube
-              videoId="GdNlH8GPhL0"
-              title="Arizona Window Washing Pros - Video 2"
-              className="max-w-md mx-auto"
-            />
+            <div className="relative w-full h-[400px] max-w-md mx-auto">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/TpGGKeABfCI"
+                title="Arizona Window Washing Pros - Video 1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            <div className="relative w-full h-[400px] max-w-md mx-auto">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/GdNlH8GPhL0"
+                title="Arizona Window Washing Pros - Video 2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Trust Section */}
-      <TrustSection city={city} />
-
-      {/* Offer Banner */}
-      <OfferBanner />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />
@@ -301,87 +280,9 @@ export default function MesaWindowWashingPage() {
         </div>
       </section>
 
-      {/* Related Services in City */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Related Services in {city}</h2>
-            <p className="section-subtitle">
-              Complete your window cleaning with these additional services
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((service) => (
-              <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                className="card card-hover p-6 text-center group"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                  {service.name}
-                </h3>
-                <p className="text-gray-600">{service.description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Nearby Cities */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">We Also Serve Nearby Areas</h2>
-            <p className="section-subtitle">
-              Professional window cleaning in surrounding communities
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {LOCATIONS.filter((loc) => loc.id !== 'mesa').map((location) => (
-              <Link
-                key={location.id}
-                href={`/locations/${location.slug}`}
-                className="card card-hover text-center p-6 group"
-              >
-                <span className="text-primary-600 font-semibold group-hover:text-primary-700 transition-colors">
-                  {location.name}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Click-to-Call CTA Before Form */}
-      <section className="section-padding bg-primary-600">
-        <div className="container-custom max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Get Your Free Quote in {city} Today
-          </h2>
-          <p className="text-xl text-white/90 mb-6">
-            Or call us directly for fastest response
-          </p>
-          <a
-            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            className="inline-block btn-secondary text-xl font-bold px-8 py-4 bg-white text-primary-600 hover:bg-primary-50 shadow-2xl mb-6"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'phone_click', {
-                  event_category: 'engagement',
-                  event_label: 'pre_form_call',
-                })
-              }
-            }}
-          >
-            📞 Call {BUSINESS_INFO.phone}
-          </a>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
         <div className="container-custom max-w-2xl">
-          <QuoteForm defaultCity={city} />
+          <ContactForm defaultCity="Mesa" />
         </div>
       </section>
     </>
