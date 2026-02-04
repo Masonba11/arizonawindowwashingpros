@@ -1,21 +1,20 @@
 import Link from 'next/link'
 import { BUSINESS_INFO, SERVICES, LOCATIONS } from '@/lib/constants'
-import ContactForm from '@/components/ContactForm'
-import FAQSection from '@/components/FAQSection'
-import ReviewsSection from '@/components/ReviewsSection'
-import HeroVideo from '@/components/HeroVideo'
-import PricingImages from '@/components/PricingImages'
 import dynamic from 'next/dynamic'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TrustSection from '@/components/TrustSection'
 
-// Dynamically import client components to prevent build timeouts
+// Dynamically import all components to prevent build timeouts
 const StickyCTA = dynamic(() => import('@/components/StickyCTA'), { ssr: false })
+const HeroVideo = dynamic(() => import('@/components/HeroVideo'), { ssr: false })
 const OfferBanner = dynamic(() => import('@/components/OfferBanner'), { ssr: false })
 const QuoteForm = dynamic(() => import('@/components/QuoteForm'), { ssr: false })
 const WorkVideo = dynamic(() => import('@/components/WorkVideo'), { ssr: false })
 const LazyYouTube = dynamic(() => import('@/components/LazyYouTube'), { ssr: false })
+const FAQSection = dynamic(() => import('@/components/FAQSection'), { ssr: false })
+const ReviewsSection = dynamic(() => import('@/components/ReviewsSection'), { ssr: false })
+const PricingImages = dynamic(() => import('@/components/PricingImages'), { ssr: false })
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { generateLocationFAQs } from '@/lib/enhancedFAQs'
@@ -28,6 +27,9 @@ export const metadata = generateMetadata({
 
 const city = 'Mesa'
 const faqs = generateLocationFAQs(city)
+
+// Use dynamic rendering to prevent build timeouts
+export const dynamic = 'force-dynamic'
 
 export default function MesaWindowWashingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
