@@ -13,7 +13,7 @@ export const reviews: Review[] = [
     name: 'Sarah M.',
     location: 'Mesa, AZ',
     rating: 5,
-    date: '2024-01-15',
+    date: '2026-02-15',
     text: 'Absolutely fantastic service! My windows have never looked better. The team was professional, punctual, and thorough. Highly recommend!',
   },
   {
@@ -21,7 +21,7 @@ export const reviews: Review[] = [
     name: 'Mike T.',
     location: 'Gilbert, AZ',
     rating: 5,
-    date: '2024-01-10',
+    date: '2026-02-10',
     text: 'Great experience from start to finish. Easy to schedule, fair pricing, and excellent results. Will definitely use again.',
   },
   {
@@ -29,7 +29,7 @@ export const reviews: Review[] = [
     name: 'Jennifer L.',
     location: 'Queen Creek, AZ',
     rating: 5,
-    date: '2024-01-08',
+    date: '2026-02-08',
     text: 'Professional window cleaning that exceeded my expectations. They even cleaned the tracks and sills which I didn\'t expect. Very happy!',
   },
   {
@@ -37,7 +37,7 @@ export const reviews: Review[] = [
     name: 'David R.',
     location: 'Chandler, AZ',
     rating: 5,
-    date: '2024-01-05',
+    date: '2026-02-05',
     text: 'Quick response, great communication, and spotless windows. The hard water spots on my windows are completely gone. Amazing work!',
   },
   {
@@ -45,7 +45,7 @@ export const reviews: Review[] = [
     name: 'Lisa K.',
     location: 'Mesa, AZ',
     rating: 5,
-    date: '2023-12-28',
+    date: '2026-01-28',
     text: 'I\'ve tried several window cleaning companies, and this is by far the best. They\'re reliable, affordable, and do incredible work.',
   },
   {
@@ -53,7 +53,7 @@ export const reviews: Review[] = [
     name: 'Robert P.',
     location: 'Gilbert, AZ',
     rating: 5,
-    date: '2023-12-22',
+    date: '2026-01-22',
     text: 'Outstanding service! The team was friendly, efficient, and left everything clean. My windows look brand new.',
   },
   {
@@ -61,7 +61,7 @@ export const reviews: Review[] = [
     name: 'Amanda H.',
     location: 'Queen Creek, AZ',
     rating: 5,
-    date: '2023-12-18',
+    date: '2026-01-18',
     text: 'Very impressed with the quality of work. They took care of everything and the results speak for themselves. Highly recommend!',
   },
   {
@@ -69,7 +69,7 @@ export const reviews: Review[] = [
     name: 'Chris W.',
     location: 'Chandler, AZ',
     rating: 5,
-    date: '2023-12-12',
+    date: '2026-01-12',
     text: 'Professional, courteous, and thorough. They cleaned both interior and exterior windows perfectly. Will be a repeat customer!',
   },
   {
@@ -77,15 +77,15 @@ export const reviews: Review[] = [
     name: 'Michelle B.',
     location: 'Mesa, AZ',
     rating: 5,
-    date: '2023-12-08',
+    date: '2026-01-08',
     text: 'Excellent service at a fair price. The windows are crystal clear and the team was respectful of my property. Very satisfied!',
   },
   {
     id: 10,
-    name: 'James F.',
+    name: 'Andy Ball',
     location: 'Gilbert, AZ',
     rating: 5,
-    date: '2023-12-03',
+    date: '2026-01-03',
     text: 'Great company to work with. They showed up on time, worked efficiently, and the results were outstanding. Five stars!',
   },
   {
@@ -93,7 +93,7 @@ export const reviews: Review[] = [
     name: 'Patricia S.',
     location: 'Chandler, AZ',
     rating: 5,
-    date: '2023-11-28',
+    date: '2026-01-28',
     text: 'The best window cleaning service in the area! Professional, affordable, and they did an amazing job on my two-story home.',
   },
   {
@@ -101,7 +101,7 @@ export const reviews: Review[] = [
     name: 'Thomas R.',
     location: 'Queen Creek, AZ',
     rating: 5,
-    date: '2023-11-20',
+    date: '2026-02-20',
     text: 'Highly recommend! They cleaned all my windows inside and out, and even did the screens. Everything looks perfect!',
   },
 ]
