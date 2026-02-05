@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import GallerySection from '@/components/GallerySection'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
+import CallSticker from '@/components/CallSticker'
+import SocialMediaSticker from '@/components/SocialMediaSticker'
 
 interface LandingPageProps {
   city: string
@@ -319,6 +321,12 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
           </a>
         </div>
       </div>
+
+      {/* Call Sticker - Desktop */}
+      <CallSticker />
+      
+      {/* Social Media Sticker - Desktop */}
+      <SocialMediaSticker />
     </div>
   )
 }
