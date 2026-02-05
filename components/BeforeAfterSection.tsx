@@ -17,7 +17,7 @@ export default function BeforeAfterSection({ city, service }: BeforeAfterSection
         </div>
 
         {/* Main Before/After Images - Optimized & Lazy Loaded */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-xl border-2 border-gray-200">
             <picture>
               <source srcSet="/before-after-1.webp" type="image/webp" />

@@ -29,7 +29,7 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
         </div>
 
         {/* Gallery Grid - Optimized & Lazy Loaded */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {galleryImages.map((item, index) => (
             <div key={index} className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg border border-gray-200 group">
               <picture>
@@ -39,6 +39,7 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
                   alt={item.caption}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  style={{ transform: 'scaleX(-1)' }}
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   loading="lazy"
                   quality={70}
