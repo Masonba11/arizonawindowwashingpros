@@ -53,7 +53,9 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
         }),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+      
+      if (response.ok && result.success) {
         setFormStatus('success')
         // Track form submission
         if (typeof window !== 'undefined') {
@@ -69,6 +71,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
         // Reset form
         setFormData({ name: '', phone: '', address: '', type: 'Residential', message: '' })
       } else {
+        console.error('Form submission failed:', result)
         setFormStatus('error')
       }
     } catch (error) {

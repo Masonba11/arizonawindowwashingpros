@@ -45,7 +45,7 @@ export default function ContactForm({
 
       const result = await response.json()
 
-      if (result.success && result.web3forms?.success !== false) {
+      if (result.success) {
         setFormStatus('success')
         // Redirect to thank you page after a brief delay
         setTimeout(() => {
