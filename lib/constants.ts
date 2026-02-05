@@ -25,6 +25,7 @@ export const BUSINESS_INFO = {
     facebook: 'https://www.facebook.com/profile.php?id=61586875071307',
     instagram: 'https://www.instagram.com/azwindowwashingpros/',
     tiktok: 'https://www.tiktok.com/@azwindowwashingpros?_r=1&_t=ZP-937shIX1VTL',
+    youtube: 'https://www.youtube.com/@azwindowwashingpros',
   },
 }
 
