@@ -114,19 +114,37 @@ export async function POST(request: NextRequest) {
     // File writes don't work in read-only filesystems
     // Submissions are sent to Web3Forms instead
 
-    return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Thank you for your submission! We\'ll contact you soon.',
-        web3forms: web3formsStatus
-      },
-      { 
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json',
+    // Only return success if Web3Forms succeeded
+    if (web3formsStatus.success) {
+      return NextResponse.json(
+        { 
+          success: true, 
+          message: 'Thank you for your submission! We\'ll contact you soon.',
+          web3forms: web3formsStatus
+        },
+        { 
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json',
+          }
         }
-      }
-    )
+      )
+    } else {
+      // Return error if Web3Forms failed
+      return NextResponse.json(
+        { 
+          success: false,
+          error: web3formsStatus.error || 'Failed to submit form. Please try calling us directly.',
+          web3forms: web3formsStatus
+        },
+        { 
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
+      )
+    }
   } catch (error: any) {
     console.error('Contact form error:', error)
     return NextResponse.json(

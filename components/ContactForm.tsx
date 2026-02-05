@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { BUSINESS_INFO, CITIES, SERVICES } from '@/lib/constants'
+import { BUSINESS_INFO, CITIES } from '@/lib/constants'
 import { useRouter } from 'next/navigation'
 
 interface ContactFormProps {
@@ -21,7 +21,6 @@ export default function ContactForm({
     phone: '',
     email: '',
     city: defaultCity || '',
-    service: defaultService || '',
     message: '',
   })
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
@@ -34,18 +33,26 @@ export default function ContactForm({
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          service: formData.message, // Use message as service type
+        }),
       })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
 
       const result = await response.json()
 
-      if (result.success) {
+      if (result.success && result.web3forms?.success !== false) {
         setFormStatus('success')
         // Redirect to thank you page after a brief delay
         setTimeout(() => {
           router.push('/thank-you')
         }, 1500)
       } else {
+        console.error('Form submission failed:', result)
         setFormStatus('error')
       }
     } catch (error) {
@@ -138,35 +145,17 @@ export default function ContactForm({
             </div>
 
             <div>
-              <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-1">
-                Service
-              </label>
-              <select
-                id="service"
-                value={formData.service}
-                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
-              >
-                <option value="">Select a service</option>
-                {SERVICES.map((service) => (
-                  <option key={service.id} value={service.name}>
-                    {service.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
               <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">
-                Message (Optional)
+                Message About Service Type *
               </label>
               <textarea
                 id="message"
                 rows={4}
+                required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
-                placeholder="Tell us about your window cleaning needs..."
+                placeholder="Please describe the service you need (e.g., Exterior window cleaning, Interior cleaning, Screen cleaning, etc.)"
               />
             </div>
 
