@@ -5,17 +5,17 @@ import { BUSINESS_INFO } from '@/lib/constants'
 export default function SocialMediaSticker() {
 
   return (
-    <div className="fixed left-6 bottom-6 z-50 flex flex-col gap-4">
+    <div className="fixed left-6 bottom-6 z-50 flex flex-row gap-3">
       {/* Instagram */}
       <a
         href={BUSINESS_INFO.socialMedia.instagram}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 p-4 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
+        className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 p-2.5 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
         aria-label="Follow us on Instagram"
       >
         <svg
-          className="w-6 h-6 md:w-7 md:h-7"
+          className="w-4 h-4 md:w-5 md:h-5"
           fill="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
@@ -29,11 +29,11 @@ export default function SocialMediaSticker() {
         href={BUSINESS_INFO.socialMedia.youtube}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 p-4 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
+        className="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 p-2.5 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300"
         aria-label="Follow us on YouTube"
       >
         <svg
-          className="w-6 h-6 md:w-7 md:h-7"
+          className="w-4 h-4 md:w-5 md:h-5"
           fill="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
