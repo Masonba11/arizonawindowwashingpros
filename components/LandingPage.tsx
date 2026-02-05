@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
+import GallerySection from '@/components/GallerySection'
+import BeforeAfterSection from '@/components/BeforeAfterSection'
 
 interface LandingPageProps {
   city: string
@@ -72,15 +74,6 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
       setFormStatus('error')
     }
   }
-
-  const services = [
-    'Exterior Windows',
-    'Interior Windows',
-    'Screens',
-    'Tracks & Sills',
-    'Hard Water Spot Removal',
-    'Commercial',
-  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -235,98 +228,11 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-12 md:py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-            How It Works
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                1
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Call or Request Quote</h3>
-              <p className="text-gray-600">Contact us by phone or fill out the form above</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                2
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">Get Same-Day Estimate</h3>
-              <p className="text-gray-600">We'll provide a clear, upfront estimate</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">We Clean — You Inspect</h3>
-              <p className="text-gray-600">Professional service with streak-free results</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Before & After Section - Proof */}
+      <BeforeAfterSection city={city} />
 
-      {/* Work Gallery */}
-      <section className="py-12 md:py-16 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-            Our Work Gallery
-          </h2>
-          <p className="text-center text-gray-600 mb-8 text-lg">
-            Professional window cleaning results from real jobs
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {[
-              { src: '/gallery/IMG_0509.jpg', webp: '/gallery-optimized/IMG_0509.webp', caption: 'Hard water removal' },
-              { src: '/gallery/IMG_0512.jpg', webp: '/gallery-optimized/IMG_0512.webp', caption: 'Track cleaning' },
-              { src: '/gallery/IMG_0533.jpg', webp: '/gallery-optimized/IMG_0533.webp', caption: 'Exterior wash' },
-              { src: '/gallery/IMG_0580.jpg', webp: '/gallery-optimized/IMG_0580.webp', caption: 'Screen cleaning' },
-              { src: '/gallery/IMG_0582.jpg', webp: '/gallery-optimized/IMG_0582.webp', caption: 'Interior detail' },
-            ].map((item, index) => (
-              <div key={index} className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg border border-gray-200 group">
-                <picture>
-                  <source srcSet={item.webp} type="image/webp" />
-                  <Image
-                    src={item.src}
-                    alt={item.caption}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ transform: 'rotate(90deg)' }}
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                    loading="lazy"
-                    quality={70}
-                  />
-                </picture>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-2">
-                    <p className="text-white text-xs font-semibold text-center">{item.caption}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-12 md:py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-            Our Services in {city}
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {services.map((service) => (
-              <div
-                key={service}
-                className="bg-white border-2 border-gray-200 rounded-lg p-4 text-center hover:border-blue-500 transition-colors"
-              >
-                <p className="font-semibold text-gray-900">{service}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Work Gallery - Proof */}
+      <GallerySection city={city} />
 
       {/* Why Choose Us */}
       <section className="py-12 md:py-16 px-4 bg-white">
@@ -348,15 +254,6 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Service Areas Nearby */}
-      <section className="py-8 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-600">
-            <strong>Service Areas Nearby:</strong> {nearbyAreas.join(', ')}
-          </p>
         </div>
       </section>
 
