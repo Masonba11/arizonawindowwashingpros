@@ -122,8 +122,7 @@ export default function ReviewsPage() {
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-700 mb-2">{review.text}</p>
-                <p className="text-sm text-gray-500">{new Date(review.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <p className="text-gray-700">{review.text}</p>
               </div>
             ))}
           </div>

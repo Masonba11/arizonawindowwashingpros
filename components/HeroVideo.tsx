@@ -114,7 +114,7 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
           </div>
           <div className="hidden sm:block w-px h-6 bg-white/50"></div>
           <div className="text-sm md:text-base font-semibold drop-shadow-lg">
-            500+ Local Homeowners Served
+            👨‍👩‍👧‍👦 Family Owned
           </div>
           <div className="hidden sm:block w-px h-6 bg-white/50"></div>
           <div className="text-sm md:text-base font-semibold drop-shadow-lg">
