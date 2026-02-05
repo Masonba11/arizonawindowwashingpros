@@ -80,27 +80,27 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Above the Fold */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white py-12 md:py-20 px-4">
+      <section className="relative bg-gradient-to-br from-blue-50 to-white py-8 md:py-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Offer Badge */}
-          <div className="inline-block mb-6">
+          <div className="inline-block mb-4">
             <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-6 py-2 rounded-full font-bold text-sm md:text-base shadow-lg">
               $100 OFF Your First Service (Limited Time)
             </div>
           </div>
 
           {/* H1 */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-3">
             {city} Window Washing
           </h1>
 
           {/* Subhead */}
-          <p className="text-xl md:text-2xl text-gray-700 mb-8">
+          <p className="text-xl md:text-2xl text-gray-700 mb-6">
             Streak-free window cleaning for homes & businesses
           </p>
 
           {/* Trust Bullets */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8 text-sm md:text-base">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 text-sm md:text-base">
             <div className="flex items-center gap-2">
               <span className="text-green-600 font-bold">✓</span>
               <span className="text-gray-700 font-semibold">Licensed & Insured</span>
@@ -116,12 +116,12 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
           </div>
 
           {/* Primary CTA - Call Button */}
-          <div className="mb-8">
+          <div className="mb-6">
             <a
               href={`tel:${BUSINESS_INFO.phoneFormatted}`}
               onClick={handleCall}
               data-cta="call"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl md:text-2xl px-8 py-4 md:px-12 md:py-5 rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-200 mb-4"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl md:text-2xl px-8 py-4 md:px-12 md:py-5 rounded-lg shadow-2xl transform hover:scale-105 transition-all duration-200 mb-3"
             >
               📞 Call Now: {BUSINESS_INFO.phone}
             </a>
@@ -132,8 +132,8 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
         </div>
       </section>
 
-      {/* Lead Form - First Section After Hero */}
-      <section id="quote-form" className="py-16 md:py-20 px-4 bg-gray-50">
+      {/* Lead Form - Immediately After Hero (First Section) */}
+      <section id="quote-form" className="py-10 md:py-14 px-4 bg-gray-50 -mt-2">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">
             Get Your Free Estimate
@@ -322,10 +322,10 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
         </div>
       </div>
 
-      {/* Call Sticker - Desktop */}
+      {/* Call Sticker - Follows Page */}
       <CallSticker />
       
-      {/* Social Media Sticker - Desktop */}
+      {/* Social Media Sticker - Follows Page */}
       <SocialMediaSticker />
     </div>
   )
