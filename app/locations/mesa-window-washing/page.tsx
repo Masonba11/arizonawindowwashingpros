@@ -66,9 +66,6 @@ export default function MesaWindowWashingPage() {
         </div>
       </HeroVideo>
 
-      {/* Before & After Section */}
-      <BeforeAfterSection city="Mesa" />
-
       {/* Gallery Section */}
       <GallerySection city="Mesa" />
 
@@ -118,6 +115,9 @@ export default function MesaWindowWashingPage() {
               </p>
             </div>
           </div>
+
+          {/* Before & After Section */}
+          <BeforeAfterSection city="Mesa" />
 
           {/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">

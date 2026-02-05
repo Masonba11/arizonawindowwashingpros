@@ -5,6 +5,7 @@ import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
+import BeforeAfterSection from '@/components/BeforeAfterSection'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
@@ -87,7 +88,17 @@ export default function ChandlerWindowWashingPage() {
             <p className="text-gray-700 mb-8">
               We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Chandler home&apos;s windows are spotless and streak-free. Our local team understands Chandler neighborhoods and works efficiently to minimize disruption to your day.
             </p>
+          </div>
+        </div>
+      </section>
 
+      {/* Before & After Section */}
+      <BeforeAfterSection city="Chandler" />
+
+      {/* Pricing Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-5xl">
+          <div className="content-section">
             <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Chandler Window Washing</h2>
             <p className="text-gray-700 mb-4">
               Window washing prices in Chandler typically range from:

@@ -5,6 +5,7 @@ import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
+import BeforeAfterSection from '@/components/BeforeAfterSection'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
@@ -108,6 +109,9 @@ export default function TempeWindowWashingPage() {
               </p>
             </div>
           </div>
+
+          {/* Before & After Section */}
+          <BeforeAfterSection city="Tempe" />
 
           {/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
