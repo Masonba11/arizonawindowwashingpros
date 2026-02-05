@@ -29,24 +29,46 @@ export default function ContactForm({
     e.preventDefault()
     setFormStatus('submitting')
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData,
-          service: formData.message, // Use message as service type
-        }),
-      })
+    const FORM_ACCESS_KEY = '0f32ed52-78cd-4ae4-8e56-df6c2b533b71'
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
+    try {
+      // Submit directly to Web3Forms from client
+      const params = new URLSearchParams()
+      params.append('access_key', FORM_ACCESS_KEY)
+      params.append('name', formData.name)
+      params.append('phone', formData.phone)
+      params.append('email', formData.email)
+      params.append('city', formData.city || 'Not specified')
+      params.append('service', formData.message || 'Not specified')
+      params.append('message', formData.message || '')
+      params.append('subject', `New Contact Form Submission from ${formData.name}`)
+      params.append('from_name', 'Arizona Window Washing Pros Website')
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json',
+        },
+        body: params.toString(),
+      })
 
       const result = await response.json()
 
       if (result.success) {
         setFormStatus('success')
+        // Track form submission
+        if (typeof window !== 'undefined') {
+          if ((window as any).gtag) {
+            (window as any).gtag('event', 'form_submit', {
+              event_category: 'conversion',
+              event_label: 'contact_form_success',
+            })
+          }
+          if ((window as any).fbq) {
+            (window as any).fbq('track', 'Lead')
+          }
+        }
         // Redirect to thank you page after a brief delay
         setTimeout(() => {
           router.push('/thank-you')
