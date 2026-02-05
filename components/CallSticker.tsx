@@ -21,7 +21,7 @@ export default function CallSticker() {
       <a
         href={`tel:${BUSINESS_INFO.phoneFormatted}`}
         onClick={handleCall}
-        className="flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold text-lg md:text-xl"
+        className="flex items-center gap-3 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold text-lg md:text-xl"
         aria-label="Call 480-737-0850"
       >
         <svg
