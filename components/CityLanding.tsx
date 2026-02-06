@@ -104,41 +104,140 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-white pt-20 pb-32">
+      <section className="relative bg-gradient-to-br from-blue-50 to-white pt-8 pb-12 md:pt-20 md:pb-32">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Heading and Offer Badge */}
+          <div className="text-center mb-6 md:mb-8">
+            <div className="inline-block mb-4 md:mb-6">
+              <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
+                $100 OFF Your First Service — Limited Availability
+              </span>
+            </div>
+            
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
+              {city} Window Washing
+            </h1>
+            
+            <p className="text-lg md:text-2xl text-gray-700 mb-4 md:mb-8">
+              Streak-free window cleaning for homes & businesses.
+            </p>
+          </div>
+
+          {/* Form - Mobile First (appears right after heading) */}
+          <div className="mb-8 md:hidden">
+            <div className="bg-white rounded-2xl shadow-2xl p-6 border-2 border-gray-200">
+              <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">Get Your Free Quote</h2>
+              {formStatus === 'success' ? (
+                <div className="text-center py-6">
+                  <div className="text-green-600 text-4xl mb-3">✓</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h3>
+                  <p className="text-gray-700 mb-4 text-sm">We'll call you shortly.</p>
+                  <a
+                    href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+                    onClick={handleCallClick}
+                    className="inline-block bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                  >
+                    Or Call Now: {BUSINESS_INFO.phone}
+                  </a>
+                </div>
+              ) : (
+                <form onSubmit={handleFormSubmit} className="space-y-3">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">Name *</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">Phone *</label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="(480) 555-1234"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">Address or City</label>
+                    <input
+                      type="text"
+                      value={formData.address}
+                      onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                      className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder={city}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">Type</label>
+                    <select
+                      value={formData.type}
+                      onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                      className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    >
+                      <option value="Residential">Residential</option>
+                      <option value="Commercial">Commercial</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1">Message (optional)</label>
+                    <textarea
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      rows={2}
+                      className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                  <div className="flex justify-center pt-2">
+                    <img 
+                      src="/AZWPlogo-Photoroom.png" 
+                      alt={BUSINESS_INFO.name}
+                      className="h-16 w-auto object-contain"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={formStatus === 'submitting'}
+                    data-cta="form"
+                    className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                  >
+                    {formStatus === 'submitting' ? 'Submitting...' : 'Get Free Quote'}
+                  </button>
+                  {formStatus === 'error' && (
+                    <p className="text-red-600 text-xs text-center">
+                      Something went wrong. Please call us at {BUSINESS_INFO.phone}
+                    </p>
+                  )}
+                </form>
+              )}
+            </div>
+          </div>
+
+          {/* Content Section */}
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Left: Content */}
             <div className="text-center md:text-left">
-              <div className="inline-block mb-6">
-                <span className="bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold text-sm md:text-base shadow-lg">
-                  $100 OFF Your First Service — Limited Availability
-                </span>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                {city} Window Washing
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-700 mb-8">
-                Streak-free window cleaning for homes & businesses.
-              </p>
-
               {/* Trust Bullets */}
-              <div className="flex flex-wrap gap-4 mb-8 justify-center md:justify-start">
-                <div className="flex items-center gap-2 text-gray-700">
-                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8 justify-center md:justify-start">
+                <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="font-semibold">Licensed & Insured</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="font-semibold">Free Estimates</span>
                 </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="font-semibold">Streak-Free Guarantee</span>
@@ -146,18 +245,18 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
               </div>
 
               {/* Primary CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center md:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6 md:mb-8 justify-center md:justify-start">
                 <a
                   href={`tel:${BUSINESS_INFO.phoneFormatted}`}
                   onClick={handleCallClick}
                   data-cta="call"
-                  className="bg-blue-600 text-white font-bold text-xl py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg text-center"
+                  className="bg-blue-600 text-white font-bold text-lg md:text-xl py-3 md:py-4 px-6 md:px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg text-center"
                 >
                   📞 Call Now: {BUSINESS_INFO.phone}
                 </a>
               </div>
 
-              <p className="text-lg text-gray-600">
+              <p className="text-base md:text-lg text-gray-600">
                 Serving {city} and nearby areas: {nearbyAreas.join(', ')}
               </p>
             </div>
@@ -423,102 +522,6 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
         </div>
       </section>
 
-      {/* Form Section (Mobile) */}
-      <section id="quote-form" className="py-16 px-4 bg-white md:hidden">
-        <div className="container mx-auto max-w-2xl">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 border-2 border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Get Your Free Quote</h2>
-            {formStatus === 'success' ? (
-              <div className="text-center py-8">
-                <div className="text-green-600 text-5xl mb-4">✓</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                <p className="text-gray-700 mb-4">We'll call you shortly.</p>
-                <a
-                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-                  onClick={handleCallClick}
-                  className="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Or Call Now: {BUSINESS_INFO.phone}
-                </a>
-              </div>
-            ) : (
-              <form onSubmit={handleFormSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Phone *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="(480) 555-1234"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Address or City</label>
-                  <input
-                    type="text"
-                    value={formData.address}
-                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder={city}
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Type</label>
-                  <select
-                    value={formData.type}
-                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  >
-                    <option value="Residential">Residential</option>
-                    <option value="Commercial">Commercial</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-1">Message (optional)</label>
-                  <textarea
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={3}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  />
-                </div>
-                <div className="flex justify-center pt-4">
-                  <img 
-                    src="/AZWPlogo-Photoroom.png" 
-                    alt={BUSINESS_INFO.name}
-                    className="h-24 w-auto object-contain"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={formStatus === 'submitting'}
-                  data-cta="form"
-                  className="w-full bg-blue-600 text-white font-bold py-4 px-6 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {formStatus === 'submitting' ? 'Submitting...' : 'Get Free Quote'}
-                </button>
-                {formStatus === 'error' && (
-                  <p className="text-red-600 text-sm text-center">
-                    Something went wrong. Please call us at {BUSINESS_INFO.phone}
-                  </p>
-                )}
-              </form>
-            )}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-16 px-4 bg-gray-50">
