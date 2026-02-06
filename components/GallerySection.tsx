@@ -32,20 +32,21 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {galleryImages.map((item, index) => (
             <div key={index} className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg border border-gray-200 group">
-              <picture>
-                <source srcSet={item.webp} type="image/webp" />
-                <Image
-                  src={item.src}
-                  alt={item.caption}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  style={{ transform: 'rotate(90deg)' }}
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  loading="lazy"
-                  quality={70}
-                />
-              </picture>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="relative w-full h-full" style={{ transform: 'rotate(90deg)' }}>
+                <picture>
+                  <source srcSet={item.webp} type="image/webp" />
+                  <Image
+                    src={item.src}
+                    alt={item.caption}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    loading="lazy"
+                    quality={70}
+                  />
+                </picture>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                 <div className="absolute bottom-0 left-0 right-0 p-3">
                   <p className="text-white text-sm font-semibold">{item.caption}</p>
                 </div>
