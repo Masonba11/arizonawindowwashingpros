@@ -117,14 +117,14 @@ export default function PopupContactForm() {
           <div className="text-center mb-6">
             <div className="inline-block mb-4">
               <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-6 py-2 rounded-full font-bold text-sm md:text-base shadow-lg">
-                $100 OFF Your Entire Service
+                $100 OFF your window cleaning service
               </div>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               Fill Out This Contact Form
             </h2>
             <p className="text-lg text-gray-700">
-              and receive $100 off your entire service
+              and receive $100 off your window cleaning service
             </p>
           </div>
 
