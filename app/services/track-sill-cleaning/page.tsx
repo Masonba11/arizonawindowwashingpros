@@ -5,6 +5,7 @@ import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
+import GallerySection from '@/components/GallerySection'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -72,6 +73,9 @@ export default function TrackSillCleaningPage() {
           </a>
         </div>
       </HeroVideo>
+
+      {/* Gallery Section */}
+      <GallerySection service="Track & Sill Cleaning" />
 
       <section className="section-padding bg-white">
         <div className="container-custom max-w-5xl">

@@ -6,6 +6,7 @@ import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingReference from '@/components/PricingReference'
 import PricingImages from '@/components/PricingImages'
+import GallerySection from '@/components/GallerySection'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -73,6 +74,9 @@ export default function InteriorWindowCleaningPage() {
           </a>
         </div>
       </HeroVideo>
+
+      {/* Gallery Section */}
+      <GallerySection service="Interior Window Cleaning" />
 
       {/* Main Content Section */}
       <section className="section-padding bg-white">

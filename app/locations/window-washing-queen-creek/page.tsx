@@ -5,6 +5,7 @@ import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
+import GallerySection from '@/components/GallerySection'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
@@ -62,6 +63,9 @@ export default function WindowWashingQueenCreekPage() {
           </a>
         </div>
       </HeroVideo>
+
+      {/* Gallery Section */}
+      <GallerySection city="Queen Creek" />
 
       <section className="section-padding">
         <div className="container-custom max-w-4xl">

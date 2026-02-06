@@ -6,6 +6,7 @@ import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingReference from '@/components/PricingReference'
 import PricingImages from '@/components/PricingImages'
+import GallerySection from '@/components/GallerySection'
 import { generalFAQs } from '@/lib/faqs'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
@@ -45,6 +46,9 @@ export default function ScreenCleaningPage() {
           </a>
         </div>
       </HeroVideo>
+
+      {/* Gallery Section */}
+      <GallerySection service="Screen Cleaning" />
 
       <section className="section-padding bg-white">
         <div className="container-custom max-w-5xl">

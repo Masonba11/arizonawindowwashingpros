@@ -6,6 +6,7 @@ import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import LazyYouTube from '@/components/LazyYouTube'
+import GallerySection from '@/components/GallerySection'
 import { generalFAQs } from '@/lib/faqs'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
@@ -35,6 +36,9 @@ export default function HomePage() {
           </a>
         </div>
       </HeroVideo>
+
+      {/* Gallery Section */}
+      <GallerySection />
 
       {/* Services Section */}
       <section className="section-padding gradient-bg">

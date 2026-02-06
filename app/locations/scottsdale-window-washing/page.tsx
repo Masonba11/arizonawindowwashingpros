@@ -6,6 +6,7 @@ import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
+import GallerySection from '@/components/GallerySection'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
@@ -63,6 +64,9 @@ export default function ScottsdaleWindowWashingPage() {
           </a>
         </div>
       </HeroVideo>
+
+      {/* Gallery Section */}
+      <GallerySection city="Scottsdale" />
 
       {/* Main Content Section */}
       <section className="section-padding bg-white">
