@@ -22,12 +22,12 @@ export default function PopupContactForm() {
     const hasSeenPopup = sessionStorage.getItem('popupContactFormShown')
     
     if (!hasSeenPopup) {
-      // Show popup after 10 seconds
+      // Show popup after 5 seconds
       const timer = setTimeout(() => {
         setIsOpen(true)
         setHasShown(true)
         sessionStorage.setItem('popupContactFormShown', 'true')
-      }, 10000)
+      }, 5000)
 
       return () => clearTimeout(timer)
     }
@@ -100,7 +100,7 @@ export default function PopupContactForm() {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={handleClose}
