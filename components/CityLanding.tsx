@@ -105,15 +105,6 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-white pt-20 pb-32">
         <div className="container mx-auto px-4 max-w-6xl">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <img 
-              src="/AZWPlogo-Photoroom.png" 
-              alt={BUSINESS_INFO.name}
-              className="h-24 md:h-32 w-auto object-contain"
-            />
-          </div>
-          
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Content */}
             <div className="text-center md:text-left">
