@@ -2,6 +2,7 @@ import Header from './Header'
 import Footer from './Footer'
 import CallSticker from './CallSticker'
 import SocialMediaSticker from './SocialMediaSticker'
+import PopupContactForm from './PopupContactForm'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,6 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Footer />
       <CallSticker />
       <SocialMediaSticker />
+      <PopupContactForm />
     </div>
   )
 }
