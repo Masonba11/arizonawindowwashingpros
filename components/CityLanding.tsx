@@ -6,6 +6,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 import GallerySection from '@/components/GallerySection'
 import CallSticker from '@/components/CallSticker'
 import SocialMediaSticker from '@/components/SocialMediaSticker'
+import LazyYouTube from '@/components/LazyYouTube'
 
 interface CityLandingProps {
   city: string
@@ -350,35 +351,26 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       {/* Gallery Section */}
       <GallerySection city={city} />
 
-      {/* Before/After Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* YouTube Videos Section */}
+      <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            Before & After Results
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/beforevafter.JPEG"
-                alt="Before window cleaning"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                loading="lazy"
-                quality={75}
-              />
-            </div>
-            <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/beforevsafter2.JPEG"
-                alt="After window cleaning"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                loading="lazy"
-                quality={75}
-              />
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See Us In Action</h2>
+            <p className="text-lg text-gray-700">
+              Watch our professional window cleaning team at work
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <LazyYouTube
+              videoId="TpGGKeABfCI"
+              title="Arizona Window Washing Pros - Video 1"
+              className="max-w-md mx-auto"
+            />
+            <LazyYouTube
+              videoId="GdNlH8GPhL0"
+              title="Arizona Window Washing Pros - Video 2"
+              className="max-w-md mx-auto"
+            />
           </div>
         </div>
       </section>
