@@ -123,8 +123,23 @@ export default function PopupContactForm() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               Fill Out This Contact Form
             </h2>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-700 mb-3">
               and receive $100 off your window cleaning service
+            </p>
+            <p className="text-lg font-bold text-gray-900">
+              Or call us now: <a href={`tel:${BUSINESS_INFO.phoneFormatted}`} className="text-blue-600 hover:text-blue-700 underline" onClick={() => {
+                if (typeof window !== 'undefined') {
+                  if ((window as any).gtag) {
+                    (window as any).gtag('event', 'phone_click', {
+                      event_category: 'conversion',
+                      event_label: 'popup_phone_number',
+                    })
+                  }
+                  if ((window as any).fbq) {
+                    (window as any).fbq('track', 'Contact')
+                  }
+                }
+              }}>{BUSINESS_INFO.phone}</a>
             </p>
           </div>
 
