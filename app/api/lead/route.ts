@@ -20,6 +20,10 @@ export async function POST(request: Request) {
     console.log('Timestamp:', new Date().toISOString())
     console.log('Data:', JSON.stringify(body, null, 2))
     
+    // TODO: Integrate with GoHighLevel/Web3Forms webhook for lead management
+    // For now, we log the payload and submit to Web3Forms
+    // Future: Add webhook endpoint for GoHighLevel CRM integration
+    
     // Send to Web3Forms
     let web3formsStatus: { success: boolean; error: string | null } = { success: false, error: null }
     try {

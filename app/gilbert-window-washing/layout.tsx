@@ -9,6 +9,9 @@ export default function LandingPageLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <>{children}</>
+  return (
+    <div className="min-h-screen">
+      {children}
+    </div>
+  )
 }
-
