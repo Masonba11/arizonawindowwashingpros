@@ -173,7 +173,14 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
             {/* Right: Form (Desktop) */}
             <div className="hidden md:block">
               <div className="bg-white rounded-2xl shadow-2xl p-8 border-2 border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h2>
+                <div className="flex justify-center mb-6">
+                  <img 
+                    src="/AZWPlogo-Photoroom.png" 
+                    alt={BUSINESS_INFO.name}
+                    className="h-16 w-auto object-contain"
+                  />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Get Your Free Quote</h2>
                 {formStatus === 'success' ? (
                   <div className="text-center py-8">
                     <div className="text-green-600 text-5xl mb-4">✓</div>
@@ -437,7 +444,14 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       <section id="quote-form" className="py-16 px-4 bg-white md:hidden">
         <div className="container mx-auto max-w-2xl">
           <div className="bg-white rounded-2xl shadow-2xl p-8 border-2 border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h2>
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/AZWPlogo-Photoroom.png" 
+                alt={BUSINESS_INFO.name}
+                className="h-16 w-auto object-contain"
+              />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Get Your Free Quote</h2>
             {formStatus === 'success' ? (
               <div className="text-center py-8">
                 <div className="text-green-600 text-5xl mb-4">✓</div>
