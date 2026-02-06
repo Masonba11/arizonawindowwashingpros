@@ -3,6 +3,9 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
+import GallerySection from '@/components/GallerySection'
+import CallSticker from '@/components/CallSticker'
+import SocialMediaSticker from '@/components/SocialMediaSticker'
 
 interface CityLandingProps {
   city: string
@@ -102,6 +105,15 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-white pt-20 pb-32">
         <div className="container mx-auto px-4 max-w-6xl">
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <img 
+              src="/AZWPlogo-Photoroom.png" 
+              alt={BUSINESS_INFO.name}
+              className="h-24 md:h-32 w-auto object-contain"
+            />
+          </div>
+          
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Content */}
             <div className="text-center md:text-left">
@@ -337,6 +349,9 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <GallerySection city={city} />
+
       {/* Before/After Section */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
@@ -547,6 +562,10 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
           </p>
         </div>
       </section>
+
+      {/* Sticky Call and Social Media Stickers */}
+      <CallSticker />
+      <SocialMediaSticker />
     </>
   )
 }
