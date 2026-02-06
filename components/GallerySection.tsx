@@ -7,14 +7,14 @@ interface GallerySectionProps {
 
 // Pre-defined gallery images with optimized paths
 const galleryImages = [
-  { src: '/gallery/IMG_0509.jpg', webp: '/gallery-optimized/IMG_0509.webp', caption: 'Hard water removal' },
-  { src: '/gallery/IMG_0512.jpg', webp: '/gallery-optimized/IMG_0512.webp', caption: 'Track cleaning' },
-  { src: '/gallery/IMG_0533.jpg', webp: '/gallery-optimized/IMG_0533.webp', caption: 'Exterior wash' },
-  { src: '/gallery/IMG_0580.jpg', webp: '/gallery-optimized/IMG_0580.webp', caption: 'Screen cleaning' },
-  { src: '/gallery/IMG_0582.jpg', webp: '/gallery-optimized/IMG_0582.webp', caption: 'Interior detail' },
-  { src: '/gallery/IMG_0598.jpg', webp: '/gallery-optimized/IMG_0598.webp', caption: 'Frame cleaning' },
-  { src: '/gallery/IMG_0632.jpg', webp: '/gallery-optimized/IMG_0632.webp', caption: 'Sill restoration' },
-  { src: '/gallery/IMG_0651.jpg', webp: '/gallery-optimized/IMG_0651.webp', caption: 'Final polish' },
+  { src: '/gallery/IMG_0509.jpg', webp: '/gallery-optimized/IMG_0509.webp' },
+  { src: '/gallery/IMG_0512.jpg', webp: '/gallery-optimized/IMG_0512.webp' },
+  { src: '/gallery/IMG_0533.jpg', webp: '/gallery-optimized/IMG_0533.webp' },
+  { src: '/gallery/IMG_0580.jpg', webp: '/gallery-optimized/IMG_0580.webp' },
+  { src: '/gallery/IMG_0582.jpg', webp: '/gallery-optimized/IMG_0582.webp' },
+  { src: '/gallery/IMG_0598.jpg', webp: '/gallery-optimized/IMG_0598.webp' },
+  { src: '/gallery/IMG_0632.jpg', webp: '/gallery-optimized/IMG_0632.webp' },
+  { src: '/gallery/IMG_0651.jpg', webp: '/gallery-optimized/IMG_0651.webp' },
 ]
 
 export default function GallerySection({ city, service }: GallerySectionProps) {
@@ -37,7 +37,7 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
                   <source srcSet={item.webp} type="image/webp" />
                   <Image
                     src={item.src}
-                    alt={item.caption}
+                    alt="Our window cleaning work"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
                     sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
@@ -45,11 +45,6 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
                     quality={70}
                   />
                 </picture>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <p className="text-white text-sm font-semibold">{item.caption}</p>
-                </div>
               </div>
             </div>
           ))}
