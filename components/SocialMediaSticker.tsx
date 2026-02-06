@@ -5,7 +5,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 export default function SocialMediaSticker() {
 
   return (
-    <div className="fixed left-4 md:left-6 bottom-20 md:bottom-6 z-40 flex flex-row gap-3">
+    <div className="fixed left-4 md:left-6 bottom-24 md:bottom-4 z-40 flex flex-row gap-3">
       {/* Instagram */}
       <a
         href={BUSINESS_INFO.socialMedia.instagram}

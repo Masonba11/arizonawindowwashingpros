@@ -214,13 +214,34 @@ export default function PopupContactForm() {
                 />
               </div>
 
-              <button
-                type="submit"
-                disabled={formStatus === 'submitting'}
-                className="w-full btn-primary py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {formStatus === 'submitting' ? 'Submitting...' : 'Claim $100 Off'}
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  type="submit"
+                  disabled={formStatus === 'submitting'}
+                  className="flex-1 btn-primary py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {formStatus === 'submitting' ? 'Submitting...' : 'Claim $100 Off'}
+                </button>
+                <a
+                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+                  onClick={() => {
+                    if (typeof window !== 'undefined') {
+                      if ((window as any).gtag) {
+                        (window as any).gtag('event', 'phone_click', {
+                          event_category: 'conversion',
+                          event_label: 'popup_call_now',
+                        })
+                      }
+                      if ((window as any).fbq) {
+                        (window as any).fbq('track', 'Contact')
+                      }
+                    }
+                  }}
+                  className="flex-1 btn-secondary py-4 text-lg font-bold text-center bg-white text-primary-600 border-2 border-primary-600 hover:bg-primary-50"
+                >
+                  📞 Call Now
+                </a>
+              </div>
 
               {formStatus === 'error' && (
                 <p className="text-red-600 text-sm text-center">

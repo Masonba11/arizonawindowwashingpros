@@ -17,7 +17,7 @@ export default function CallSticker() {
   }
 
   return (
-    <div className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-40 animate-pulse hover:animate-none">
+    <div className="fixed bottom-24 md:bottom-4 right-4 md:right-6 z-40 animate-pulse hover:animate-none">
       <a
         href={`tel:${BUSINESS_INFO.phoneFormatted}`}
         onClick={handleCall}
