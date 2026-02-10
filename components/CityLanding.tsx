@@ -59,7 +59,10 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, formData, setFormDa
             {/* Heading */}
             <div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-                {city === 'Gilbert' ? 'Gilbert, Arizona | Window Washing' : city === 'Chandler' ? 'Chandler, Arizona | Window Washing' : `${city} Window Washing`}
+                {city === 'Gilbert' ? 'Gilbert, Arizona | Window Washing' : 
+                 city === 'Chandler' ? 'Chandler, Arizona | Window Washing' : 
+                 city === 'Scottsdale' ? 'Scottsdale, Arizona | Window Washing' : 
+                 `${city} Window Washing`}
               </h1>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex text-yellow-400">
@@ -672,7 +675,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       </div>
 
       {/* Hero Section */}
-      {['Gilbert', 'Chandler'].includes(city) ? (
+      {['Gilbert', 'Chandler', 'Scottsdale'].includes(city) ? (
         <ConversionOptimizedHeroSection 
           city={city}
           nearbyAreas={nearbyAreas}
