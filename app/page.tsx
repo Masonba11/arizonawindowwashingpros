@@ -7,6 +7,7 @@ import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import LazyYouTube from '@/components/LazyYouTube'
 import GallerySection from '@/components/GallerySection'
+import TestimonialVideo from '@/components/TestimonialVideo'
 import { generalFAQs } from '@/lib/faqs'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
@@ -261,6 +262,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />

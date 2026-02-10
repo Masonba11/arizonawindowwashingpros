@@ -7,6 +7,7 @@ import HeroVideo from '@/components/HeroVideo'
 import PricingReference from '@/components/PricingReference'
 import PricingImages from '@/components/PricingImages'
 import GallerySection from '@/components/GallerySection'
+import TestimonialVideo from '@/components/TestimonialVideo'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -194,6 +195,9 @@ export default function InteriorWindowCleaningPage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />

@@ -7,6 +7,7 @@ import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
+import TestimonialVideo from '@/components/TestimonialVideo'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
@@ -247,6 +248,9 @@ export default function TempeWindowWashingPage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />

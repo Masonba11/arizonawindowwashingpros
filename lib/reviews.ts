@@ -82,7 +82,7 @@ export const reviews: Review[] = [
   },
   {
     id: 10,
-    name: 'Andy Ball',
+    name: 'Andy B.',
     location: 'Gilbert, AZ',
     rating: 5,
     date: '2026-01-26',

@@ -7,6 +7,7 @@ import GallerySection from '@/components/GallerySection'
 import CallSticker from '@/components/CallSticker'
 import SocialMediaSticker from '@/components/SocialMediaSticker'
 import LazyYouTube from '@/components/LazyYouTube'
+import TestimonialVideo from '@/components/TestimonialVideo'
 
 interface CityLandingProps {
   city: string
@@ -522,6 +523,8 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
         </div>
       </section>
 
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="quote-form" />
 
       {/* FAQ Section */}
       <section className="py-16 px-4 bg-gray-50">

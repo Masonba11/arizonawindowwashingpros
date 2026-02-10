@@ -8,6 +8,7 @@ import PricingImages from '@/components/PricingImages'
 import StickyCTA from '@/components/StickyCTA'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
+import TestimonialVideo from '@/components/TestimonialVideo'
 import TrustSection from '@/components/TrustSection'
 import OfferBanner from '@/components/OfferBanner'
 import QuoteForm from '@/components/QuoteForm'
@@ -211,6 +212,9 @@ export default function ExteriorWindowCleaningPage() {
 
       {/* Offer Banner */}
       <OfferBanner />
+
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />
