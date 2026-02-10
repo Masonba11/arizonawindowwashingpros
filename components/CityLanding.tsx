@@ -627,8 +627,41 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
           </a>
           <button
             onClick={() => {
-              const formSection = document.getElementById('quote-form')
-              formSection?.scrollIntoView({ behavior: 'smooth' })
+              // Find the first visible form element
+              const formSections = document.querySelectorAll('[id="quote-form"]')
+              
+              // On mobile, prefer the mobile form, on desktop prefer desktop form
+              const isMobile = window.innerWidth < 768
+              
+              for (let i = 0; i < formSections.length; i++) {
+                const section = formSections[i] as HTMLElement
+                const computedStyle = window.getComputedStyle(section)
+                
+                if (computedStyle.display !== 'none' && computedStyle.visibility !== 'hidden') {
+                  // Check if this is the right form for the current viewport
+                  const isMobileForm = section.classList.contains('md:hidden')
+                  const isDesktopForm = section.classList.contains('hidden') && section.classList.contains('md:block')
+                  
+                  if ((isMobile && isMobileForm) || (!isMobile && isDesktopForm) || (!isMobileForm && !isDesktopForm)) {
+                    const yOffset = -20 // Small offset from top
+                    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset
+                    window.scrollTo({ top: y, behavior: 'smooth' })
+                    return
+                  }
+                }
+              }
+              
+              // Fallback: scroll to first visible form
+              for (let i = 0; i < formSections.length; i++) {
+                const section = formSections[i] as HTMLElement
+                const computedStyle = window.getComputedStyle(section)
+                if (computedStyle.display !== 'none' && computedStyle.visibility !== 'hidden') {
+                  const yOffset = -20
+                  const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset
+                  window.scrollTo({ top: y, behavior: 'smooth' })
+                  return
+                }
+              }
             }}
             data-cta="form"
             className="flex-1 bg-gray-100 text-gray-900 font-bold py-4 px-4 text-center hover:bg-gray-200 transition-colors"
