@@ -40,13 +40,6 @@ interface HeroSectionProps {
 function GilbertHeroSection({ city, nearbyAreas, formData, setFormData, formStatus, handleFormSubmit, handleCallClick }: HeroSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  const handleScrollToForm = () => {
-    const formElement = document.getElementById('quote-form')
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
-
   return (
     <section className="relative bg-white pt-8 pb-12 md:pt-16 md:pb-20">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -266,6 +259,7 @@ function GilbertHeroSection({ city, nearbyAreas, formData, setFormData, formStat
           {/* Right: Testimonial Video */}
           <div className="flex flex-col items-center md:items-start">
             <div className="w-full max-w-lg">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center md:text-left">Client Testimonial</h2>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900">
                 <video
                   ref={videoRef}
@@ -277,14 +271,6 @@ function GilbertHeroSection({ city, nearbyAreas, formData, setFormData, formStat
                   <source src="/riverside-testimonial.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-              </div>
-              <div className="text-center mt-4">
-                <button
-                  onClick={handleScrollToForm}
-                  className="bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg"
-                >
-                  Get Free Quote
-                </button>
               </div>
             </div>
           </div>
