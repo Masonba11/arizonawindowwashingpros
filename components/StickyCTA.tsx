@@ -48,7 +48,7 @@ export default function StickyCTA({ formId = 'contact-form' }: StickyCTAProps) {
             onClick={handleCall}
             className="flex-1 btn-primary text-center text-base font-bold py-3"
           >
-            📞 Call Now
+            Call Now
           </a>
           <button
             onClick={handleGetQuote}

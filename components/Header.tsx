@@ -115,7 +115,7 @@ export default function Header() {
               }
             }}
           >
-            📞 {BUSINESS_INFO.phone}
+            {BUSINESS_INFO.phone}
           </a>
 
           {/* Mobile Menu Button */}

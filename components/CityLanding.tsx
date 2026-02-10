@@ -80,7 +80,7 @@ function GilbertHeroSection({ city, nearbyAreas, formData, setFormData, formStat
             </div>
 
             {/* Form - Desktop */}
-            <div className="hidden md:block">
+            <div id="quote-form" className="hidden md:block">
               <div className="bg-white rounded-2xl shadow-2xl p-6 border-2 border-gray-200">
                 <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">Get Your Free Quote</h2>
                 {formStatus === 'success' ? (
@@ -168,7 +168,7 @@ function GilbertHeroSection({ city, nearbyAreas, formData, setFormData, formStat
             </div>
 
             {/* Mobile Form */}
-            <div className="md:hidden">
+            <div id="quote-form" className="md:hidden">
               <div className="bg-white rounded-2xl shadow-2xl p-6 border-2 border-gray-200">
                 <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">Get Your Free Quote</h2>
                 {formStatus === 'success' ? (
@@ -312,7 +312,7 @@ function StandardHeroSection({ city, nearbyAreas, formData, setFormData, formSta
         </div>
 
         {/* Form - Mobile First (appears right after heading) */}
-        <div className="mb-8 md:hidden">
+        <div id="quote-form" className="mb-8 md:hidden">
           <div className="bg-white rounded-2xl shadow-2xl p-6 border-2 border-gray-200">
             <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">Get Your Free Quote</h2>
             {formStatus === 'success' ? (
@@ -440,7 +440,7 @@ function StandardHeroSection({ city, nearbyAreas, formData, setFormData, formSta
                 data-cta="call"
                 className="bg-blue-600 text-white font-bold text-lg md:text-xl py-3 md:py-4 px-6 md:px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg text-center"
               >
-                📞 Call Now: {BUSINESS_INFO.phone}
+ Call Now: {BUSINESS_INFO.phone}
               </a>
             </div>
 
@@ -450,7 +450,7 @@ function StandardHeroSection({ city, nearbyAreas, formData, setFormData, formSta
           </div>
 
           {/* Right: Form (Desktop) */}
-          <div className="hidden md:block">
+          <div id="quote-form" className="hidden md:block">
             <div className="bg-white rounded-2xl shadow-2xl p-8 border-2 border-gray-200">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h2>
               {formStatus === 'success' ? (
@@ -623,7 +623,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
             data-cta="call"
             className="flex-1 bg-blue-600 text-white font-bold py-4 px-4 text-center hover:bg-blue-700 transition-colors"
           >
-            📞 Call Now
+ Call Now
           </a>
           <button
             onClick={() => {
@@ -856,7 +856,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
             data-cta="call"
             className="inline-block bg-white text-blue-600 font-bold text-xl py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg mb-4"
           >
-            📞 Call Now: {BUSINESS_INFO.phone}
+ Call Now: {BUSINESS_INFO.phone}
           </a>
           <p className="text-blue-100">
             Or fill out the form above for a free quote

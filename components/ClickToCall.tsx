@@ -37,7 +37,7 @@ export default function ClickToCall({
       onClick={handleClick}
       className={className}
     >
-      {children || label || `📞 Call ${phone}`}
+      {children || label || `Call ${phone}`}
     </a>
   )
 }

@@ -28,7 +28,7 @@ export default function OfferBanner({ showUrgency = true }: OfferBannerProps) {
                   }
                 }}
               >
-                📞 Call Now for Fastest Scheduling
+                Call Now for Fastest Scheduling
               </a>
             </div>
             {showUrgency && (

@@ -103,7 +103,7 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
               onClick={handleCall}
               className="btn-secondary text-lg md:text-xl font-bold px-8 py-4 bg-white/95 text-primary-600 border-2 border-white hover:bg-white shadow-2xl hover:scale-105 transition-transform"
             >
-              📞 Call Now: {BUSINESS_INFO.phone}
+              Call Now: {BUSINESS_INFO.phone}
             </a>
           </div>
         )}
