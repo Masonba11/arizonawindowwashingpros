@@ -8,6 +8,8 @@ import PricingReference from '@/components/PricingReference'
 import PricingImages from '@/components/PricingImages'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
+import BeforeAfterSection from '@/components/BeforeAfterSection'
+import LazyYouTube from '@/components/LazyYouTube'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -76,6 +78,9 @@ export default function InteriorWindowCleaningPage() {
         </div>
       </HeroVideo>
 
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
+
       {/* Gallery Section */}
       <GallerySection service="Interior Window Cleaning" />
 
@@ -137,6 +142,9 @@ export default function InteriorWindowCleaningPage() {
             </div>
           </div>
 
+          {/* Before & After Section */}
+          <BeforeAfterSection service="Interior Window Cleaning" />
+
           {/* Service Areas */}
           <div className="content-section">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Service Areas</h2>
@@ -196,8 +204,29 @@ export default function InteriorWindowCleaningPage() {
         </div>
       </section>
 
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
+      {/* YouTube Videos Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="section-title">See Us In Action</h2>
+            <p className="section-subtitle">
+              Watch our professional window cleaning team at work
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <LazyYouTube
+              videoId="TpGGKeABfCI"
+              title="Arizona Window Washing Pros - Video 1"
+              className="max-w-md mx-auto"
+            />
+            <LazyYouTube
+              videoId="GdNlH8GPhL0"
+              title="Arizona Window Washing Pros - Video 2"
+              className="max-w-md mx-auto"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />

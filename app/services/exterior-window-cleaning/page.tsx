@@ -5,21 +5,16 @@ import FAQSection from '@/components/FAQSection'
 import ReviewsSection from '@/components/ReviewsSection'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
-import StickyCTA from '@/components/StickyCTA'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
-import TrustSection from '@/components/TrustSection'
-import OfferBanner from '@/components/OfferBanner'
-import QuoteForm from '@/components/QuoteForm'
-import WorkVideo from '@/components/WorkVideo'
-import ClickToCall from '@/components/ClickToCall'
+import LazyYouTube from '@/components/LazyYouTube'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { generateServiceFAQs } from '@/lib/enhancedFAQs'
 
 export const metadata = generateMetadata({
-  title: 'Exterior Window Cleaning Services in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale',
+  title: 'Exterior Window Cleaning Services',
   description: 'Professional exterior window cleaning services. Hand-washed windows with professional squeegee finish. Starting at $150 for 1-story homes, $180 for 2-story homes. Free estimates. Licensed & insured.',
   path: '/services/exterior-window-cleaning',
 })
@@ -27,6 +22,7 @@ export const metadata = generateMetadata({
 const faqs = generateServiceFAQs('Exterior Window Cleaning')
 
 export default function ExteriorWindowCleaningPage() {
+  const serviceName = "Exterior Window Cleaning"
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://arizonawindowwashingpros.com' },
     { name: 'Services', url: 'https://arizonawindowwashingpros.com/services' },
@@ -45,58 +41,28 @@ export default function ExteriorWindowCleaningPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <StickyCTA />
       <HeroVideo
-        title="Exterior Window Cleaning Services in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale"
+        title="Exterior Window Cleaning Services"
         subtitle="Professional exterior window cleaning. Our most popular and cost-effective service."
-        service="Exterior Window Cleaning"
-      />
-      
-      {/* Quote Form in Hero Area */}
-      <section className="section-padding bg-white -mt-20 relative z-20">
-        <div className="container-custom max-w-2xl">
-          <QuoteForm defaultService="Exterior Window Cleaning" compact />
+      >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+            className="btn-primary text-lg"
+          >
+            Call Now: {BUSINESS_INFO.phone}
+          </a>
+          <a href="#contact-form" className="btn-secondary text-lg bg-white text-primary-600 border-2 border-white hover:bg-primary-50">
+            Get Free Quote
+          </a>
         </div>
-      </section>
+      </HeroVideo>
 
-      {/* Click-to-Call CTA */}
-      <section className="section-padding bg-gradient-to-r from-primary-600 to-primary-700">
-        <div className="container-custom max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready for Crystal-Clear Windows?
-          </h2>
-          <p className="text-xl text-white/90 mb-6">
-            Call now for fastest scheduling or get your free quote below
-          </p>
-          <ClickToCall
-            className="inline-block btn-secondary text-xl font-bold px-8 py-4 bg-white text-primary-600 hover:bg-primary-50 shadow-2xl"
-            eventLabel="mid_page_call"
-          />
-        </div>
-      </section>
-
-      {/* Before & After Section */}
-      <BeforeAfterSection service="Exterior Window Cleaning" />
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
 
       {/* Gallery Section */}
-      <GallerySection service="Exterior Window Cleaning" />
-
-      {/* Work Video Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">See Our Work in Action</h2>
-            <p className="section-subtitle">
-              Watch our professional team deliver streak-free results
-            </p>
-          </div>
-          <WorkVideo
-            src="/videos/work-video-1.mp4"
-            poster="/before-after-1.jpg"
-            alt="Professional window cleaning in action"
-          />
-        </div>
-      </section>
+      <GallerySection service={serviceName} />
 
       {/* Main Content Section */}
       <section className="section-padding bg-white">
@@ -109,13 +75,15 @@ export default function ExteriorWindowCleaningPage() {
 
           {/* What's Included */}
           <div className="content-section">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s Included</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s Included in Our Exterior Window Cleaning Service</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 'Hand-washed exterior window glass',
                 'Professional squeegee finish',
                 'Light wipe-down of window frames',
+                'Track and sill cleaning',
                 'Safe ladder work for two-story homes',
+                'Streak-free finish guarantee',
               ].map((item, index) => (
                 <div key={index} className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mt-0.5">
@@ -129,26 +97,42 @@ export default function ExteriorWindowCleaningPage() {
             </div>
           </div>
 
-          {/* Pricing Section */}
+          {/* Why Choose Us */}
           <div className="content-section">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing</h2>
-            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Our Exterior Window Cleaning?</h2>
+            <div className="space-y-6">
+              <p className="text-gray-700 leading-relaxed text-lg">
+                Arizona&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience and knows exactly how to handle these conditions.
+              </p>
+              <p className="text-gray-700 leading-relaxed text-lg">
+                We use professional-grade equipment and eco-friendly cleaning solutions to ensure your windows are spotless and streak-free. Our team works efficiently to minimize disruption to your day.
+              </p>
+            </div>
+          </div>
+
+          {/* Before & After Section */}
+          <BeforeAfterSection service={serviceName} />
+
+          {/* Pricing Guidance */}
+          <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing for Exterior Window Cleaning</h2>
+            <p className="text-gray-700 mb-6 text-lg">
               Pricing is based on number of windows and home height. We provide free estimates before scheduling so you know exactly what to expect.
             </p>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="bg-white p-6 rounded-xl border-2 border-primary-200">
-                <h3 className="text-xl font-bold mb-3 text-gray-900">1-Story Homes</h3>
-                <p className="text-3xl font-bold text-primary-600 mb-2">Starting at $150</p>
-                <p className="text-gray-600">Most homes: $150-$350</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl border-2 border-primary-200">
-                <h3 className="text-xl font-bold mb-3 text-gray-900">2-Story Homes</h3>
-                <p className="text-3xl font-bold text-primary-600 mb-2">Starting at $180</p>
-                <p className="text-gray-600">Most homes: $180-$400</p>
-              </div>
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
+              {[
+                { label: '1-Story Homes', price: 'Starting at $150', range: 'Most homes: $150-$350' },
+                { label: '2-Story Homes', price: 'Starting at $180', range: 'Most homes: $180-$400' },
+              ].map((item, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl border border-gray-200">
+                  <p className="text-gray-700 font-medium mb-1">{item.label}</p>
+                  <p className="text-primary-600 font-bold text-2xl mb-1">{item.price}</p>
+                  <p className="text-gray-600">{item.range}</p>
+                </div>
+              ))}
             </div>
-            <div className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-xl border border-primary-200">
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-white/80 p-4 rounded-xl border border-primary-200">
+              <p className="text-gray-700">
                 <strong className="text-primary-700">Note:</strong> Most homes fall between $150-$350. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
               </p>
             </div>
@@ -185,7 +169,6 @@ export default function ExteriorWindowCleaningPage() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Professional Exterior Window Cleaning</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
             </div>
-            
             <div className="space-y-6">
               <p className="text-xl text-gray-700 leading-relaxed">
                 Exterior window cleaning is the foundation of maintaining beautiful, clear windows. Arizona&apos;s unique climate presents specific challenges, from intense desert sun creating hard water spots to frequent dust storms. Our professional exterior cleaning service addresses these challenges with proven techniques and professional-grade equipment.
@@ -207,14 +190,29 @@ export default function ExteriorWindowCleaningPage() {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <TrustSection />
-
-      {/* Offer Banner */}
-      <OfferBanner />
-
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
+      {/* YouTube Videos Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="section-title">See Us In Action</h2>
+            <p className="section-subtitle">
+              Watch our professional window cleaning team at work
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <LazyYouTube
+              videoId="TpGGKeABfCI"
+              title="Arizona Window Washing Pros - Video 1"
+              className="max-w-md mx-auto"
+            />
+            <LazyYouTube
+              videoId="GdNlH8GPhL0"
+              title="Arizona Window Washing Pros - Video 2"
+              className="max-w-md mx-auto"
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />
@@ -229,55 +227,11 @@ export default function ExteriorWindowCleaningPage() {
         </div>
       </section>
 
-      {/* Related Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Related Services</h2>
-            <p className="section-subtitle">
-              Complete your window cleaning with these additional services
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.filter(s => s.slug !== 'exterior-window-cleaning').map((service) => (
-              <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                className="card card-hover p-6 text-center group"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                  {service.name}
-                </h3>
-                <p className="text-gray-600">{service.description}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Click-to-Call CTA Before Form */}
-      <section className="section-padding bg-primary-600">
-        <div className="container-custom max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Get Your Free Quote Today
-          </h2>
-          <p className="text-xl text-white/90 mb-6">
-            Or call us directly for fastest response
-          </p>
-          <ClickToCall
-            className="inline-block btn-secondary text-xl font-bold px-8 py-4 bg-white text-primary-600 hover:bg-primary-50 shadow-2xl mb-6"
-            eventLabel="pre_form_call"
-          />
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
         <div className="container-custom max-w-2xl">
-          <QuoteForm defaultService="Exterior Window Cleaning" />
+          <ContactForm defaultService="Exterior Window Cleaning" />
         </div>
       </section>
     </>
   )
 }
-
