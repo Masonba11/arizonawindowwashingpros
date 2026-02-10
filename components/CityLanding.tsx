@@ -272,6 +272,15 @@ function GilbertHeroSection({ city, nearbyAreas, formData, setFormData, formStat
                   Your browser does not support the video tag.
                 </video>
               </div>
+              <div className="text-center mt-4">
+                <a
+                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+                  onClick={handleCallClick}
+                  className="bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg inline-block"
+                >
+                  Call Us Now
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -855,9 +864,13 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
         </div>
       </section>
 
-      {/* Sticky Call and Social Media Stickers */}
-      <CallSticker />
-      <SocialMediaSticker />
+      {/* Sticky Call and Social Media Stickers - Only show for non-ad landing pages */}
+      {!['Gilbert', 'Chandler', 'Scottsdale'].includes(city) && (
+        <>
+          <CallSticker />
+          <SocialMediaSticker />
+        </>
+      )}
     </>
   )
 }
