@@ -74,16 +74,16 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
           {title}
         </h1>
         {subtitle && (
-          <p className="text-lg md:text-xl font-semibold text-white mb-8 drop-shadow-lg max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+          <p className="text-lg md:text-xl font-semibold text-white mb-4 drop-shadow-lg max-w-3xl mx-auto leading-relaxed" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
             {subtitle}
           </p>
         )}
         
         {/* Services */}
-        <p className="text-lg md:text-xl font-semibold text-white mb-4 drop-shadow-lg max-w-2xl mx-auto" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+        <p className="text-lg md:text-xl font-semibold text-white mb-6 drop-shadow-lg max-w-2xl mx-auto" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
           Exterior Cleaning and Interior Cleaning
         </p>
-
+        
         {/* Trust + Outcome + Speed Subheadline */}
         <p className="text-base md:text-lg text-white/95 mb-8 drop-shadow-lg max-w-2xl mx-auto" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
           ✓ Licensed & Insured • ✓ Streak-Free Guarantee • ✓ Free Estimate
