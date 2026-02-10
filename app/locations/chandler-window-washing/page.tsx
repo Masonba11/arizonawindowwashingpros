@@ -66,6 +66,9 @@ export default function ChandlerWindowWashingPage() {
         </div>
       </HeroVideo>
 
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
+
       {/* Gallery Section */}
       <GallerySection city="Chandler" />
 
@@ -208,9 +211,6 @@ export default function ChandlerWindowWashingPage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />

@@ -66,6 +66,9 @@ export default function ScottsdaleWindowWashingPage() {
         </div>
       </HeroVideo>
 
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
+
       {/* Gallery Section */}
       <GallerySection city="Scottsdale" />
 
@@ -248,9 +251,6 @@ export default function ScottsdaleWindowWashingPage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />

@@ -65,6 +65,9 @@ export default function WindowWashingQueenCreekPage() {
         </div>
       </HeroVideo>
 
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
+
       {/* Gallery Section */}
       <GallerySection city="Queen Creek" />
 
@@ -197,9 +200,6 @@ export default function WindowWashingQueenCreekPage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />

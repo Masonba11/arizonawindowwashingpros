@@ -67,6 +67,9 @@ export default function MesaWindowWashingPage() {
         </div>
       </HeroVideo>
 
+      {/* Testimonial Video Section */}
+      <TestimonialVideo formId="contact-form" />
+
       {/* Gallery Section */}
       <GallerySection city="Mesa" />
 
@@ -252,9 +255,6 @@ export default function MesaWindowWashingPage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
 
       {/* Reviews Section */}
       <ReviewsSection reviews={reviews} maxReviews={6} />
