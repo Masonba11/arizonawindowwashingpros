@@ -63,6 +63,13 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
 
       {/* Content */}
       <div className="relative z-10 container-custom text-center w-full">
+        {/* $100 OFF Badge */}
+        <div className="mb-6">
+          <span className="bg-yellow-400 text-gray-900 px-6 py-2 md:px-8 md:py-3 rounded-full font-bold text-sm md:text-base shadow-2xl inline-block">
+            $100 OFF Your First Service
+          </span>
+        </div>
+        
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 drop-shadow-2xl leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
           {title}
         </h1>

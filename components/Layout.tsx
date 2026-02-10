@@ -5,7 +5,6 @@ import Header from './Header'
 import Footer from './Footer'
 import CallSticker from './CallSticker'
 import SocialMediaSticker from './SocialMediaSticker'
-import PopupContactForm from './PopupContactForm'
 
 const LANDING_PAGES = [
   '/scottsdale-window-washing',
@@ -30,7 +29,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Footer />
       <CallSticker />
       <SocialMediaSticker />
-      <PopupContactForm />
     </div>
   )
 }
