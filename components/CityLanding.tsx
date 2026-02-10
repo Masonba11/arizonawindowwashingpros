@@ -59,7 +59,7 @@ function GilbertHeroSection({ city, nearbyAreas, formData, setFormData, formStat
             {/* Heading */}
             <div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-                {city} Window Washing
+                {city === 'Gilbert' ? 'Gilbert, Arizona | Window Washing' : `${city} Window Washing`}
               </h1>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex text-yellow-400">
