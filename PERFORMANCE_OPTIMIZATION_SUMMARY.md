@@ -180,3 +180,4 @@ The following location pages still need LazyYouTube updates:
 
 **Total Size Reduction**: ~60MB → ~1MB (98% reduction in image assets)
 
+

@@ -336,3 +336,4 @@ import { generateServiceFAQs } from '@/lib/enhancedFAQs' // or generateLocationF
 
 **Last Updated**: Implementation completed for exterior-window-cleaning and mesa-window-washing pages. Remaining pages follow the same pattern.
 
+

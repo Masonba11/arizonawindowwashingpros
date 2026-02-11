@@ -62,3 +62,4 @@ export function generateCityLandingSchema(city: string, nearbyAreas: string[]) {
   }
 }
 
+
