@@ -75,12 +75,12 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
 
             {/* Form - Desktop */}
             <div id="quote-form" className="hidden md:block">
-              <ContactForm defaultCity={city} showTitle={false} />
+              <ContactForm defaultCity={city} showTitle={false} compact={true} />
             </div>
 
             {/* Mobile Form */}
             <div id="quote-form" className="md:hidden">
-              <ContactForm defaultCity={city} showTitle={false} />
+              <ContactForm defaultCity={city} showTitle={false} compact={true} />
             </div>
           </div>
 
@@ -141,7 +141,7 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
 
         {/* Form - Mobile First (appears right after heading) */}
         <div id="quote-form" className="mb-8 md:hidden">
-          <ContactForm defaultCity={city} showTitle={false} />
+          <ContactForm defaultCity={city} showTitle={false} compact={true} />
         </div>
 
         {/* Content Section */}
@@ -189,7 +189,7 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
 
           {/* Right: Form (Desktop) */}
           <div id="quote-form" className="hidden md:block">
-            <ContactForm defaultCity={city} showTitle={false} />
+            <ContactForm defaultCity={city} showTitle={false} compact={true} />
           </div>
         </div>
       </div>

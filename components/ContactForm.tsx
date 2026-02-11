@@ -8,12 +8,14 @@ interface ContactFormProps {
   defaultCity?: string
   defaultService?: string
   showTitle?: boolean
+  compact?: boolean
 }
 
 export default function ContactForm({
   defaultCity = '',
   defaultService = '',
   showTitle = true,
+  compact = false,
 }: ContactFormProps) {
   const router = useRouter()
   const [formData, setFormData] = useState({
@@ -84,27 +86,35 @@ export default function ContactForm({
   }
 
   return (
-    <div className="card">
-      <div className="p-8 md:p-10">
+    <div className={compact ? "bg-white rounded-2xl shadow-2xl border-2 border-gray-200" : "card"}>
+      <div className={compact ? "p-6" : "p-8 md:p-10"}>
         {showTitle && (
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            <h2 className={compact ? "text-xl font-bold text-gray-900 mb-4 text-center" : "text-3xl md:text-4xl font-bold text-gray-900 mb-3"}>
               Get Your Free Quote
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+            {!compact && <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>}
           </div>
         )}
 
         {formStatus === 'success' ? (
-          <div className="text-center py-8">
-            <div className="text-green-600 text-5xl mb-4">✓</div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-            <p className="text-gray-700">We'll contact you shortly.</p>
+          <div className={compact ? "text-center py-6" : "text-center py-8"}>
+            <div className={compact ? "text-green-600 text-4xl mb-3" : "text-green-600 text-5xl mb-4"}>✓</div>
+            <h3 className={compact ? "text-xl font-bold text-gray-900 mb-2" : "text-2xl font-bold text-gray-900 mb-2"}>Thank You!</h3>
+            <p className={compact ? "text-gray-700 mb-4 text-sm" : "text-gray-700"}>We'll contact you shortly.</p>
+            {compact && (
+              <a
+                href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+                className="inline-block bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              >
+                Or Call Now: {BUSINESS_INFO.phone}
+              </a>
+            )}
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className={compact ? "space-y-3" : "space-y-4"}>
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
+              <label htmlFor="name" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
                 Name *
               </label>
               <input
@@ -113,12 +123,12 @@ export default function ContactForm({
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-1">
+              <label htmlFor="phone" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
                 Phone *
               </label>
               <input
@@ -127,13 +137,13 @@ export default function ContactForm({
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
                 placeholder="(480) 555-1234"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
+              <label htmlFor="email" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
                 Email *
               </label>
               <input
@@ -142,20 +152,20 @@ export default function ContactForm({
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
                 placeholder="your@email.com"
               />
             </div>
 
             <div>
-              <label htmlFor="city" className="block text-sm font-semibold text-gray-700 mb-1">
+              <label htmlFor="city" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
                 City
               </label>
               <select
                 id="city"
                 value={formData.city}
                 onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
               >
                 <option value="">Select a city</option>
                 {CITIES.map((city) => (
@@ -167,16 +177,16 @@ export default function ContactForm({
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">
+              <label htmlFor="message" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
                 Message About Service Type *
               </label>
               <textarea
                 id="message"
-                rows={4}
+                rows={compact ? 2 : 4}
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
+                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
                 placeholder="Please describe the service you need (e.g., Exterior window cleaning, Interior cleaning, Screen cleaning, etc.)"
               />
             </div>
@@ -184,7 +194,7 @@ export default function ContactForm({
             <button
               type="submit"
               disabled={formStatus === 'submitting'}
-              className="w-full btn-primary py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
+              className={compact ? "w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm" : "w-full btn-primary py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"}
             >
               {formStatus === 'submitting' ? 'Submitting...' : 'Get Free Quote'}
             </button>

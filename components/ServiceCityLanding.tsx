@@ -105,12 +105,12 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
 
             {/* Form - Desktop */}
             <div id="quote-form" className="hidden md:block">
-              <ContactForm defaultCity={city} defaultService={service} showTitle={false} />
+              <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
             </div>
 
             {/* Mobile Form */}
             <div id="quote-form" className="md:hidden">
-              <ContactForm defaultCity={city} defaultService={service} showTitle={false} />
+              <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
             </div>
           </div>
 
