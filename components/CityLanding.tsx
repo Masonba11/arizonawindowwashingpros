@@ -585,17 +585,29 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
     e.preventDefault()
     setFormStatus('submitting')
 
+    const FORM_ACCESS_KEY = '0f32ed52-78cd-4ae4-8e56-df6c2b533b71'
+
     try {
-      const response = await fetch('/api/lead', {
+      // Submit directly to Web3Forms from client
+      const params = new URLSearchParams()
+      params.append('access_key', FORM_ACCESS_KEY)
+      params.append('name', formData.name)
+      params.append('phone', formData.phone)
+      params.append('email', formData.address || 'Not provided')
+      params.append('city', city)
+      params.append('type', formData.type || 'Residential')
+      params.append('message', formData.message || `Window washing inquiry for ${city}`)
+      params.append('subject', `New Lead from ${city} Window Washing Ad Landing Page`)
+      params.append('from_name', 'Arizona Window Washing Pros Website')
+      params.append('source', 'Google Ads Landing Page')
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          city: city,
-          source: 'Google Ads Landing Page',
-        }),
+        body: params.toString(),
       })
 
       const result = await response.json()
@@ -606,13 +618,15 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
           if ((window as any).gtag) {
             (window as any).gtag('event', 'lead_submit', {
               city: city,
-              page: `/${city.toLowerCase()}-window-washing`,
+              page: `/${city.toLowerCase().replace(' ', '-')}-window-washing`,
             })
-          } else {
-            console.log('Lead submit tracked:', { city, page: `/${city.toLowerCase()}-window-washing` })
+          }
+          if ((window as any).fbq) {
+            (window as any).fbq('track', 'Lead')
           }
         }
       } else {
+        console.error('Form submission failed:', result)
         setFormStatus('error')
       }
     } catch (error) {
