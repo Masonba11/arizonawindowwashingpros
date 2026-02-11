@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import { BUSINESS_INFO } from '@/lib/constants'
 import GallerySection from '@/components/GallerySection'
 import LazyYouTube from '@/components/LazyYouTube'
+import ContactForm from '@/components/ContactForm'
 
 interface ServiceCityLandingProps {
   service: string
@@ -17,27 +18,11 @@ interface HeroSectionProps {
   service: string
   city: string
   nearbyAreas: string[]
-  formData: {
-    name: string
-    phone: string
-    address: string
-    type: string
-    message: string
-  }
-  setFormData: React.Dispatch<React.SetStateAction<{
-    name: string
-    phone: string
-    address: string
-    type: string
-    message: string
-  }>>
-  formStatus: 'idle' | 'submitting' | 'success' | 'error'
-  handleFormSubmit: (e: React.FormEvent) => void
   handleCallClick: () => void
 }
 
 // Conversion-optimized hero section for service+location pages
-function ConversionOptimizedHeroSection({ service, city, nearbyAreas, formData, setFormData, formStatus, handleFormSubmit, handleCallClick }: HeroSectionProps) {
+function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCallClick }: HeroSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const getCityHeading = () => {
@@ -120,178 +105,12 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, formData, 
 
             {/* Form - Desktop */}
             <div id="quote-form" className="hidden md:block">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 border-2 border-gray-200">
-                <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">Get Your Free Quote</h2>
-                {formStatus === 'success' ? (
-                  <div className="text-center py-6">
-                    <div className="text-green-600 text-4xl mb-3">✓</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                    <p className="text-gray-700 mb-4 text-sm">We'll call you shortly.</p>
-                    <a
-                      href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-                      onClick={handleCallClick}
-                      className="inline-block bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors text-sm"
-                    >
-                      Or Call Now: {BUSINESS_INFO.phone}
-                    </a>
-                  </div>
-                ) : (
-                  <form onSubmit={handleFormSubmit} className="space-y-3">
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Name *</label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Phone *</label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="(480) 555-1234"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Address or City</label>
-                      <input
-                        type="text"
-                        value={formData.address}
-                        onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder={city}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Type</label>
-                      <select
-                        value={formData.type}
-                        onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      >
-                        <option value="Residential">Residential</option>
-                        <option value="Commercial">Commercial</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Message (optional)</label>
-                      <textarea
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        rows={2}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={formStatus === 'submitting'}
-                      data-cta="form"
-                      className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-                    >
-                      {formStatus === 'submitting' ? 'Submitting...' : 'Get Free Quote'}
-                    </button>
-                    {formStatus === 'error' && (
-                      <p className="text-red-600 text-xs text-center">
-                        Something went wrong. Please call us at {BUSINESS_INFO.phone}
-                      </p>
-                    )}
-                  </form>
-                )}
-              </div>
+              <ContactForm defaultCity={city} defaultService={service} showTitle={false} />
             </div>
 
             {/* Mobile Form */}
             <div id="quote-form" className="md:hidden">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 border-2 border-gray-200">
-                <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">Get Your Free Quote</h2>
-                {formStatus === 'success' ? (
-                  <div className="text-center py-6">
-                    <div className="text-green-600 text-4xl mb-3">✓</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                    <p className="text-gray-700 mb-4 text-sm">We'll call you shortly.</p>
-                    <a
-                      href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-                      onClick={handleCallClick}
-                      className="inline-block bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors text-sm"
-                    >
-                      Or Call Now: {BUSINESS_INFO.phone}
-                    </a>
-                  </div>
-                ) : (
-                  <form onSubmit={handleFormSubmit} className="space-y-3">
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Name *</label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Phone *</label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="(480) 555-1234"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Address or City</label>
-                      <input
-                        type="text"
-                        value={formData.address}
-                        onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder={city}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Type</label>
-                      <select
-                        value={formData.type}
-                        onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      >
-                        <option value="Residential">Residential</option>
-                        <option value="Commercial">Commercial</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">Message (optional)</label>
-                      <textarea
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        rows={2}
-                        className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={formStatus === 'submitting'}
-                      data-cta="form"
-                      className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
-                    >
-                      {formStatus === 'submitting' ? 'Submitting...' : 'Get Free Quote'}
-                    </button>
-                    {formStatus === 'error' && (
-                      <p className="text-red-600 text-xs text-center">
-                        Something went wrong. Please call us at {BUSINESS_INFO.phone}
-                      </p>
-                    )}
-                  </form>
-                )}
-              </div>
+              <ContactForm defaultCity={city} defaultService={service} showTitle={false} />
             </div>
           </div>
 
@@ -329,15 +148,6 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, formData, 
 }
 
 export default function ServiceCityLanding({ service, serviceSlug, city, nearbyAreas, faqs }: ServiceCityLandingProps) {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    address: '',
-    type: 'Residential',
-    message: '',
-  })
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-
   const handleCallClick = () => {
     if (typeof window !== 'undefined') {
       if ((window as any).gtag) {
@@ -347,62 +157,6 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
           page: `/${serviceSlug}-${city.toLowerCase().replace(' ', '-')}`,
         })
       }
-    }
-  }
-
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setFormStatus('submitting')
-
-    const FORM_ACCESS_KEY = '0f32ed52-78cd-4ae4-8e56-df6c2b533b71'
-
-    try {
-      // Submit directly to Web3Forms from client
-      const params = new URLSearchParams()
-      params.append('access_key', FORM_ACCESS_KEY)
-      params.append('name', formData.name)
-      params.append('phone', formData.phone)
-      params.append('email', formData.address || 'Not provided')
-      params.append('city', city)
-      params.append('service', service)
-      params.append('type', formData.type || 'Residential')
-      params.append('message', formData.message || `${service} inquiry for ${city}`)
-      params.append('subject', `New Lead from ${service} in ${city} Ad Landing Page`)
-      params.append('from_name', 'Arizona Window Washing Pros Website')
-      params.append('source', 'Google Ads Landing Page')
-
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json',
-        },
-        body: params.toString(),
-      })
-
-      const result = await response.json()
-
-      if (result.success) {
-        setFormStatus('success')
-        if (typeof window !== 'undefined') {
-          if ((window as any).gtag) {
-            (window as any).gtag('event', 'lead_submit', {
-              service: serviceSlug,
-              city: city,
-              page: `/${serviceSlug}-${city.toLowerCase().replace(' ', '-')}`,
-            })
-          }
-          if ((window as any).fbq) {
-            (window as any).fbq('track', 'Lead')
-          }
-        }
-      } else {
-        console.error('Form submission failed:', result)
-        setFormStatus('error')
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-      setFormStatus('error')
     }
   }
 
@@ -465,10 +219,6 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
         service={service}
         city={city}
         nearbyAreas={nearbyAreas}
-        formData={formData}
-        setFormData={setFormData}
-        formStatus={formStatus}
-        handleFormSubmit={handleFormSubmit}
         handleCallClick={handleCallClick}
       />
 
