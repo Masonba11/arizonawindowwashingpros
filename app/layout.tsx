@@ -64,7 +64,6 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-17892178683');
-              gtag('config', 'AW-17892178683/wcO-COye-vYbEPv109NC', { 'phone_conversion_number': '480-737-0850' });
             `,
           }}
         />
