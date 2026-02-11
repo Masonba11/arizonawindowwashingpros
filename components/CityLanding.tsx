@@ -61,7 +61,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, formData, setFormDa
               {/* $100 OFF Badge */}
               <div className="inline-block mb-4">
                 <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
-                  $100 OFF Your First Service — Limited Availability
+                  $100 OFF Your First Service Limited Availability
                 </span>
               </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
@@ -316,7 +316,7 @@ function StandardHeroSection({ city, nearbyAreas, formData, setFormData, formSta
         <div className="text-center mb-6 md:mb-8">
           <div className="inline-block mb-4 md:mb-6">
             <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
-              $100 OFF Your First Service — Limited Availability
+              $100 OFF Your First Service Limited Availability
             </span>
           </div>
           
@@ -899,7 +899,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
             Ready for Streak-Free Windows in {city}?
           </h2>
           <p className="text-xl mb-8">
-            $100 OFF Your First Service — Limited Availability
+            $100 OFF Your First Service Limited Availability
           </p>
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
