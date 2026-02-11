@@ -5,6 +5,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 import GallerySection from '@/components/GallerySection'
 import LazyYouTube from '@/components/LazyYouTube'
 import ContactForm from '@/components/ContactForm'
+import { trackCallClick } from '@/lib/callTracking'
 
 interface ServiceCityLandingProps {
   service: string
@@ -149,14 +150,13 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
 
 export default function ServiceCityLanding({ service, serviceSlug, city, nearbyAreas, faqs }: ServiceCityLandingProps) {
   const handleCallClick = () => {
-    if (typeof window !== 'undefined') {
-      if ((window as any).gtag) {
-        (window as any).gtag('event', 'call_click', {
-          service: serviceSlug,
-          city: city,
-          page: `/${serviceSlug}-${city.toLowerCase().replace(' ', '-')}`,
-        })
-      }
+    trackCallClick(`service_city_${serviceSlug}_${city.toLowerCase().replace(' ', '_')}`)
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'call_click', {
+        service: serviceSlug,
+        city: city,
+        page: `/${serviceSlug}-${city.toLowerCase().replace(' ', '-')}`,
+      })
     }
   }
 

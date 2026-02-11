@@ -107,11 +107,19 @@ export default function Header() {
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
             className="hidden md:flex btn-primary text-base font-bold px-6 py-3 shadow-lg hover:shadow-xl transition-shadow"
             onClick={() => {
-              if (typeof window !== 'undefined' && (window as any).gtag) {
-                (window as any).gtag('event', 'phone_click', {
-                  event_category: 'engagement',
-                  event_label: 'header_call',
-                })
+              if (typeof window !== 'undefined') {
+                if ((window as any).gtag) {
+                  (window as any).gtag('event', 'conversion', {
+                    send_to: 'AW-17892178683/wcO-COye-vYbEPv109NC',
+                  })
+                  ;(window as any).gtag('event', 'phone_click', {
+                    event_category: 'engagement',
+                    event_label: 'header_call',
+                  })
+                }
+                if ((window as any).fbq) {
+                  (window as any).fbq('track', 'Contact')
+                }
               }
             }}
           >
@@ -238,7 +246,23 @@ export default function Header() {
               <a
                 href={`tel:${BUSINESS_INFO.phoneFormatted}`}
                 className="block w-full btn-primary text-center"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  if (typeof window !== 'undefined') {
+                    if ((window as any).gtag) {
+                      (window as any).gtag('event', 'conversion', {
+                        send_to: 'AW-17892178683/wcO-COye-vYbEPv109NC',
+                      })
+                      ;(window as any).gtag('event', 'phone_click', {
+                        event_category: 'engagement',
+                        event_label: 'mobile_header_call',
+                      })
+                    }
+                    if ((window as any).fbq) {
+                      (window as any).fbq('track', 'Contact')
+                    }
+                  }
+                }}
               >
                 Call {BUSINESS_INFO.phone}
               </a>

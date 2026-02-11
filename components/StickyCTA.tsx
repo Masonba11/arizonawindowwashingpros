@@ -1,6 +1,7 @@
 'use client'
 
 import { BUSINESS_INFO } from '@/lib/constants'
+import { trackCallClick } from '@/lib/callTracking'
 
 interface StickyCTAProps {
   formId?: string
@@ -27,16 +28,7 @@ export default function StickyCTA({ formId = 'contact-form' }: StickyCTAProps) {
   }
 
   const handleCall = () => {
-    // Track call click
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'phone_click', {
-        event_category: 'engagement',
-        event_label: 'sticky_call',
-      })
-    }
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Contact')
-    }
+    trackCallClick('sticky_call')
   }
 
   return (

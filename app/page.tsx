@@ -8,6 +8,7 @@ import PricingImages from '@/components/PricingImages'
 import LazyYouTube from '@/components/LazyYouTube'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
+import CallButton from '@/components/CallButton'
 import { generalFAQs } from '@/lib/faqs'
 import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
@@ -26,12 +27,12 @@ export default function HomePage() {
         subtitle="Crystal-clear windows that make your home shine. Expert service you can trust."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+          <CallButton
             className="btn-primary text-lg"
+            eventLabel="homepage_hero_call"
           >
             Call Now: {BUSINESS_INFO.phone}
-          </a>
+          </CallButton>
           <a href="#contact-form" className="btn-secondary text-lg bg-white text-primary-600 border-2 border-white hover:bg-primary-50">
             Get Free Quote
           </a>

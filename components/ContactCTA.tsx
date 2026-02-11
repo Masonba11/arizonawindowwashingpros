@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import { BUSINESS_INFO } from '@/lib/constants'
+import { trackCallClick } from '@/lib/callTracking'
 
 export default function ContactCTA() {
   return (
@@ -19,6 +22,7 @@ export default function ContactCTA() {
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
             className="btn-secondary bg-white text-primary-600 hover:bg-primary-50 border-white"
+            onClick={() => trackCallClick('contact_cta_call')}
           >
             Call Now: {BUSINESS_INFO.phone}
           </a>

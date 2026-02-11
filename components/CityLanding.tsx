@@ -8,6 +8,7 @@ import CallSticker from '@/components/CallSticker'
 import SocialMediaSticker from '@/components/SocialMediaSticker'
 import LazyYouTube from '@/components/LazyYouTube'
 import ContactForm from '@/components/ContactForm'
+import { trackCallClick } from '@/lib/callTracking'
 
 interface CityLandingProps {
   city: string
@@ -199,15 +200,12 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
 
 export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProps) {
   const handleCallClick = () => {
-    if (typeof window !== 'undefined') {
-      if ((window as any).gtag) {
-        (window as any).gtag('event', 'call_click', {
-          city: city,
-          page: `/${city.toLowerCase()}-window-washing`,
-        })
-      } else {
-        console.log('Call click tracked:', { city, page: `/${city.toLowerCase()}-window-washing` })
-      }
+    trackCallClick(`city_landing_${city.toLowerCase().replace(' ', '_')}`)
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'call_click', {
+        city: city,
+        page: `/${city.toLowerCase()}-window-washing`,
+      })
     }
   }
 

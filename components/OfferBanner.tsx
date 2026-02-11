@@ -1,6 +1,7 @@
 'use client'
 
 import { BUSINESS_INFO } from '@/lib/constants'
+import { trackCallClick } from '@/lib/callTracking'
 
 interface OfferBannerProps {
   showUrgency?: boolean
@@ -19,14 +20,7 @@ export default function OfferBanner({ showUrgency = true }: OfferBannerProps) {
               <a
                 href={`tel:${BUSINESS_INFO.phoneFormatted}`}
                 className="btn-primary text-lg font-bold px-8 py-4"
-                onClick={() => {
-                  if (typeof window !== 'undefined' && (window as any).gtag) {
-                    (window as any).gtag('event', 'phone_click', {
-                      event_category: 'engagement',
-                      event_label: 'offer_banner_call',
-                    })
-                  }
-                }}
+                onClick={() => trackCallClick('offer_banner_call')}
               >
                 Call Now for Fastest Scheduling
               </a>

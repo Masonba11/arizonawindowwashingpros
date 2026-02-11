@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
+import { trackCallClick } from '@/lib/callTracking'
 
 interface HeroVideoProps {
   title: string
@@ -30,15 +31,7 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
   }
 
   const handleCall = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'phone_click', {
-        event_category: 'engagement',
-        event_label: 'hero_call',
-      })
-    }
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Contact')
-    }
+    trackCallClick('hero_call')
   }
 
   return (

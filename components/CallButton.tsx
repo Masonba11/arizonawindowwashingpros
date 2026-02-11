@@ -3,7 +3,7 @@
 import { BUSINESS_INFO } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
 
-interface ClickToCallProps {
+interface CallButtonProps {
   phone?: string
   phoneFormatted?: string
   label?: string
@@ -12,14 +12,14 @@ interface ClickToCallProps {
   children?: React.ReactNode
 }
 
-export default function ClickToCall({ 
-  phone = BUSINESS_INFO.phone, 
+export default function CallButton({
+  phone = BUSINESS_INFO.phone,
   phoneFormatted = BUSINESS_INFO.phoneFormatted,
   label,
   className = '',
-  eventLabel = 'phone_click',
-  children
-}: ClickToCallProps) {
+  eventLabel = 'phone_call',
+  children,
+}: CallButtonProps) {
   const handleClick = () => {
     trackCallClick(eventLabel)
   }
@@ -30,7 +30,7 @@ export default function ClickToCall({
       onClick={handleClick}
       className={className}
     >
-      {children || label || `Call ${phone}`}
+      {children || label || `Call Now: ${phone}`}
     </a>
   )
 }
