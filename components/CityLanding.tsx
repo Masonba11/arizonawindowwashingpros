@@ -83,15 +83,6 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, formData, setFormDa
               <p className="text-lg md:text-xl text-gray-700 mb-2">
                 100s of Arizona Homeowners Served
               </p>
-              {/* Pricing Information for Exterior */}
-              <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-4">
-                <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
-                  3-in-1 Package Deal: $15
-                </p>
-                <p className="text-sm md:text-base text-gray-700">
-                  Includes: Window Cleaning + Tracks & Sills + Screen Cleaning
-                </p>
-              </div>
               <p className="text-base md:text-lg text-gray-600">
                 Streak-free window cleaning for homes & businesses.
               </p>
