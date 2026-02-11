@@ -12,11 +12,20 @@ const LANDING_PAGES = [
   '/gilbert-window-washing',
 ]
 
+// Service+city ad landing pages
+const SERVICE_CITY_PATTERNS = [
+  '/exterior-window-cleaning-',
+  '/interior-window-cleaning-',
+  '/track-sill-cleaning-',
+  '/screen-cleaning-',
+]
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const isLandingPage = LANDING_PAGES.includes(pathname || '')
+  const isServiceCityPage = SERVICE_CITY_PATTERNS.some(pattern => pathname?.startsWith(pattern))
 
-  if (isLandingPage) {
+  if (isLandingPage || isServiceCityPage) {
     // Minimal layout for Google Ads landing pages - no nav, no footer, no stickers
     return <div className="min-h-screen">{children}</div>
   }
