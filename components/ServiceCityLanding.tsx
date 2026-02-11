@@ -70,6 +70,12 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, formData, 
           <div className="space-y-6">
             {/* Heading */}
             <div>
+              {/* $100 OFF Badge */}
+              <div className="inline-block mb-4">
+                <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
+                  $100 OFF Your First Service — Limited Availability
+                </span>
+              </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
                 {service} in {getCityHeading()}
               </h1>
@@ -86,6 +92,27 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, formData, 
               <p className="text-lg md:text-xl text-gray-700 mb-2">
                 100s of Arizona Homeowners Served
               </p>
+              {/* Pricing Information */}
+              {service.toLowerCase().includes('exterior') && (
+                <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-4">
+                  <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                    3-in-1 Package Deal: $15
+                  </p>
+                  <p className="text-sm md:text-base text-gray-700">
+                    Includes: Window Cleaning + Tracks & Sills + Screen Cleaning
+                  </p>
+                </div>
+              )}
+              {service.toLowerCase().includes('interior') && (
+                <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-4">
+                  <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                    Interior Window Cleaning: $10
+                  </p>
+                  <p className="text-sm md:text-base text-gray-700">
+                    Professional interior window cleaning service
+                  </p>
+                </div>
+              )}
               <p className="text-base md:text-lg text-gray-600">
                 Professional {service.toLowerCase()} services in {city}.
               </p>
