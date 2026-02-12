@@ -10,6 +10,7 @@ const LANDING_PAGES = [
   '/scottsdale-window-washing',
   '/chandler-window-washing',
   '/gilbert-window-washing',
+  '/queen-creek-window-washing',
 ]
 
 // Service+city ad landing pages
