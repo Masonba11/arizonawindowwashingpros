@@ -55,6 +55,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                  city === 'Chandler' ? 'Chandler, Arizona | Window Washing' : 
                  city === 'Scottsdale' ? 'Scottsdale, Arizona | Window Washing' : 
                  city === 'Queen Creek' ? 'Queen Creek, Arizona | Window Washing' : 
+                 city === 'San Tan Valley' ? 'San Tan Valley, Arizona | Window Washing' : 
                  `${city} Window Washing`}
               </h1>
               <div className="flex items-center gap-2 mb-4">
@@ -270,7 +271,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       </div>
 
       {/* Hero Section */}
-      {['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek'].includes(city) ? (
+      {['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek', 'San Tan Valley'].includes(city) ? (
         <ConversionOptimizedHeroSection 
           city={city}
           nearbyAreas={nearbyAreas}
@@ -488,7 +489,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       </section>
 
       {/* Sticky Call and Social Media Stickers - Only show for non-ad landing pages */}
-      {!['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek'].includes(city) && (
+      {!['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek', 'San Tan Valley'].includes(city) && (
         <>
           <CallSticker />
           <SocialMediaSticker />

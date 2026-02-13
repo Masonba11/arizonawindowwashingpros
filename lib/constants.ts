@@ -4,7 +4,7 @@ export const BUSINESS_INFO = {
   phone: '(480) 737-0850',
   phoneFormatted: '4807370850',
   email: 'info@arizonawindowwashingpros.com',
-  serviceArea: ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'AZ'],
+  serviceArea: ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'San Tan Valley', 'AZ'],
   address: {
     street: 'Arizona',
     city: 'Mesa',
@@ -101,8 +101,15 @@ export const LOCATIONS = [
     keyword: 'tempe window washing',
     description: 'Professional window cleaning services in Tempe, Arizona.',
   },
+  {
+    id: 'san-tan-valley',
+    name: 'San Tan Valley',
+    slug: 'san-tan-valley-window-washing',
+    keyword: 'san tan valley window washing',
+    description: 'Professional window cleaning services in San Tan Valley, Arizona.',
+  },
 ]
 
 // Cities for contact form dropdown
-export const CITIES = ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'Other']
+export const CITIES = ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'San Tan Valley', 'Other']
 

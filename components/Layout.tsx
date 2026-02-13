@@ -11,6 +11,7 @@ const LANDING_PAGES = [
   '/chandler-window-washing',
   '/gilbert-window-washing',
   '/queen-creek-window-washing',
+  '/san-tan-valley-window-washing',
 ]
 
 // Service+city ad landing pages

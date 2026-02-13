@@ -23,7 +23,7 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <HeroVideo
-        title="Professional Window Washing in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale"
+        title="Professional Window Washing Services"
         subtitle="Crystal-clear windows that make your home shine. Expert service you can trust."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
