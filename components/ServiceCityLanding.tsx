@@ -39,14 +39,32 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
   }
 
   return (
-    <section className="relative bg-white pt-8 pb-12 md:pt-16 md:pb-20">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-8 pb-12 md:pt-16 md:pb-20">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectFit: 'cover' }}
+        >
+          <source src="/hero-video-new.mov" type="video/quicktime" />
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         {/* Logo */}
         <div className="flex justify-center mb-6 md:mb-8">
           <img 
             src="/AZWPlogo-Photoroom.png" 
             alt={BUSINESS_INFO.name}
-            className="h-20 md:h-28 w-auto object-contain"
+            className="h-20 md:h-28 w-auto object-contain drop-shadow-2xl"
+            style={{ filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.8))' }}
           />
         </div>
 
@@ -62,7 +80,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                   $100 OFF Your First Service Limited Availability
                 </span>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                 {service} in {getCityHeading()}
               </h1>
               <div className="flex items-center gap-2 mb-4">
@@ -73,14 +91,14 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                     </svg>
                   ))}
                 </div>
-                <span className="text-xl md:text-2xl font-bold text-gray-900">5 Star Reviews</span>
+                <span className="text-xl md:text-2xl font-bold text-white drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>5 Star Reviews</span>
               </div>
-              <p className="text-lg md:text-xl text-gray-700 mb-2">
+              <p className="text-lg md:text-xl text-white mb-2 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
                 100s of Arizona Homeowners Served
               </p>
               {/* Pricing Information */}
               {service.toLowerCase().includes('exterior') && (
-                <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-4">
+                <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
                   <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                     3-in-1 Package Deal: $15
                   </p>
@@ -90,7 +108,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                 </div>
               )}
               {service.toLowerCase().includes('interior') && (
-                <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 mb-4">
+                <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
                   <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
                     Interior Window Cleaning: $10
                   </p>
@@ -99,7 +117,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                   </p>
                 </div>
               )}
-              <p className="text-base md:text-lg text-gray-600">
+              <p className="text-base md:text-lg text-white/95 drop-shadow-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
                 Professional {service.toLowerCase()} services in {city}.
               </p>
             </div>
@@ -118,7 +136,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
           {/* Right: Testimonial Video */}
           <div className="flex flex-col items-center md:items-start">
             <div className="w-full max-w-lg">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center md:text-left">Client Testimonial</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>Client Testimonial</h2>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900">
                 <video
                   ref={videoRef}
