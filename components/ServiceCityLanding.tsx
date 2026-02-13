@@ -39,7 +39,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
   }
 
   return (
-    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-8 pb-12 md:pt-16 md:pb-20">
+    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-16 md:pb-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -181,7 +181,7 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
   return (
     <>
       {/* Mobile Sticky CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t-2 border-blue-600 shadow-2xl">
+      <div className="fixed top-0 left-0 right-0 z-50 md:hidden bg-white border-b-2 border-blue-600 shadow-2xl">
         <div className="flex">
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}

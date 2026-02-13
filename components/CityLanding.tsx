@@ -249,7 +249,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
   return (
     <>
       {/* Mobile Sticky CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t-2 border-blue-600 shadow-2xl">
+      <div className="fixed top-0 left-0 right-0 z-50 md:hidden bg-white border-b-2 border-blue-600 shadow-2xl">
         <div className="flex">
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
