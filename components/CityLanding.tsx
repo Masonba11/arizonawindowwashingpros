@@ -27,7 +27,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
-    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-8 pb-12 md:pt-16 md:pb-20">
+    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-16 md:pb-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -141,7 +141,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
 // Standard hero section for other cities
 function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-8 pb-12 md:pt-20 md:pb-32">
+    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-20 md:pb-32">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
