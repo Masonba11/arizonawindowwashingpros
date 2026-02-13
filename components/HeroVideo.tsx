@@ -46,7 +46,7 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
         >
-          <source src="/hero-video-new.mov" type="video/quicktime" />
+          <source src="/hero-video-ad-landing.mov" type="video/quicktime" />
           <source src="/hero-video.mp4" type="video/mp4" />
           {/* Fallback image if video doesn't load */}
           <Image
