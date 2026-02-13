@@ -36,10 +36,19 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
 
   return (
     <section className="relative section-padding overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
-      {/* Image Background - Optimized for LCP */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <picture>
-          <source srcSet="/hero-image.webp" type="image/webp" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectFit: 'cover' }}
+        >
+          <source src="/hero-video-new.mov" type="video/quicktime" />
+          <source src="/hero-video.mp4" type="video/mp4" />
+          {/* Fallback image if video doesn't load */}
           <Image
             src="/hero-image-optimized.jpg"
             alt="Arizona Window Washing Pros"
@@ -49,7 +58,7 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
             quality={65}
             sizes="100vw"
           />
-        </picture>
+        </video>
         {/* Overlay for better text readability - dimmed */}
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
