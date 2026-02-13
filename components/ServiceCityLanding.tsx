@@ -57,13 +57,13 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-4 md:pt-6">
         {/* Logo */}
-        <div className="flex justify-center mb-6 md:mb-8">
+        <div className="flex justify-center mb-3 md:mb-6">
           <img 
             src="/AZWPlogo-Photoroom.png" 
             alt={BUSINESS_INFO.name}
-            className="h-20 md:h-28 w-auto object-contain drop-shadow-2xl"
+            className="h-24 md:h-32 w-auto object-contain drop-shadow-2xl"
             style={{ filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.8))' }}
           />
         </div>
@@ -75,7 +75,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
             {/* Heading */}
             <div>
               {/* $100 OFF Badge */}
-              <div className="inline-block mb-4">
+              <div className="inline-block mb-2 md:mb-4">
                 <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
                   $100 OFF Your First Service Limited Availability
                 </span>
@@ -134,7 +134,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
           </div>
 
           {/* Right: Testimonial Video */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start -mt-4 md:mt-0">
             <div className="w-full max-w-lg">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>Client Testimonial</h2>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900">
