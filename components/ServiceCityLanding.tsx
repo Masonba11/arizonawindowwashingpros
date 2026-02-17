@@ -58,9 +58,9 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-4 md:pt-6">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-2 md:pt-6">
         {/* Logo */}
-        <div className="flex justify-center mb-3 md:mb-6">
+        <div className="flex justify-center mb-2 md:mb-6">
           <img 
             src="/AZWPlogo-Photoroom.png" 
             alt={BUSINESS_INFO.name}

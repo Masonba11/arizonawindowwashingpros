@@ -115,7 +115,7 @@ export default function ContactForm({
           <form onSubmit={handleSubmit} className={compact ? "space-y-3" : "space-y-4"}>
             <div>
               <label htmlFor="name" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
-                Name *
+                Name
               </label>
               <input
                 type="text"
@@ -129,7 +129,7 @@ export default function ContactForm({
 
             <div>
               <label htmlFor="phone" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
-                Phone *
+                Phone
               </label>
               <input
                 type="tel"
@@ -144,7 +144,7 @@ export default function ContactForm({
 
             <div>
               <label htmlFor="email" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
-                Email *
+                Email
               </label>
               <input
                 type="email"
@@ -178,7 +178,7 @@ export default function ContactForm({
 
             <div>
               <label htmlFor="message" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
-                Message About Service Type *
+                Message About Service Type
               </label>
               <textarea
                 id="message"
