@@ -118,31 +118,35 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
             </div>
 
             {/* Pricing Information - Above Form */}
-            {service.toLowerCase().includes('exterior') && (
-              <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
-                <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
-                  <span className="line-through text-gray-500 mr-2">$15</span>
-                  <span className="text-green-600">$7.50</span> per window
-                </p>
-                <p className="text-sm md:text-base text-gray-700 font-semibold mb-1">
-                  What's Included:
-                </p>
-                <ul className="text-sm md:text-base text-gray-700 list-disc list-inside space-y-1">
-                  <li>Tracks & Sills</li>
-                  <li>Screen Cleaning</li>
-                  <li>Full Window</li>
-                </ul>
-              </div>
-            )}
-            {service.toLowerCase().includes('interior') && (
-              <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
-                <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
-                  <span className="line-through text-gray-500 mr-2">$10</span>
-                  <span className="text-green-600">$5</span> per window
-                </p>
-                <p className="text-sm md:text-base text-gray-700">
-                  Professional interior window cleaning service
-                </p>
+            {(service.toLowerCase().includes('exterior') || service.toLowerCase().includes('interior')) && (
+              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 mb-6 shadow-2xl relative z-10">
+                {service.toLowerCase().includes('exterior') && (
+                  <>
+                    <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                      <span className="line-through text-gray-500 mr-3 text-lg">$15</span>
+                      <span className="text-green-600 text-2xl">$7.50</span> per window
+                    </p>
+                    <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                      What's Included:
+                    </p>
+                    <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1 mb-0">
+                      <li>Tracks & Sills</li>
+                      <li>Screen Cleaning</li>
+                      <li>Full Window</li>
+                    </ul>
+                  </>
+                )}
+                {service.toLowerCase().includes('interior') && (
+                  <>
+                    <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                      <span className="line-through text-gray-500 mr-3 text-lg">$10</span>
+                      <span className="text-green-600 text-2xl">$5</span> per window
+                    </p>
+                    <p className="text-base md:text-lg text-gray-700">
+                      Professional interior window cleaning service
+                    </p>
+                  </>
+                )}
               </div>
             )}
 
