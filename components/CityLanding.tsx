@@ -27,7 +27,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
-    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-16 md:pb-20">
+    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-16 pb-12 md:pt-16 md:pb-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -45,9 +45,9 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-2 md:pt-6">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-6">
         {/* Logo */}
-        <div className="flex justify-center mb-2 md:mb-6">
+        <div className="flex justify-center mb-1 md:mb-6">
           <img 
             src="/AZWPlogo-Photoroom.png" 
             alt={BUSINESS_INFO.name}
