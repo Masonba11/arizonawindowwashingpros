@@ -109,18 +109,18 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               </p>
             </div>
 
-            {/* Pricing Information - Above Form */}
-            <div className="space-y-4 mb-6">
+            {/* Pricing Information - Above Form (Mobile) */}
+            <div className="md:hidden space-y-4 mb-6">
               {/* Exterior Pricing */}
               <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                  <span className="line-through text-gray-500 mr-3 text-lg">$15</span>
-                  <span className="text-green-600 text-2xl">$7.50</span> per window - Exterior
+                  <span className="line-through text-gray-500 mr-2">$15</span>
+                  <span className="text-green-600">$7.50</span> per window - Exterior
                 </p>
                 <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
                   What's Included:
                 </p>
-                <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1 mb-0">
+                <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
                   <li>Tracks & Sills</li>
                   <li>Screen Cleaning</li>
                   <li>Full Window</li>
@@ -129,8 +129,8 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               {/* Interior Pricing */}
               <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                  <span className="line-through text-gray-500 mr-3 text-lg">$10</span>
-                  <span className="text-green-600 text-2xl">$5</span> per window - Interior
+                  <span className="line-through text-gray-500 mr-2">$10</span>
+                  <span className="text-green-600">$5</span> per window - Interior
                 </p>
                 <p className="text-base md:text-lg text-gray-700">
                   Professional interior window cleaning service
@@ -173,6 +173,37 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                 >
                   Call Us Now
                 </a>
+              </div>
+              
+              {/* Pricing Information - Desktop (Right Side) */}
+              <div className="hidden md:block mt-6 w-full">
+                <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
+                  {/* Exterior Pricing */}
+                  <div className="mb-4">
+                    <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                      <span className="line-through text-gray-500 mr-2">$15</span>
+                      <span className="text-green-600">$7.50</span> per window - Exterior
+                    </p>
+                    <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                      What's Included:
+                    </p>
+                    <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
+                      <li>Tracks & Sills</li>
+                      <li>Screen Cleaning</li>
+                      <li>Full Window</li>
+                    </ul>
+                  </div>
+                  {/* Interior Pricing */}
+                  <div className="border-t-2 border-gray-200 pt-4">
+                    <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                      <span className="line-through text-gray-500 mr-2">$10</span>
+                      <span className="text-green-600">$5</span> per window - Interior
+                    </p>
+                    <p className="text-base md:text-lg text-gray-700">
+                      Professional interior window cleaning service
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
