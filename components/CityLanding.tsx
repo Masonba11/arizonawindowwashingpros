@@ -109,6 +109,35 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               </p>
             </div>
 
+            {/* Pricing Information - Above Form */}
+            <div className="space-y-4 mb-6">
+              {/* Exterior Pricing */}
+              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
+                <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                  <span className="line-through text-gray-500 mr-3 text-lg">$15</span>
+                  <span className="text-green-600 text-2xl">$7.50</span> per window - Exterior
+                </p>
+                <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                  What's Included:
+                </p>
+                <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1 mb-0">
+                  <li>Tracks & Sills</li>
+                  <li>Screen Cleaning</li>
+                  <li>Full Window</li>
+                </ul>
+              </div>
+              {/* Interior Pricing */}
+              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
+                <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                  <span className="line-through text-gray-500 mr-3 text-lg">$10</span>
+                  <span className="text-green-600 text-2xl">$5</span> per window - Interior
+                </p>
+                <p className="text-base md:text-lg text-gray-700">
+                  Professional interior window cleaning service
+                </p>
+              </div>
+            </div>
+
             {/* Form - Desktop */}
             <div id="quote-form" className="hidden md:block">
               <ContactForm defaultCity={city} showTitle={false} compact={true} />
