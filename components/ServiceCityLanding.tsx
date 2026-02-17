@@ -112,38 +112,39 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                   <span className="font-semibold text-sm md:text-base drop-shadow-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>Free In Person Quotes</span>
                 </div>
               </div>
-              {/* Pricing Information */}
-              {service.toLowerCase().includes('exterior') && (
-                <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
-                  <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
-                    <span className="line-through text-gray-500 mr-2">$15</span>
-                    <span className="text-green-600">$7.50</span> per window
-                  </p>
-                  <p className="text-sm md:text-base text-gray-700 font-semibold mb-1">
-                    What's Included:
-                  </p>
-                  <ul className="text-sm md:text-base text-gray-700 list-disc list-inside space-y-1">
-                    <li>Tracks & Sills</li>
-                    <li>Screen Cleaning</li>
-                    <li>Full Window</li>
-                  </ul>
-                </div>
-              )}
-              {service.toLowerCase().includes('interior') && (
-                <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
-                  <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
-                    <span className="line-through text-gray-500 mr-2">$10</span>
-                    <span className="text-green-600">$5</span> per window
-                  </p>
-                  <p className="text-sm md:text-base text-gray-700">
-                    Professional interior window cleaning service
-                  </p>
-                </div>
-              )}
               <p className="text-base md:text-lg text-white/95 drop-shadow-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
                 Professional {service.toLowerCase()} services in {city}.
               </p>
             </div>
+
+            {/* Pricing Information - Above Form */}
+            {service.toLowerCase().includes('exterior') && (
+              <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
+                <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                  <span className="line-through text-gray-500 mr-2">$15</span>
+                  <span className="text-green-600">$7.50</span> per window
+                </p>
+                <p className="text-sm md:text-base text-gray-700 font-semibold mb-1">
+                  What's Included:
+                </p>
+                <ul className="text-sm md:text-base text-gray-700 list-disc list-inside space-y-1">
+                  <li>Tracks & Sills</li>
+                  <li>Screen Cleaning</li>
+                  <li>Full Window</li>
+                </ul>
+              </div>
+            )}
+            {service.toLowerCase().includes('interior') && (
+              <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
+                <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                  <span className="line-through text-gray-500 mr-2">$10</span>
+                  <span className="text-green-600">$5</span> per window
+                </p>
+                <p className="text-sm md:text-base text-gray-700">
+                  Professional interior window cleaning service
+                </p>
+              </div>
+            )}
 
             {/* Form - Desktop */}
             <div id="quote-form" className="hidden md:block">
