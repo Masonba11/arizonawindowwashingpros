@@ -34,6 +34,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
       'Mesa': 'Mesa, Arizona',
       'Tempe': 'Tempe, Arizona',
       'Queen Creek': 'Queen Creek, Arizona',
+      'San Tan Valley': 'San Tan Valley, Arizona',
     }
     return cityHeadings[city] || city
   }
@@ -74,10 +75,10 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
           <div className="space-y-6">
             {/* Heading */}
             <div>
-              {/* $100 OFF Badge */}
+              {/* 50% OFF Badge */}
               <div className="inline-block mb-2 md:mb-4">
                 <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
-                  $100 OFF Your First Service Limited Availability
+                  50% off your first cleaning service
                 </span>
               </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
@@ -96,6 +97,21 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
               <p className="text-lg md:text-xl text-white mb-2 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
                 100s of Arizona Homeowners Served
               </p>
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap gap-3 md:gap-4 mb-3">
+                <div className="flex items-center gap-2 text-white">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-semibold text-sm md:text-base drop-shadow-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>Licensed & Insured</span>
+                </div>
+                <div className="flex items-center gap-2 text-white">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-semibold text-sm md:text-base drop-shadow-lg" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>Free In Person Quotes</span>
+                </div>
+              </div>
               {/* Pricing Information */}
               {service.toLowerCase().includes('exterior') && (
                 <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
@@ -346,7 +362,7 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
             Ready for Professional {service} in {city}?
           </h2>
           <p className="text-xl mb-8">
-            $100 OFF Your First Service Limited Availability
+            50% off your first cleaning service
           </p>
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
