@@ -116,17 +116,24 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
               {service.toLowerCase().includes('exterior') && (
                 <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
                   <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
-                    3-in-1 Package Deal: $15
+                    <span className="line-through text-gray-500 mr-2">$15</span>
+                    <span className="text-green-600">$7.50</span> per window
                   </p>
-                  <p className="text-sm md:text-base text-gray-700">
-                    Includes: Window Cleaning + Tracks & Sills + Screen Cleaning
+                  <p className="text-sm md:text-base text-gray-700 font-semibold mb-1">
+                    What's Included:
                   </p>
+                  <ul className="text-sm md:text-base text-gray-700 list-disc list-inside space-y-1">
+                    <li>Tracks & Sills</li>
+                    <li>Screen Cleaning</li>
+                    <li>Full Window</li>
+                  </ul>
                 </div>
               )}
               {service.toLowerCase().includes('interior') && (
                 <div className="bg-white/95 border-2 border-yellow-400 rounded-lg p-4 mb-4 shadow-xl">
                   <p className="text-lg md:text-xl font-bold text-gray-900 mb-2">
-                    Interior Window Cleaning: $10
+                    <span className="line-through text-gray-500 mr-2">$10</span>
+                    <span className="text-green-600">$5</span> per window
                   </p>
                   <p className="text-sm md:text-base text-gray-700">
                     Professional interior window cleaning service
