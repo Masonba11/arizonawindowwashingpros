@@ -78,7 +78,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
               {/* 50% OFF Badge */}
               <div className="inline-block mb-2 md:mb-4">
                 <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
-                  50% off your first cleaning service
+                  50% off your whole cleaning service
                 </span>
               </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
@@ -380,7 +380,7 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
             Ready for Professional {service} in {city}?
           </h2>
           <p className="text-xl mb-8">
-            50% off your first cleaning service
+            50% off your whole cleaning service
           </p>
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
