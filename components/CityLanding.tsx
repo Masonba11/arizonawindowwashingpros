@@ -65,7 +65,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               {/* 50% OFF Badge */}
               <div className="inline-block mb-2 md:mb-4">
                 <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
-                  50% off your whole cleaning service
+                  20% off your whole cleaning service
                 </span>
               </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
@@ -121,7 +121,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
                   <span className="line-through text-gray-500 mr-2">$15</span>
-                  <span className="text-green-600">$7.50</span> per window - Exterior
+                  <span className="text-green-600">$12</span> per window - Exterior
                 </p>
                 <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
                   What's Included:
@@ -129,18 +129,22 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                 <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
                   <li>Tracks & Sills</li>
                   <li>Screen Cleaning</li>
-                  <li>Full Window</li>
+                  <li>Glass</li>
                 </ul>
               </div>
               {/* Interior Pricing */}
               <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
                   <span className="line-through text-gray-500 mr-2">$10</span>
-                  <span className="text-green-600">$5</span> per window - Interior
+                  <span className="text-green-600">$8</span> per window - Interior
                 </p>
-                <p className="text-base md:text-lg text-gray-700">
-                  Professional interior window cleaning service
+                <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                  What's Included:
                 </p>
+                <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
+                  <li>Tracks & Sills</li>
+                  <li>Glass</li>
+                </ul>
               </div>
             </div>
 
@@ -188,7 +192,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                   <div className="mb-4">
                     <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
                       <span className="line-through text-gray-500 mr-2">$15</span>
-                      <span className="text-green-600">$7.50</span> per window - Exterior
+                      <span className="text-green-600">$12</span> per window - Exterior
                     </p>
                     <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
                       What's Included:
@@ -196,18 +200,22 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                     <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
                       <li>Tracks & Sills</li>
                       <li>Screen Cleaning</li>
-                      <li>Full Window</li>
+                      <li>Glass</li>
                     </ul>
                   </div>
                   {/* Interior Pricing */}
                   <div className="border-t-2 border-gray-200 pt-4">
                     <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
                       <span className="line-through text-gray-500 mr-2">$10</span>
-                      <span className="text-green-600">$5</span> per window - Interior
+                      <span className="text-green-600">$8</span> per window - Interior
                     </p>
-                    <p className="text-base md:text-lg text-gray-700">
-                      Professional interior window cleaning service
+                    <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                      What's Included:
                     </p>
+                    <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
+                      <li>Tracks & Sills</li>
+                      <li>Glass</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -245,7 +253,7 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
         <div className="text-center mb-6 md:mb-8">
           <div className="inline-block mb-4 md:mb-6">
             <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
-              50% off your whole cleaning service
+              20% off your whole cleaning service
             </span>
           </div>
           
@@ -588,7 +596,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
             Ready for Streak-Free Windows in {city}?
           </h2>
           <p className="text-xl mb-8">
-            50% off your whole cleaning service
+            20% off your whole cleaning service
           </p>
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
