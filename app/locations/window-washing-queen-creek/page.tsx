@@ -11,7 +11,7 @@ import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Window Washing Queen Creek',
+  title: 'window cleaning Queen Creek',
   description: 'Professional exterior and interior window cleaning services in Queen Creek, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
   path: '/locations/window-washing-queen-creek',
 })
@@ -39,7 +39,7 @@ export default function WindowWashingQueenCreekPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://arizonawindowwashingpros.com' },
     { name: 'Locations', url: 'https://arizonawindowwashingpros.com/locations' },
-    { name: 'Window Washing Queen Creek', url: 'https://arizonawindowwashingpros.com/locations/window-washing-queen-creek' },
+    { name: 'window cleaning Queen Creek', url: 'https://arizonawindowwashingpros.com/locations/window-washing-queen-creek' },
   ])
 
   return (
@@ -49,8 +49,8 @@ export default function WindowWashingQueenCreekPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <HeroVideo
-        title="Window Washing Queen Creek"
-        subtitle="Top-rated window washing in Queen Creek, Arizona"
+        title="window cleaning Queen Creek"
+        subtitle="Top-rated window cleaning in Queen Creek, Arizona"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -75,10 +75,10 @@ export default function WindowWashingQueenCreekPage() {
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-6">
-              Looking for professional window washing Queen Creek services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for Queen Creek homeowners and businesses.
+              Looking for professional window cleaning Queen Creek services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for Queen Creek homeowners and businesses.
             </p>
 
-            <h2 className="text-2xl font-bold mb-4">What&apos;s Included in Our Window Washing Queen Creek Service</h2>
+            <h2 className="text-2xl font-bold mb-4">What&apos;s Included in Our window cleaning Queen Creek Service</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
               <li>Complete exterior window cleaning (all accessible windows)</li>
               <li>Interior window cleaning (optional)</li>
@@ -88,7 +88,7 @@ export default function WindowWashingQueenCreekPage() {
               <li>Streak-free finish guarantee</li>
             </ul>
 
-            <h2 className="text-2xl font-bold mb-4">Why Choose Us for Window Washing Queen Creek?</h2>
+            <h2 className="text-2xl font-bold mb-4">Why Choose Us for window cleaning Queen Creek?</h2>
             <p className="text-gray-700 mb-4">
               Queen Creek&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Queen Creek and knows exactly how to handle these conditions.
             </p>
@@ -96,9 +96,9 @@ export default function WindowWashingQueenCreekPage() {
               We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Queen Creek home&apos;s windows are spotless and streak-free. Our local team understands Queen Creek neighborhoods and works efficiently to minimize disruption to your day.
             </p>
 
-            <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Window Washing Queen Creek</h2>
+            <h2 className="text-2xl font-bold mb-4">Pricing Guidance for window cleaning Queen Creek</h2>
             <p className="text-gray-700 mb-4">
-              Window washing prices in Queen Creek typically range from:
+              window cleaning prices in Queen Creek typically range from:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
               <li>Small homes (10-15 windows): $150-$250</li>
@@ -151,7 +151,7 @@ export default function WindowWashingQueenCreekPage() {
       <section className="bg-gray-50 section-padding">
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Top-Rated Window Washing in Queen Creek, Arizona</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Top-Rated window cleaning in Queen Creek, Arizona</h2>
             <p className="text-xl text-gray-700 mb-6">
               Queen Creek is one of Arizona&apos;s fastest-growing communities, and we&apos;re proud to serve this vibrant area. From established neighborhoods to new developments in San Tan Valley, we bring professional window cleaning expertise to every Queen Creek home.
             </p>
@@ -163,7 +163,7 @@ export default function WindowWashingQueenCreekPage() {
               As Queen Creek continues to grow, we&apos;re committed to being the trusted window cleaning service for this community. We understand the pride Queen Creek residents take in their homes and work hard to help maintain that beautiful appearance.
             </p>
             <p className="text-gray-700">
-              Whether you&apos;re in the heart of Queen Creek or in the surrounding San Tan Valley area, you can count on Arizona Window Washing Pros for reliable, professional service. We&apos;re your local window cleaning experts, dedicated to helping Queen Creek homeowners enjoy crystal-clear windows year-round.
+              Whether you&apos;re in the heart of Queen Creek or in the surrounding San Tan Valley area, you can count on Arizona window cleaning Pros for reliable, professional service. We&apos;re your local window cleaning experts, dedicated to helping Queen Creek homeowners enjoy crystal-clear windows year-round.
             </p>
           </div>
         </div>
@@ -183,7 +183,7 @@ export default function WindowWashingQueenCreekPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona Window Washing Pros - Video 1"
+                title="Arizona window cleaning Pros - Video 1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
@@ -192,7 +192,7 @@ export default function WindowWashingQueenCreekPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona Window Washing Pros - Video 2"
+                title="Arizona window cleaning Pros - Video 2"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

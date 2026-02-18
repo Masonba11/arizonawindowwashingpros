@@ -35,7 +35,7 @@ export async function POST(request: Request) {
       params.append('address', address || '')
       params.append('message', `Service Type: ${type}\nAddress: ${address}\nCity: ${city || 'Not specified'}\nSource: ${source || 'Landing Page'}\n\nMessage: ${message || 'No additional message'}`)
       params.append('subject', `New Lead: ${type} Window Cleaning - ${city || 'Unknown City'}`)
-      params.append('from_name', 'Arizona Window Washing Pros')
+      params.append('from_name', 'Arizona Window Cleaning Pros')
       
       console.log('=== Submitting to Web3Forms ===')
       

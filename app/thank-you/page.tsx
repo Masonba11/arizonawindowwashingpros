@@ -5,7 +5,7 @@ import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'Thank You',
-  description: 'Thank you for contacting Arizona Window Washing Pros. We\'ll be in touch soon!',
+  description: 'Thank you for contacting Arizona window cleaning Pros. We\'ll be in touch soon!',
   path: '/thank-you',
 })
 

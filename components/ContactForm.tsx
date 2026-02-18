@@ -44,7 +44,7 @@ export default function ContactForm({
       params.append('service', formData.message || 'Not specified')
       params.append('message', formData.message || '')
       params.append('subject', `New Contact Form Submission from ${formData.name}`)
-      params.append('from_name', 'Arizona Window Washing Pros Website')
+      params.append('from_name', 'Arizona Window Cleaning Pros Website')
 
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',

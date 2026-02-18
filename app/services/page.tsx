@@ -10,7 +10,7 @@ import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Window Washing Services',
+  title: 'window cleaning Services',
   description: 'Professional exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Screen cleaning available as add-on. Starting at $150.',
   path: '/services',
 })
@@ -61,7 +61,7 @@ export default function ServicesPage() {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Comprehensive Window Cleaning Solutions</h2>
             <p className="text-xl text-gray-700 mb-6">
-              At Arizona Window Washing Pros, we offer professional exterior and interior window cleaning services designed to meet your needs. Exterior window cleaning is our most popular service, starting at $150. We also offer interior window cleaning as an optional add-on, plus screen cleaning.
+              At Arizona window cleaning Pros, we offer professional exterior and interior window cleaning services designed to meet your needs. Exterior window cleaning is our most popular service, starting at $150. We also offer interior window cleaning as an optional add-on, plus screen cleaning.
             </p>
             <p className="text-gray-700 mb-6">
               Our services are tailored to Arizona&apos;s unique climate and conditions. We understand the challenges that desert living presents for window maintenance, from dust storms to intense sun. That&apos;s why we use professional-grade equipment and proven techniques to deliver results that last.

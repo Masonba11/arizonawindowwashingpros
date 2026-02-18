@@ -3,8 +3,8 @@ import CityLanding from '@/components/CityLanding'
 import { BUSINESS_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'San Tan Valley Window Washing | $100 OFF | Arizona Window Washing Pros',
-  description: 'Professional window washing in San Tan Valley, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
+  title: 'San Tan Valley window cleaning | $100 OFF | Arizona window cleaning Pros',
+  description: 'Professional window cleaning in San Tan Valley, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
   alternates: {
     canonical: '/san-tan-valley-window-washing',
   },
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: 'How much does window washing cost in San Tan Valley?',
-    answer: 'Window washing prices in San Tan Valley start at $150 for 1-story homes and $180 for 2-story homes. Most San Tan Valley homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
+    question: 'How much does window cleaning cost in San Tan Valley?',
+    answer: 'window cleaning prices in San Tan Valley start at $150 for 1-story homes and $180 for 2-story homes. Most San Tan Valley homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
   },
   {
     question: 'Do you clean screens in San Tan Valley?',
@@ -55,12 +55,12 @@ const schema = {
     name: 'San Tan Valley',
     addressRegion: 'AZ',
   },
-  serviceType: 'Window Washing',
+  serviceType: 'window cleaning',
   url: `${BUSINESS_INFO.website}/san-tan-valley-window-washing`,
   '@graph': [
     {
       '@type': 'Service',
-      serviceType: 'Window Washing',
+      serviceType: 'window cleaning',
       areaServed: {
         '@type': 'City',
         name: 'San Tan Valley',

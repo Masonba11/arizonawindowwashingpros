@@ -3,8 +3,8 @@ import CityLanding from '@/components/CityLanding'
 import { BUSINESS_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Gilbert Window Washing | $100 OFF | Arizona Window Washing Pros',
-  description: 'Professional window washing in Gilbert, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
+  title: 'Gilbert Window Cleaning | $100 OFF | Arizona Window Cleaning Pros',
+  description: 'Professional window cleaning in Gilbert, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
   alternates: {
     canonical: '/gilbert-window-washing',
   },
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: 'How much does window washing cost in Gilbert?',
-    answer: 'Window washing prices in Gilbert start at $150 for 1-story homes and $180 for 2-story homes. Most Gilbert homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
+    question: 'How much does window cleaning cost in Gilbert?',
+    answer: 'window cleaning prices in Gilbert start at $150 for 1-story homes and $180 for 2-story homes. Most Gilbert homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
   },
   {
     question: 'Do you clean screens in Gilbert?',
@@ -55,12 +55,12 @@ const schema = {
     name: 'Gilbert',
     addressRegion: 'AZ',
   },
-  serviceType: 'Window Washing',
+  serviceType: 'Window Cleaning',
   url: `${BUSINESS_INFO.website}/gilbert-window-washing`,
   '@graph': [
     {
       '@type': 'Service',
-      serviceType: 'Window Washing',
+      serviceType: 'Window Cleaning',
       areaServed: {
         '@type': 'City',
         name: 'Gilbert',

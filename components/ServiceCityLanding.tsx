@@ -344,12 +344,12 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <LazyYouTube
               videoId="TpGGKeABfCI"
-              title="Arizona Window Washing Pros - Video 1"
+              title="Arizona Window Cleaning Pros - Video 1"
               className="max-w-md mx-auto"
             />
             <LazyYouTube
               videoId="GdNlH8GPhL0"
-              title="Arizona Window Washing Pros - Video 2"
+              title="Arizona Window Cleaning Pros - Video 2"
               className="max-w-md mx-auto"
             />
           </div>

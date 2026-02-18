@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
       params.append('service', service || 'Not specified')
       params.append('message', message || '')
       params.append('subject', `New Contact Form Submission from ${name}`)
-      params.append('from_name', 'Arizona Window Washing Pros Website')
+      params.append('from_name', 'Arizona Window Cleaning Pros Website')
 
       console.log('=== Submitting to Web3Forms ===')
       console.log('Access key:', FORM_ACCESS_KEY.substring(0, 8) + '...')

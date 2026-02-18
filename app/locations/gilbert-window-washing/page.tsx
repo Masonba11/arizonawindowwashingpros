@@ -12,7 +12,7 @@ import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Gilbert Window Washing',
+  title: 'Gilbert window cleaning',
   description: 'Professional exterior and interior window cleaning services in Gilbert, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
   path: '/locations/gilbert-window-washing',
 })
@@ -40,7 +40,7 @@ export default function GilbertWindowWashingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://arizonawindowwashingpros.com' },
     { name: 'Locations', url: 'https://arizonawindowwashingpros.com/locations' },
-    { name: 'Gilbert Window Washing', url: 'https://arizonawindowwashingpros.com/locations/gilbert-window-washing' },
+    { name: 'Gilbert window cleaning', url: 'https://arizonawindowwashingpros.com/locations/gilbert-window-washing' },
   ])
 
   return (
@@ -50,7 +50,7 @@ export default function GilbertWindowWashingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <HeroVideo
-        title="Gilbert Window Washing"
+        title="Gilbert window cleaning"
         subtitle="Expert window cleaning in Gilbert, Arizona"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -76,10 +76,10 @@ export default function GilbertWindowWashingPage() {
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-6">
-              Looking for professional Gilbert window washing services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for Gilbert homeowners and businesses.
+              Looking for professional Gilbert window cleaning services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for Gilbert homeowners and businesses.
             </p>
 
-            <h2 className="text-2xl font-bold mb-4">What&apos;s Included in Our Gilbert Window Washing Service</h2>
+            <h2 className="text-2xl font-bold mb-4">What&apos;s Included in Our Gilbert window cleaning Service</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
               <li>Complete exterior window cleaning (all accessible windows)</li>
               <li>Interior window cleaning (optional)</li>
@@ -89,7 +89,7 @@ export default function GilbertWindowWashingPage() {
               <li>Streak-free finish guarantee</li>
             </ul>
 
-            <h2 className="text-2xl font-bold mb-4">Why Choose Us for Gilbert Window Washing?</h2>
+            <h2 className="text-2xl font-bold mb-4">Why Choose Us for Gilbert window cleaning?</h2>
             <p className="text-gray-700 mb-4">
               Gilbert&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Gilbert and knows exactly how to handle these conditions.
             </p>
@@ -107,9 +107,9 @@ export default function GilbertWindowWashingPage() {
       <section className="section-padding bg-white">
         <div className="container-custom max-w-5xl">
           <div className="content-section">
-            <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Gilbert Window Washing</h2>
+            <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Gilbert window cleaning</h2>
             <p className="text-gray-700 mb-4">
-              Window washing prices in Gilbert typically range from:
+              window cleaning prices in Gilbert typically range from:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
               <li>Small homes (10-15 windows): $150-$250</li>
@@ -162,7 +162,7 @@ export default function GilbertWindowWashingPage() {
       <section className="bg-gray-50 section-padding">
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Expert Window Washing in Gilbert, Arizona</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Expert window cleaning in Gilbert, Arizona</h2>
             <p className="text-xl text-gray-700 mb-6">
               Gilbert homeowners appreciate the value of professional window cleaning, especially in Arizona&apos;s challenging climate. With Gilbert&apos;s rapid growth and diverse neighborhoods, from downtown to Val Vista and Higley, we bring professional window cleaning expertise to every corner of the community.
             </p>
@@ -194,7 +194,7 @@ export default function GilbertWindowWashingPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona Window Washing Pros - Video 1"
+                title="Arizona window cleaning Pros - Video 1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
@@ -203,7 +203,7 @@ export default function GilbertWindowWashingPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona Window Washing Pros - Video 2"
+                title="Arizona window cleaning Pros - Video 2"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

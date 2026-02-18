@@ -3,7 +3,7 @@ import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Arizona Window Washing Pros. Learn how we collect, use, and protect your personal information.',
+  description: 'Privacy Policy for Arizona window cleaning Pros. Learn how we collect, use, and protect your personal information.',
 })
 
 export default function PrivacyPolicyPage() {

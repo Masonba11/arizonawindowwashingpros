@@ -11,7 +11,7 @@ import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'Contact Us',
-  description: `Contact ${BUSINESS_INFO.name} for professional window washing services in Mesa, Gilbert, Queen Creek, and Chandler. Call ${BUSINESS_INFO.phone} or request a free quote.`,
+  description: `Contact ${BUSINESS_INFO.name} for professional window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler. Call ${BUSINESS_INFO.phone} or request a free quote.`,
   path: '/contact',
 })
 
@@ -21,7 +21,7 @@ export default function ContactPage() {
       {/* Hero */}
       <HeroVideo
         title="Contact Us"
-        subtitle="Get in touch for a free quote on professional window washing services"
+        subtitle="Get in touch for a free quote on professional window cleaning services"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

@@ -3,8 +3,8 @@ import CityLanding from '@/components/CityLanding'
 import { BUSINESS_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Queen Creek Window Washing | $100 OFF | Arizona Window Washing Pros',
-  description: 'Professional window washing in Queen Creek, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
+  title: 'Queen Creek window cleaning | $100 OFF | Arizona window cleaning Pros',
+  description: 'Professional window cleaning in Queen Creek, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
   alternates: {
     canonical: '/queen-creek-window-washing',
   },
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: 'How much does window washing cost in Queen Creek?',
-    answer: 'Window washing prices in Queen Creek start at $150 for 1-story homes and $180 for 2-story homes. Most Queen Creek homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
+    question: 'How much does window cleaning cost in Queen Creek?',
+    answer: 'window cleaning prices in Queen Creek start at $150 for 1-story homes and $180 for 2-story homes. Most Queen Creek homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
   },
   {
     question: 'Do you clean screens in Queen Creek?',
@@ -55,12 +55,12 @@ const schema = {
     name: 'Queen Creek',
     addressRegion: 'AZ',
   },
-  serviceType: 'Window Washing',
+  serviceType: 'window cleaning',
   url: `${BUSINESS_INFO.website}/queen-creek-window-washing`,
   '@graph': [
     {
       '@type': 'Service',
-      serviceType: 'Window Washing',
+      serviceType: 'window cleaning',
       areaServed: {
         '@type': 'City',
         name: 'Queen Creek',

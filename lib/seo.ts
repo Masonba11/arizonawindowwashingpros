@@ -30,7 +30,7 @@ export function generateLocalBusinessSchema() {
     '@type': 'LocalBusiness',
     '@id': `${BUSINESS_INFO.website}#organization`,
     name: BUSINESS_INFO.name,
-    alternateName: 'Arizona Window Washing Pros',
+    alternateName: 'Arizona Window Cleaning Pros',
     description: 'Professional exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Expert window cleaning and screen cleaning.',
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,
@@ -128,7 +128,7 @@ export function generateLocalBusinessSchema() {
     },
     knowsAbout: [
       'Window Cleaning',
-      'Exterior Window Washing',
+      'Exterior Window Cleaning',
       'Interior Window Cleaning',
       'Screen Cleaning',
       'Residential Window Cleaning',

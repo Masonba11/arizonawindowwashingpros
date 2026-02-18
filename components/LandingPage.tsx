@@ -45,7 +45,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
       params.append('address', formData.address)
       params.append('message', `Service Type: ${formData.type}\nAddress: ${formData.address}\nCity: ${city}\nSource: google_ads_landing\n\nMessage: ${formData.message || 'No additional message'}`)
       params.append('subject', `New Lead: ${formData.type} Window Cleaning - ${city}`)
-      params.append('from_name', 'Arizona Window Washing Pros')
+      params.append('from_name', 'Arizona Window Cleaning Pros')
 
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -85,7 +85,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
       <section className="bg-gradient-to-br from-blue-50 to-white py-16 md:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-            {city} Window Washing
+            {city} Window Cleaning
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-8">
             Professional window cleaning services for homes and businesses

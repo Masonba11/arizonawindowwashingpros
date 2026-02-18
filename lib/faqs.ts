@@ -5,8 +5,8 @@ export interface FAQ {
 
 export const generalFAQs: FAQ[] = [
   {
-    question: 'How much does window washing cost?',
-    answer: 'Window washing prices vary based on the number of windows, property size, accessibility, and specific services needed. Most homes range from $150-$400 for a complete exterior cleaning. We offer free, no-obligation quotes tailored to your specific needs. Contact us today for an accurate estimate.',
+    question: 'How much does window cleaning cost?',
+    answer: 'Window cleaning prices vary based on the number of windows, property size, accessibility, and specific services needed. Most homes range from $150-$400 for a complete exterior cleaning. We offer free, no-obligation quotes tailored to your specific needs. Contact us today for an accurate estimate.',
   },
   {
     question: 'How often should I have my windows cleaned?',

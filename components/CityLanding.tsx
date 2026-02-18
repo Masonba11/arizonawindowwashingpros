@@ -69,12 +69,12 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                 </span>
               </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-                {city === 'Gilbert' ? 'Gilbert, Arizona | Window Washing' : 
-                 city === 'Chandler' ? 'Chandler, Arizona | Window Washing' : 
-                 city === 'Scottsdale' ? 'Scottsdale, Arizona | Window Washing' : 
-                 city === 'Queen Creek' ? 'Queen Creek, Arizona | Window Washing' : 
-                 city === 'San Tan Valley' ? 'San Tan Valley, Arizona | Window Washing' : 
-                 `${city} Window Washing`}
+                {city === 'Gilbert' ? 'Gilbert, Arizona | Window Cleaning' : 
+                 city === 'Chandler' ? 'Chandler, Arizona | Window Cleaning' : 
+                 city === 'Scottsdale' ? 'Scottsdale, Arizona | Window Cleaning' : 
+                 city === 'Queen Creek' ? 'Queen Creek, Arizona | Window Cleaning' : 
+                 city === 'San Tan Valley' ? 'San Tan Valley, Arizona | Window Cleaning' : 
+                 `${city} Window Cleaning`}
               </h1>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex text-yellow-400">
@@ -250,7 +250,7 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
           </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-            {city} Window Washing
+            {city} Window Cleaning
           </h1>
           
           <p className="text-lg md:text-2xl text-white mb-4 md:mb-8 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
@@ -405,7 +405,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            Why Choose Us for {city} Window Washing?
+            Why Choose Us for {city} Window Cleaning?
           </h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="flex items-start gap-4">
@@ -504,12 +504,12 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <LazyYouTube
               videoId="TpGGKeABfCI"
-              title="Arizona Window Washing Pros - Video 1"
+              title="Arizona Window Cleaning Pros - Video 1"
               className="max-w-md mx-auto"
             />
             <LazyYouTube
               videoId="GdNlH8GPhL0"
-              title="Arizona Window Washing Pros - Video 2"
+              title="Arizona Window Cleaning Pros - Video 2"
               className="max-w-md mx-auto"
             />
           </div>
@@ -520,7 +520,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            Our {city} Window Washing Services
+            Our {city} Window Cleaning Services
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -528,7 +528,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
               { name: 'Interior Window Cleaning', desc: 'Optional add-on for interior glass cleaning' },
               { name: 'Screen Cleaning', desc: 'Thorough screen cleaning to remove dust and debris' },
               { name: 'Tracks & Sills', desc: 'Deep cleaning of window tracks and sills' },
-              { name: 'Commercial Window Washing', desc: 'Professional service for businesses and offices' },
+              { name: 'Commercial Window Cleaning', desc: 'Professional service for businesses and offices' },
               { name: 'Hard Water Spot Evaluation', desc: 'Assessment and removal of hard water deposits' },
             ].map((service, index) => (
               <div key={index} className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors">

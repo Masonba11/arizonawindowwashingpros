@@ -3,7 +3,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 
 export const metadata = generateMetadata({
   title: 'SMS Communication Opt-In',
-  description: 'SMS opt-in information for Arizona Window Washing Pros. Learn how to opt in to receive text messages for service-related communication.',
+  description: 'SMS opt-in information for Arizona window cleaning Pros. Learn how to opt in to receive text messages for service-related communication.',
   path: '/opt-in',
 })
 

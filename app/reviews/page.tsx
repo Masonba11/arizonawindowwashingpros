@@ -10,7 +10,7 @@ import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'Customer Reviews',
-  description: `Read reviews from satisfied customers of ${BUSINESS_INFO.name}. See why homeowners in Mesa, Gilbert, Queen Creek, and Chandler trust us for window washing.`,
+  description: `Read reviews from satisfied customers of ${BUSINESS_INFO.name}. See why homeowners in Mesa, Gilbert, Queen Creek, and Chandler trust us for window cleaning.`,
   path: '/reviews',
 })
 
@@ -23,7 +23,7 @@ export default function ReviewsPage() {
       {/* Hero */}
       <HeroVideo
         title="Customer Reviews"
-        subtitle="See what our customers are saying about our window washing services"
+        subtitle="See what our customers are saying about our window cleaning services"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -82,7 +82,7 @@ export default function ReviewsPage() {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Why Our Customers Love Us</h2>
             <p className="text-xl text-gray-700 mb-6">
-              Don&apos;t just take our word for it. Hear from homeowners throughout Mesa, Gilbert, Queen Creek, and Chandler who have experienced the Arizona Window Washing Pros difference. Our commitment to excellence shows in every review we receive.
+              Don&apos;t just take our word for it. Hear from homeowners throughout Mesa, Gilbert, Queen Creek, and Chandler who have experienced the Arizona window cleaning Pros difference. Our commitment to excellence shows in every review we receive.
             </p>
             <p className="text-gray-700 mb-6">
               We&apos;re proud to maintain a 5-star rating across all review platforms. Our customers consistently praise our professionalism, attention to detail, fair pricing, and the exceptional results we deliver. These reviews reflect our dedication to providing the best window cleaning service in the East Valley.

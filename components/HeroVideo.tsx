@@ -51,7 +51,7 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
           {/* Fallback image if video doesn't load */}
           <Image
             src="/hero-image-optimized.jpg"
-            alt="Arizona Window Washing Pros"
+            alt="Arizona Window Cleaning Pros"
             fill
             className="object-cover"
             priority

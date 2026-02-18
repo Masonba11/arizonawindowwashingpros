@@ -3,8 +3,8 @@ import CityLanding from '@/components/CityLanding'
 import { BUSINESS_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Scottsdale Window Washing | $100 OFF | Arizona Window Washing Pros',
-  description: 'Professional window washing in Scottsdale, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
+  title: 'Scottsdale window cleaning | $100 OFF | Arizona window cleaning Pros',
+  description: 'Professional window cleaning in Scottsdale, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
   alternates: {
     canonical: '/scottsdale-window-washing',
   },
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: 'How much does window washing cost in Scottsdale?',
-    answer: 'Window washing prices in Scottsdale typically range from $150-$500+ depending on home size, number of windows, and services requested. We provide free, same-day estimates. Contact us for your personalized quote.',
+    question: 'How much does window cleaning cost in Scottsdale?',
+    answer: 'window cleaning prices in Scottsdale typically range from $150-$500+ depending on home size, number of windows, and services requested. We provide free, same-day estimates. Contact us for your personalized quote.',
   },
   {
     question: 'Do you clean screens in Scottsdale?',
@@ -55,12 +55,12 @@ const schema = {
     name: 'Scottsdale',
     addressRegion: 'AZ',
   },
-  serviceType: 'Window Washing',
+  serviceType: 'window cleaning',
   url: `${BUSINESS_INFO.website}/scottsdale-window-washing`,
   '@graph': [
     {
       '@type': 'Service',
-      serviceType: 'Window Washing',
+      serviceType: 'window cleaning',
       areaServed: {
         '@type': 'City',
         name: 'Scottsdale',

@@ -4,7 +4,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 import { generateServiceCityFAQs } from '@/lib/serviceCityFAQs'
 
 export const metadata: Metadata = {
-  title: 'Track & Sill Cleaning in Tempe, AZ | $100 OFF | Arizona Window Washing Pros',
+  title: 'Track & Sill Cleaning in Tempe, AZ | $100 OFF | Arizona window cleaning Pros',
   description: 'Professional track and sill cleaning in Tempe, Arizona. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
   alternates: {
     canonical: '/track-sill-cleaning-tempe',

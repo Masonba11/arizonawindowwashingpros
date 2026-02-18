@@ -14,7 +14,7 @@ import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Professional Window Washing in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale',
+  title: 'Professional Window Cleaning in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale',
   description: `Expert exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Professional window cleaning and screen cleaning. Starting at $150. Free quotes available.`,
 })
 
@@ -23,7 +23,7 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <HeroVideo
-        title="Professional Window Washing Services"
+        title="Professional Window Cleaning Services"
         subtitle="Crystal-clear windows that make your home shine. Expert service you can trust."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -172,12 +172,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <LazyYouTube
               videoId="TpGGKeABfCI"
-              title="Arizona Window Washing Pros - Video 1"
+              title="Arizona Window Cleaning Pros - Video 1"
               className="max-w-md mx-auto"
             />
             <LazyYouTube
               videoId="GdNlH8GPhL0"
-              title="Arizona Window Washing Pros - Video 2"
+              title="Arizona Window Cleaning Pros - Video 2"
               className="max-w-md mx-auto"
             />
           </div>
@@ -189,7 +189,7 @@ export default function HomePage() {
         <div className="container-custom max-w-5xl">
           <div className="content-section">
             <div className="text-center mb-12">
-              <h2 className="section-title">Why Choose Arizona Window Washing Pros?</h2>
+              <h2 className="section-title">Why Choose Arizona Window Cleaning Pros?</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto mt-4 rounded-full"></div>
             </div>
             

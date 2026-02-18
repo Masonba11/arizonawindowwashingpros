@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Scottsdale Window Washing | $100 Off | Arizona Window Washing Pros',
+  title: 'Scottsdale window cleaning | $100 Off | Arizona window cleaning Pros',
 }
 
 export default function LandingPageLayout({

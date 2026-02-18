@@ -13,7 +13,7 @@ import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'San Tan Valley Window Washing',
+  title: 'San Tan Valley window cleaning',
   description: 'Professional exterior and interior window cleaning services in San Tan Valley, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
   path: '/locations/san-tan-valley-window-washing',
 })
@@ -42,7 +42,7 @@ export default function SanTanValleyWindowWashingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: 'https://arizonawindowwashingpros.com' },
     { name: 'Locations', url: 'https://arizonawindowwashingpros.com/locations' },
-    { name: 'San Tan Valley Window Washing', url: 'https://arizonawindowwashingpros.com/locations/san-tan-valley-window-washing' },
+    { name: 'San Tan Valley window cleaning', url: 'https://arizonawindowwashingpros.com/locations/san-tan-valley-window-washing' },
   ])
 
   return (
@@ -52,7 +52,7 @@ export default function SanTanValleyWindowWashingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <HeroVideo
-        title="San Tan Valley Window Washing"
+        title="San Tan Valley window cleaning"
         subtitle="Professional window cleaning services in San Tan Valley, Arizona"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -79,13 +79,13 @@ export default function SanTanValleyWindowWashingPage() {
         <div className="container-custom max-w-5xl">
           <div className="content-section">
             <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed text-center">
-              Looking for professional San Tan Valley window washing services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for San Tan Valley homeowners and businesses.
+              Looking for professional San Tan Valley window cleaning services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for San Tan Valley homeowners and businesses.
             </p>
           </div>
 
           {/* What's Included */}
           <div className="content-section">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s Included in Our San Tan Valley Window Washing Service</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s Included in Our San Tan Valley window cleaning Service</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 'Complete exterior window cleaning (all accessible windows)',
@@ -109,7 +109,7 @@ export default function SanTanValleyWindowWashingPage() {
 
           {/* Why Choose Us */}
           <div className="content-section">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Us for San Tan Valley Window Washing?</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Us for San Tan Valley window cleaning?</h2>
             <div className="space-y-6">
               <p className="text-gray-700 leading-relaxed text-lg">
                 San Tan Valley&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in San Tan Valley and knows exactly how to handle these conditions.
@@ -125,9 +125,9 @@ export default function SanTanValleyWindowWashingPage() {
 
           {/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing Guidance for San Tan Valley Window Washing</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing Guidance for San Tan Valley window cleaning</h2>
             <p className="text-gray-700 mb-6 text-lg">
-              Window washing prices in San Tan Valley typically range from:
+              window cleaning prices in San Tan Valley typically range from:
             </p>
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               {[
@@ -198,12 +198,12 @@ export default function SanTanValleyWindowWashingPage() {
         <div className="container-custom max-w-5xl">
           <div className="content-section">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Professional Window Washing in San Tan Valley, Arizona</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Professional window cleaning in San Tan Valley, Arizona</h2>
               <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
             </div>
             <div className="space-y-6">
               <p className="text-xl text-gray-700 leading-relaxed">
-                San Tan Valley homeowners know that maintaining clean windows in Arizona&apos;s desert climate requires specialized expertise. With intense sun, frequent dust storms, and hard water challenges, San Tan Valley windows need professional care to stay crystal clear. Arizona Window Washing Pros brings years of local experience to every San Tan Valley home we serve.
+                San Tan Valley homeowners know that maintaining clean windows in Arizona&apos;s desert climate requires specialized expertise. With intense sun, frequent dust storms, and hard water challenges, San Tan Valley windows need professional care to stay crystal clear. Arizona window cleaning Pros brings years of local experience to every San Tan Valley home we serve.
               </p>
               <p className="text-gray-700 leading-relaxed text-lg">
                 Whether you live in any of San Tan Valley&apos;s neighborhoods or surrounding areas, we understand the unique window cleaning challenges in your area. Our team uses proven techniques and professional-grade equipment specifically suited for San Tan Valley&apos;s climate conditions.
@@ -236,7 +236,7 @@ export default function SanTanValleyWindowWashingPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona Window Washing Pros - Video 1"
+                title="Arizona window cleaning Pros - Video 1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="lazy"
@@ -246,7 +246,7 @@ export default function SanTanValleyWindowWashingPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona Window Washing Pros - Video 2"
+                title="Arizona window cleaning Pros - Video 2"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="lazy"
