@@ -20,7 +20,7 @@ export default function TestimonialVideo({ formId = 'contact-form' }: Testimonia
     <section className="py-16 px-4 bg-white">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Testimonial</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
           <p className="text-lg text-gray-700">See what our customers have to say</p>
         </div>
         
