@@ -79,6 +79,11 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
           </div>
         </div>
 
+        {/* Google Reviews Widget - Mobile Only, Top of Page */}
+        <div className="md:hidden mb-4 -mx-4 px-4">
+          <GoogleReviewsSlider compact={true} />
+        </div>
+
         {/* Main Hero Content - Two Column Layout */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left: Content & Form */}
@@ -207,8 +212,8 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                 </a>
               </div>
               
-              {/* Google Reviews Widget - Right Side */}
-              <div className="mt-6 w-full">
+              {/* Google Reviews Widget - Right Side (Desktop Only) */}
+              <div className="hidden md:block mt-6 w-full">
                 <GoogleReviewsSlider compact={true} />
               </div>
             </div>
