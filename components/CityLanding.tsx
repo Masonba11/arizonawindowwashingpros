@@ -133,7 +133,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
             </div>
 
             {/* Pricing Information - Below Form */}
-            <div className="space-y-4 mt-6">
+            <div className="space-y-4 mt-3 md:mt-4">
               {/* Exterior Pricing */}
               <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">

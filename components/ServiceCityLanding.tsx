@@ -142,7 +142,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
 
             {/* Pricing Information - Below Form */}
             {(service.toLowerCase().includes('exterior') || service.toLowerCase().includes('interior')) && (
-              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 mt-6 shadow-2xl relative z-10">
+              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 mt-3 md:mt-4 shadow-2xl relative z-10">
                 {service.toLowerCase().includes('exterior') && (
                   <>
                     <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
