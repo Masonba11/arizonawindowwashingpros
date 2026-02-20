@@ -5,6 +5,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 import GallerySection from '@/components/GallerySection'
 import LazyYouTube from '@/components/LazyYouTube'
 import ContactForm from '@/components/ContactForm'
+import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import { trackCallClick } from '@/lib/callTracking'
 
 interface ServiceCityLandingProps {
@@ -283,6 +284,9 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
         nearbyAreas={nearbyAreas}
         handleCallClick={handleCallClick}
       />
+
+      {/* Google Reviews Slider */}
+      <GoogleReviewsSlider />
 
       {/* Trust Section */}
       <section className="py-16 px-4 bg-white">

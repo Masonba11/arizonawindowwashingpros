@@ -8,6 +8,7 @@ import CallSticker from '@/components/CallSticker'
 import SocialMediaSticker from '@/components/SocialMediaSticker'
 import LazyYouTube from '@/components/LazyYouTube'
 import ContactForm from '@/components/ContactForm'
+import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import { trackCallClick } from '@/lib/callTracking'
 
 interface CityLandingProps {
@@ -414,6 +415,9 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
           handleCallClick={handleCallClick}
         />
       )}
+
+      {/* Google Reviews Slider */}
+      <GoogleReviewsSlider />
 
       {/* Trust Section */}
       <section className="py-16 px-4 bg-white">
