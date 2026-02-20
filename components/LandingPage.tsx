@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { BUSINESS_INFO } from '@/lib/constants'
+import { trackCallClick } from '@/lib/callTracking'
 
 interface LandingPageProps {
   city: string
@@ -18,17 +19,6 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
     message: '',
   })
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-
-  const handleCall = () => {
-    if (typeof window !== 'undefined') {
-      if ((window as any).gtag) {
-        (window as any).gtag('event', 'click_call', {
-          event_category: 'conversion',
-          event_label: `${city}_landing_page`,
-        })
-      }
-    }
-  }
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -97,7 +87,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
           </div>
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            onClick={handleCall}
+            onClick={() => trackCallClick(`${city}_landing_page`)}
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg transition"
           >
             Call {BUSINESS_INFO.phone}
@@ -114,7 +104,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
           {formStatus === 'success' ? (
             <div className="bg-green-50 border-2 border-green-500 rounded-lg p-6 text-center">
               <p className="text-green-800 font-bold text-lg mb-2">Thank you! We'll call you shortly.</p>
-              <p className="text-green-700">Or call us now: <a href={`tel:${BUSINESS_INFO.phoneFormatted}`} className="font-bold underline">{BUSINESS_INFO.phone}</a></p>
+              <p className="text-green-700">Or call us now: <a href={`tel:${BUSINESS_INFO.phoneFormatted}`} onClick={() => trackCallClick(`${city}_landing_page_success`)} className="font-bold underline">{BUSINESS_INFO.phone}</a></p>
             </div>
           ) : (
             <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -253,7 +243,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
           </p>
           <a
             href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            onClick={handleCall}
+            onClick={() => trackCallClick(`${city}_landing_page`)}
             className="inline-block bg-white text-blue-600 hover:bg-blue-50 font-bold text-lg px-8 py-4 rounded-lg shadow-lg transition"
           >
             Call {BUSINESS_INFO.phone}

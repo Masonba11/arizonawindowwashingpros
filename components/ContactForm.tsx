@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { BUSINESS_INFO, CITIES } from '@/lib/constants'
 import { useRouter } from 'next/navigation'
+import { trackCallClick } from '@/lib/callTracking'
 
 interface ContactFormProps {
   defaultCity?: string
@@ -105,6 +106,7 @@ export default function ContactForm({
             {compact && (
               <a
                 href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+                onClick={() => trackCallClick('contact_form_success_call')}
                 className="inline-block bg-blue-600 text-white font-bold py-2 px-5 rounded-lg hover:bg-blue-700 transition-colors text-sm"
               >
                 Or Call Now: {BUSINESS_INFO.phone}
