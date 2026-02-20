@@ -28,20 +28,22 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
-    <section className="relative overflow-hidden min-h-[400px] md:min-h-[450px] flex items-center pt-16 pb-8 md:pt-16 md:pb-12">
-      {/* Image Background */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/azwwppt2.png"
-          alt="Arizona Window Washing Pros"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectFit: 'cover' }}
-        />
-        {/* Dimmed overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
+    <>
+      {/* Hero Section with Image - Mobile: ends at form, Desktop: full section */}
+      <section className="relative overflow-hidden md:min-h-[450px] flex items-center pt-16 pb-8 md:pt-16 md:pb-12">
+        {/* Image Background */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/azwwppt2.png"
+            alt="Arizona Window Washing Pros"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectFit: 'cover' }}
+          />
+          {/* Dimmed overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4">
+        <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4 w-full">
         {/* Top Row: Logo + 20% OFF Badge */}
         <div className="flex items-center justify-between mb-4 md:mb-6 gap-4">
           {/* Logo */}
@@ -130,46 +132,8 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               <ContactForm defaultCity={city} showTitle={false} compact={true} />
             </div>
 
-            {/* Google Reviews Widget - Mobile Only, Above Pricing */}
-            <div className="md:hidden mt-6">
-              <GoogleReviewsSlider compact={true} />
-            </div>
-
             {/* Interior Pricing - Desktop Only, Under Form */}
             <div className="hidden md:block mt-4">
-              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
-                <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                  <span className="line-through text-gray-500 mr-2">$10</span>
-                  <span className="text-green-600">$8</span> per window - Interior
-                </p>
-                <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
-                  What's Included:
-                </p>
-                <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
-                  <li>Tracks & Sills</li>
-                  <li>Glass</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Pricing Information - Mobile Only */}
-            <div className="space-y-4 mt-3 md:mt-4 md:hidden">
-              {/* Exterior Pricing */}
-              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
-                <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                  <span className="line-through text-gray-500 mr-2">$15</span>
-                  <span className="text-green-600">$12</span> per window - Exterior
-                </p>
-                <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
-                  What's Included:
-                </p>
-                <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
-                  <li>Tracks & Sills</li>
-                  <li>Screen Cleaning</li>
-                  <li>Glass</li>
-                </ul>
-              </div>
-              {/* Interior Pricing */}
               <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
                   <span className="line-through text-gray-500 mr-2">$10</span>
@@ -241,6 +205,50 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
         </div>
       </div>
     </section>
+
+    {/* Mobile Content Section - Outside Hero */}
+    <section className="md:hidden bg-white py-6">
+      <div className="container mx-auto px-4 max-w-7xl">
+        {/* Google Reviews Widget - Mobile Only */}
+        <div className="mb-6">
+          <GoogleReviewsSlider compact={true} />
+        </div>
+
+        {/* Pricing Information - Mobile Only */}
+        <div className="space-y-4">
+          {/* Exterior Pricing */}
+          <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl">
+            <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+              <span className="line-through text-gray-500 mr-2">$15</span>
+              <span className="text-green-600">$12</span> per window - Exterior
+            </p>
+            <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+              What's Included:
+            </p>
+            <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
+              <li>Tracks & Sills</li>
+              <li>Screen Cleaning</li>
+              <li>Glass</li>
+            </ul>
+          </div>
+          {/* Interior Pricing */}
+          <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl">
+            <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+              <span className="line-through text-gray-500 mr-2">$10</span>
+              <span className="text-green-600">$8</span> per window - Interior
+            </p>
+            <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+              What's Included:
+            </p>
+            <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
+              <li>Tracks & Sills</li>
+              <li>Glass</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    </>
   )
 }
 
