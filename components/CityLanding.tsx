@@ -29,21 +29,16 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
 
   return (
     <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-16 pb-12 md:pt-16 md:pb-20">
-      {/* Video Background */}
+      {/* Image Background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          src="/azwwppt2.png"
+          alt="Arizona Window Washing Pros"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
-        >
-          <source src="/hero-video-ad-landing.mov" type="video/quicktime" />
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        />
+        {/* Dimmed overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4">
