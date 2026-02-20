@@ -421,7 +421,7 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       </div>
 
       {/* Hero Section */}
-      {['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek', 'San Tan Valley'].includes(city) ? (
+      {['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek', 'San Tan Valley', 'East Valley'].includes(city) ? (
         <ConversionOptimizedHeroSection 
           city={city}
           nearbyAreas={nearbyAreas}
