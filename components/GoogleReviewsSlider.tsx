@@ -1,25 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
-
 export default function GoogleReviewsSlider() {
-  useEffect(() => {
-    // Load Elfsight platform script for Google Reviews widget
-    // Replace 'YOUR_WIDGET_ID' with your actual Elfsight widget ID
-    const script = document.createElement('script')
-    script.src = 'https://static.elfsight.com/platform/platform.js'
-    script.async = true
-    script.defer = true
-    document.body.appendChild(script)
-
-    return () => {
-      const existingScript = document.querySelector('script[src*="elfsight"]')
-      if (existingScript) {
-        existingScript.remove()
-      }
-    }
-  }, [])
-
   return (
     <section className="py-6 md:py-8 bg-white relative z-10 border-t border-gray-200">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -30,32 +11,26 @@ export default function GoogleReviewsSlider() {
           <p className="text-sm md:text-base text-gray-600">Real reviews from Google</p>
         </div>
         
-        {/* Google Reviews Widget */}
+        {/* Google Reviews Embed */}
         <div className="w-full overflow-hidden rounded-lg shadow-lg bg-white">
           <div 
             className="w-full"
             style={{ 
-              minHeight: '400px',
+              minHeight: '500px',
+              height: '600px',
             }}
           >
-            {/* 
-              To display Google Reviews:
-              
-              Option 1: Use Elfsight (Free)
-              1. Go to https://apps.elfsight.com/panel/applications/
-              2. Sign up/login (free)
-              3. Create a "Google Reviews" widget
-              4. Connect your Google Business Profile
-              5. Copy the widget ID (looks like: abc123def456)
-              6. Replace 'YOUR_WIDGET_ID' below with your widget ID
-              
-              Option 2: Use Google Reviews Embed Code
-              If you have a direct embed code from Google, replace the div below
-              with: <div dangerouslySetInnerHTML={{ __html: 'YOUR_EMBED_CODE' }} />
-            */}
-            <div 
-              className="elfsight-app-YOUR_WIDGET_ID"
-              data-elfsight-app-lazy
+            {/* Embed Google Reviews using the share link */}
+            <iframe
+              src="https://share.google.com/4tVjOOHaFaAIElHpF"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="Google Reviews"
             />
           </div>
         </div>
@@ -63,7 +38,7 @@ export default function GoogleReviewsSlider() {
         {/* Link to view full reviews on Google */}
         <div className="text-center mt-4 pb-2">
           <a
-            href="https://share.google.com/D6qJAxatm16v8sPWD"
+            href="https://share.google.com/4tVjOOHaFaAIElHpF"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm font-semibold transition-colors"
