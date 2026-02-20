@@ -36,6 +36,7 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
       'Tempe': 'Tempe, Arizona',
       'Queen Creek': 'Queen Creek, Arizona',
       'San Tan Valley': 'San Tan Valley, Arizona',
+      'East Valley': 'East Valley, Arizona',
     }
     return cityHeadings[city] || city
   }
