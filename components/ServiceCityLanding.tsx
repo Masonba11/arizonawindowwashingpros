@@ -79,11 +79,6 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
           </div>
         </div>
 
-        {/* Google Reviews Widget - Mobile Only, Top of Page */}
-        <div className="md:hidden mb-4 -mx-4 px-4">
-          <GoogleReviewsSlider compact={true} />
-        </div>
-
         {/* Main Hero Content - Two Column Layout */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left: Content & Form */}
@@ -151,6 +146,11 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
             {/* Mobile Form */}
             <div id="quote-form" className="md:hidden">
               <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
+              
+              {/* Google Reviews Widget - Mobile Only, Inside Form Area */}
+              <div className="mt-4">
+                <GoogleReviewsSlider compact={true} />
+              </div>
             </div>
 
             {/* Pricing Information - Below Form */}
