@@ -59,9 +59,9 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-6">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4">
         {/* Logo */}
-        <div className="flex justify-center mb-1 md:mb-6">
+        <div className="flex justify-center mb-0 md:mb-4">
           <img 
             src="/AZWPlogo-Photoroom.png" 
             alt={BUSINESS_INFO.name}
@@ -76,16 +76,16 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
           <div className="space-y-6">
             {/* Heading */}
             <div>
-              {/* 50% OFF Badge */}
-              <div className="inline-block mb-2 md:mb-4">
+              {/* 20% OFF Badge */}
+              <div className="inline-block mb-1 md:mb-2">
                 <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
                   20% off your whole cleaning service
                 </span>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 md:mb-3 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                 {service} in {getCityHeading()}
               </h1>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-2 md:mb-3">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -101,11 +101,11 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                   <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                 </svg>
               </div>
-              <p className="text-lg md:text-xl text-white mb-2 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+              <p className="text-lg md:text-xl text-white mb-1 md:mb-2 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
                 1000s of homes served across the valley
               </p>
               {/* Trust Indicators */}
-              <div className="flex flex-wrap gap-3 md:gap-4 mb-3">
+              <div className="flex flex-wrap gap-3 md:gap-4 mb-2 md:mb-3">
                 <div className="flex items-center gap-2 text-white">
                   <svg className="w-5 h-5 md:w-6 md:h-6 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -130,9 +130,19 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
               </p>
             </div>
 
-            {/* Pricing Information - Above Form */}
+            {/* Form - Desktop */}
+            <div id="quote-form" className="hidden md:block">
+              <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
+            </div>
+
+            {/* Mobile Form */}
+            <div id="quote-form" className="md:hidden">
+              <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
+            </div>
+
+            {/* Pricing Information - Below Form */}
             {(service.toLowerCase().includes('exterior') || service.toLowerCase().includes('interior')) && (
-              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 mb-6 shadow-2xl relative z-10">
+              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 mt-6 shadow-2xl relative z-10">
                 {service.toLowerCase().includes('exterior') && (
                   <>
                     <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
@@ -166,16 +176,6 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                 )}
               </div>
             )}
-
-            {/* Form - Desktop */}
-            <div id="quote-form" className="hidden md:block">
-              <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
-            </div>
-
-            {/* Mobile Form */}
-            <div id="quote-form" className="md:hidden">
-              <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
-            </div>
           </div>
 
           {/* Right: Testimonial Video */}

@@ -46,9 +46,9 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-6">
+      <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4">
         {/* Logo */}
-        <div className="flex justify-center mb-1 md:mb-6">
+        <div className="flex justify-center mb-0 md:mb-4">
           <img 
             src="/AZWPlogo-Photoroom.png" 
             alt={BUSINESS_INFO.name}
@@ -63,13 +63,13 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
           <div className="space-y-6">
             {/* Heading */}
             <div>
-              {/* 50% OFF Badge */}
-              <div className="inline-block mb-2 md:mb-4">
+              {/* 20% OFF Badge */}
+              <div className="inline-block mb-1 md:mb-2">
                 <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
                   20% off your whole cleaning service
                 </span>
               </div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 md:mb-3 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                 {city === 'Gilbert' ? 'Gilbert, Arizona | Window Cleaning' : 
                  city === 'Chandler' ? 'Chandler, Arizona | Window Cleaning' : 
                  city === 'Scottsdale' ? 'Scottsdale, Arizona | Window Cleaning' : 
@@ -77,7 +77,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                  city === 'San Tan Valley' ? 'San Tan Valley, Arizona | Window Cleaning' : 
                  `${city} Window Cleaning`}
               </h1>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-2 md:mb-3">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -93,11 +93,11 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                   <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                 </svg>
               </div>
-              <p className="text-lg md:text-xl text-white mb-2 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+              <p className="text-lg md:text-xl text-white mb-1 md:mb-2 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
                 1000s of homes served across the valley
               </p>
               {/* Trust Indicators */}
-              <div className="flex flex-wrap gap-3 md:gap-4 mb-3">
+              <div className="flex flex-wrap gap-3 md:gap-4 mb-2 md:mb-3">
                 <div className="flex items-center gap-2 text-white">
                   <svg className="w-5 h-5 md:w-6 md:h-6 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -122,8 +122,18 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               </p>
             </div>
 
-            {/* Pricing Information - Above Form (Mobile) */}
-            <div className="md:hidden space-y-4 mb-6">
+            {/* Form - Desktop */}
+            <div id="quote-form" className="hidden md:block">
+              <ContactForm defaultCity={city} showTitle={false} compact={true} />
+            </div>
+
+            {/* Mobile Form */}
+            <div id="quote-form" className="md:hidden">
+              <ContactForm defaultCity={city} showTitle={false} compact={true} />
+            </div>
+
+            {/* Pricing Information - Below Form */}
+            <div className="space-y-4 mt-6">
               {/* Exterior Pricing */}
               <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
@@ -153,16 +163,6 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                   <li>Glass</li>
                 </ul>
               </div>
-            </div>
-
-            {/* Form - Desktop */}
-            <div id="quote-form" className="hidden md:block">
-              <ContactForm defaultCity={city} showTitle={false} compact={true} />
-            </div>
-
-            {/* Mobile Form */}
-            <div id="quote-form" className="md:hidden">
-              <ContactForm defaultCity={city} showTitle={false} compact={true} />
             </div>
           </div>
 
@@ -195,41 +195,6 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               {/* Google Reviews Widget - Right Side */}
               <div className="mt-6 w-full">
                 <GoogleReviewsSlider compact={true} />
-              </div>
-              
-              {/* Pricing Information - Desktop (Right Side) */}
-              <div className="hidden md:block mt-6 w-full">
-                <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
-                  {/* Exterior Pricing */}
-                  <div className="mb-4">
-                    <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                      <span className="line-through text-gray-500 mr-2">$15</span>
-                      <span className="text-green-600">$12</span> per window - Exterior
-                    </p>
-                    <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
-                      What's Included:
-                    </p>
-                    <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
-                      <li>Tracks & Sills</li>
-                      <li>Screen Cleaning</li>
-                      <li>Glass</li>
-                    </ul>
-                  </div>
-                  {/* Interior Pricing */}
-                  <div className="border-t-2 border-gray-200 pt-4">
-                    <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                      <span className="line-through text-gray-500 mr-2">$10</span>
-                      <span className="text-green-600">$8</span> per window - Interior
-                    </p>
-                    <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
-                      What's Included:
-                    </p>
-                    <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
-                      <li>Tracks & Sills</li>
-                      <li>Glass</li>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
