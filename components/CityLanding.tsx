@@ -28,7 +28,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
-    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-16 pb-12 md:pt-16 md:pb-20">
+    <section className="relative overflow-hidden min-h-[400px] md:min-h-[450px] flex items-center pt-16 pb-8 md:pt-16 md:pb-12">
       {/* Image Background */}
       <div className="absolute inset-0 z-0">
         <img
