@@ -47,28 +47,31 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
       </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4">
-        {/* Logo */}
-        <div className="flex justify-center mb-0 md:mb-4">
-          <img 
-            src="/AZWPlogo-Photoroom.png" 
-            alt={BUSINESS_INFO.name}
-            className="h-24 md:h-32 w-auto object-contain drop-shadow-2xl"
-            style={{ filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.8))' }}
-          />
+        {/* Top Row: Logo + 20% OFF Badge */}
+        <div className="flex items-center justify-between mb-4 md:mb-6 gap-4">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <img 
+              src="/AZWPlogo-Photoroom.png" 
+              alt={BUSINESS_INFO.name}
+              className="h-20 md:h-28 w-auto object-contain drop-shadow-2xl"
+              style={{ filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.8))' }}
+            />
+          </div>
+          {/* 20% OFF Badge */}
+          <div className="flex-shrink-0">
+            <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
+              20% off your whole cleaning service
+            </span>
+          </div>
         </div>
 
         {/* Main Hero Content - Two Column Layout */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left: Content & Form */}
           <div className="space-y-6">
             {/* Heading */}
             <div>
-              {/* 20% OFF Badge */}
-              <div className="inline-block mb-1 md:mb-2">
-                <span className="bg-yellow-400 text-gray-900 px-4 py-2 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-base shadow-lg">
-                  20% off your whole cleaning service
-                </span>
-              </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 md:mb-3 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                 {city === 'Gilbert' ? 'Gilbert, Arizona | Window Cleaning' : 
                  city === 'Chandler' ? 'Chandler, Arizona | Window Cleaning' : 
