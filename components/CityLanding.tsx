@@ -128,20 +128,30 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
             {/* Form - Desktop */}
             <div id="quote-form" className="hidden md:block">
               <ContactForm defaultCity={city} showTitle={false} compact={true} />
-              
-              {/* Google Reviews Widget - Compact Desktop Version */}
-              <div className="mt-4">
-                <GoogleReviewsSlider compact={true} />
-              </div>
             </div>
 
             {/* Mobile Form */}
             <div id="quote-form" className="md:hidden">
               <ContactForm defaultCity={city} showTitle={false} compact={true} />
+            </div>
+
+            {/* What Our Customers Say & Call Us Now - Before Pricing */}
+            <div className="mt-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>What Our Customers Say</h2>
               
-              {/* Google Reviews Widget - Mobile Only, Inside Form Area */}
-              <div className="mt-4">
-                <GoogleReviewsSlider compact={true} />
+              {/* Google Reviews Widget - Normal Size */}
+              <div className="mb-4">
+                <GoogleReviewsSlider compact={false} />
+              </div>
+              
+              <div className="text-center md:text-left mt-4">
+                <a
+                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+                  onClick={handleCallClick}
+                  className="bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg inline-block"
+                >
+                  Call Us Now
+                </a>
               </div>
             </div>
 
@@ -182,7 +192,6 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
           {/* Right: Testimonial Video */}
           <div className="flex flex-col items-center md:items-start -mt-6 md:-mt-2">
             <div className="w-full max-w-lg">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>What Our Customers Say</h2>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900">
                 <video
                   ref={videoRef}
@@ -194,15 +203,6 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                   <source src="/riverside-testimonial.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-              </div>
-              <div className="text-center mt-4">
-                <a
-                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-                  onClick={handleCallClick}
-                  className="bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg inline-block"
-                >
-                  Call Us Now
-                </a>
               </div>
             </div>
           </div>
