@@ -75,6 +75,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                  city === 'Scottsdale' ? 'Scottsdale, Arizona | Window Cleaning' : 
                  city === 'Queen Creek' ? 'Queen Creek, Arizona | Window Cleaning' : 
                  city === 'San Tan Valley' ? 'San Tan Valley, Arizona | Window Cleaning' : 
+                 city === 'East Valley' ? 'East Valley, Arizona | Window Cleaning' : 
                  `${city} Window Cleaning`}
               </h1>
               <div className="flex items-center gap-2 mb-2 md:mb-3">
