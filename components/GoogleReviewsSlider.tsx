@@ -21,9 +21,9 @@ export default function GoogleReviewsSlider() {
             }}
           >
             {/* Embed Google Maps with Reviews */}
-            {/* Using the Google Maps link - may need to be converted to embed format */}
+            {/* Using place name - this will show the business with reviews */}
             <iframe
-              src="https://maps.app.goo.gl/4g8NMh5wEzVNGtDq8"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6d-s6U4uGGG4iEM&q=Arizona+Window+Washing+Pros,+Mesa,+AZ&zoom=15"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -39,7 +39,7 @@ export default function GoogleReviewsSlider() {
         {/* Link to view full reviews on Google */}
         <div className="text-center mt-4 pb-2">
           <a
-            href="https://maps.app.goo.gl/4g8NMh5wEzVNGtDq8"
+            href="https://www.google.com/maps/place/Arizona+Window+Washing+Pros/@33.52394,-112.0742795,10z/data=!4m18!1m9!3m8!1s0x8ab1d6918afe27d9:0x8654c88dbacb6053!2sArizona+Window+Washing+Pros!8m2!3d33.523804!4d-111.744626!9m1!1b1!16s%2Fg%2F11yx354jqm!3m7!1s0x8ab1d6918afe27d9:0x8654c88dbacb6053!8m2!3d33.523804!4d-111.744626!9m1!1b1!16s%2Fg%2F11yx354jqm?hl=en&entry=ttu&g_ep=EgoyMDI2MDIxNy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm font-semibold transition-colors"
