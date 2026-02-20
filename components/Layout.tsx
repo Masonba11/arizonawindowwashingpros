@@ -13,6 +13,8 @@ const LANDING_PAGES = [
   '/queen-creek-window-washing',
   '/san-tan-valley-window-washing',
   '/east-valley-window-washing',
+  '/east-valley-reviews',
+  '/east-valley-contact-us',
 ]
 
 // Service+city ad landing pages
