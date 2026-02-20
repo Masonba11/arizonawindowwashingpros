@@ -6,6 +6,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 import GallerySection from '@/components/GallerySection'
 import CallSticker from '@/components/CallSticker'
 import SocialMediaSticker from '@/components/SocialMediaSticker'
+import GetFreeQuoteSticker from '@/components/GetFreeQuoteSticker'
 import LazyYouTube from '@/components/LazyYouTube'
 import ContactForm from '@/components/ContactForm'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
@@ -363,62 +364,6 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
 
   return (
     <>
-      {/* Mobile Sticky CTA Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 md:hidden bg-white border-b-2 border-blue-600 shadow-2xl">
-        <div className="flex">
-          <a
-            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            onClick={handleCallClick}
-            data-cta="call"
-            className="flex-1 bg-blue-600 text-white font-bold py-4 px-4 text-center hover:bg-blue-700 transition-colors"
-          >
- Call Now
-          </a>
-          <button
-            onClick={() => {
-              // Find the first visible form element
-              const formSections = document.querySelectorAll('[id="quote-form"]')
-              
-              // On mobile, prefer the mobile form, on desktop prefer desktop form
-              const isMobile = window.innerWidth < 768
-              
-              for (let i = 0; i < formSections.length; i++) {
-                const section = formSections[i] as HTMLElement
-                const computedStyle = window.getComputedStyle(section)
-                
-                if (computedStyle.display !== 'none' && computedStyle.visibility !== 'hidden') {
-                  // Check if this is the right form for the current viewport
-                  const isMobileForm = section.classList.contains('md:hidden')
-                  const isDesktopForm = section.classList.contains('hidden') && section.classList.contains('md:block')
-                  
-                  if ((isMobile && isMobileForm) || (!isMobile && isDesktopForm) || (!isMobileForm && !isDesktopForm)) {
-                    const yOffset = -20 // Small offset from top
-                    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset
-                    window.scrollTo({ top: y, behavior: 'smooth' })
-                    return
-                  }
-                }
-              }
-              
-              // Fallback: scroll to first visible form
-              for (let i = 0; i < formSections.length; i++) {
-                const section = formSections[i] as HTMLElement
-                const computedStyle = window.getComputedStyle(section)
-                if (computedStyle.display !== 'none' && computedStyle.visibility !== 'hidden') {
-                  const yOffset = -20
-                  const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset
-                  window.scrollTo({ top: y, behavior: 'smooth' })
-                  return
-                }
-              }
-            }}
-            data-cta="form"
-            className="flex-1 bg-gray-100 text-gray-900 font-bold py-4 px-4 text-center hover:bg-gray-200 transition-colors"
-          >
-            Get Quote
-          </button>
-        </div>
-      </div>
 
       {/* Hero Section */}
       {['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek', 'San Tan Valley', 'East Valley'].includes(city) ? (
@@ -639,10 +584,18 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
       </section>
 
       {/* Sticky Call and Social Media Stickers - Only show for non-ad landing pages */}
-      {!['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek', 'San Tan Valley'].includes(city) && (
+      {!['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek', 'San Tan Valley', 'East Valley'].includes(city) && (
         <>
           <CallSticker />
           <SocialMediaSticker />
+        </>
+      )}
+
+      {/* Sticky Call and Get Free Quote Stickers - Only show for ad landing pages */}
+      {['Gilbert', 'Chandler', 'Scottsdale', 'Queen Creek', 'San Tan Valley', 'East Valley'].includes(city) && (
+        <>
+          <CallSticker />
+          <GetFreeQuoteSticker />
         </>
       )}
     </>
