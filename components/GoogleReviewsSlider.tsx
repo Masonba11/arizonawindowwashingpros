@@ -2,7 +2,11 @@
 
 import { useEffect } from 'react'
 
-export default function GoogleReviewsSlider() {
+interface GoogleReviewsSliderProps {
+  compact?: boolean
+}
+
+export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSliderProps) {
   useEffect(() => {
     // Load Elfsight platform script for Google Reviews widget
     const script = document.createElement('script')
@@ -18,6 +22,22 @@ export default function GoogleReviewsSlider() {
     }
   }, [])
 
+  if (compact) {
+    // Compact version for hero section
+    return (
+      <div className="w-full mt-6">
+        <div className="w-full" style={{ minHeight: '300px' }}>
+          {/* Elfsight Google Reviews Widget */}
+          <div 
+            className="elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b" 
+            data-elfsight-app-lazy
+          />
+        </div>
+      </div>
+    )
+  }
+
+  // Full version for standalone section
   return (
     <section className="py-6 md:py-8 bg-white relative z-10 border-t border-gray-200">
       <div className="container mx-auto px-4 max-w-7xl">

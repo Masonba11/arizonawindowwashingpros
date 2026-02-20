@@ -203,6 +203,11 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                   Call Us Now
                 </a>
               </div>
+              
+              {/* Google Reviews Widget - Right Side */}
+              <div className="mt-6 w-full">
+                <GoogleReviewsSlider compact={true} />
+              </div>
             </div>
           </div>
         </div>
@@ -284,9 +289,6 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
         nearbyAreas={nearbyAreas}
         handleCallClick={handleCallClick}
       />
-
-      {/* Google Reviews Slider */}
-      <GoogleReviewsSlider />
 
       {/* Trust Section */}
       <section className="py-16 px-4 bg-white">

@@ -192,6 +192,11 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                 </a>
               </div>
               
+              {/* Google Reviews Widget - Right Side */}
+              <div className="mt-6 w-full">
+                <GoogleReviewsSlider compact={true} />
+              </div>
+              
               {/* Pricing Information - Desktop (Right Side) */}
               <div className="hidden md:block mt-6 w-full">
                 <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
@@ -415,9 +420,6 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
           handleCallClick={handleCallClick}
         />
       )}
-
-      {/* Google Reviews Slider */}
-      <GoogleReviewsSlider />
 
       {/* Trust Section */}
       <section className="py-16 px-4 bg-white">
