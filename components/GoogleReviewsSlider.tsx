@@ -68,22 +68,23 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
             }
             
             if (reviewText) {
+              const textElement = reviewText as HTMLElement
               // Toggle expanded state
-              const isExpanded = reviewText.classList.contains('expanded')
+              const isExpanded = textElement.classList.contains('expanded')
               
               if (!isExpanded) {
                 // Expand: remove truncation, show full text
-                reviewText.classList.add('expanded')
-                reviewText.style.maxHeight = 'none'
-                reviewText.style.overflow = 'visible'
-                reviewText.style.whiteSpace = 'normal'
+                textElement.classList.add('expanded')
+                textElement.style.maxHeight = 'none'
+                textElement.style.overflow = 'visible'
+                textElement.style.whiteSpace = 'normal'
                 newAnchor.textContent = 'Read less'
               } else {
                 // Collapse: restore truncation
-                reviewText.classList.remove('expanded')
-                reviewText.style.maxHeight = ''
-                reviewText.style.overflow = ''
-                reviewText.style.whiteSpace = ''
+                textElement.classList.remove('expanded')
+                textElement.style.maxHeight = ''
+                textElement.style.overflow = ''
+                textElement.style.whiteSpace = ''
                 newAnchor.textContent = 'Read more'
               }
             }
