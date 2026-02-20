@@ -143,29 +143,33 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
               <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
             </div>
 
-            {/* What Our Customers Say & Call Us Now - Before Pricing */}
-            <div className="mt-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>What Our Customers Say</h2>
-              
-              {/* Google Reviews Widget - Normal Size */}
-              <div className="mb-4">
-                <GoogleReviewsSlider compact={false} />
-              </div>
-              
-              <div className="text-center md:text-left mt-4">
-                <a
-                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-                  onClick={handleCallClick}
-                  className="bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg inline-block"
-                >
-                  Call Us Now
-                </a>
-              </div>
+            {/* Google Reviews Widget - Mobile Only, Above Pricing */}
+            <div className="md:hidden mt-6">
+              <GoogleReviewsSlider compact={true} />
             </div>
 
-            {/* Pricing Information - Below Form */}
+            {/* Interior Pricing - Desktop Only, Under Form */}
+            {service.toLowerCase().includes('interior') && (
+              <div className="hidden md:block mt-4">
+                <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
+                  <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                    <span className="line-through text-gray-500 mr-3 text-lg">$10</span>
+                    <span className="text-green-600 text-2xl">$8</span> per window
+                  </p>
+                  <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                    What's Included:
+                  </p>
+                  <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
+                    <li>Tracks & Sills</li>
+                    <li>Glass</li>
+                  </ul>
+                </div>
+              </div>
+            )}
+
+            {/* Pricing Information - Mobile Only */}
             {(service.toLowerCase().includes('exterior') || service.toLowerCase().includes('interior')) && (
-              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 mt-3 md:mt-4 shadow-2xl relative z-10">
+              <div className="md:hidden bg-white border-2 border-yellow-400 rounded-lg p-5 mt-3 md:mt-4 shadow-2xl relative z-10">
                 {service.toLowerCase().includes('exterior') && (
                   <>
                     <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
@@ -201,10 +205,11 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
             )}
           </div>
 
-          {/* Right: Testimonial Video */}
+          {/* Right: Testimonial Video, Reviews, Call Button & Pricing */}
           <div className="flex flex-col items-center md:items-start -mt-6 md:-mt-2">
             <div className="w-full max-w-lg">
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>What Our Customers Say</h2>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900 mb-6">
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
@@ -216,6 +221,42 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
                   Your browser does not support the video tag.
                 </video>
               </div>
+              
+              {/* Google Reviews Widget - Desktop Only */}
+              <div className="hidden md:block mb-4">
+                <GoogleReviewsSlider compact={true} />
+              </div>
+              
+              {/* Call Us Now Button - Desktop Only */}
+              <div className="hidden md:block text-center md:text-left mt-4 mb-6">
+                <a
+                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+                  onClick={handleCallClick}
+                  className="bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg inline-block"
+                >
+                  Call Us Now
+                </a>
+              </div>
+              
+              {/* Exterior Pricing - Desktop Only */}
+              {service.toLowerCase().includes('exterior') && (
+                <div className="hidden md:block mt-4">
+                  <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
+                    <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                      <span className="line-through text-gray-500 mr-3 text-lg">$15</span>
+                      <span className="text-green-600 text-2xl">$12</span> per window
+                    </p>
+                    <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                      What's Included:
+                    </p>
+                    <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1 mb-0">
+                      <li>Tracks & Sills</li>
+                      <li>Screen Cleaning</li>
+                      <li>Glass</li>
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

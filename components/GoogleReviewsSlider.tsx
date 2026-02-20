@@ -14,7 +14,114 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
     script.async = true
     document.body.appendChild(script)
 
+    // Add clean styling for widget
+    const styleElement = document.createElement('style')
+    styleElement.textContent = `
+      .elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b {
+        width: 100% !important;
+      }
+      .elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b iframe {
+        width: 100% !important;
+        border: none !important;
+        border-radius: 8px !important;
+      }
+    `
+    document.head.appendChild(styleElement)
+
+    // Intercept "Read more" clicks to expand reviews inline
+    const handleReadMoreClicks = () => {
+      const widget = document.querySelector('.elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b')
+      if (!widget) return
+
+      // Find all links within the widget
+      const allLinks = widget.querySelectorAll('a')
+      
+      allLinks.forEach((link) => {
+        const anchor = link as HTMLAnchorElement
+        const linkText = anchor.textContent?.toLowerCase().trim() || ''
+        
+        // Check if link text contains "read more" (case insensitive)
+        if (linkText.includes('read more') || linkText.includes('readmore')) {
+          // Remove existing listeners to avoid duplicates
+          const newAnchor = anchor.cloneNode(true) as HTMLAnchorElement
+          anchor.parentNode?.replaceChild(newAnchor, anchor)
+          
+          newAnchor.addEventListener('click', (e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            
+            // Find the review container (parent elements)
+            let reviewCard = newAnchor.parentElement
+            let reviewText: HTMLElement | null = null
+            
+            // Search up the DOM tree for review content
+            while (reviewCard && !reviewText) {
+              // Look for text content elements
+              const textElements = reviewCard.querySelectorAll('p, div, span')
+              textElements.forEach((el) => {
+                const element = el as HTMLElement
+                if (element.textContent && element.textContent.length > 100 && !element.querySelector('a')) {
+                  reviewText = element
+                }
+              })
+              reviewCard = reviewCard.parentElement
+            }
+            
+            if (reviewText) {
+              // Toggle expanded state
+              const isExpanded = reviewText.classList.contains('expanded')
+              
+              if (!isExpanded) {
+                // Expand: remove truncation, show full text
+                reviewText.classList.add('expanded')
+                reviewText.style.maxHeight = 'none'
+                reviewText.style.overflow = 'visible'
+                reviewText.style.whiteSpace = 'normal'
+                newAnchor.textContent = 'Read less'
+              } else {
+                // Collapse: restore truncation
+                reviewText.classList.remove('expanded')
+                reviewText.style.maxHeight = ''
+                reviewText.style.overflow = ''
+                reviewText.style.whiteSpace = ''
+                newAnchor.textContent = 'Read more'
+              }
+            }
+          })
+        }
+      })
+    }
+
+    // Wait for widget to load, then set up click handlers
+    let checkWidget: NodeJS.Timeout | null = null
+    let observer: MutationObserver | null = null
+    
+    const setupHandlers = () => {
+      const widget = document.querySelector('.elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b')
+      if (widget) {
+        handleReadMoreClicks()
+        // Set up a mutation observer to handle dynamically loaded reviews
+        if (observer) observer.disconnect()
+        observer = new MutationObserver(() => {
+          handleReadMoreClicks()
+        })
+        observer.observe(widget, { childList: true, subtree: true })
+        if (checkWidget) clearInterval(checkWidget)
+      }
+    }
+    
+    checkWidget = setInterval(setupHandlers, 500)
+    
+    // Also try immediately
+    setTimeout(setupHandlers, 1000)
+
+    // Cleanup
     return () => {
+      if (checkWidget) clearInterval(checkWidget)
+      if (observer) observer.disconnect()
+      if (styleElement && document.head.contains(styleElement)) {
+        document.head.removeChild(styleElement)
+      }
       const existingScript = document.querySelector('script[src*="elfsightcdn.com"]')
       if (existingScript) {
         existingScript.remove()
@@ -23,16 +130,38 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
   }, [])
 
   if (compact) {
-    // Compact version for hero section - smaller on desktop
+    // Clean, simple version
     return (
-      <div className="w-full mt-4">
-        <div className="w-full overflow-hidden" style={{ height: '200px', maxHeight: '200px' }}>
-          {/* Elfsight Google Reviews Widget */}
+      <div className="w-full">
+        {/* Mobile */}
+        <div className="md:hidden">
           <div 
-            className="elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b" 
-            data-elfsight-app-lazy
-            data-elfsight-widget-options='{"height": "200px"}'
-          />
+            className="w-full overflow-hidden rounded-lg"
+            style={{ 
+              height: '500px',
+              maxHeight: '500px',
+            }}
+          >
+            <div 
+              className="elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b" 
+              data-elfsight-app-lazy
+            />
+          </div>
+        </div>
+        {/* Desktop */}
+        <div className="hidden md:block">
+          <div 
+            className="w-full overflow-hidden rounded-lg"
+            style={{ 
+              height: '450px',
+              maxHeight: '450px',
+            }}
+          >
+            <div 
+              className="elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b" 
+              data-elfsight-app-lazy
+            />
+          </div>
         </div>
       </div>
     )

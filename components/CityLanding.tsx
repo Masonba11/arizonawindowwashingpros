@@ -135,28 +135,30 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               <ContactForm defaultCity={city} showTitle={false} compact={true} />
             </div>
 
-            {/* What Our Customers Say & Call Us Now - Before Pricing */}
-            <div className="mt-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>What Our Customers Say</h2>
-              
-              {/* Google Reviews Widget - Normal Size */}
-              <div className="mb-4">
-                <GoogleReviewsSlider compact={false} />
-              </div>
-              
-              <div className="text-center md:text-left mt-4">
-                <a
-                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-                  onClick={handleCallClick}
-                  className="bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg inline-block"
-                >
-                  Call Us Now
-                </a>
+            {/* Google Reviews Widget - Mobile Only, Above Pricing */}
+            <div className="md:hidden mt-6">
+              <GoogleReviewsSlider compact={true} />
+            </div>
+
+            {/* Interior Pricing - Desktop Only, Under Form */}
+            <div className="hidden md:block mt-4">
+              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
+                <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                  <span className="line-through text-gray-500 mr-2">$10</span>
+                  <span className="text-green-600">$8</span> per window - Interior
+                </p>
+                <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                  What's Included:
+                </p>
+                <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
+                  <li>Tracks & Sills</li>
+                  <li>Glass</li>
+                </ul>
               </div>
             </div>
 
-            {/* Pricing Information - Below Form */}
-            <div className="space-y-4 mt-3 md:mt-4">
+            {/* Pricing Information - Mobile Only */}
+            <div className="space-y-4 mt-3 md:mt-4 md:hidden">
               {/* Exterior Pricing */}
               <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
@@ -189,10 +191,11 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
             </div>
           </div>
 
-          {/* Right: Testimonial Video */}
+          {/* Right: Testimonial Video, Reviews, Call Button & Pricing */}
           <div className="flex flex-col items-center md:items-start -mt-6 md:-mt-2">
             <div className="w-full max-w-lg">
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>What Our Customers Say</h2>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900 mb-6">
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
@@ -203,6 +206,40 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                   <source src="/riverside-testimonial.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+              </div>
+              
+              {/* Google Reviews Widget - Desktop Only */}
+              <div className="hidden md:block mb-4">
+                <GoogleReviewsSlider compact={true} />
+              </div>
+              
+              {/* Call Us Now Button - Desktop Only */}
+              <div className="hidden md:block text-center md:text-left mt-4 mb-6">
+                <a
+                  href={`tel:${BUSINESS_INFO.phoneFormatted}`}
+                  onClick={handleCallClick}
+                  className="bg-blue-600 text-white font-bold text-lg py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg inline-block"
+                >
+                  Call Us Now
+                </a>
+              </div>
+              
+              {/* Exterior Pricing - Desktop Only */}
+              <div className="hidden md:block mt-4">
+                <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
+                  <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                    <span className="line-through text-gray-500 mr-2">$15</span>
+                    <span className="text-green-600">$12</span> per window - Exterior
+                  </p>
+                  <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
+                    What's Included:
+                  </p>
+                  <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
+                    <li>Tracks & Sills</li>
+                    <li>Screen Cleaning</li>
+                    <li>Glass</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
