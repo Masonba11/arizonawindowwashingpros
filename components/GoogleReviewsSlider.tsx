@@ -23,14 +23,15 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
   }, [])
 
   if (compact) {
-    // Compact version for hero section
+    // Compact version for hero section - smaller on desktop
     return (
-      <div className="w-full mt-6">
-        <div className="w-full" style={{ minHeight: '300px' }}>
+      <div className="w-full mt-4">
+        <div className="w-full overflow-hidden" style={{ height: '200px', maxHeight: '200px' }}>
           {/* Elfsight Google Reviews Widget */}
           <div 
             className="elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b" 
             data-elfsight-app-lazy
+            data-elfsight-widget-options='{"height": "200px"}'
           />
         </div>
       </div>

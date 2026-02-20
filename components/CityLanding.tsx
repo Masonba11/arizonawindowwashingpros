@@ -133,6 +133,11 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
             {/* Form - Desktop */}
             <div id="quote-form" className="hidden md:block">
               <ContactForm defaultCity={city} showTitle={false} compact={true} />
+              
+              {/* Google Reviews Widget - Compact Desktop Version */}
+              <div className="mt-4">
+                <GoogleReviewsSlider compact={true} />
+              </div>
             </div>
 
             {/* Mobile Form */}
@@ -198,11 +203,6 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                 >
                   Call Us Now
                 </a>
-              </div>
-              
-              {/* Google Reviews Widget - Right Side (Desktop Only) */}
-              <div className="hidden md:block mt-6 w-full">
-                <GoogleReviewsSlider compact={true} />
               </div>
             </div>
           </div>
