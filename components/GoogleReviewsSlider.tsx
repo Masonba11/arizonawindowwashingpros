@@ -1,6 +1,23 @@
 'use client'
 
+import { useEffect } from 'react'
+
 export default function GoogleReviewsSlider() {
+  useEffect(() => {
+    // Load Elfsight platform script for Google Reviews widget
+    const script = document.createElement('script')
+    script.src = 'https://elfsightcdn.com/platform.js'
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      const existingScript = document.querySelector('script[src*="elfsightcdn.com"]')
+      if (existingScript) {
+        existingScript.remove()
+      }
+    }
+  }, [])
+
   return (
     <section className="py-6 md:py-8 bg-white relative z-10 border-t border-gray-200">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -11,26 +28,18 @@ export default function GoogleReviewsSlider() {
           <p className="text-sm md:text-base text-gray-600">Real reviews from Google</p>
         </div>
         
-        {/* Google Reviews Embed */}
+        {/* Google Reviews Widget */}
         <div className="w-full overflow-hidden rounded-lg shadow-lg bg-white">
           <div 
             className="w-full"
             style={{ 
-              minHeight: '500px',
-              height: '600px',
+              minHeight: '400px',
             }}
           >
-            {/* Embed Google Reviews using the share link */}
-            <iframe
-              src="https://share.google/r7PtiPg5MMygIYtZF"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-              title="Google Reviews"
+            {/* Elfsight Google Reviews Widget */}
+            <div 
+              className="elfsight-app-9700e0c9-d756-4605-a68f-cc430320952b" 
+              data-elfsight-app-lazy
             />
           </div>
         </div>
