@@ -153,6 +153,11 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
           {/* Right: Testimonial Video, Reviews, Call Button & Pricing */}
           <div className="flex flex-col items-center md:items-start -mt-6 md:-mt-2">
             <div className="w-full max-w-lg">
+              {/* Google Reviews Widget - Mobile Only, Before Video */}
+              <div className="md:hidden mb-6">
+                <GoogleReviewsSlider compact={true} />
+              </div>
+              
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>What Our Customers Say</h2>
               <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900 mb-6">
                 <video
@@ -209,11 +214,6 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
     {/* Mobile Content Section - Outside Hero */}
     <section className="md:hidden bg-white py-6">
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Google Reviews Widget - Mobile Only */}
-        <div className="mb-6">
-          <GoogleReviewsSlider compact={true} />
-        </div>
-
         {/* Pricing Information - Mobile Only */}
         <div className="space-y-4">
           {/* Exterior Pricing */}
