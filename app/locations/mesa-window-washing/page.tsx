@@ -5,7 +5,6 @@ import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
-import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
@@ -52,7 +51,7 @@ export default function MesaWindowWashingPage() {
       <HeroVideo
         title="Mesa window cleaning"
         subtitle="Professional window cleaning services in Mesa, Arizona"
-        showReviews={true}
+        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -120,8 +119,6 @@ export default function MesaWindowWashingPage() {
             </div>
           </div>
 
-          {/* Before & After Section */}
-          <BeforeAfterSection city="Mesa" />
 
           {/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
@@ -256,24 +253,6 @@ export default function MesaWindowWashingPage() {
         </div>
       </section>
 
-      {/* Contact Form Section - Moved Up */}
-      <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
-          <ContactForm defaultCity="Mesa" />
-        </div>
-      </section>
-
-      {/* Google Reviews Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-8">
-            <h2 className="section-title">What Our Customers Say</h2>
-            <p className="section-subtitle">Real reviews from Google</p>
-          </div>
-          <GoogleReviewsSlider compact={false} />
-        </div>
-      </section>
-
       {/* Deionized Water Section */}
       <section className="section-padding bg-blue-50">
         <div className="container-custom max-w-4xl">
@@ -338,6 +317,24 @@ export default function MesaWindowWashingPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact-form" className="section-padding bg-white">
+        <div className="container-custom max-w-2xl">
+          <ContactForm defaultCity="Mesa" />
+        </div>
+      </section>
+
+      {/* Google Reviews Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-8">
+            <h2 className="section-title">What Our Customers Say</h2>
+            <p className="section-subtitle">Real reviews from Google</p>
+          </div>
+          <GoogleReviewsSlider compact={false} />
         </div>
       </section>
 

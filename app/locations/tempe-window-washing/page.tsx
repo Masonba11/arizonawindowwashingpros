@@ -5,7 +5,6 @@ import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
-import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
@@ -51,7 +50,7 @@ export default function TempeWindowWashingPage() {
       <HeroVideo
         title="Tempe window cleaning"
         subtitle="Professional window cleaning services in Tempe, Arizona"
-        showReviews={true}
+        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -118,8 +117,6 @@ export default function TempeWindowWashingPage() {
             </div>
           </div>
 
-          {/* Before & After Section */}
-          <BeforeAfterSection city="Tempe" />
 
           {/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">

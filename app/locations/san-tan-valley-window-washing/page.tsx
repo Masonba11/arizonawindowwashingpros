@@ -5,7 +5,6 @@ import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
-import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import CallButton from '@/components/CallButton'
@@ -53,7 +52,7 @@ export default function SanTanValleyWindowWashingPage() {
       <HeroVideo
         title="San Tan Valley window cleaning"
         subtitle="Professional window cleaning services in San Tan Valley, Arizona"
-        showReviews={true}
+        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CallButton
@@ -120,8 +119,6 @@ export default function SanTanValleyWindowWashingPage() {
             </div>
           </div>
 
-          {/* Before & After Section */}
-          <BeforeAfterSection city="San Tan Valley" />
 
           {/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">

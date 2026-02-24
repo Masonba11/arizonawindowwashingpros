@@ -50,7 +50,7 @@ export default function WindowWashingQueenCreekPage() {
       <HeroVideo
         title="window cleaning Queen Creek"
         subtitle="Top-rated window cleaning in Queen Creek, Arizona"
-        showReviews={true}
+        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

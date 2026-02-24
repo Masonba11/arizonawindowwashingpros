@@ -5,7 +5,6 @@ import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
-import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
@@ -51,7 +50,7 @@ export default function EastValleyWindowWashingPage() {
       <HeroVideo
         title="East Valley window cleaning"
         subtitle="Expert window cleaning in East Valley, Arizona"
-        showReviews={true}
+        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -100,8 +99,6 @@ export default function EastValleyWindowWashingPage() {
         </div>
       </section>
 
-      {/* Before & After Section */}
-      <BeforeAfterSection city="East Valley" />
 
       {/* Pricing Section */}
       <section className="section-padding bg-white">
