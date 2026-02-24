@@ -7,6 +7,7 @@ import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
+import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
@@ -70,6 +71,7 @@ export default function GilbertWindowWashingPage() {
           <GoogleReviewsSlider compact={false} />
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* Deionized Water Section */}
       <section className="section-padding bg-blue-50">
@@ -137,6 +139,7 @@ export default function GilbertWindowWashingPage() {
           </div>
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
@@ -147,9 +150,11 @@ export default function GilbertWindowWashingPage() {
 
       {/* Testimonial Video Section */}
       <TestimonialVideo formId="contact-form" />
+      <GetFreeQuoteCTA />
 
       {/* Gallery Section */}
       <GallerySection city="Gilbert" />
+      <GetFreeQuoteCTA />
 
       <section className="section-padding">
         <div className="container-custom max-w-4xl">
@@ -178,6 +183,7 @@ export default function GilbertWindowWashingPage() {
           </div>
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* Pricing Section */}
       <section className="section-padding bg-white">
@@ -233,6 +239,7 @@ export default function GilbertWindowWashingPage() {
           </div>
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* Rich Content Section */}
       <section className="bg-gray-50 section-padding">
@@ -255,6 +262,7 @@ export default function GilbertWindowWashingPage() {
           </div>
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* YouTube Videos Section */}
       <section className="section-padding bg-white">
@@ -287,9 +295,11 @@ export default function GilbertWindowWashingPage() {
           </div>
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
+      <GetFreeQuoteCTA />
 
       {/* Pricing Images Section */}
       <section className="section-padding bg-white">
@@ -297,6 +307,7 @@ export default function GilbertWindowWashingPage() {
           <PricingImages />
         </div>
       </section>
+      <GetFreeQuoteCTA />
     </>
   )
 }

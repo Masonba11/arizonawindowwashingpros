@@ -1,6 +1,6 @@
 'use client'
 
-export default function GetFreeQuoteSticker() {
+export default function GetFreeQuoteCTA() {
   const handleGetQuote = () => {
     const contactForm = document.getElementById('contact-form')
     if (contactForm) {
@@ -11,14 +11,14 @@ export default function GetFreeQuoteSticker() {
   }
 
   return (
-    <div className="fixed bottom-20 right-4 md:bottom-4 md:left-6 z-40 animate-pulse hover:animate-none">
+    <div className="text-center py-8 md:py-12">
       <button
         onClick={handleGetQuote}
-        className="flex items-center gap-2 bg-white border-2 border-green-600 text-green-600 hover:bg-green-50 px-3 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 font-bold text-sm md:text-base"
+        className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 font-bold text-lg md:text-xl"
         aria-label="Get Free Quote"
       >
         <svg
-          className="w-4 h-4 md:w-5 md:h-5"
+          className="w-6 h-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -31,7 +31,7 @@ export default function GetFreeQuoteSticker() {
             d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
           />
         </svg>
-        <span className="font-extrabold">Get Free Quote</span>
+        <span>Get Free Quote</span>
       </button>
     </div>
   )

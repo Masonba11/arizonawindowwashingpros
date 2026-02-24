@@ -7,6 +7,7 @@ import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
+import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
@@ -138,6 +139,7 @@ export default function TempeWindowWashingPage() {
           </div>
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
@@ -145,6 +147,7 @@ export default function TempeWindowWashingPage() {
           <ContactForm defaultCity="Tempe" />
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* Testimonial Video Section */}
       <TestimonialVideo formId="contact-form" />
@@ -329,6 +332,7 @@ export default function TempeWindowWashingPage() {
           </div>
         </div>
       </section>
+      <GetFreeQuoteCTA />
 
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
@@ -339,6 +343,7 @@ export default function TempeWindowWashingPage() {
           <PricingImages />
         </div>
       </section>
+      <GetFreeQuoteCTA />
     </>
   )
 }

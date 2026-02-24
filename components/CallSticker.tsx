@@ -13,11 +13,11 @@ export default function CallSticker() {
       <a
         href={`tel:${BUSINESS_INFO.phoneFormatted}`}
         onClick={handleCall}
-        className="flex items-center gap-3 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 font-bold text-lg md:text-xl"
+        className="flex items-center gap-2 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 font-bold text-sm md:text-base"
                 aria-label="Call Now"
       >
           <svg
-            className="w-6 h-6 md:w-7 md:h-7"
+            className="w-4 h-4 md:w-5 md:h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
