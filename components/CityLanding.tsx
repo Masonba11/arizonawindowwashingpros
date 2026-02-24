@@ -1,6 +1,5 @@
 'use client'
 
-import { useRef } from 'react'
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import GallerySection from '@/components/GallerySection'
@@ -26,7 +25,6 @@ interface HeroSectionProps {
 
 // Conversion-optimized hero section for Gilbert and Chandler
 function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: HeroSectionProps) {
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
     <>
@@ -134,44 +132,14 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               <ContactForm defaultCity={city} showTitle={false} compact={true} />
             </div>
 
-            {/* Interior Pricing - Desktop Only, Under Form */}
-            <div className="hidden md:block mt-4">
-              <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
-                <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                  <span className="line-through text-gray-500 mr-2">$10</span>
-                  <span className="text-green-600">$8</span> per window - Interior
-                </p>
-                <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
-                  What's Included:
-                </p>
-                <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
-                  <li>Tracks & Sills</li>
-                  <li>Glass</li>
-                </ul>
-              </div>
-            </div>
           </div>
 
           {/* Right: Testimonial Video, Reviews, Call Button & Pricing */}
           <div className="flex flex-col items-center md:items-start -mt-6 md:-mt-2">
             <div className="w-full max-w-lg">
-              {/* Google Reviews Widget - Mobile Only, Before Video */}
+              {/* Google Reviews Widget - Mobile Only */}
               <div className="md:hidden mb-6">
                 <GoogleReviewsSlider compact={true} />
-              </div>
-              
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 text-center md:text-left drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>What Our Customers Say</h2>
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-gray-900 mb-6">
-                <video
-                  ref={videoRef}
-                  className="w-full h-full object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
-                >
-                  <source src="/riverside-testimonial.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
               </div>
               
               {/* Google Reviews Widget - Desktop Only */}
@@ -190,66 +158,12 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                 </a>
               </div>
               
-              {/* Exterior Pricing - Desktop Only */}
-              <div className="hidden md:block mt-4">
-                <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl relative z-10">
-                  <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                    <span className="line-through text-gray-500 mr-2">$15</span>
-                    <span className="text-green-600">$12</span> per window - Exterior
-                  </p>
-                  <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
-                    What's Included:
-                  </p>
-                  <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
-                    <li>Tracks & Sills</li>
-                    <li>Screen Cleaning</li>
-                    <li>Glass</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    {/* Mobile Content Section - Outside Hero */}
-    <section className="md:hidden bg-white py-6">
-      <div className="container mx-auto px-4 max-w-7xl">
-        {/* Pricing Information - Mobile Only */}
-        <div className="space-y-4">
-          {/* Exterior Pricing */}
-          <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl">
-            <p className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-              <span className="line-through text-gray-500 mr-2">$15</span>
-              <span className="text-green-600">$12</span> per window - Exterior
-            </p>
-            <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
-              What's Included:
-            </p>
-            <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
-              <li>Tracks & Sills</li>
-              <li>Screen Cleaning</li>
-              <li>Glass</li>
-            </ul>
-          </div>
-          {/* Interior Pricing */}
-          <div className="bg-white border-2 border-yellow-400 rounded-lg p-5 shadow-2xl">
-            <p className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-              <span className="line-through text-gray-500 mr-2">$10</span>
-              <span className="text-green-600">$8</span> per window - Interior
-            </p>
-            <p className="text-base md:text-lg text-gray-800 font-semibold mb-2">
-              What's Included:
-            </p>
-            <ul className="text-base md:text-lg text-gray-700 list-disc list-inside space-y-1">
-              <li>Tracks & Sills</li>
-              <li>Glass</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
     </>
   )
 }
