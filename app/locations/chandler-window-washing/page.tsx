@@ -64,6 +64,24 @@ export default function ChandlerWindowWashingPage() {
         </div>
       </HeroVideo>
 
+      {/* Google Reviews Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-8">
+            <h2 className="section-title">What Our Customers Say</h2>
+            <p className="section-subtitle">Real reviews from Google</p>
+          </div>
+          <GoogleReviewsSlider compact={false} />
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section id="contact-form" className="section-padding bg-white">
+        <div className="container-custom max-w-2xl">
+          <ContactForm defaultCity="Chandler" />
+        </div>
+      </section>
+
       {/* Testimonial Video Section */}
       <TestimonialVideo formId="contact-form" />
 
@@ -271,24 +289,6 @@ export default function ChandlerWindowWashingPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
-          <ContactForm defaultCity="Chandler" />
-        </div>
-      </section>
-
-      {/* Google Reviews Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-8">
-            <h2 className="section-title">What Our Customers Say</h2>
-            <p className="section-subtitle">Real reviews from Google</p>
-          </div>
-          <GoogleReviewsSlider compact={false} />
         </div>
       </section>
 
