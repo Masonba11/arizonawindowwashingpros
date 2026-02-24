@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { BUSINESS_INFO, CITIES } from '@/lib/constants'
+import { BUSINESS_INFO } from '@/lib/constants'
 import { useRouter } from 'next/navigation'
 import { trackCallClick } from '@/lib/callTracking'
 
@@ -24,11 +24,9 @@ export default function ContactForm({
     phone: '',
     email: '',
     city: defaultCity || '',
-    customCity: '',
     message: '',
   })
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-  const [showCustomCity, setShowCustomCity] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -43,7 +41,7 @@ export default function ContactForm({
       params.append('name', formData.name)
       params.append('phone', formData.phone)
       params.append('email', formData.email)
-      params.append('city', showCustomCity && formData.customCity ? formData.customCity : (formData.city || 'Not specified'))
+      params.append('city', formData.city || 'Not specified')
       params.append('service', formData.message || 'Not specified')
       params.append('message', formData.message || '')
       params.append('subject', `New Contact Form Submission from ${formData.name}`)
@@ -165,38 +163,14 @@ export default function ContactForm({
               <label htmlFor="city" className={compact ? "block text-xs font-semibold text-gray-700 mb-1" : "block text-sm font-semibold text-gray-700 mb-1"}>
                 City
               </label>
-              <select
+              <input
+                type="text"
                 id="city"
                 value={formData.city}
-                onChange={(e) => {
-                  const selectedCity = e.target.value
-                  setFormData({ ...formData, city: selectedCity })
-                  setShowCustomCity(selectedCity === 'Other')
-                  if (selectedCity !== 'Other') {
-                    setFormData(prev => ({ ...prev, customCity: '' }))
-                  }
-                }}
+                onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                placeholder="Enter your city"
                 className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
-              >
-                <option value="">Select a city</option>
-                {CITIES.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
-                  </option>
-                ))}
-                <option value="Other">Other (Enter your city)</option>
-              </select>
-              {showCustomCity && (
-                <input
-                  type="text"
-                  id="customCity"
-                  value={formData.customCity}
-                  onChange={(e) => setFormData({ ...formData, customCity: e.target.value })}
-                  placeholder="Enter your city"
-                  className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mt-2" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition mt-2"}
-                  required={showCustomCity}
-                />
-              )}
+              />
             </div>
 
             <div>
