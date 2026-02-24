@@ -37,6 +37,7 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
                 src={src}
                 alt={`Window cleaning example ${index + 1}`}
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                style={{ transform: 'rotate(90deg) scale(1.5)' }}
                 loading="lazy"
               />
             </div>
