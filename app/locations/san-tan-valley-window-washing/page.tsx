@@ -13,13 +13,13 @@ import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'San Tan Valley window cleaning',
-  description: 'Professional exterior and interior window cleaning services in San Tan Valley, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
+  description: 'Professional outdoor and indoor window cleaning services in San Tan Valley, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
   path: '/locations/san-tan-valley-window-washing',
 })
 
 const faqs = [
   {
-    question: 'How much does exterior window cleaning cost in San Tan Valley?',
+    question: 'How much does outdoor window cleaning cost in San Tan Valley?',
     answer: 'Exterior window cleaning prices in San Tan Valley start at $150 for 1-story homes and $180 for 2-story homes. Most San Tan Valley homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
   },
   {
@@ -27,8 +27,8 @@ const faqs = [
     answer: 'Given San Tan Valley\'s desert climate with dust storms and intense sun, we recommend window cleaning every 3-4 months to maintain optimal clarity and prevent hard water spot buildup.',
   },
   {
-    question: 'Do you clean both interior and exterior windows in San Tan Valley?',
-    answer: 'Yes, we offer both interior and exterior window cleaning services in San Tan Valley. You can choose one or both depending on your needs.',
+    question: 'Do you clean both indoor and outdoor windows in San Tan Valley?',
+    answer: 'Yes, we offer both indoor and outdoor window cleaning services in San Tan Valley. You can choose one or both depending on your needs.',
   },
   {
     question: 'What areas of San Tan Valley do you serve?',
@@ -53,6 +53,7 @@ export default function SanTanValleyWindowWashingPage() {
       <HeroVideo
         title="San Tan Valley window cleaning"
         subtitle="Professional window cleaning services in San Tan Valley, Arizona"
+        showReviews={true}
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CallButton
@@ -87,7 +88,7 @@ export default function SanTanValleyWindowWashingPage() {
             <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s Included in Our San Tan Valley window cleaning Service</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
-                'Complete exterior window cleaning (all accessible windows)',
+                'Complete outdoor window cleaning (all accessible windows)',
                 'Interior window cleaning (optional)',
                 'Screen cleaning (optional add-on)',
                 'Track and sill cleaning',
@@ -255,6 +256,13 @@ export default function SanTanValleyWindowWashingPage() {
         </div>
       </section>
 
+      {/* Contact Form Section - Moved Up */}
+      <section id="contact-form" className="section-padding bg-white">
+        <div className="container-custom max-w-2xl">
+          <ContactForm defaultCity="San Tan Valley" />
+        </div>
+      </section>
+
       {/* Google Reviews Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
@@ -263,13 +271,6 @@ export default function SanTanValleyWindowWashingPage() {
             <p className="section-subtitle">Real reviews from Google</p>
           </div>
           <GoogleReviewsSlider compact={false} />
-        </div>
-      </section>
-
-      {/* Contact Form Section - Moved Up */}
-      <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
-          <ContactForm defaultCity="San Tan Valley" />
         </div>
       </section>
 

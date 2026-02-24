@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
+import GoogleReviewsSlider from './GoogleReviewsSlider'
 
 interface HeroVideoProps {
   title: string
@@ -11,9 +12,10 @@ interface HeroVideoProps {
   city?: string
   service?: string
   formId?: string
+  showReviews?: boolean
 }
 
-export default function HeroVideo({ title, subtitle, children, city, service, formId = 'contact-form' }: HeroVideoProps) {
+export default function HeroVideo({ title, subtitle, children, city, service, formId = 'contact-form', showReviews = false }: HeroVideoProps) {
   const handleGetQuote = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'cta_click', {
@@ -65,13 +67,6 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
 
       {/* Content */}
       <div className="relative z-10 container-custom text-center w-full">
-        {/* $100 OFF Badge */}
-        <div className="mb-6">
-          <span className="bg-yellow-400 text-gray-900 px-6 py-2 md:px-8 md:py-3 rounded-full font-bold text-sm md:text-base shadow-2xl inline-block">
-            $100 OFF Your First Service
-          </span>
-        </div>
-        
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 drop-shadow-2xl leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
           {title}
         </h1>
@@ -83,7 +78,7 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
         
         {/* Services */}
         <p className="text-lg md:text-xl font-semibold text-white mb-6 drop-shadow-lg max-w-2xl mx-auto" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
-          Exterior Cleaning and Interior Cleaning
+          Outdoor Cleaning and Indoor Cleaning
         </p>
         
         {/* Trust + Outcome + Speed Subheadline */}
@@ -110,6 +105,15 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
           </div>
         )}
         {children}
+
+        {/* Google Reviews for Location Pages */}
+        {showReviews && (
+          <div className="mt-8 max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6">
+              <GoogleReviewsSlider compact={true} />
+            </div>
+          </div>
+        )}
 
         {/* Social Proof Strip */}
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 text-white">

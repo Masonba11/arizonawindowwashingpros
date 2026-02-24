@@ -12,22 +12,22 @@ import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'Gilbert window cleaning',
-  description: 'Professional exterior and interior window cleaning services in Gilbert, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
+  description: 'Professional outdoor and indoor window cleaning services in Gilbert, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
   path: '/locations/gilbert-window-washing',
 })
 
 const faqs = [
   {
-    question: 'How much does exterior window cleaning cost in Gilbert?',
-    answer: 'Exterior window cleaning prices in Gilbert start at $150 for 1-story homes and $180 for 2-story homes. Most Gilbert homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
+    question: 'How much does outdoor window cleaning cost in Gilbert?',
+    answer: 'Outdoor window cleaning prices in Gilbert start at $150 for 1-story homes and $180 for 2-story homes. Most Gilbert homes range from $150-$350. Pricing is based on number of windows and home height. Contact us for a free estimate.',
   },
   {
     question: 'How often should I have my windows cleaned in Gilbert?',
     answer: 'Given Gilbert\'s desert climate with dust storms and intense sun, we recommend window cleaning every 3-4 months to maintain optimal clarity and prevent hard water spot buildup.',
   },
   {
-    question: 'Do you clean both interior and exterior windows in Gilbert?',
-    answer: 'Yes, we offer both interior and exterior window cleaning services in Gilbert. You can choose one or both depending on your needs.',
+    question: 'Do you clean both indoor and outdoor windows in Gilbert?',
+    answer: 'Yes, we offer both indoor and outdoor window cleaning services in Gilbert. You can choose one or both depending on your needs.',
   },
   {
     question: 'What areas of Gilbert do you serve?',
@@ -51,6 +51,7 @@ export default function GilbertWindowWashingPage() {
       <HeroVideo
         title="Gilbert window cleaning"
         subtitle="Expert window cleaning in Gilbert, Arizona"
+        showReviews={true}
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -80,8 +81,8 @@ export default function GilbertWindowWashingPage() {
 
             <h2 className="text-2xl font-bold mb-4">What&apos;s Included in Our Gilbert window cleaning Service</h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
-              <li>Complete exterior window cleaning (all accessible windows)</li>
-              <li>Interior window cleaning (optional)</li>
+              <li>Complete outdoor window cleaning (all accessible windows)</li>
+              <li>Indoor window cleaning (optional)</li>
               <li>Screen cleaning (optional add-on)</li>
               <li>Track and sill cleaning</li>
               <li>Frame and edge cleaning</li>
@@ -211,6 +212,13 @@ export default function GilbertWindowWashingPage() {
         </div>
       </section>
 
+      {/* Contact Form Section - Moved Up */}
+      <section id="contact-form" className="section-padding bg-white">
+        <div className="container-custom max-w-2xl">
+          <ContactForm defaultCity="Gilbert" />
+        </div>
+      </section>
+
       {/* Google Reviews Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
@@ -219,13 +227,6 @@ export default function GilbertWindowWashingPage() {
             <p className="section-subtitle">Real reviews from Google</p>
           </div>
           <GoogleReviewsSlider compact={false} />
-        </div>
-      </section>
-
-      {/* Contact Form Section - Moved Up */}
-      <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
-          <ContactForm defaultCity="Gilbert" />
         </div>
       </section>
 
