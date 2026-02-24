@@ -84,6 +84,9 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 md:mb-3 drop-shadow-2xl" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
                 {service} in {getCityHeading()}
               </h1>
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+                {BUSINESS_INFO.name}
+              </p>
               <div className="flex items-center gap-2 mb-2 md:mb-3">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
