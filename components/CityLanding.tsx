@@ -6,7 +6,6 @@ import GallerySection from '@/components/GallerySection'
 import CallSticker from '@/components/CallSticker'
 import SocialMediaSticker from '@/components/SocialMediaSticker'
 import GetFreeQuoteSticker from '@/components/GetFreeQuoteSticker'
-import LazyYouTube from '@/components/LazyYouTube'
 import ContactForm from '@/components/ContactForm'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import { trackCallClick } from '@/lib/callTracking'
@@ -384,30 +383,6 @@ export default function CityLanding({ city, nearbyAreas, faqs }: CityLandingProp
 
       {/* Gallery Section */}
       <GallerySection city={city} />
-
-      {/* YouTube Videos Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See Us In Action</h2>
-            <p className="text-lg text-gray-700">
-              Watch our professional window cleaning team at work
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <LazyYouTube
-              videoId="TpGGKeABfCI"
-              title="Arizona Window Cleaning Pros - Video 1"
-              className="max-w-md mx-auto"
-            />
-            <LazyYouTube
-              videoId="GdNlH8GPhL0"
-              title="Arizona Window Cleaning Pros - Video 2"
-              className="max-w-md mx-auto"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section className="py-16 px-4 bg-white">
