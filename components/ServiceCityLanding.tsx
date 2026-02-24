@@ -1,7 +1,6 @@
 'use client'
 
 import { BUSINESS_INFO } from '@/lib/constants'
-import GallerySection from '@/components/GallerySection'
 import ContactForm from '@/components/ContactForm'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import CallSticker from '@/components/CallSticker'
@@ -198,104 +197,6 @@ export default function ServiceCityLanding({ service, serviceSlug, city, nearbyA
         nearbyAreas={nearbyAreas}
         handleCallClick={handleCallClick}
       />
-
-      {/* Trust Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            Why Choose Us for {service} in {city}?
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Licensed & Insured</h3>
-                <p className="text-gray-600">Fully licensed and insured for your protection and peace of mind.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Free Estimates</h3>
-                <p className="text-gray-600">No obligation free estimates. We provide transparent pricing upfront.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Professional Equipment</h3>
-                <p className="text-gray-600">We use professional-grade tools and techniques for superior results.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Satisfaction Guaranteed</h3>
-                <p className="text-gray-600">Your satisfaction is our priority. We stand behind our work.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <GallerySection service={service} />
-
-      {/* FAQ Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 border-2 border-gray-200">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-16 px-4 bg-blue-600 text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready for Professional {service} in {city}?
-          </h2>
-          <p className="text-xl mb-8">
-            20% off your whole cleaning service
-          </p>
-          <a
-            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            onClick={handleCallClick}
-            data-cta="call"
-            className="inline-block bg-white text-blue-600 font-bold text-xl py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg mb-4"
-          >
-            Call Now: {BUSINESS_INFO.phone}
-          </a>
-          <p className="text-blue-100">
-            Or fill out the form above for a free quote
-          </p>
-        </div>
-      </section>
 
       {/* Sticky Call and Get Free Quote Stickers */}
       <CallSticker />
