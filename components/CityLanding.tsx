@@ -40,7 +40,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
         </div>
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4 w-full">
-        {/* Top Row: Logo + 20% OFF Badge */}
+        {/* Top Row: Logo + Business Name + 20% OFF Badge */}
         <div className="flex items-center justify-between mb-4 md:mb-6 gap-4">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -50,6 +50,15 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               className="h-20 md:h-28 w-auto object-contain drop-shadow-2xl"
               style={{ filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.8))' }}
             />
+          </div>
+          {/* Business Name - Glowing Blue */}
+          <div className="flex-1 text-center mx-4">
+            <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl" style={{ 
+              textShadow: '0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4), 2px 2px 8px rgba(0,0,0,0.8)',
+              filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))'
+            }}>
+              Arizona Window Washing Pros
+            </h2>
           </div>
           {/* 20% OFF Badge */}
           <div className="flex-shrink-0">
@@ -74,9 +83,6 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
                  city === 'East Valley' ? 'East Valley, Arizona | Window Cleaning' : 
                  `${city} Window Cleaning`}
               </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3 drop-shadow-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
-                {BUSINESS_INFO.name}
-              </p>
               <div className="flex items-center gap-2 mb-2 md:mb-3">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
