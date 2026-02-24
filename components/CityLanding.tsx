@@ -226,6 +226,10 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
             <p className="text-base md:text-lg font-semibold text-gray-900 text-center">
               For homeowners who expect clarity, longevity, and a higher standard of care, this is the difference.
             </p>
+            
+            <p className="text-base md:text-lg font-semibold text-gray-900 text-center mt-6">
+              This is more than just cleaning your windows, it is also our mission to protect your asset.
+            </p>
           </div>
         </div>
       </div>
