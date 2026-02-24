@@ -41,7 +41,7 @@ export default function ReviewsPage() {
           <div className="bg-white rounded-lg shadow-lg p-8 text-center">
             <div className="mb-4">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <span className="text-5xl font-bold text-gray-900">{averageRating}</span>
+                <span className="text-5xl font-bold text-gray-900">5</span>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
                     <svg
