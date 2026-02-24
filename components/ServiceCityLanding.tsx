@@ -63,8 +63,10 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
             <img 
               src="/AZWPlogo-Photoroom.png" 
               alt={BUSINESS_INFO.name}
-              className="h-28 md:h-40 w-auto object-contain drop-shadow-2xl"
-              style={{ filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.8))' }}
+              className="h-32 md:h-40 w-auto object-contain drop-shadow-2xl"
+              style={{ 
+                filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.4)) drop-shadow(2px 2px 8px rgba(0,0,0,0.8))'
+              }}
             />
           </div>
           {/* 20% OFF Badge */}
