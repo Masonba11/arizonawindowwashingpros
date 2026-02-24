@@ -3,6 +3,15 @@ interface GallerySectionProps {
   service?: string
 }
 
+const galleryImages = [
+  '/gallery-optimized/IMG_0509.webp',
+  '/gallery-optimized/IMG_0512.webp',
+  '/gallery-optimized/IMG_0533.webp',
+  '/gallery-optimized/IMG_0580.webp',
+  '/gallery-optimized/IMG_0582.webp',
+  '/gallery-optimized/IMG_0598.webp',
+]
+
 export default function GallerySection({ city, service }: GallerySectionProps) {
   const title = city 
     ? `Our Work in ${city}`
@@ -22,9 +31,14 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[...Array(6)].map((_, index) => (
-            <div key={index} className="bg-gray-100 rounded-lg aspect-square flex items-center justify-center">
-              <p className="text-gray-500 text-sm">Gallery image {index + 1}</p>
+          {galleryImages.map((src, index) => (
+            <div key={index} className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
+              <img
+                src={src}
+                alt={`Window cleaning example ${index + 1}`}
+                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
