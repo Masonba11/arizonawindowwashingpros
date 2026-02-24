@@ -209,24 +209,6 @@ export default function EastValleyWindowWashingPage() {
         </div>
       </section>
 
-      {/* Contact Form Section - Moved Up */}
-      <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
-          <ContactForm defaultCity="East Valley" />
-        </div>
-      </section>
-
-      {/* Google Reviews Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-8">
-            <h2 className="section-title">What Our Customers Say</h2>
-            <p className="section-subtitle">Real reviews from Google</p>
-          </div>
-          <GoogleReviewsSlider compact={false} />
-        </div>
-      </section>
-
       {/* Deionized Water Section */}
       <section className="section-padding bg-blue-50">
         <div className="container-custom max-w-4xl">
