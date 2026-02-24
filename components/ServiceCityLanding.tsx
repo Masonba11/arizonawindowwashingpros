@@ -131,6 +131,41 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
               </p>
             </div>
 
+            {/* Services Line */}
+            <p className="text-base md:text-lg text-white mb-4 drop-shadow-lg text-center md:text-left" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+              Interior cleaning, Exterior cleaning, Tracks & sills, Screens we handle it all.
+            </p>
+
+            {/* What Makes Us Different Section */}
+            <div className="mb-6 space-y-4">
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-3 drop-shadow-lg text-center md:text-left" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+                What Makes Us Different in {city}
+              </h2>
+              <div className="text-sm md:text-base text-white/95 drop-shadow-lg space-y-3 text-center md:text-left" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                <p>
+                  In Arizona the water is extremely mineral heavy. That means even after a traditional cleaning, microscopic calcium and mineral deposits can remain on the glass. Once the water dries, those deposits turn into visible streaks and hard water marks.
+                </p>
+                <p className="font-semibold">
+                  We operate differently.
+                </p>
+                <p>
+                  Arizona Window Washing Pros uses a professional grade Deionized water purification system. This is advanced filtration technology designed to remove dissolved minerals and impurities from the water before it ever touches your windows.
+                </p>
+                <p>
+                  What remains is ultra purified water that dries crystal clear. No streaks. No spotting. No residue left behind.
+                </p>
+                <p>
+                  Because the water contains zero minerals, it evaporates cleanly and helps reduce future buildup. Your glass is left with a refined, polished appearance that stays cleaner longer.
+                </p>
+                <p>
+                  This is not basic bucket cleaning. This is precision water purification engineered for high end residential properties in {city}.
+                </p>
+                <p>
+                  For homeowners who expect clarity, longevity, and a higher standard of care, this is the difference.
+                </p>
+              </div>
+            </div>
+
             {/* Form - Desktop */}
             <div id="quote-form" className="hidden md:block">
               <ContactForm defaultCity={city} defaultService={service} showTitle={false} compact={true} />
