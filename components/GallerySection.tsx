@@ -30,7 +30,7 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
             See examples of our professional window cleaning results
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-xs md:max-w-none mx-auto md:mx-0">
           {galleryImages.map((src, index) => (
             <div key={index} className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
               <img
