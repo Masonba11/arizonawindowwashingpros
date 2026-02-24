@@ -56,7 +56,17 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
         </div>
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4 w-full">
-        {/* Top Row: Logo + Business Name + 20% OFF Badge */}
+        {/* Business Name - Mobile: Above, Desktop: Between Logo and Badge */}
+        <div className="md:hidden mb-4 text-center">
+          <h2 className="text-xl font-bold text-white drop-shadow-2xl" style={{ 
+            textShadow: '0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4), 2px 2px 8px rgba(0,0,0,0.8)',
+            filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))'
+          }}>
+            Arizona Window Washing Pros
+          </h2>
+        </div>
+        
+        {/* Top Row: Logo + Business Name (Desktop) + 20% OFF Badge */}
         <div className="flex items-center justify-between mb-4 md:mb-6 gap-4">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -67,9 +77,9 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
               style={{ filter: 'drop-shadow(2px 2px 8px rgba(0,0,0,0.8))' }}
             />
           </div>
-          {/* Business Name - Glowing Blue */}
-          <div className="flex-1 text-center mx-4">
-            <h2 className="text-lg md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl" style={{ 
+          {/* Business Name - Desktop Only, Between Logo and Badge */}
+          <div className="hidden md:flex flex-1 justify-center mx-4">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl" style={{ 
               textShadow: '0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4), 2px 2px 8px rgba(0,0,0,0.8)',
               filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))'
             }}>
