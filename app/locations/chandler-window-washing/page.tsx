@@ -2,13 +2,12 @@ import Link from 'next/link'
 import { BUSINESS_INFO, SERVICES, LOCATIONS } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
-import ReviewsSection from '@/components/ReviewsSection'
+import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
-import { reviews } from '@/lib/reviews'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
@@ -212,8 +211,90 @@ export default function ChandlerWindowWashingPage() {
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <ReviewsSection reviews={reviews} maxReviews={6} />
+      {/* Google Reviews Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-8">
+            <h2 className="section-title">What Our Customers Say</h2>
+            <p className="section-subtitle">Real reviews from Google</p>
+          </div>
+          <GoogleReviewsSlider compact={false} />
+        </div>
+      </section>
+
+      {/* Contact Form Section - Moved Up */}
+      <section id="contact-form" className="section-padding bg-white">
+        <div className="container-custom max-w-2xl">
+          <ContactForm defaultCity="Chandler" />
+        </div>
+      </section>
+
+      {/* Deionized Water Section */}
+      <section className="section-padding bg-blue-50">
+        <div className="container-custom max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Our Deionized Water System Matters in Chandler
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="bg-white rounded-2xl p-8 md:p-12 border-2 border-blue-100 shadow-xl">
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-base md:text-lg">
+                In Arizona the water is extremely mineral heavy. That means even after a traditional cleaning, microscopic calcium and mineral deposits can remain on the glass. Once the water dries, those deposits turn into visible streaks and hard water marks.
+              </p>
+              
+              <div className="bg-blue-600 text-white rounded-xl p-6 text-center my-8">
+                <p className="text-xl md:text-2xl font-bold">
+                  We operate differently.
+                </p>
+              </div>
+              
+              <p className="text-base md:text-lg">
+                Arizona Window Washing Pros uses a professional grade Deionized water purification system. This is advanced filtration technology designed to remove dissolved minerals and impurities from the water before it ever touches your windows.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-4 my-8">
+                <div className="bg-blue-50 rounded-lg p-4 border-2 border-blue-200 text-center">
+                  <div className="text-3xl mb-2">✨</div>
+                  <p className="font-semibold text-gray-900">No Streaks</p>
+                </div>
+                <div className="bg-blue-50 rounded-lg p-4 border-2 border-blue-200 text-center">
+                  <div className="text-3xl mb-2">💎</div>
+                  <p className="font-semibold text-gray-900">No Spotting</p>
+                </div>
+                <div className="bg-blue-50 rounded-lg p-4 border-2 border-blue-200 text-center">
+                  <div className="text-3xl mb-2">🌟</div>
+                  <p className="font-semibold text-gray-900">No Residue</p>
+                </div>
+              </div>
+              
+              <p className="text-base md:text-lg">
+                What remains is ultra purified water that dries crystal clear. No streaks. No spotting. No residue left behind.
+              </p>
+              
+              <p className="text-base md:text-lg">
+                Because the water contains zero minerals, it evaporates cleanly and helps reduce future buildup. Your glass is left with a refined, polished appearance that stays cleaner longer.
+              </p>
+              
+              <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-blue-600 my-8">
+                <p className="text-base md:text-lg font-semibold text-gray-900 italic">
+                  This is not basic bucket cleaning. This is precision water purification engineered for high end residential properties in Chandler.
+                </p>
+              </div>
+              
+              <p className="text-base md:text-lg font-semibold text-gray-900 text-center">
+                For homeowners who expect clarity, longevity, and a higher standard of care, this is the difference.
+              </p>
+              
+              <p className="text-base md:text-lg font-semibold text-gray-900 text-center mt-6">
+                This is more than just cleaning your windows, it is also our mission to protect your asset.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
@@ -222,12 +303,6 @@ export default function ChandlerWindowWashingPage() {
       <section className="section-padding bg-white">
         <div className="container-custom max-w-5xl">
           <PricingImages />
-        </div>
-      </section>
-
-      <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
-          <ContactForm defaultCity="Chandler" />
         </div>
       </section>
     </>

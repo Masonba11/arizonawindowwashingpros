@@ -2,11 +2,10 @@ import Link from 'next/link'
 import { BUSINESS_INFO } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
-import ReviewsSection from '@/components/ReviewsSection'
+import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import PricingImages from '@/components/PricingImages'
 import { generalFAQs } from '@/lib/faqs'
-import { reviews } from '@/lib/reviews'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
@@ -158,8 +157,16 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Reviews Section */}
-      <ReviewsSection reviews={reviews} maxReviews={6} />
+      {/* Google Reviews Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          <div className="text-center mb-8">
+            <h2 className="section-title">What Our Customers Say</h2>
+            <p className="section-subtitle">Real reviews from Google</p>
+          </div>
+          <GoogleReviewsSlider compact={false} />
+        </div>
+      </section>
 
       {/* Pricing Images Section */}
       <section className="section-padding bg-white">
