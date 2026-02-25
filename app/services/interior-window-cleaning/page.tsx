@@ -7,7 +7,6 @@ import HeroVideo from '@/components/HeroVideo'
 import PricingReference from '@/components/PricingReference'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
-import BeforeAfterSection from '@/components/BeforeAfterSection'
 import LazyYouTube from '@/components/LazyYouTube'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -140,10 +139,7 @@ export default function InteriorWindowCleaningPage() {
             </div>
           </div>
 
-          {/* Before & After Section */}
-          <BeforeAfterSection service="Interior Window Cleaning" />
-
-          {/* Service Areas */}
+{/* Service Areas */}
           <div className="content-section">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Service Areas</h2>
             <p className="text-gray-700 mb-6 text-lg">

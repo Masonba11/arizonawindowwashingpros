@@ -6,7 +6,6 @@ import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
-import BeforeAfterSection from '@/components/BeforeAfterSection'
 import LazyYouTube from '@/components/LazyYouTube'
 import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -148,10 +147,7 @@ export default function TrackSillCleaningPage() {
             </div>
           </div>
 
-          {/* Before & After Section */}
-          <BeforeAfterSection service="Track & Sill Cleaning" />
-
-          {/* Pricing Section */}
+{/* Pricing Section */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing for Track & Sill Cleaning</h2>
             <p className="text-gray-700 mb-6 text-lg leading-relaxed">

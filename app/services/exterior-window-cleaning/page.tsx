@@ -4,7 +4,6 @@ import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
-import BeforeAfterSection from '@/components/BeforeAfterSection'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import LazyYouTube from '@/components/LazyYouTube'
@@ -108,10 +107,7 @@ export default function ExteriorWindowCleaningPage() {
             </div>
           </div>
 
-          {/* Before & After Section */}
-          <BeforeAfterSection service={serviceName} />
-
-          {/* Pricing Guidance */}
+{/* Pricing Guidance */}
           <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing for Exterior Window Cleaning</h2>
             <p className="text-gray-700 mb-6 text-lg">
