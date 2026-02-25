@@ -4,7 +4,6 @@ import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
-import PricingImages from '@/components/PricingImages'
 import { generalFAQs } from '@/lib/faqs'
 import { generateMetadata } from '@/lib/seo'
 
@@ -90,14 +89,7 @@ export default function ServicesPage() {
       {/* FAQ Section */}
       <FAQSection faqs={generalFAQs} />
 
-      {/* Pricing Images Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-5xl">
-          <PricingImages />
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
+{/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
         <div className="container-custom max-w-2xl">
           <ContactForm />

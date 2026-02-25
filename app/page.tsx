@@ -4,7 +4,6 @@ import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
-import PricingImages from '@/components/PricingImages'
 import LazyYouTube from '@/components/LazyYouTube'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
@@ -237,20 +236,6 @@ export default function HomePage() {
                     </p>
                   </div>
                 </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">Transparent Pricing</h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      Free quotes, no hidden fees, and satisfaction guaranteed. We make it easy to choose us.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
             
@@ -280,14 +265,7 @@ export default function HomePage() {
       {/* FAQ Section */}
       <FAQSection faqs={generalFAQs} />
 
-      {/* Pricing Images Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-5xl">
-          <PricingImages />
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
+{/* Contact Form Section */}
       <section id="contact-form" className="section-padding">
         <div className="container-custom max-w-2xl">
           <ContactForm />

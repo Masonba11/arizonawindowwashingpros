@@ -4,7 +4,6 @@ import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
-import PricingImages from '@/components/PricingImages'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
@@ -298,13 +297,7 @@ export default function EastValleyWindowWashingPage() {
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
 
-      {/* Pricing Images Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-5xl">
-          <PricingImages />
-        </div>
-      </section>
-      <GetFreeQuoteCTA />
+<GetFreeQuoteCTA />
     </>
   )
 }
