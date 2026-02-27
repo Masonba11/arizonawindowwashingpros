@@ -89,9 +89,9 @@ export default function EastValleyWindowWashingPage() {
                 <img
                   src="/newstuff/newstuff9.jpg"
                   alt="Deionized Water System"
-                  className="w-full h-auto rounded-lg object-cover"
+                  className="w-full max-w-xs mx-auto h-auto rounded-lg object-cover"
                 />
-              </div>
+                <p className="text-center text-sm font-semibold text-gray-700 mt-2">Deionized Water Tank</p></div>
             </div>
             
             {/* Content */}
