@@ -43,14 +43,26 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
     <>
       {/* Hero Section with Image - Mobile: ends at form, Desktop: full section */}
       <section className="relative overflow-hidden md:min-h-[450px] flex items-center pt-16 pb-8 md:pt-16 md:pb-12">
-        {/* Image Background */}
+        {/* Video Background */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/azwwppt2.png"
-            alt="Arizona Window Washing Pros"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="absolute inset-0 w-full h-full object-cover"
             style={{ objectFit: 'cover' }}
-          />
+          >
+            <source src="/hero-video-new.mov" type="video/quicktime" />
+            <source src="/hero-video.mp4" type="video/mp4" />
+            {/* Fallback image if video doesn't load */}
+            <img
+              src="/azwwppt2.png"
+              alt="Arizona Window Washing Pros"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectFit: 'cover' }}
+            />
+          </video>
           {/* Dimmed overlay for better text readability */}
           <div className="absolute inset-0 bg-black/60"></div>
         </div>

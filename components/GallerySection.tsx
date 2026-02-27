@@ -9,7 +9,6 @@ interface GallerySectionProps {
 
 // Gallery items from newstuff folder
 const galleryItems = [
-  { type: 'image', src: '/newstuff/newstuff5.jpg', name: 'newstuff5' },
   { type: 'image', src: '/newstuff/newstuff6.jpg', name: 'newstuff6' },
   { type: 'image', src: '/newstuff/newstuff7.jpg', name: 'newstuff7' },
   { type: 'image', src: '/newstuff/newstuff8.jpg', name: 'newstuff8' },
