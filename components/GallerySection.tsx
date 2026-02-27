@@ -1,16 +1,104 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+
 interface GallerySectionProps {
   city?: string
   service?: string
 }
 
-const galleryImages = [
-  '/gallery-optimized/IMG_0509.webp',
-  '/gallery-optimized/IMG_0512.webp',
-  '/gallery-optimized/IMG_0533.webp',
-  '/gallery-optimized/IMG_0580.webp',
-  '/gallery-optimized/IMG_0582.webp',
-  '/gallery-optimized/IMG_0598.webp',
+// Gallery items from newstuff folder
+const galleryItems = [
+  { type: 'image', src: '/newstuff/newstuff5.HEIC', name: 'newstuff5' },
+  { type: 'image', src: '/newstuff/newstuff6.HEIC', name: 'newstuff6' },
+  { type: 'image', src: '/newstuff/newstuff7.HEIC', name: 'newstuff7' },
+  { type: 'image', src: '/newstuff/newstuff8.HEIC', name: 'newstuff8' },
+  { type: 'image', src: '/newstuff/newstuff9.HEIC', name: 'newstuff9' },
+  { type: 'image', src: '/newstuff/newstuff10.HEIC', name: 'newstuff10' },
+  { type: 'image', src: '/newstuff/newstuff11.HEIC', name: 'newstuff11' },
+  { type: 'image', src: '/newstuff/newstuff12.HEIC', name: 'newstuff12' },
+  { type: 'image', src: '/newstuff/newstuff13.HEIC', name: 'newstuff13' },
+  { type: 'image', src: '/newstuff/newstuff14.HEIC', name: 'newstuff14' },
+  { type: 'image', src: '/newstuff/newstuff15.HEIC', name: 'newstuff15' },
+  { type: 'image', src: '/newstuff/newstuff16.HEIC', name: 'newstuff16' },
+  { type: 'image', src: '/newstuff/newstuff20.HEIC', name: 'newstuff20' },
+  { type: 'image', src: '/newstuff/newstuff21.HEIC', name: 'newstuff21' },
+  { type: 'image', src: '/newstuff/newstuff22.HEIC', name: 'newstuff22' },
+  { type: 'video', src: '/newstuff/newstuff2.mov', name: 'newstuff2' },
+  { type: 'video', src: '/newstuff/newstuff3.mov', name: 'newstuff3' },
+  { type: 'video', src: '/newstuff/newstuff4.MOV', name: 'newstuff4' },
+  { type: 'video', src: '/newstuff/newstuff17.mov', name: 'newstuff17' },
+  { type: 'video', src: '/newstuff/newstuff19.MOV', name: 'newstuff19' },
+  { type: 'video', src: '/newstuff/newstuff23.mov', name: 'newstuff23' },
+  { type: 'video', src: '/newstuff/newstuff24.MOV', name: 'newstuff24' },
+  { type: 'video', src: '/newstuff/newstuff25.MOV', name: 'newstuff25' },
+  { type: 'video', src: '/newstuff/newstuff26.MOV', name: 'newstuff26' },
+  { type: 'video', src: '/newstuff/newstuff27.MOV', name: 'newstuff27' },
+  { type: 'video', src: '/newstuff/newstuff28.MOV', name: 'newstuff28' },
+  { type: 'video', src: '/newstuff/newstuff29.MOV', name: 'newstuff29' },
+  { type: 'video', src: '/newstuff/newstuff30.MOV', name: 'newstuff30' },
 ]
+
+// Lazy video component that only plays when visible
+function LazyVideo({ src, name }: { src: string; name: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const [hasStarted, setHasStarted] = useState(false)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasStarted) {
+            setIsVisible(true)
+            setHasStarted(true)
+            // Start playing when visible
+            video.play().catch(() => {
+              // Autoplay may be blocked, user will need to click
+            })
+          } else if (!entry.isIntersecting && hasStarted) {
+            // Pause when not visible
+            video.pause()
+          }
+        })
+      },
+      {
+        threshold: 0.5, // Start when 50% visible
+      }
+    )
+
+    observer.observe(video)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [hasStarted])
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className="w-full h-full object-cover"
+      loop
+      muted
+      playsInline
+      controls
+      preload="metadata"
+      onClick={(e) => {
+        // Allow user to play/pause on click
+        const video = e.currentTarget
+        if (video.paused) {
+          video.play()
+        } else {
+          video.pause()
+        }
+      }}
+    />
+  )
+}
 
 export default function GallerySection({ city, service }: GallerySectionProps) {
   const title = city 
@@ -31,15 +119,18 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-xs md:max-w-none mx-auto md:mx-0">
-          {galleryImages.map((src, index) => (
+          {galleryItems.map((item, index) => (
             <div key={index} className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={src}
-                alt={`Window cleaning example ${index + 1}`}
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                style={{ transform: 'rotate(90deg) scale(1.5)' }}
-                loading="lazy"
-              />
+              {item.type === 'image' ? (
+                <img
+                  src={item.src}
+                  alt={`Window cleaning example ${index + 1}`}
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                />
+              ) : (
+                <LazyVideo src={item.src} name={item.name} />
+              )}
             </div>
           ))}
         </div>
@@ -47,4 +138,3 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
     </section>
   )
 }
-
