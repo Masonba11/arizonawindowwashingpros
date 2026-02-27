@@ -74,7 +74,7 @@ export default function EastValleyWindowWashingPage() {
 
       {/* Deionized Water Section */}
       <section className="section-padding bg-blue-50">
-        <div className="container-custom max-w-4xl">
+        <div className="container-custom max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Our Deionized Water System Matters in East Valley
@@ -82,8 +82,21 @@ export default function EastValleyWindowWashingPage() {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
           </div>
           
-          <div className="bg-white rounded-2xl p-8 md:p-12 border-2 border-blue-100 shadow-xl">
-            <div className="space-y-6 text-gray-700 leading-relaxed">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+            {/* Product Image */}
+            <div className="order-2 md:order-1">
+              <div className="bg-white rounded-2xl p-4 shadow-xl overflow-hidden">
+                <img
+                  src="/newstuff/newstuff9.jpg"
+                  alt="Deionized Water System"
+                  className="w-full h-auto rounded-lg object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Content */}
+            <div className="order-1 md:order-2 bg-white rounded-2xl p-8 md:p-12 border-2 border-blue-100 shadow-xl">
+              <div className="space-y-6 text-gray-700 leading-relaxed">
               <p className="text-base md:text-lg">
                 In Arizona the water is extremely mineral heavy. That means even after a traditional cleaning, microscopic calcium and mineral deposits can remain on the glass. Once the water dries, those deposits turn into visible streaks and hard water marks.
               </p>
@@ -134,6 +147,7 @@ export default function EastValleyWindowWashingPage() {
               <p className="text-base md:text-lg font-semibold text-gray-900 text-center mt-6">
                 This is more than just cleaning your windows, it is also our mission to protect your asset.
               </p>
+              </div>
             </div>
           </div>
         </div>
