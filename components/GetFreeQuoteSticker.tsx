@@ -11,7 +11,7 @@ export default function GetFreeQuoteSticker() {
   }
 
   return (
-    <div className="fixed bottom-20 right-4 md:bottom-4 md:left-6 z-40 animate-pulse hover:animate-none">
+    <div className="fixed bottom-20 right-4 md:bottom-20 md:right-6 z-40 animate-pulse hover:animate-none">
       <button
         onClick={handleGetQuote}
         className="flex items-center gap-2 bg-white border-2 border-green-600 text-green-600 hover:bg-green-50 px-3 py-2 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 font-bold text-sm md:text-base"
