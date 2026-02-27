@@ -253,7 +253,7 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
         >
-          <source src="/hero-video-ad-landing.mov" type="video/quicktime" />
+          <source src="/hero-video-new.mov" type="video/quicktime" />
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         {/* Overlay for better text readability */}
