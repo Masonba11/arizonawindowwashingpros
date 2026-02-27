@@ -88,10 +88,11 @@ export default function TempeWindowWashingPage() {
               <div className="bg-white rounded-2xl p-4 shadow-xl overflow-hidden">
                 <img
                   src="/newstuff/newstuff9.jpg"
-                  alt="Deionized Water System"
+                  alt="Deionized Water Tank"
                   className="w-full max-w-xs mx-auto h-auto rounded-lg object-cover"
                 />
-                <p className="text-center text-sm font-semibold text-gray-700 mt-2">Deionized Water Tank</p></div>
+                <p className="text-center text-sm font-semibold text-gray-700 mt-2">Deionized Water Tank</p>
+              </div>
             </div>
             
             {/* Content */}
