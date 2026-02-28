@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
@@ -43,25 +44,35 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
     <>
       {/* Hero Section with Image - Mobile: ends at form, Desktop: full section */}
       <section className="relative overflow-hidden md:min-h-[450px] flex items-center pt-16 pb-8 md:pt-16 md:pb-12">
-        {/* Video Background */}
+        {/* Video Background - Optimized for LCP */}
         <div className="absolute inset-0 z-0">
+          {/* Priority fallback image for instant LCP */}
+          <Image
+            src="/hero-image-optimized.jpg"
+            alt="Arizona Window Washing Pros"
+            fill
+            className="object-cover"
+            priority
+            quality={75}
+            sizes="100vw"
+          />
+          {/* Video loads after image for better UX */}
           <video
             autoPlay
             loop
             muted
             playsInline
+            preload="none"
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', opacity: 0 }}
+            onLoadedData={(e) => {
+              // Fade in video once loaded
+              e.currentTarget.style.transition = 'opacity 0.5s'
+              e.currentTarget.style.opacity = '1'
+            }}
           >
-            <source src="/hero-video-new.mov" type="video/quicktime" />
             <source src="/hero-video.mp4" type="video/mp4" />
-            {/* Fallback image if video doesn't load */}
-            <img
-              src="/azwwppt2.png"
-              alt="Arizona Window Washing Pros"
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectFit: 'cover' }}
-            />
+            <source src="/hero-video-new.mov" type="video/quicktime" />
           </video>
           {/* Dimmed overlay for better text readability */}
           <div className="absolute inset-0 bg-black/60"></div>

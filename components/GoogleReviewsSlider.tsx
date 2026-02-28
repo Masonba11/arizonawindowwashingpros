@@ -10,7 +10,7 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
 
 
   if (compact) {
-    // Clean, simple version
+    // Clean, simple version - load only when visible
     return (
       <>
         <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
@@ -50,7 +50,7 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
     )
   }
 
-  // Full version for standalone section
+  // Full version for standalone section - load only when in viewport
   return (
     <>
       <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />

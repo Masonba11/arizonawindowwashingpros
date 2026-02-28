@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
 interface GallerySectionProps {
   city?: string
@@ -122,11 +123,14 @@ export default function GallerySection({ city, service }: GallerySectionProps) {
           {galleryItems.map((item, index) => (
             <div key={index} className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
               {item.type === 'image' ? (
-                <img
+                <Image
                   src={item.src}
                   alt={`Window cleaning example ${index + 1}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  fill
+                  className="object-cover hover:scale-110 transition-transform duration-300"
                   loading="lazy"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  quality={75}
                 />
               ) : (
                 <LazyVideo src={item.src} name={item.name} />

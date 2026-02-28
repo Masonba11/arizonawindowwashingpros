@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import CallSticker from '@/components/CallSticker'
 import SocialMediaSticker from '@/components/SocialMediaSticker'
@@ -27,13 +28,16 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
     <>
       {/* Hero Section with Image - Mobile: ends at form, Desktop: full section */}
       <section className="relative overflow-hidden md:min-h-[450px] flex items-center pt-16 pb-8 md:pt-16 md:pb-12">
-        {/* Image Background */}
+        {/* Image Background - Optimized */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/azwwppt2.png"
+          <Image
+            src="/hero-image-optimized.jpg"
             alt="Arizona Window Washing Pros"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectFit: 'cover' }}
+            fill
+            className="object-cover"
+            priority
+            quality={75}
+            sizes="100vw"
           />
           {/* Dimmed overlay for better text readability */}
           <div className="absolute inset-0 bg-black/60"></div>
@@ -43,14 +47,17 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
         {/* Top Row: Logo + 20% OFF Badge */}
         <div className="flex items-center justify-between mb-4 md:mb-6 gap-4">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <img 
+          <div className="flex-shrink-0 relative h-32 md:h-40 w-auto">
+            <Image 
               src="/AZWPlogo-Photoroom.png" 
               alt={BUSINESS_INFO.name}
+              width={200}
+              height={160}
               className="h-32 md:h-40 w-auto object-contain drop-shadow-2xl"
               style={{ 
                 filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.4)) drop-shadow(2px 2px 8px rgba(0,0,0,0.8))'
               }}
+              priority
             />
           </div>
           {/* 20% OFF Badge */}
@@ -243,18 +250,35 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
 function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-20 md:pb-32">
-      {/* Video Background */}
+      {/* Video Background - Optimized for LCP */}
       <div className="absolute inset-0 z-0">
+        {/* Priority fallback image for instant LCP */}
+        <Image
+          src="/hero-image-optimized.jpg"
+          alt="Arizona Window Washing Pros"
+          fill
+          className="object-cover"
+          priority
+          quality={75}
+          sizes="100vw"
+        />
+        {/* Video loads after image for better UX */}
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'cover', opacity: 0 }}
+          onLoadedData={(e) => {
+            // Fade in video once loaded
+            e.currentTarget.style.transition = 'opacity 0.5s'
+            e.currentTarget.style.opacity = '1'
+          }}
         >
-          <source src="/hero-video-new.mov" type="video/quicktime" />
           <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/hero-video-new.mov" type="video/quicktime" />
         </video>
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/50"></div>

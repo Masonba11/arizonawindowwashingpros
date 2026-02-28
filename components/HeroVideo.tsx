@@ -38,28 +38,36 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
 
   return (
     <section className="relative section-padding overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
-      {/* Video Background */}
+      {/* Video Background - Optimized for LCP */}
       <div className="absolute inset-0 z-0">
+        {/* Priority fallback image for instant LCP */}
+        <Image
+          src="/hero-image-optimized.jpg"
+          alt="Arizona Window Cleaning Pros"
+          fill
+          className="object-cover"
+          priority
+          quality={75}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+        />
+        {/* Video loads after image for better UX */}
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: 'cover' }}
+          onLoadedData={(e) => {
+            // Fade in video once loaded
+            e.currentTarget.style.opacity = '1'
+          }}
         >
-          <source src="/hero-video-new.mov" type="video/quicktime" />
           <source src="/hero-video.mp4" type="video/mp4" />
-          {/* Fallback image if video doesn't load */}
-          <Image
-            src="/hero-image-optimized.jpg"
-            alt="Arizona Window Cleaning Pros"
-            fill
-            className="object-cover"
-            priority
-            quality={65}
-            sizes="100vw"
-          />
+          <source src="/hero-video-new.mov" type="video/quicktime" />
         </video>
         {/* Overlay for better text readability - dimmed */}
         <div className="absolute inset-0 bg-black/60"></div>
