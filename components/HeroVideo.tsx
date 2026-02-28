@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
@@ -16,6 +17,7 @@ interface HeroVideoProps {
 }
 
 export default function HeroVideo({ title, subtitle, children, city, service, formId = 'contact-form', showReviews = false }: HeroVideoProps) {
+  const [videoLoaded, setVideoLoaded] = useState(false)
   const handleGetQuote = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'cta_click', {
@@ -59,11 +61,11 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
           muted
           playsInline
           preload="none"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectFit: 'cover' }}
-          onLoadedData={(e) => {
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+          style={{ objectFit: 'cover', opacity: videoLoaded ? 1 : 0 }}
+          onLoadedData={() => {
             // Fade in video once loaded
-            e.currentTarget.style.opacity = '1'
+            setVideoLoaded(true)
           }}
         >
           <source src="/hero-video.mp4" type="video/mp4" />

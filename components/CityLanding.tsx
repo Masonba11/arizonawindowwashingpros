@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import CallSticker from '@/components/CallSticker'
@@ -248,6 +249,8 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
 
 // Standard hero section for other cities
 function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSectionProps) {
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  
   return (
     <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-20 md:pb-32">
       {/* Video Background - Optimized for LCP */}
@@ -269,12 +272,11 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
           muted
           playsInline
           preload="none"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectFit: 'cover', opacity: 0 }}
-          onLoadedData={(e) => {
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+          style={{ objectFit: 'cover', opacity: videoLoaded ? 1 : 0 }}
+          onLoadedData={() => {
             // Fade in video once loaded
-            e.currentTarget.style.transition = 'opacity 0.5s'
-            e.currentTarget.style.opacity = '1'
+            setVideoLoaded(true)
           }}
         >
           <source src="/hero-video.mp4" type="video/mp4" />

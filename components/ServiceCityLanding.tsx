@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
@@ -25,6 +26,7 @@ interface HeroSectionProps {
 
 // Conversion-optimized hero section for service+location pages
 function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCallClick }: HeroSectionProps) {
+  const [videoLoaded, setVideoLoaded] = useState(false)
 
   const getCityHeading = () => {
     const cityHeadings: { [key: string]: string } = {
@@ -63,12 +65,11 @@ function ConversionOptimizedHeroSection({ service, city, nearbyAreas, handleCall
             muted
             playsInline
             preload="none"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectFit: 'cover', opacity: 0 }}
-            onLoadedData={(e) => {
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+            style={{ objectFit: 'cover', opacity: videoLoaded ? 1 : 0 }}
+            onLoadedData={() => {
               // Fade in video once loaded
-              e.currentTarget.style.transition = 'opacity 0.5s'
-              e.currentTarget.style.opacity = '1'
+              setVideoLoaded(true)
             }}
           >
             <source src="/hero-video.mp4" type="video/mp4" />
