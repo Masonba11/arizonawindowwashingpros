@@ -124,16 +124,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <h2 className="text-2xl font-bold mb-6 text-center">Service Area Map</h2>
-          <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-            <p className="text-gray-500">Map embed placeholder - Add Google Maps embed here</p>
-          </div>
-        </div>
-      </section>
-
       {/* Rich Content Section */}
       <section className="bg-gray-50 section-padding">
         <div className="container-custom max-w-4xl">
