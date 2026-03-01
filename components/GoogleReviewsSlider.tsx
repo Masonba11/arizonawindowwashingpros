@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import Script from 'next/script'
 
 interface GoogleReviewsSliderProps {
@@ -7,13 +8,43 @@ interface GoogleReviewsSliderProps {
 }
 
 export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSliderProps) {
+  const [shouldLoad, setShouldLoad] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
+  useEffect(() => {
+    // Load script when component is about to enter viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !shouldLoad) {
+            setShouldLoad(true)
+            observer.disconnect()
+          }
+        })
+      },
+      {
+        rootMargin: '200px', // Start loading 200px before it's visible
+        threshold: 0.1,
+      }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [shouldLoad])
 
   if (compact) {
     // Clean, simple version - load only when visible
     return (
       <>
-        <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
+        {shouldLoad && (
+          <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
+        )}
+        <div ref={containerRef} className="w-full">
         <div className="w-full">
           {/* Mobile */}
           <div className="md:hidden">
@@ -53,8 +84,10 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
   // Full version for standalone section - load only when in viewport
   return (
     <>
-      <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
-      <section className="py-6 md:py-8 bg-white relative z-10 border-t border-gray-200">
+      {shouldLoad && (
+        <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
+      )}
+      <section ref={containerRef} className="py-6 md:py-8 bg-white relative z-10 border-t border-gray-200">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-4">
             <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">

@@ -52,6 +52,7 @@ export default function RootLayout({
         {/* Preconnect to external domains for faster DNS */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://elfsightcdn.com" />
         <link rel="dns-prefetch" href="https://elfsightcdn.com" />
         <link rel="dns-prefetch" href="https://link.msgsndr.com" />
         <script
