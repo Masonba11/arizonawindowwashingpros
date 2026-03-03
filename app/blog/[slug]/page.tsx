@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getBlogPost, getRelatedPosts } from '@/lib/blog'
-import { generateMetadata, generateArticleSchema } from '@/lib/seo'
+import { generateMetadata as generatePageMetadata, generateArticleSchema } from '@/lib/seo'
 import AreasWeServeLinks from '@/components/AreasWeServeLinks'
 import ContactForm from '@/components/ContactForm'
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   }
 
-  return generateMetadata({
+  return generatePageMetadata({
     title: post.title,
     description: post.excerpt,
     path: `/blog/${post.slug}`,

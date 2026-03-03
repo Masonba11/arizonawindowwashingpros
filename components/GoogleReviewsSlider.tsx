@@ -45,7 +45,6 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
           <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
         )}
         <div ref={containerRef} className="w-full">
-        <div className="w-full">
           {/* Mobile */}
           <div className="md:hidden">
             <div 
