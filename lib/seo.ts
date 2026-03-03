@@ -173,17 +173,9 @@ export function generateServiceSchema(serviceName: string, serviceDescription: s
     name: serviceName,
     description: serviceDescription,
     provider: {
+      '@id': `${BUSINESS_INFO.website}#organization`,
       '@type': 'LocalBusiness',
       name: BUSINESS_INFO.name,
-      telephone: BUSINESS_INFO.phone,
-      email: BUSINESS_INFO.email,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: BUSINESS_INFO.address.city,
-        addressRegion: BUSINESS_INFO.address.state,
-        postalCode: BUSINESS_INFO.address.zip,
-        addressCountry: 'US',
-      },
     },
     areaServed: BUSINESS_INFO.serviceArea
       .filter((area) => area !== 'AZ')
@@ -196,6 +188,35 @@ export function generateServiceSchema(serviceName: string, serviceDescription: s
     url: serviceUrl,
     serviceType: 'Window Cleaning Service',
     category: 'Home Improvement',
+  }
+}
+
+export function generateArticleSchema(post: { title: string; excerpt: string; datePublished: string; dateModified?: string; author: string; slug: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.datePublished,
+    dateModified: post.dateModified || post.datePublished,
+    author: {
+      '@type': 'Organization',
+      name: post.author,
+      url: BUSINESS_INFO.website,
+    },
+    publisher: {
+      '@id': `${BUSINESS_INFO.website}#organization`,
+      '@type': 'Organization',
+      name: BUSINESS_INFO.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${BUSINESS_INFO.website}/AZWPlogo-Photoroom.png`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BUSINESS_INFO.website}/blog/${post.slug}`,
+    },
   }
 }
 

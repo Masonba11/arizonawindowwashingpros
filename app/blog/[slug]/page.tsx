@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getBlogPost, getRelatedPosts } from '@/lib/blog'
-import { generateMetadata } from '@/lib/seo'
+import { generateMetadata, generateArticleSchema } from '@/lib/seo'
 import AreasWeServeLinks from '@/components/AreasWeServeLinks'
 import ContactForm from '@/components/ContactForm'
 
@@ -37,8 +37,14 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
+  const articleSchema = generateArticleSchema(post)
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <article className="section-padding bg-white">
         <div className="container-custom max-w-4xl">
           <Link
