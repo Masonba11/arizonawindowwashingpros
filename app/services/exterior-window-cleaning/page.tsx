@@ -7,14 +7,11 @@ import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import LazyYouTube from '@/components/LazyYouTube'
-import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
+import { generateServiceMetadata } from '@/lib/serviceSEO'
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { generateServiceFAQs } from '@/lib/enhancedFAQs'
 
-export const metadata = generateMetadata({
-  title: 'Exterior Window Cleaning',
-  description: 'Professional exterior window cleaning with deionized water for streak-free results. Starting at $150. Licensed & insured. Free quotes. Call or text for same-day service.',
-  path: '/services/exterior-window-cleaning',
-})
+export const metadata = generateServiceMetadata('exterior-window-cleaning')
 
 const faqs = generateServiceFAQs('Exterior Window Cleaning')
 

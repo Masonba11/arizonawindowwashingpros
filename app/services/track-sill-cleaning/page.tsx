@@ -7,13 +7,10 @@ import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import LazyYouTube from '@/components/LazyYouTube'
-import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
+import { generateServiceMetadata } from '@/lib/serviceSEO'
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
-export const metadata = generateMetadata({
-  title: 'Track & Sill Cleaning Services',
-  description: 'Professional window track and sill cleaning services in Mesa, Gilbert, Queen Creek, Chandler, Scottsdale, and Tempe, Arizona. Deep cleaning to remove dirt, debris, and buildup.',
-  path: '/services/track-sill-cleaning',
-})
+export const metadata = generateServiceMetadata('track-sill-cleaning')
 
 const faqs = [
   {

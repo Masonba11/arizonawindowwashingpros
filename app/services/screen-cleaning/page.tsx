@@ -9,13 +9,10 @@ import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import LazyYouTube from '@/components/LazyYouTube'
 import { generalFAQs } from '@/lib/faqs'
-import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
+import { generateServiceMetadata } from '@/lib/serviceSEO'
+import { generateBreadcrumbSchema } from '@/lib/seo'
 
-export const metadata = generateMetadata({
-  title: 'Screen Cleaning Services',
-  description: 'Professional window screen cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Remove dust, pollen, and debris for better air quality.',
-  path: '/services/screen-cleaning',
-})
+export const metadata = generateServiceMetadata('screen-cleaning')
 
 export default function ScreenCleaningPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([

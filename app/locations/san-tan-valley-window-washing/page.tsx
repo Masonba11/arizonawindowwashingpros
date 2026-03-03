@@ -8,13 +8,10 @@ import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
 import CallButton from '@/components/CallButton'
-import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
+import { generateCityMetadata } from '@/lib/citySEO'
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
-export const metadata = generateMetadata({
-  title: 'San Tan Valley window cleaning',
-  description: 'Professional outdoor and indoor window cleaning services in San Tan Valley, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
-  path: '/locations/san-tan-valley-window-washing',
-})
+export const metadata = generateCityMetadata('san-tan-valley')
 
 const faqs = [
   {

@@ -7,13 +7,10 @@ import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
-import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
+import { generateCityMetadata } from '@/lib/citySEO'
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
-export const metadata = generateMetadata({
-  title: 'Window Cleaning in Gilbert, AZ',
-  description: 'Professional window cleaning in Gilbert, Arizona. Outdoor and indoor services with deionized water for streak-free results. Starting at $150. Free quotes. Call or text for same-day service.',
-  path: '/locations/gilbert-window-washing',
-})
+export const metadata = generateCityMetadata('gilbert')
 
 const faqs = [
   {

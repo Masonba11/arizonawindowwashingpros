@@ -12,8 +12,8 @@ import { generalFAQs } from '@/lib/faqs'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Professional Window Cleaning in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale',
-  description: `Expert exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Professional window cleaning and screen cleaning. Starting at $150. Free quotes available.`,
+  title: 'Window Cleaning in Gilbert, Queen Creek, Mesa, Chandler & Tempe',
+  description: `Professional window cleaning services throughout the East Valley. Deionized water system removes hard water stains. Licensed & insured. Starting at $150. Free quotes. Call or text for same-day service.`,
 })
 
 export default function HomePage() {

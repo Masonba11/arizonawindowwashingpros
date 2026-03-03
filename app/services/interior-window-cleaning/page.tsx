@@ -8,13 +8,10 @@ import PricingReference from '@/components/PricingReference'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import LazyYouTube from '@/components/LazyYouTube'
-import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
+import { generateServiceMetadata } from '@/lib/serviceSEO'
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
-export const metadata = generateMetadata({
-  title: 'Interior Window Cleaning Services',
-  description: 'Optional premium interior window cleaning add-on service. Interior glass cleaned and detailed with careful protection of floors. Priced at 30-40% of exterior service.',
-  path: '/services/interior-window-cleaning',
-})
+export const metadata = generateServiceMetadata('interior-window-cleaning')
 
 const faqs = [
   {

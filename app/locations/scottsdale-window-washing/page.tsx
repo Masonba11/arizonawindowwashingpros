@@ -7,13 +7,10 @@ import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
-import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
+import { generateCityMetadata } from '@/lib/citySEO'
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
-export const metadata = generateMetadata({
-  title: 'Scottsdale window cleaning',
-  description: 'Professional outdoor and indoor window cleaning services in Scottsdale, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
-  path: '/locations/scottsdale-window-washing',
-})
+export const metadata = generateCityMetadata('scottsdale')
 
 const faqs = [
   {
