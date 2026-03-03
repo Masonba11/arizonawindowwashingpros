@@ -1,16 +1,12 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getBlogPost, getRelatedPosts } from '@/lib/blog'
+import { getBlogPost, getRelatedPosts, getAllBlogPosts } from '@/lib/blog'
 import { generateMetadata as generatePageMetadata, generateArticleSchema } from '@/lib/seo'
-import AreasWeServeLinks from '@/components/AreasWeServeLinks'
 import ContactForm from '@/components/ContactForm'
 
 export async function generateStaticParams() {
-  const posts = [
-    'how-to-remove-hard-water-stains-from-windows',
-    'why-deionized-water-matters-for-window-cleaning',
-  ]
-  return posts.map((slug) => ({ slug }))
+  const publishedPosts = getAllBlogPosts()
+  return publishedPosts.map((post) => ({ slug: post.slug }))
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
@@ -75,20 +71,27 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </header>
 
           <div className="prose prose-lg max-w-none">
-            {/* Blog content will be loaded from MDX files */}
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p className="text-xl font-semibold text-gray-900">{post.excerpt}</p>
               
-              {/* Full content placeholder - will be replaced with MDX */}
-              <p>
-                This is a placeholder for the full blog post content. In production, this would be loaded from an MDX file.
-              </p>
+              {/* Blog content - MDX files are in content/blog/ directory */}
+              {/* For now, showing excerpt. To load MDX dynamically, install @next/mdx */}
+              <div className="space-y-4">
+                <p>
+                  Full blog post content is available in MDX format. The complete article includes detailed information, 
+                  internal links to our services and city pages, and actionable advice for Arizona homeowners.
+                </p>
+                <p>
+                  To enable full MDX rendering, install <code>@next/mdx</code> and configure it in <code>next.config.js</code>.
+                  The MDX files are located in the <code>content/blog/</code> directory.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Internal Links Section */}
+          {/* Internal Links Section - Required for SEO */}
           <div className="mt-12 pt-8 border-t border-gray-200">
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">Related Services</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Our Services</h2>
             <div className="flex flex-wrap gap-4 mb-8">
               <Link
                 href="/services/exterior-window-cleaning"
@@ -103,14 +106,52 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 Interior Window Cleaning
               </Link>
               <Link
+                href="/services/screen-cleaning"
+                className="text-primary-600 hover:text-primary-700 hover:underline font-medium"
+              >
+                Screen Cleaning
+              </Link>
+              <Link
+                href="/services/track-sill-cleaning"
+                className="text-primary-600 hover:text-primary-700 hover:underline font-medium"
+              >
+                Track & Sill Cleaning
+              </Link>
+            </div>
+
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 mt-8">Serving Arizona Cities</h2>
+            <div className="flex flex-wrap gap-4 mb-8">
+              <Link
                 href="/locations/gilbert-window-washing"
                 className="text-primary-600 hover:text-primary-700 hover:underline font-medium"
               >
                 Window Cleaning in Gilbert
               </Link>
+              <Link
+                href="/locations/mesa-window-washing"
+                className="text-primary-600 hover:text-primary-700 hover:underline font-medium"
+              >
+                Window Cleaning in Mesa
+              </Link>
+              <Link
+                href="/locations/chandler-window-washing"
+                className="text-primary-600 hover:text-primary-700 hover:underline font-medium"
+              >
+                Window Cleaning in Chandler
+              </Link>
+              <Link
+                href="/locations/tempe-window-washing"
+                className="text-primary-600 hover:text-primary-700 hover:underline font-medium"
+              >
+                Window Cleaning in Tempe
+              </Link>
+              <Link
+                href="/locations/window-washing-queen-creek"
+                className="text-primary-600 hover:text-primary-700 hover:underline font-medium"
+              >
+                Window Cleaning in Queen Creek
+              </Link>
             </div>
-
-            <AreasWeServeLinks className="mb-8" />
           </div>
 
           {/* Related Posts */}

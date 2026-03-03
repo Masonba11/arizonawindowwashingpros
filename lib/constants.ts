@@ -1,6 +1,6 @@
 // Business Information (NAP - Name, Address, Phone)
 export const BUSINESS_INFO = {
-  name: 'Arizona Window Cleaning Pros',
+  name: 'Arizona Window Washing Pros',
   phone: '(480) 737-0850',
   phoneFormatted: '4807370850',
   email: 'info@arizonawindowwashingpros.com',

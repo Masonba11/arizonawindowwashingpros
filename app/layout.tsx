@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Layout from '@/components/Layout'
 import { BUSINESS_INFO } from '@/lib/constants'
-import { generateLocalBusinessSchema } from '@/lib/seo'
+import { generateProfessionalServiceSchema } from '@/lib/schema'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -37,7 +37,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const localBusinessSchema = generateLocalBusinessSchema()
+  const professionalServiceSchema = generateProfessionalServiceSchema()
 
   return (
     <html lang="en">
@@ -57,7 +57,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://link.msgsndr.com" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
         />
         {/* Load third-party scripts after page becomes interactive */}
         <script

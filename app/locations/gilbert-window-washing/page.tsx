@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import { BUSINESS_INFO, SERVICES, LOCATIONS } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
-import FAQSection from '@/components/FAQSection'
+import FAQ from '@/components/FAQ'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
 import { generateCityMetadata } from '@/lib/citySEO'
-import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
+import { generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateCityMetadata('gilbert')
 
@@ -308,8 +308,8 @@ export default function GilbertWindowWashingPage() {
       </section>
       <GetFreeQuoteCTA />
 
-      {/* FAQ Section */}
-      <FAQSection faqs={faqs} />
+      {/* FAQ Section - includes FAQPage schema automatically */}
+      <FAQ faqs={faqs} />
       <GetFreeQuoteCTA />
 
 <GetFreeQuoteCTA />
