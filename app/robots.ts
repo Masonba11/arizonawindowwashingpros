@@ -6,18 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/data/'],
+      disallow: ['/api/', '/_next/', '/admin/'],
     },
     sitemap: `${BUSINESS_INFO.website}/sitemap.xml`,
   }
 }
-
-
-
-
-
-
-
-
-
-

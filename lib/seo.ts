@@ -119,13 +119,14 @@ export function generateLocalBusinessSchema() {
         },
       ],
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '12',
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // Removed aggregateRating - only include if you have real structured data from Google
+    // aggregateRating: {
+    //   '@type': 'AggregateRating',
+    //   ratingValue: '4.9',
+    //   reviewCount: '12',
+    //   bestRating: '5',
+    //   worstRating: '1',
+    // },
     knowsAbout: [
       'Window Cleaning',
       'Exterior Window Cleaning',

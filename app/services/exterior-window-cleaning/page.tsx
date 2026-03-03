@@ -11,8 +11,8 @@ import { generateMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@
 import { generateServiceFAQs } from '@/lib/enhancedFAQs'
 
 export const metadata = generateMetadata({
-  title: 'Exterior Window Cleaning Services',
-  description: 'Professional exterior window cleaning services. Hand-washed windows with professional squeegee finish. Starting at $150 for 1-story homes, $180 for 2-story homes. Free estimates. Licensed & insured.',
+  title: 'Exterior Window Cleaning',
+  description: 'Professional exterior window cleaning with deionized water for streak-free results. Starting at $150. Licensed & insured. Free quotes. Call or text for same-day service.',
   path: '/services/exterior-window-cleaning',
 })
 
