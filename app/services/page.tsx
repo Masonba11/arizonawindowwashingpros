@@ -8,8 +8,8 @@ import { generalFAQs } from '@/lib/faqs'
 import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'window cleaning Services',
-  description: 'Professional exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Screen cleaning available as add-on. Starting at $150.',
+  title: 'Window Cleaning Services',
+  description: 'Professional window cleaning services including exterior, interior, screen, and track cleaning. Deionized water system for streak-free results. Starting at $150. Free quotes.',
   path: '/services',
 })
 

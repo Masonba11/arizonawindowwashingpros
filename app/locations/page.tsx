@@ -9,7 +9,7 @@ import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'Service Areas',
-  description: 'Professional window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Local experts serving the East Valley.',
+  description: 'Window cleaning services throughout the East Valley. Serving Gilbert, Mesa, Chandler, Tempe, Queen Creek, Scottsdale, and San Tan Valley. Free quotes available.',
   path: '/locations',
 })
 

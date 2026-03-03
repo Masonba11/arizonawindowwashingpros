@@ -1,8 +1,7 @@
 import { MetadataRoute } from 'next'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { LOCATIONS, SERVICES } from '@/lib/constants'
-import { getAllCities } from '@/data/cities'
-import { getAllServices } from '@/data/services'
+import { getAllBlogPosts } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = BUSINESS_INFO.website
@@ -45,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
   ]
 
   // City pages
@@ -63,8 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // Blog pages (will be added when blog is created)
-  const blogPages: MetadataRoute.Sitemap = []
+  // Blog pages
+  const blogPages = getAllBlogPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.dateModified ? new Date(post.dateModified) : new Date(post.datePublished),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
   return [...staticPages, ...cityPages, ...servicePages, ...blogPages]
 }
