@@ -14,11 +14,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${BUSINESS_INFO.name} | Professional window cleaning in Mesa, Gilbert, Queen Creek, Chandler, Tempe & Scottsdale`,
+    default: `${BUSINESS_INFO.name} | Window Cleaning in Gilbert, Queen Creek, Mesa, Chandler & Tempe`,
     template: `%s | ${BUSINESS_INFO.name}`,
   },
   description: `Professional exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Expert window cleaning and screen cleaning. Starting at $150.`,
-  keywords: ['window cleaning', 'window cleaning', 'Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Arizona'],
+  // Removed keywords - Google ignores them and they're not needed
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

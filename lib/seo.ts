@@ -203,18 +203,20 @@ export function generateMetadata({
   description,
   path = '',
 }: {
-  title: string
+  title: string // Page-specific title only (template will add business name)
   description: string
   path?: string
 }): Metadata {
-  const fullTitle = `${title} | ${BUSINESS_INFO.name}`
+  // Don't add business name here - let layout.tsx template handle it
+  // This prevents duplication: template adds it once
   const url = `${BUSINESS_INFO.website}${path}`
+  const fullTitleForOG = `${title} | ${BUSINESS_INFO.name}` // Only for OG/Twitter
 
   return {
-    title: fullTitle,
+    title, // Page title only - template adds business name
     description,
     openGraph: {
-      title: fullTitle,
+      title: fullTitleForOG,
       description,
       url,
       siteName: BUSINESS_INFO.name,
@@ -231,7 +233,7 @@ export function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: fullTitle,
+      title: fullTitleForOG,
       description,
       images: [`${BUSINESS_INFO.website}/AZWPlogo-Photoroom.png`],
     },

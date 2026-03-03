@@ -10,8 +10,8 @@ import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
 import { generateMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata = generateMetadata({
-  title: 'Gilbert window cleaning',
-  description: 'Professional outdoor and indoor window cleaning services in Gilbert, Arizona. Expert window cleaning and screen cleaning. Starting at $150 for 1-story homes. Free quotes available.',
+  title: 'Window Cleaning in Gilbert, AZ',
+  description: 'Professional window cleaning in Gilbert, Arizona. Outdoor and indoor services with deionized water for streak-free results. Starting at $150. Free quotes. Call or text for same-day service.',
   path: '/locations/gilbert-window-washing',
 })
 
