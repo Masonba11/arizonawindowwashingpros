@@ -246,7 +246,7 @@ export default function EastValleyWindowWashingPage() {
               We also serve these nearby areas:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-              {LOCATIONS.map((location) => (
+              {LOCATIONS.filter((loc) => loc.id !== 'east-valley').map((location) => (
                 <Link
                   key={location.id}
                   href={`/locations/${location.slug}`}
@@ -319,7 +319,7 @@ export default function EastValleyWindowWashingPage() {
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
 
-<GetFreeQuoteCTA />
+      <GetFreeQuoteCTA />
     </>
   )
 }
