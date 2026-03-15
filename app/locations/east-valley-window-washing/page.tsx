@@ -221,15 +221,11 @@ export default function EastValleyWindowWashingPage() {
         </div>
       </section>
 
-
       <GetFreeQuoteCTA />
-            </ul>
-            <p className="text-gray-700 mb-8">
-              <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
-            </p>
 
-
-            <h2 className="text-2xl font-bold mb-4 mt-8">Our Services in East Valley</h2>
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-2xl font-bold mb-4 mt-8">Our Services in East Valley</h2>
             <p className="text-gray-700 mb-4">
               We offer comprehensive window cleaning services throughout East Valley:
             </p>
