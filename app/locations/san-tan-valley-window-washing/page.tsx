@@ -346,7 +346,7 @@ export default function SanTanValleyWindowWashingPage() {
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
 
-<GetFreeQuoteCTA />
+      <GetFreeQuoteCTA />
     </>
   )
 }

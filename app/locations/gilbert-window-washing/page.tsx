@@ -320,8 +320,6 @@ export default function GilbertWindowWashingPage() {
       {/* FAQ Section - includes FAQPage schema automatically */}
       <FAQ faqs={faqs} />
       <GetFreeQuoteCTA />
-
-<GetFreeQuoteCTA />
     </>
   )
 }

@@ -342,7 +342,7 @@ export default function ScottsdaleWindowWashingPage() {
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
 
-<GetFreeQuoteCTA />
+      <GetFreeQuoteCTA />
     </>
   )
 }

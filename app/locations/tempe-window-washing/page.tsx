@@ -342,7 +342,7 @@ export default function TempeWindowWashingPage() {
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
 
-<GetFreeQuoteCTA />
+      <GetFreeQuoteCTA />
     </>
   )
 }
