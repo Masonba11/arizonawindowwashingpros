@@ -222,13 +222,16 @@ export default function MesaWindowWashingPage() {
                 'Track and sill cleaning',
                 'Frame and edge cleaning',
                 'Streak-free finish guarantee',
-              ]}
-            </div>
-          </div>
-            <div className="bg-white/80 p-4 rounded-xl border border-primary-200">
-              <p className="text-gray-700">
-                <strong className="text-primary-700">Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
-              </p>
+              ].map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{item}</p>
+                </div>
+              ))}
             </div>
           </div>
 
