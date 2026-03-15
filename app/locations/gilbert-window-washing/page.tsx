@@ -43,7 +43,7 @@ export default function GilbertWindowWashingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      ></script>
       <HeroVideo
         title="Gilbert window cleaning"
         subtitle="Expert window cleaning in Gilbert, Arizona"
