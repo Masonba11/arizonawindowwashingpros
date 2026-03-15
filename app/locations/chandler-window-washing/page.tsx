@@ -187,44 +187,39 @@ export default function ChandlerWindowWashingPage() {
       </section>
 
       <GetFreeQuoteCTA />
-            </ul>
-            <p className="text-gray-700 mb-8">
-              <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
-            </p>
 
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-2xl font-bold mb-4 mt-8">Our Services in Chandler</h2>
+          <p className="text-gray-700 mb-4">
+            We offer comprehensive window cleaning services throughout Chandler:
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            {SERVICES.map((service) => (
+              <Link
+                key={service.id}
+                href={`/services/${service.slug}`}
+                className="text-primary-600 hover:underline font-medium"
+              >
+                {service.name}
+              </Link>
+            ))}
+          </div>
 
-            <h2 className="text-2xl font-bold mb-4 mt-8">Our Services in Chandler</h2>
-            <p className="text-gray-700 mb-4">
-              We offer comprehensive window cleaning services throughout Chandler:
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              {SERVICES.map((service) => (
-                <Link
-                  key={service.id}
-                  href={`/services/${service.slug}`}
-                  className="text-primary-600 hover:underline font-medium"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-
-            <h2 className="text-2xl font-bold mb-4">Other Service Areas</h2>
-            <p className="text-gray-700 mb-4">
-              We also serve these nearby areas:
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-              {LOCATIONS.filter((loc) => loc.id !== 'chandler').map((location) => (
-                <Link
-                  key={location.id}
-                  href={`/locations/${location.slug}`}
-                  className="text-primary-600 hover:underline font-medium"
-                >
-                  {location.name}
-                </Link>
-              ))}
-            </div>
-
+          <h2 className="text-2xl font-bold mb-4">Other Service Areas</h2>
+          <p className="text-gray-700 mb-4">
+            We also serve these nearby areas:
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            {LOCATIONS.filter((loc) => loc.id !== 'chandler').map((location) => (
+              <Link
+                key={location.id}
+                href={`/locations/${location.slug}`}
+                className="text-primary-600 hover:underline font-medium"
+              >
+                {location.name}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
