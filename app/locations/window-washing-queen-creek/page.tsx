@@ -217,8 +217,6 @@ export default function WindowWashingQueenCreekPage() {
               <li>Streak-free finish guarantee</li>
             </ul>
 
-
-
             <h2 className="text-2xl font-bold mb-4 mt-8">Our Services in Queen Creek</h2>
             <p className="text-gray-700 mb-4">
               We offer comprehensive window cleaning services throughout Queen Creek:
