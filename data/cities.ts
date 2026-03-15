@@ -100,3 +100,4 @@ export function getAllCities(): CityData[] {
   return Object.values(cities)
 }
 
+

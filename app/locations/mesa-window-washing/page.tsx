@@ -63,6 +63,40 @@ export default function MesaWindowWashingPage() {
         </div>
       </HeroVideo>
 
+      {/* Why Choose Us Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-2xl font-bold mb-4">Why Choose Us for Mesa window cleaning?</h2>
+          <p className="text-gray-700 mb-4">
+            Mesa&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Mesa and knows exactly how to handle these conditions.
+          </p>
+          <p className="text-gray-700 mb-8">
+            We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Mesa home&apos;s windows are spotless and streak-free. Our local team understands Mesa neighborhoods and works efficiently to minimize disruption to your day.
+          </p>
+        </div>
+      </section>
+
+      {/* Pricing Guidance Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Mesa window cleaning</h2>
+          <p className="text-gray-700 mb-4">
+            window cleaning prices in Mesa typically range from:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+            <li>Small homes (10-15 windows): $150-$250</li>
+            <li>Medium homes (16-25 windows): $200-$350</li>
+            <li>Large homes (26+ windows): $300-$500+</li>
+          </ul>
+          <p className="text-gray-700 mb-4 font-semibold">
+            Screen cleaning and tracks & sills are free with every window cleaning service.
+          </p>
+          <p className="text-gray-700 mb-8">
+            <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
+          </p>
+        </div>
+      </section>
+
       {/* Google Reviews Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
@@ -188,45 +222,10 @@ export default function MesaWindowWashingPage() {
                 'Track and sill cleaning',
                 'Frame and edge cleaning',
                 'Streak-free finish guarantee',
-              ].map((item, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mt-0.5">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">{item}</p>
-                </div>
-              ))}
+              ]}
             </div>
           </div>
 
-          {/* Why Choose Us */}
-          <div className="content-section">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Choose Us for Mesa window cleaning?</h2>
-            <div className="space-y-6">
-              <p className="text-gray-700 leading-relaxed text-lg">
-                Mesa&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Mesa and knows exactly how to handle these conditions.
-              </p>
-              <p className="text-gray-700 leading-relaxed text-lg">
-                We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Mesa home&apos;s windows are spotless and streak-free. Our local team understands Mesa neighborhoods and works efficiently to minimize disruption to your day.
-              </p>
-            </div>
-          </div>
-
-
-          {/* Pricing Guidance */}
-          <div className="content-section bg-gradient-to-br from-primary-50 to-white border-2 border-primary-100">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Pricing Guidance for Mesa window cleaning</h2>
-            <p className="text-gray-700 mb-6 text-lg">
-              window cleaning prices in Mesa typically range from:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              {[
-                { label: 'Small homes (10-15 windows)', price: '$150-$250' },
-                { label: 'Medium homes (16-25 windows)', price: '$200-$350' },
-                { label: 'Large homes (26+ windows)', price: '$300-$500+' },
-                { label: 'Add-ons: Screen cleaning', price: '$50-$100' },
               ].map((item, index) => (
                 <div key={index} className="bg-white p-4 rounded-xl border border-gray-200">
                   <p className="text-gray-700 font-medium mb-1">{item.label}</p>

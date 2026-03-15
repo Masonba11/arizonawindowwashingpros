@@ -62,6 +62,40 @@ export default function WindowWashingQueenCreekPage() {
         </div>
       </HeroVideo>
 
+      {/* Why Choose Us Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-2xl font-bold mb-4">Why Choose Us for window cleaning Queen Creek?</h2>
+          <p className="text-gray-700 mb-4">
+            Queen Creek&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Queen Creek and knows exactly how to handle these conditions.
+          </p>
+          <p className="text-gray-700 mb-8">
+            We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Queen Creek home&apos;s windows are spotless and streak-free. Our local team understands Queen Creek neighborhoods and works efficiently to minimize disruption to your day.
+          </p>
+        </div>
+      </section>
+
+      {/* Pricing Guidance Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-2xl font-bold mb-4">Pricing Guidance for window cleaning Queen Creek</h2>
+          <p className="text-gray-700 mb-4">
+            window cleaning prices in Queen Creek typically range from:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+            <li>Small homes (10-15 windows): $150-$250</li>
+            <li>Medium homes (16-25 windows): $200-$350</li>
+            <li>Large homes (26+ windows): $300-$500+</li>
+          </ul>
+          <p className="text-gray-700 mb-4 font-semibold">
+            Screen cleaning and tracks & sills are free with every window cleaning service.
+          </p>
+          <p className="text-gray-700 mb-8">
+            <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
+          </p>
+        </div>
+      </section>
+
       {/* Google Reviews Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
@@ -183,27 +217,6 @@ export default function WindowWashingQueenCreekPage() {
               <li>Streak-free finish guarantee</li>
             </ul>
 
-            <h2 className="text-2xl font-bold mb-4">Why Choose Us for window cleaning Queen Creek?</h2>
-            <p className="text-gray-700 mb-4">
-              Queen Creek&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Queen Creek and knows exactly how to handle these conditions.
-            </p>
-            <p className="text-gray-700 mb-8">
-              We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Queen Creek home&apos;s windows are spotless and streak-free. Our local team understands Queen Creek neighborhoods and works efficiently to minimize disruption to your day.
-            </p>
-
-            <h2 className="text-2xl font-bold mb-4">Pricing Guidance for window cleaning Queen Creek</h2>
-            <p className="text-gray-700 mb-4">
-              window cleaning prices in Queen Creek typically range from:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
-              <li>Small homes (10-15 windows): $150-$250</li>
-              <li>Medium homes (16-25 windows): $200-$350</li>
-              <li>Large homes (26+ windows): $300-$500+</li>
-              <li>Add-ons: Screen cleaning ($50-$100)</li>
-            </ul>
-            <p className="text-gray-700 mb-8">
-              <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
-            </p>
 
 
             <h2 className="text-2xl font-bold mb-4 mt-8">Our Services in Queen Creek</h2>

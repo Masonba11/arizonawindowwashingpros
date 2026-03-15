@@ -265,7 +265,7 @@ export default function HomePage() {
       {/* FAQ Section */}
       <FAQSection faqs={generalFAQs} />
 
-{/* Contact Form Section */}
+      {/* Contact Form Section */}
       <section id="contact-form" className="section-padding">
         <div className="container-custom max-w-2xl">
           <ContactForm />
