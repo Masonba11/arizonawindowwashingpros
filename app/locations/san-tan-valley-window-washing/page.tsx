@@ -234,14 +234,6 @@ export default function SanTanValleyWindowWashingPage() {
               ))}
             </div>
           </div>
-
-              ].map((item, index) => (
-                <div key={index} className="bg-white p-4 rounded-xl border border-gray-200">
-                  <p className="text-gray-700 font-medium mb-1">{item.label}</p>
-                  <p className="text-primary-600 font-bold text-lg">{item.price}</p>
-                </div>
-              ))}
-            </div>
             <div className="bg-white/80 p-4 rounded-xl border border-primary-200">
               <p className="text-gray-700">
                 <strong className="text-primary-700">Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
