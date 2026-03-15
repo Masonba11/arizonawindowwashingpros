@@ -89,7 +89,7 @@ export default function LocationsPage() {
       {/* FAQ Section */}
       <FAQSection faqs={generalFAQs} />
 
-{/* Contact Form Section */}
+      {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
         <div className="container-custom max-w-2xl">
           <ContactForm />
