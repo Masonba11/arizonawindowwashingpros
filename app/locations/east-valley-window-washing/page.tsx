@@ -201,85 +201,109 @@ export default function EastValleyWindowWashingPage() {
       {/* Gallery Section */}
       <GallerySection city="East Valley" />
 
-      <section className="section-padding">
-        <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-700 mb-6">
+
+      {/* Main Content Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-5xl">
+          <div className="content-section">
+            <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed text-center">
               Looking for professional East Valley window cleaning services? You&apos;ve come to the right place. We specialize in providing top-quality window cleaning and screen cleaning for East Valley homeowners and businesses.
             </p>
-
-            <h2 className="text-2xl font-bold mb-4">What&apos;s Included in Our East Valley window cleaning Service</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
-              <li>Complete outdoor window cleaning (all accessible windows)</li>
-              <li>Interior window cleaning (optional)</li>
-              <li>Screen cleaning (optional add-on)</li>
-              <li>Track and sill cleaning</li>
-              <li>Frame and edge cleaning</li>
-              <li>Streak-free finish guarantee</li>
-            </ul>
-
           </div>
-        </div>
-      </section>
 
-      <GetFreeQuoteCTA />
+          {/* What's Included */}
+          <div className="content-section">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">What&apos;s Included in Our East Valley window cleaning Service</h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                'Complete outdoor window cleaning (all accessible windows)',
+                'Interior window cleaning (optional)',
+                'Screen cleaning (optional add-on)',
+                'Track and sill cleaning',
+                'Frame and edge cleaning',
+                'Streak-free finish guarantee',
+              ].map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4 mt-8">Our Services in East Valley</h2>
-            <p className="text-gray-700 mb-4">
+          {/* Our Services in East Valley */}
+          <div className="content-section">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Services in East Valley</h2>
+            <p className="text-gray-700 mb-6 text-lg">
               We offer comprehensive window cleaning services throughout East Valley:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {SERVICES.map((service) => (
                 <Link
                   key={service.id}
                   href={`/services/${service.slug}`}
-                  className="text-primary-600 hover:underline font-medium"
+                  className="card card-hover text-center p-6 group"
                 >
-                  {service.name}
+                  <span className="text-primary-600 font-semibold group-hover:text-primary-700 transition-colors">
+                    {service.name}
+                  </span>
                 </Link>
               ))}
             </div>
+          </div>
 
-            <h2 className="text-2xl font-bold mb-4">Other Service Areas</h2>
-            <p className="text-gray-700 mb-4">
+          {/* Other Service Areas */}
+          <div className="content-section">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Other Service Areas</h2>
+            <p className="text-gray-700 mb-6 text-lg">
               We also serve these nearby areas:
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {LOCATIONS.filter((loc) => loc.id !== 'east-valley').map((location) => (
                 <Link
                   key={location.id}
                   href={`/locations/${location.slug}`}
-                  className="text-primary-600 hover:underline font-medium"
+                  className="card card-hover text-center p-6 group"
                 >
-                  {location.name}
+                  <span className="text-primary-600 font-semibold group-hover:text-primary-700 transition-colors">
+                    {location.name}
+                  </span>
                 </Link>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
       {/* Rich Content Section */}
-      <section className="bg-gray-50 section-padding">
-        <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Expert window cleaning in East Valley, Arizona</h2>
-            <p className="text-xl text-gray-700 mb-6">
-              East Valley homeowners appreciate the value of professional window cleaning, especially in Arizona&apos;s challenging climate. With East Valley&apos;s rapid growth and diverse communities, from Mesa to Gilbert, Chandler to Tempe, we bring professional window cleaning expertise to every corner of the region.
-            </p>
-            <p className="text-gray-700 mb-6">
-              Our team understands East Valley&apos;s unique window cleaning needs. Whether you live in an established neighborhood or a new development, we have the experience and equipment to handle your home&apos;s specific requirements. We&apos;re familiar with East Valley&apos;s architectural styles and know how to clean windows on everything from single-story ranches to multi-story custom homes.
-            </p>
-            <h3 className="text-2xl font-bold mb-4 mt-8">Why East Valley Residents Trust Us</h3>
-            <p className="text-gray-700 mb-4">
-              East Valley is known for its family-friendly atmosphere and well-maintained homes. We share that commitment to quality and take pride in helping East Valley homeowners maintain beautiful, clear windows that enhance their property values and quality of life.
-            </p>
-            <p className="text-gray-700">
-              Our local knowledge of East Valley neighborhoods, combined with professional training and the best equipment, ensures that every East Valley home receives the exceptional service it deserves. We&apos;re your neighbors, and we&apos;re committed to providing the best window cleaning service in East Valley.
-            </p>
+      <section className="section-padding gradient-bg">
+        <div className="container-custom max-w-5xl">
+          <div className="content-section">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Professional window cleaning in East Valley, Arizona</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
+            </div>
+            <div className="space-y-6">
+              <p className="text-xl text-gray-700 leading-relaxed">
+                East Valley homeowners know that maintaining clean windows in Arizona&apos;s desert climate requires specialized expertise. With intense sun, frequent dust storms, and hard water challenges, East Valley windows need professional care to stay crystal clear. Arizona window cleaning Pros brings years of local experience to every East Valley home we serve.
+              </p>
+              <p className="text-gray-700 leading-relaxed text-lg">
+                Whether you live in Mesa, Gilbert, Chandler, Tempe, Queen Creek, or any of the surrounding neighborhoods, we understand the unique window cleaning challenges in your area. Our team uses proven techniques and professional-grade equipment specifically suited for East Valley&apos;s climate conditions.
+              </p>
+              <div className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-2xl border border-primary-100 mt-8">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Why East Valley Residents Trust Us</h3>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  East Valley is known for its family-friendly atmosphere with homes ranging from historic properties to new developments. We&apos;ve worked on all types of East Valley homes and understand the specific needs of each. Our flexible scheduling and competitive pricing make professional window cleaning accessible to all East Valley residents.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  We&apos;re committed to providing exceptional service to the East Valley community. As your local window cleaning experts, we take pride in helping East Valley homeowners maintain beautiful, clear windows that enhance their home&apos;s appearance and their enjoyment of Arizona&apos;s beautiful weather.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -301,6 +325,7 @@ export default function EastValleyWindowWashingPage() {
                 title="Arizona window cleaning Pros - Video 1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                loading="lazy"
               />
             </div>
             <div className="relative w-full h-[400px] max-w-md mx-auto">
@@ -310,6 +335,7 @@ export default function EastValleyWindowWashingPage() {
                 title="Arizona window cleaning Pros - Video 2"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                loading="lazy"
               />
             </div>
           </div>
@@ -320,7 +346,7 @@ export default function EastValleyWindowWashingPage() {
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
 
-      <GetFreeQuoteCTA />
+<GetFreeQuoteCTA />
     </>
   )
 }
