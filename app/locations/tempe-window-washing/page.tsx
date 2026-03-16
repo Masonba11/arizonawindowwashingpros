@@ -42,12 +42,13 @@ export default function TempeWindowWashingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
       />
       <HeroVideo
         title="Tempe window cleaning"
         subtitle="Professional window cleaning services in Tempe, Arizona"
-        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

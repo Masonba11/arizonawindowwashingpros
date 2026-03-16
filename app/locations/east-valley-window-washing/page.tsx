@@ -42,12 +42,13 @@ export default function EastValleyWindowWashingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
       />
       <HeroVideo
         title="East Valley window cleaning"
         subtitle="Expert window cleaning in East Valley, Arizona"
-        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

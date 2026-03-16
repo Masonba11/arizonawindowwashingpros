@@ -44,12 +44,13 @@ export default function SanTanValleyWindowWashingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
       />
       <HeroVideo
         title="San Tan Valley window cleaning"
         subtitle="Professional window cleaning services in San Tan Valley, Arizona"
-        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CallButton

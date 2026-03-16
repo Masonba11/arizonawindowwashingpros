@@ -42,7 +42,9 @@ export default function ChandlerWindowWashingPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
       />
       <HeroVideo
         title="Chandler window cleaning"

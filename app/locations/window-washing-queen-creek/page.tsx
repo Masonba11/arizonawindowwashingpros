@@ -42,12 +42,13 @@ export default function WindowWashingQueenCreekPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
       />
       <HeroVideo
         title="window cleaning Queen Creek"
         subtitle="Top-rated window cleaning in Queen Creek, Arizona"
-        
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
