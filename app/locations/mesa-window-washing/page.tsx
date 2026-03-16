@@ -77,27 +77,6 @@ export default function MesaWindowWashingPage() {
         </div>
       </section>
 
-      {/* Pricing Guidance Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Mesa window cleaning</h2>
-          <p className="text-gray-700 mb-4">
-            window cleaning prices in Mesa typically range from:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-            <li>Small homes (10-15 windows): $150-$250</li>
-            <li>Medium homes (16-25 windows): $200-$350</li>
-            <li>Large homes (26+ windows): $300-$500+</li>
-          </ul>
-          <p className="text-gray-700 mb-4 font-semibold">
-            Screen cleaning and tracks & sills are free with every window cleaning service.
-          </p>
-          <p className="text-gray-700 mb-8">
-            <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
-          </p>
-        </div>
-      </section>
-
       {/* Google Reviews Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
@@ -340,6 +319,28 @@ export default function MesaWindowWashingPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+      <GetFreeQuoteCTA />
+
+      {/* Pricing Guidance Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Mesa window cleaning</h2>
+          <p className="text-gray-700 mb-4">
+            window cleaning prices in Mesa typically range from:
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+            <li>Small homes (10-15 windows): $150-$250</li>
+            <li>Medium homes (16-25 windows): $200-$350</li>
+            <li>Large homes (26+ windows): $300-$500+</li>
+          </ul>
+          <p className="text-gray-700 mb-4 font-semibold">
+            Screen cleaning and tracks & sills are free with every window cleaning service.
+          </p>
+          <p className="text-gray-700 mb-8">
+            <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
+          </p>
         </div>
       </section>
       <GetFreeQuoteCTA />
