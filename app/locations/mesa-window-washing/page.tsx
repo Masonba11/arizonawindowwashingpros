@@ -5,7 +5,6 @@ import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
-import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
 import LocationWhyChooseUs from '@/components/LocationWhyChooseUs'
 import DeionizedWaterTankCard from '@/components/DeionizedWaterTankCard'
@@ -166,9 +165,6 @@ export default function MesaWindowWashingPage() {
       </section>
       <GetFreeQuoteCTA />
 
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
-
       {/* Gallery Section */}
       <GallerySection city="Mesa" />
 
@@ -250,96 +246,8 @@ export default function MesaWindowWashingPage() {
         </div>
       </section>
 
-      {/* Rich Content Section */}
-      <section className="section-padding gradient-bg">
-        <div className="container-custom max-w-5xl">
-          <div className="content-section">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Professional window cleaning in Mesa, Arizona</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-600 mx-auto rounded-full"></div>
-            </div>
-            <div className="space-y-6">
-              <p className="text-xl text-gray-700 leading-relaxed">
-                Mesa homeowners know that maintaining clean windows in Arizona&apos;s desert climate requires specialized expertise. With intense sun, frequent dust storms, and hard water challenges, Mesa windows need professional care to stay crystal clear. Arizona window cleaning Pros brings years of local experience to every Mesa home we serve.
-              </p>
-              <p className="text-gray-700 leading-relaxed text-lg">
-                Whether you live in downtown Mesa, East Mesa, West Mesa, or any of the surrounding neighborhoods, we understand the unique window cleaning challenges in your area. Our team uses proven techniques and professional-grade equipment specifically suited for Mesa&apos;s climate conditions.
-              </p>
-              <div className="bg-gradient-to-br from-primary-50 to-white p-6 rounded-2xl border border-primary-100 mt-8">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Why Mesa Homeowners Choose Us</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Mesa is a diverse community with homes ranging from historic properties to new developments. We&apos;ve worked on all types of Mesa homes and understand the specific needs of each. Our flexible scheduling and competitive pricing make professional window cleaning accessible to all Mesa residents.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  We&apos;re committed to providing exceptional service to the Mesa community. As your local window cleaning experts, we take pride in helping Mesa homeowners maintain beautiful, clear windows that enhance their home&apos;s appearance and their enjoyment of Arizona&apos;s beautiful weather.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* YouTube Videos Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">See Us In Action</h2>
-            <p className="section-subtitle">
-              Watch our professional window cleaning team at work
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona window cleaning Pros, video 1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona window cleaning Pros, video 2"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <GetFreeQuoteCTA />
-
-      {/* Pricing Guidance Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Pricing Guidance for Mesa window cleaning</h2>
-          <p className="text-gray-700 mb-4">
-            window cleaning prices in Mesa typically range from:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-            <li>Small homes (10-15 windows): $150-$250</li>
-            <li>Medium homes (16-25 windows): $200-$350</li>
-            <li>Large homes (26+ windows): $300-$500+</li>
-          </ul>
-          <p className="text-gray-700 mb-4 font-semibold">
-            Screen cleaning and tracks & sills are free with every window cleaning service.
-          </p>
-          <p className="text-gray-700 mb-8">
-            <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
-          </p>
-        </div>
-      </section>
-      <GetFreeQuoteCTA />
-
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
-
-<GetFreeQuoteCTA />
     </>
   )
 }

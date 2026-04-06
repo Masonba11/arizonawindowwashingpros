@@ -5,7 +5,6 @@ import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
-import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
 import LocationWhyChooseUs from '@/components/LocationWhyChooseUs'
 import DeionizedWaterTankCard from '@/components/DeionizedWaterTankCard'
@@ -165,9 +164,6 @@ export default function ChandlerWindowWashingPage() {
       </section>
       <GetFreeQuoteCTA />
 
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
-
       {/* Gallery Section */}
       <GallerySection city="Chandler" />
 
@@ -191,8 +187,6 @@ export default function ChandlerWindowWashingPage() {
           </div>
         </div>
       </section>
-
-      <GetFreeQuoteCTA />
 
       <section className="section-padding bg-white">
         <div className="container-custom max-w-4xl">
@@ -230,65 +224,8 @@ export default function ChandlerWindowWashingPage() {
         </div>
       </section>
 
-      {/* Rich Content Section */}
-      <section className="bg-gray-50 section-padding">
-        <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Reliable Window Cleaning in Chandler, Arizona</h2>
-            <p className="text-xl text-gray-700 mb-6">
-              Chandler is a thriving community known for its excellent schools, beautiful neighborhoods, and strong sense of community. We&apos;re proud to serve Chandler homeowners with the same level of professionalism and attention to detail that makes this city special.
-            </p>
-            <p className="text-gray-700 mb-6">
-              From downtown Chandler to Ocotillo and all surrounding areas, we bring professional window cleaning expertise to every Chandler home. Our team understands Chandler&apos;s diverse architectural styles, from historic homes to modern developments, and knows how to clean windows on each type effectively.
-            </p>
-            <h3 className="text-2xl font-bold mb-4 mt-8">Why Chandler Homeowners Choose Us</h3>
-            <p className="text-gray-700 mb-4">
-              Chandler residents value quality and professionalism, and that&apos;s exactly what we deliver. We&apos;re committed to providing exceptional window cleaning service that matches the high standards Chandler homeowners expect. Our reliable service, fair pricing, and attention to detail have made us a trusted choice throughout the community.
-            </p>
-            <p className="text-gray-700">
-              Whether you need a one-time deep clean or regular maintenance, we&apos;re here to help keep your Chandler home looking its best. We understand the importance of maintaining property values and take pride in helping Chandler homeowners preserve the beauty of their homes with crystal-clear windows.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* YouTube Videos Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">See Us In Action</h2>
-            <p className="section-subtitle">
-              Watch our professional window cleaning team at work
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona window cleaning Pros, video 1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona window cleaning Pros, video 2"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <GetFreeQuoteCTA />
-
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
-
-<GetFreeQuoteCTA />
     </>
   )
 }

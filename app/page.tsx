@@ -4,9 +4,7 @@ import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
-import LazyYouTube from '@/components/LazyYouTube'
 import GallerySection from '@/components/GallerySection'
-import TestimonialVideo from '@/components/TestimonialVideo'
 import CallButton from '@/components/CallButton'
 import { generalFAQs } from '@/lib/faqs'
 import { generateMetadata } from '@/lib/seo'
@@ -158,30 +156,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* YouTube Videos Section - Lazy Loaded */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">See Us In Action</h2>
-            <p className="section-subtitle">
-              Watch our professional window cleaning team at work
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <LazyYouTube
-              videoId="TpGGKeABfCI"
-              title="Arizona Window Cleaning Pros, video 1"
-              className="max-w-md mx-auto"
-            />
-            <LazyYouTube
-              videoId="GdNlH8GPhL0"
-              title="Arizona Window Cleaning Pros, video 2"
-              className="max-w-md mx-auto"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Rich Content Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-5xl">
@@ -247,9 +221,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
 
       {/* Google Reviews Section */}
       <section className="section-padding bg-white">

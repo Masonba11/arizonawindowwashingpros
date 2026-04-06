@@ -7,6 +7,8 @@ interface GoogleReviewsSliderProps {
   compact?: boolean
 }
 
+const loadElfsight = process.env.NODE_ENV === 'production'
+
 export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSliderProps) {
   const [shouldLoad, setShouldLoad] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -41,7 +43,7 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
     // Clean, simple version - load only when visible
     return (
       <>
-        {shouldLoad && (
+        {shouldLoad && loadElfsight && (
           <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
         )}
         <div ref={containerRef} className="w-full">
@@ -83,7 +85,7 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
   // Full version for standalone section - load only when in viewport
   return (
     <>
-      {shouldLoad && (
+      {shouldLoad && loadElfsight && (
         <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
       )}
       <section ref={containerRef} className="py-6 md:py-8 bg-white relative z-10 border-t border-gray-200">

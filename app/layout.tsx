@@ -75,6 +75,15 @@ export default function RootLayout({
                 }
               }
               function loadThirdPartyScripts() {
+                try {
+                  var proto = window.location.protocol;
+                  if (proto !== 'http:' && proto !== 'https:') return;
+                } catch (e) {
+                  return;
+                }
+                if (${JSON.stringify(process.env.NODE_ENV === 'development')}) {
+                  return;
+                }
                 // Message sender tracking
                 var script1 = document.createElement('script');
                 script1.src = 'https://link.msgsndr.com/js/external-tracking.js';

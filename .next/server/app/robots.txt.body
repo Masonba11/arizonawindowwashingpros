@@ -1,6 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /api/
-Disallow: /data/
-
-Sitemap: https://arizonawindowwashingpros.com/sitemap.xml

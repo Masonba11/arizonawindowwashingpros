@@ -5,7 +5,6 @@ import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
 import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
-import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
 import LocationWhyChooseUs from '@/components/LocationWhyChooseUs'
 import DeionizedWaterTankCard from '@/components/DeionizedWaterTankCard'
@@ -165,9 +164,6 @@ export default function WindowWashingQueenCreekPage() {
       </section>
       <GetFreeQuoteCTA />
 
-      {/* Testimonial Video Section */}
-      <TestimonialVideo formId="contact-form" />
-
       {/* Gallery Section */}
       <GallerySection city="Queen Creek" />
 
@@ -224,87 +220,8 @@ export default function WindowWashingQueenCreekPage() {
         </div>
       </section>
 
-      {/* Rich Content Section */}
-      <section className="bg-gray-50 section-padding">
-        <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Top-Rated window cleaning in Queen Creek, Arizona</h2>
-            <p className="text-xl text-gray-700 mb-6">
-              Queen Creek is one of Arizona&apos;s fastest-growing communities, and we&apos;re proud to serve this vibrant area. From established neighborhoods to new developments in San Tan Valley, we bring professional window cleaning expertise to every Queen Creek home.
-            </p>
-            <p className="text-gray-700 mb-6">
-              Queen Creek&apos;s unique location means windows face the same Arizona challenges: intense sun, dust storms, and hard water. But often with newer construction and modern window designs. Our team is experienced with all types of windows and knows how to clean them effectively while protecting your investment.
-            </p>
-            <h3 className="text-2xl font-bold mb-4 mt-8">Serving Queen Creek with Excellence</h3>
-            <p className="text-gray-700 mb-4">
-              As Queen Creek continues to grow, we&apos;re committed to being the trusted window cleaning service for this community. We understand the pride Queen Creek residents take in their homes and work hard to help maintain that beautiful appearance.
-            </p>
-            <p className="text-gray-700">
-              Whether you&apos;re in the heart of Queen Creek or in the surrounding San Tan Valley area, you can count on Arizona window cleaning Pros for reliable, professional service. We&apos;re your local window cleaning experts, dedicated to helping Queen Creek homeowners enjoy crystal-clear windows year-round.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* YouTube Videos Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="section-title">See Us In Action</h2>
-            <p className="section-subtitle">
-              Watch our professional window cleaning team at work
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona window cleaning Pros, video 1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-            <div className="relative w-full h-[400px] max-w-md mx-auto">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona window cleaning Pros, video 2"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <GetFreeQuoteCTA />
-
-      {/* Pricing Guidance Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Pricing Guidance for window cleaning Queen Creek</h2>
-          <p className="text-gray-700 mb-4">
-            window cleaning prices in Queen Creek typically range from:
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-            <li>Small homes (10-15 windows): $150-$250</li>
-            <li>Medium homes (16-25 windows): $200-$350</li>
-            <li>Large homes (26+ windows): $300-$500+</li>
-          </ul>
-          <p className="text-gray-700 mb-4 font-semibold">
-            Screen cleaning and tracks & sills are free with every window cleaning service.
-          </p>
-          <p className="text-gray-700 mb-8">
-            <strong>Note:</strong> These are general ranges. Actual pricing depends on factors like window accessibility, property size, and specific services requested. Contact us for a free, personalized quote.
-          </p>
-        </div>
-      </section>
-      <GetFreeQuoteCTA />
-
       {/* FAQ Section */}
       <FAQSection faqs={faqs} />
-
-<GetFreeQuoteCTA />
     </>
   )
 }
