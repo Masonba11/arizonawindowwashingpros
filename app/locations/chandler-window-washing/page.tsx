@@ -7,6 +7,8 @@ import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
+import LocationWhyChooseUs from '@/components/LocationWhyChooseUs'
+import DeionizedWaterTankCard from '@/components/DeionizedWaterTankCard'
 import { generateCityMetadata } from '@/lib/citySEO'
 import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -63,6 +65,15 @@ export default function ChandlerWindowWashingPage() {
         </div>
       </HeroVideo>
 
+      <LocationWhyChooseUs
+        idPrefix="chandler-window-washing"
+        sectionHeading="Why Choose Us for Chandler window cleaning?"
+        cityPossessive="Chandler's"
+        cityName="Chandler"
+        experiencePhrase="working in Chandler"
+        neighborhoodsSnippet="downtown Chandler, Ocotillo, or newer master-planned communities"
+      />
+
       {/* Google Reviews Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
@@ -83,14 +94,7 @@ export default function ChandlerWindowWashingPage() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             {/* Product Image */}
             <div className="order-2 md:order-1">
-              <div className="bg-white rounded-2xl p-4 shadow-xl overflow-hidden">
-                <img
-                  src="/newstuff/newstuff9.jpg"
-                  alt="Deionized Water Tank"
-                  className="w-full max-w-xs mx-auto h-auto rounded-lg object-cover"
-                />
-                <p className="text-center text-sm font-semibold text-gray-700 mt-2">Deionized Water Tank</p>
-              </div>
+              <DeionizedWaterTankCard />
             </div>
             
             {/* Content */}

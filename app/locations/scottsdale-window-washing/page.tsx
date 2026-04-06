@@ -7,6 +7,8 @@ import HeroVideo from '@/components/HeroVideo'
 import GallerySection from '@/components/GallerySection'
 import TestimonialVideo from '@/components/TestimonialVideo'
 import GetFreeQuoteCTA from '@/components/GetFreeQuoteCTA'
+import LocationWhyChooseUs from '@/components/LocationWhyChooseUs'
+import DeionizedWaterTankCard from '@/components/DeionizedWaterTankCard'
 import { generateCityMetadata } from '@/lib/citySEO'
 import { generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 
@@ -63,18 +65,14 @@ export default function ScottsdaleWindowWashingPage() {
         </div>
       </HeroVideo>
 
-      {/* Why Choose Us Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-2xl font-bold mb-4">Why Choose Us for Scottsdale window cleaning?</h2>
-          <p className="text-gray-700 mb-4">
-            Scottsdale&apos;s unique climate presents specific challenges for window cleaning, from intense sun that creates hard water spots to dust storms that leave windows dirty. Our team has extensive experience working in Scottsdale and knows exactly how to handle these conditions.
-          </p>
-          <p className="text-gray-700 mb-8">
-            We use professional-grade equipment and eco-friendly cleaning solutions to ensure your Scottsdale home&apos;s windows are spotless and streak-free. Our local team understands Scottsdale neighborhoods and works efficiently to minimize disruption to your day.
-          </p>
-        </div>
-      </section>
+      <LocationWhyChooseUs
+        idPrefix="scottsdale-window-washing"
+        sectionHeading="Why Choose Us for Scottsdale window cleaning?"
+        cityPossessive="Scottsdale's"
+        cityName="Scottsdale"
+        experiencePhrase="working in Scottsdale"
+        neighborhoodsSnippet="Old Town Scottsdale, North Scottsdale, or newer master-planned communities"
+      />
 
       {/* Google Reviews Section */}
       <section className="section-padding bg-white">
@@ -96,14 +94,7 @@ export default function ScottsdaleWindowWashingPage() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
             {/* Product Image */}
             <div className="order-2 md:order-1">
-              <div className="bg-white rounded-2xl p-4 shadow-xl overflow-hidden">
-                <img
-                  src="/newstuff/newstuff9.jpg"
-                  alt="Deionized Water Tank"
-                  className="w-full max-w-xs mx-auto h-auto rounded-lg object-cover"
-                />
-                <p className="text-center text-sm font-semibold text-gray-700 mt-2">Deionized Water Tank</p>
-              </div>
+              <DeionizedWaterTankCard />
             </div>
             
             {/* Content */}
