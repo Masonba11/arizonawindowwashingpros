@@ -269,7 +269,7 @@ export default function WindowWashingQueenCreekPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/TpGGKeABfCI"
-                title="Arizona window cleaning Pros - Video 1"
+                title="Arizona window cleaning Pros, video 1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />
@@ -278,7 +278,7 @@ export default function WindowWashingQueenCreekPage() {
               <iframe
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
                 src="https://www.youtube.com/embed/GdNlH8GPhL0"
-                title="Arizona window cleaning Pros - Video 2"
+                title="Arizona window cleaning Pros, video 2"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
               />

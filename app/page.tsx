@@ -170,12 +170,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <LazyYouTube
               videoId="TpGGKeABfCI"
-              title="Arizona Window Cleaning Pros - Video 1"
+              title="Arizona Window Cleaning Pros, video 1"
               className="max-w-md mx-auto"
             />
             <LazyYouTube
               videoId="GdNlH8GPhL0"
-              title="Arizona Window Cleaning Pros - Video 2"
+              title="Arizona Window Cleaning Pros, video 2"
               className="max-w-md mx-auto"
             />
           </div>

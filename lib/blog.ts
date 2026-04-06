@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'why-hard-water-stains-permanently-damage-windows-in-arizona',
     title: 'Why Hard Water Stains Permanently Damage Windows in Arizona',
-    excerpt: 'Hard water stains in Arizona aren\'t just cosmetic—they can cause permanent etching and damage to your windows. Learn why immediate professional treatment is essential.',
+    excerpt: 'Hard water stains in Arizona aren\'t just cosmetic. They can cause permanent etching and damage to your windows. Learn why immediate professional treatment is essential.',
     datePublished: '2025-02-26',
     dateModified: '2025-02-26',
     author: 'Arizona Window Washing Pros',

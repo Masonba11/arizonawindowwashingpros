@@ -43,13 +43,13 @@ export default function AboutPage() {
               Arizona window cleaning Pros was founded in 2026 by three friends: Mason Ball, Chansyn Mapa, and Dane Howard. But our story didn't start in 2026. It started years earlier, in middle school, when we met and became close friends.
             </p>
             <p className="leading-relaxed">
-              Our bond was built through football—those early morning practices, grueling workouts, and the lessons that came with being part of a team. We learned discipline. We learned accountability. We learned what it means to show up, even when it's hard.
+              Our bond was built through football. Those early morning practices, grueling workouts, and the lessons that came with being part of a team. We learned discipline. We learned accountability. We learned what it means to show up, even when it's hard.
             </p>
             <p className="leading-relaxed">
               As life moved forward, we took that same drive, that same work ethic, and that same commitment to doing things right, and we repurposed it into building something together.
             </p>
             <p className="leading-relaxed font-medium">
-              Arizona window cleaning Pros exists because we wanted to bring something different to Arizona homeowners—professional, dependable service from people who genuinely care about the work and the community they serve.
+              Arizona window cleaning Pros exists because we wanted to bring something different to Arizona homeowners: professional, dependable service from people who genuinely care about the work and the community they serve.
             </p>
             <p className="leading-relaxed">
               We created this business for homeowners who are tired of no-shows, rushed jobs, and inconsistent quality. We wanted to be the people you could count on, every single time.
@@ -76,7 +76,7 @@ export default function AboutPage() {
               When you've learned to be accountable to your teammates, you understand what it means to be accountable to your customers. When you've spent years pushing through when things get tough, you don't walk away from a job when it's challenging. You figure it out.
             </p>
             <p className="leading-relaxed">
-              That's where our reliability comes from. It's not a marketing promise—it's who we are. It's built into how we operate because it's how we've learned to live.
+              That's where our reliability comes from. It's not a marketing promise. It's who we are. It's built into how we operate because it's how we've learned to live.
             </p>
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function AboutPage() {
           </div>
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p className="leading-relaxed">
-              We're a local business, built to serve Arizona homeowners with quality window cleaning services. But we're also built to last—not just as a company, but as part of this community.
+              We're a local business, built to serve Arizona homeowners with quality window cleaning services. But we're also built to last, not just as a company, but as part of this community.
             </p>
             <p className="leading-relaxed">
               We're not interested in quick wins or shortcuts. We're interested in building long-term relationships with people who live here, work here, and care about this place as much as we do.
@@ -135,7 +135,7 @@ export default function AboutPage() {
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p className="leading-relaxed text-xl">
-              We're grateful for every customer who trusts us with their window cleaning needs. This isn't just our business—it's our commitment to showing up and doing things the right way, for the long haul.
+              We're grateful for every customer who trusts us with their window cleaning needs. This isn't just our business. It's our commitment to showing up and doing things the right way, for the long haul.
             </p>
             <p className="leading-relaxed">
               When you choose Arizona window cleaning Pros, you're choosing people who genuinely care about the work and the community they serve.
@@ -145,7 +145,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-8 pt-8 border-t border-gray-200">
               <p className="text-gray-600 text-base">
-                — Mason Ball, Chansyn Mapa, and Dane Howard
+                Mason Ball, Chansyn Mapa, and Dane Howard
               </p>
               <p className="text-gray-600 text-base mt-2">
                 Founders, Arizona window cleaning Pros
