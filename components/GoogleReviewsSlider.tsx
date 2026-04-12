@@ -5,11 +5,15 @@ import Script from 'next/script'
 
 interface GoogleReviewsSliderProps {
   compact?: boolean
+  /** Load Elfsight in development (e.g. ad landing previews) */
+  alwaysLoadElfsight?: boolean
 }
 
-const loadElfsight = process.env.NODE_ENV === 'production'
-
-export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSliderProps) {
+export default function GoogleReviewsSlider({
+  compact = false,
+  alwaysLoadElfsight = false,
+}: GoogleReviewsSliderProps) {
+  const enableElfsight = process.env.NODE_ENV === 'production' || alwaysLoadElfsight
   const [shouldLoad, setShouldLoad] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -43,7 +47,7 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
     // Clean, simple version - load only when visible
     return (
       <>
-        {shouldLoad && loadElfsight && (
+        {shouldLoad && enableElfsight && (
           <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
         )}
         <div ref={containerRef} className="w-full">
@@ -85,7 +89,7 @@ export default function GoogleReviewsSlider({ compact = false }: GoogleReviewsSl
   // Full version for standalone section - load only when in viewport
   return (
     <>
-      {shouldLoad && loadElfsight && (
+      {shouldLoad && enableElfsight && (
         <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
       )}
       <section ref={containerRef} className="py-6 md:py-8 bg-white relative z-10 border-t border-gray-200">

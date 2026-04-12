@@ -6,6 +6,7 @@ import Footer from './Footer'
 import CallSticker from './CallSticker'
 import GetFreeQuoteSticker from './GetFreeQuoteSticker'
 import SocialMediaSticker from './SocialMediaSticker'
+import { AD_LANDING_PATHS } from '@/lib/adLandingPaths'
 
 const LANDING_PAGES = [
   '/scottsdale-window-washing',
@@ -26,12 +27,16 @@ const SERVICE_CITY_PATTERNS = [
   '/screen-cleaning-',
 ]
 
+/** Standalone pages: no header, footer, or floating stickers */
+const FORM_ONLY_PAGES = ['/form', ...AD_LANDING_PATHS]
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const isLandingPage = LANDING_PAGES.includes(pathname || '')
   const isServiceCityPage = SERVICE_CITY_PATTERNS.some(pattern => pathname?.startsWith(pattern))
+  const isFormOnlyPage = FORM_ONLY_PAGES.includes(pathname || '')
 
-  if (isLandingPage || isServiceCityPage) {
+  if (isLandingPage || isServiceCityPage || isFormOnlyPage) {
     // Minimal layout for Google Ads landing pages - no nav, no footer, no stickers
     return <div className="min-h-screen">{children}</div>
   }

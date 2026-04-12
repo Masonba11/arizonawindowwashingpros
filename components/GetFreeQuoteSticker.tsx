@@ -2,10 +2,11 @@
 
 export default function GetFreeQuoteSticker() {
   const handleGetQuote = () => {
-    const contactForm = document.getElementById('contact-form')
-    if (contactForm) {
-      const yOffset = -20 // Small offset from top
-      const y = contactForm.getBoundingClientRect().top + window.pageYOffset + yOffset
+    const anchor =
+      document.getElementById('quote-form') ?? document.getElementById('contact-form')
+    if (anchor) {
+      const yOffset = -20
+      const y = anchor.getBoundingClientRect().top + window.pageYOffset + yOffset
       window.scrollTo({ top: y, behavior: 'smooth' })
     }
   }

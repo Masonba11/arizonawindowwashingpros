@@ -28,10 +28,12 @@ export default function ContactForm({
     message: '',
   })
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [submitErrorDetail, setSubmitErrorDetail] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormStatus('submitting')
+    setSubmitErrorDetail(null)
 
     try {
       const serviceLine =
@@ -68,16 +70,28 @@ export default function ContactForm({
         }, 1500)
       } else {
         console.error('Form submission failed:', result.message || result)
+        const detail =
+          typeof result.message === 'string'
+            ? result.message.replace(/[<>]/g, '').slice(0, 220)
+            : null
+        setSubmitErrorDetail(detail)
         setFormStatus('error')
       }
     } catch (error) {
       console.error('Form submission error:', error)
+      setSubmitErrorDetail(null)
       setFormStatus('error')
     }
   }
 
   return (
-    <div className={compact ? "bg-white rounded-2xl shadow-2xl border-2 border-gray-200" : "card"}>
+    <div
+      className={
+        compact
+          ? 'bg-white rounded-2xl shadow-2xl border-2 border-gray-200 pb-28 md:pb-6'
+          : 'card pb-28 md:pb-10'
+      }
+    >
       <div className={compact ? "p-6" : "p-8 md:p-10"}>
         {showTitle && (
           <div className="text-center mb-8">
@@ -112,10 +126,12 @@ export default function ContactForm({
               <input
                 type="text"
                 id="name"
+                name="name"
+                autoComplete="name"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
+                className={compact ? "w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
               />
             </div>
 
@@ -126,10 +142,13 @@ export default function ContactForm({
               <input
                 type="tel"
                 id="phone"
+                name="phone"
+                autoComplete="tel"
+                inputMode="tel"
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
+                className={compact ? "w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
                 placeholder="(480) 555-1234"
               />
             </div>
@@ -141,10 +160,13 @@ export default function ContactForm({
               <input
                 type="email"
                 id="email"
+                name="email"
+                autoComplete="email"
+                inputMode="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
+                className={compact ? "w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
                 placeholder="your@email.com"
               />
             </div>
@@ -156,10 +178,12 @@ export default function ContactForm({
               <input
                 type="text"
                 id="city"
+                name="city"
+                autoComplete="address-level2"
                 value={formData.city}
                 onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                 placeholder="Enter your city"
-                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
+                className={compact ? "w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
               />
             </div>
 
@@ -169,11 +193,12 @@ export default function ContactForm({
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows={compact ? 2 : 4}
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className={compact ? "w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
+                className={compact ? "w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" : "w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"}
                 placeholder="Please describe the service you need (e.g., Exterior window cleaning, Interior cleaning, Screen cleaning, etc.)"
               />
             </div>
@@ -187,9 +212,14 @@ export default function ContactForm({
             </button>
 
             {formStatus === 'error' && (
-              <p className="text-red-600 text-sm text-center">
-                Something went wrong. Please call us at {BUSINESS_INFO.phone}
-              </p>
+              <div className="text-sm text-center space-y-1">
+                <p className="text-red-600 font-medium">
+                  Something went wrong. Please call us at {BUSINESS_INFO.phone}
+                </p>
+                {submitErrorDetail && (
+                  <p className="text-gray-600 text-xs break-words">{submitErrorDetail}</p>
+                )}
+              </div>
             )}
           </form>
         )}

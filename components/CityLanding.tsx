@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import CallSticker from '@/components/CallSticker'
@@ -134,13 +133,8 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
               Interior cleaning, Exterior cleaning, Tracks & sills, Screens we handle it all.
             </p>
 
-            {/* Form - Desktop */}
-            <div id="quote-form" className="hidden md:block">
-              <ContactForm defaultCity={city} showTitle={false} compact={true} />
-            </div>
-
-            {/* Mobile Form */}
-            <div id="quote-form" className="md:hidden">
+            {/* Single form — duplicate instances caused duplicate IDs and broke mobile Safari */}
+            <div id="quote-form" className="w-full">
               <ContactForm defaultCity={city} showTitle={false} compact={true} />
             </div>
 
@@ -249,13 +243,10 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
 
 // Standard hero section for other cities
 function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSectionProps) {
-  const [videoLoaded, setVideoLoaded] = useState(false)
-  
   return (
     <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-20 md:pb-32">
-      {/* Video Background - Optimized for LCP */}
+      {/* Hero background image */}
       <div className="absolute inset-0 z-0">
-        {/* Priority fallback image for instant LCP */}
         <Image
           src="/hero-image-optimized.jpg"
           alt="Arizona Window Washing Pros"
@@ -265,24 +256,6 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
           quality={75}
           sizes="100vw"
         />
-        {/* Video loads after image for better UX */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
-          style={{ objectFit: 'cover', opacity: videoLoaded ? 1 : 0 }}
-          onLoadedData={() => {
-            // Fade in video once loaded
-            setVideoLoaded(true)
-          }}
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-          <source src="/hero-video-new.mov" type="video/quicktime" />
-        </video>
-        {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
@@ -304,15 +277,10 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
           </p>
         </div>
 
-        {/* Form - Mobile First (appears right after heading) */}
-        <div id="quote-form" className="mb-8 md:hidden">
-          <ContactForm defaultCity={city} showTitle={false} compact={true} />
-        </div>
-
-        {/* Content Section */}
+        {/* One form: mobile shows it first via order; desktop keeps it in the right column */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left: Content */}
-          <div className="text-center md:text-left">
+          <div className="order-2 md:order-1 text-center md:text-left">
             {/* Trust Bullets */}
             <div className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8 justify-center md:justify-start">
               <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
@@ -352,8 +320,8 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
             </p>
           </div>
 
-          {/* Right: Form (Desktop) */}
-          <div id="quote-form" className="hidden md:block">
+          {/* Form: first on mobile, right column on desktop */}
+          <div id="quote-form" className="order-1 md:order-2 mb-2 md:mb-0 w-full">
             <ContactForm defaultCity={city} showTitle={false} compact={true} />
           </div>
         </div>

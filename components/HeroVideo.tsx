@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
@@ -17,7 +16,6 @@ interface HeroVideoProps {
 }
 
 export default function HeroVideo({ title, subtitle, children, city, service, formId = 'contact-form', showReviews = false }: HeroVideoProps) {
-  const [videoLoaded, setVideoLoaded] = useState(false)
   const handleGetQuote = () => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'cta_click', {
@@ -40,9 +38,8 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
 
   return (
     <section className="relative section-padding overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
-      {/* Video Background - Optimized for LCP */}
+      {/* Hero background image */}
       <div className="absolute inset-0 z-0">
-        {/* Priority fallback image for instant LCP */}
         <Image
           src="/hero-image-optimized.jpg"
           alt="Arizona Window Cleaning Pros"
@@ -54,23 +51,6 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
-        {/* Video loads after image for better UX */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
-          style={{ objectFit: 'cover', opacity: videoLoaded ? 1 : 0 }}
-          onLoadedData={() => {
-            // Fade in video once loaded
-            setVideoLoaded(true)
-          }}
-        >
-          <source src="/hero-video.mp4" type="video/mp4" />
-          <source src="/hero-video-new.mov" type="video/quicktime" />
-        </video>
         {/* Overlay for better text readability - dimmed */}
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
