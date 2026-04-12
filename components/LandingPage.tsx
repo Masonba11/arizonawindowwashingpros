@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
+import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
 
 interface LandingPageProps {
   city: string
@@ -24,29 +25,20 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
     e.preventDefault()
     setFormStatus('submitting')
 
-    const FORM_ACCESS_KEY = '0f32ed52-78cd-4ae4-8e56-df6c2b533b71'
-
     try {
-      const params = new URLSearchParams()
-      params.append('access_key', FORM_ACCESS_KEY)
-      params.append('name', formData.name)
-      params.append('phone', formData.phone)
-      params.append('email', `${formData.phone.replace(/\D/g, '')}@noreply.com`)
-      params.append('address', formData.address)
-      params.append('message', `Service Type: ${formData.type}\nAddress: ${formData.address}\nCity: ${city}\nSource: google_ads_landing\n\nMessage: ${formData.message || 'No additional message'}`)
-      params.append('subject', `New Lead: ${formData.type} Window Cleaning - ${city}`)
-      params.append('from_name', 'Arizona Window Cleaning Pros')
+      const digits = formData.phone.replace(/\D/g, '')
+      const email =
+        digits.length > 0 ? `${digits}@noreply.com` : `lead-${Date.now()}@noreply.com`
 
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json',
-        },
-        body: params.toString(),
+      const result = await submitWeb3FormsFromBrowser({
+        name: formData.name,
+        phone: formData.phone,
+        email,
+        address: formData.address,
+        message: `Service Type: ${formData.type}\nAddress: ${formData.address}\nCity: ${city}\nSource: google_ads_landing\n\nMessage: ${formData.message || 'No additional message'}`,
+        subject: `New Lead: ${formData.type} Window Cleaning - ${city}`,
+        from_name: 'Arizona Window Washing Pros',
       })
-
-      const result = await response.json()
 
       if (result.success) {
         setFormStatus('success')

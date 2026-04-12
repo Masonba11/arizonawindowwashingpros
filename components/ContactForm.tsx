@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { useRouter } from 'next/navigation'
 import { trackCallClick } from '@/lib/callTracking'
+import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
 
 interface ContactFormProps {
   defaultCity?: string
@@ -32,31 +33,20 @@ export default function ContactForm({
     e.preventDefault()
     setFormStatus('submitting')
 
-    const FORM_ACCESS_KEY = '0f32ed52-78cd-4ae4-8e56-df6c2b533b71'
-
     try {
-      // Submit directly to Web3Forms from client
-      const params = new URLSearchParams()
-      params.append('access_key', FORM_ACCESS_KEY)
-      params.append('name', formData.name)
-      params.append('phone', formData.phone)
-      params.append('email', formData.email)
-      params.append('city', formData.city || 'Not specified')
-      params.append('service', formData.message || 'Not specified')
-      params.append('message', formData.message || '')
-      params.append('subject', `New Contact Form Submission from ${formData.name}`)
-      params.append('from_name', 'Arizona Window Cleaning Pros Website')
+      const serviceLine =
+        defaultService || formData.message || 'Not specified'
 
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json',
-        },
-        body: params.toString(),
+      const result = await submitWeb3FormsFromBrowser({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city || 'Not specified',
+        service: serviceLine,
+        message: formData.message || '',
+        subject: `New Contact Form Submission from ${formData.name}`,
+        from_name: 'Arizona Window Washing Pros Website',
       })
-
-      const result = await response.json()
 
       if (result.success) {
         setFormStatus('success')
@@ -77,7 +67,7 @@ export default function ContactForm({
           router.push('/thank-you')
         }, 1500)
       } else {
-        console.error('Form submission failed:', result)
+        console.error('Form submission failed:', result.message || result)
         setFormStatus('error')
       }
     } catch (error) {

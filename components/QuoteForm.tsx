@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { BUSINESS_INFO, SERVICES, CITIES } from '@/lib/constants'
+import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
 
 interface QuoteFormProps {
   defaultCity?: string
@@ -49,18 +50,32 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
     setSubmitStatus('idle')
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          message: formData.notes || `Quote request for ${formData.service || 'window cleaning'}`,
-        }),
-      })
+      const digits = formData.phone.replace(/\D/g, '')
+      const email =
+        digits.length > 0
+          ? `${digits}@quote.noreply.com`
+          : `quote-${Date.now()}@quote.noreply.com`
+      const message =
+        formData.notes ||
+        `Quote request for ${formData.service || 'window cleaning'}`
+      const fullMessage = [
+        `City: ${formData.city}`,
+        `Service: ${formData.service}`,
+        formData.textMe ? 'Prefers text for quote: yes' : 'Prefers text for quote: no',
+        '',
+        message,
+      ].join('\n')
 
-      const result = await response.json()
+      const result = await submitWeb3FormsFromBrowser({
+        name: formData.name,
+        phone: formData.phone,
+        email,
+        city: formData.city || 'Not specified',
+        service: formData.service || 'Not specified',
+        message: fullMessage,
+        subject: `Quote request — ${formData.name} — ${formData.city || 'AZ'}`,
+        from_name: 'Arizona Window Washing Pros',
+      })
 
       if (result.success) {
         setSubmitStatus('success')
