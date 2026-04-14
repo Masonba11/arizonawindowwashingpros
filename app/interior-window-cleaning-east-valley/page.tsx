@@ -5,7 +5,7 @@ import { generateServiceCityFAQs } from '@/lib/serviceCityFAQs'
 
 export const metadata: Metadata = {
   title: 'Interior Window Cleaning in East Valley, AZ | 20% OFF | Arizona Window Cleaning Pros',
-  description: 'Professional interior window cleaning throughout the East Valley, Arizona. Serving Mesa, Gilbert, Chandler, Scottsdale, Tempe, Queen Creek & San Tan Valley. 20% off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
+  description: 'Professional interior window cleaning throughout the East Valley, Arizona. Serving Mesa, Gilbert, Chandler, Scottsdale, Tempe, Queen Creek & San Tan Valley. 20% off first service. Licensed, insured, streak-free guarantee. Call (480) 476-3731 for free estimate.',
   alternates: {
     canonical: '/interior-window-cleaning-east-valley',
   },
@@ -17,7 +17,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: BUSINESS_INFO.name,
-  telephone: '+14807370850',
+  telephone: '+14804763731',
   areaServed: [
     {
       '@type': 'City',
@@ -101,7 +101,7 @@ const schema = {
       provider: {
         '@type': 'LocalBusiness',
         name: BUSINESS_INFO.name,
-        telephone: '+14807370850',
+        telephone: '+14804763731',
       },
     },
   ],

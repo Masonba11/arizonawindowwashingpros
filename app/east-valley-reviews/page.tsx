@@ -20,7 +20,7 @@ const faqs = [
   {
     question: 'How do I get a quote for my East Valley home?',
     answer:
-      'You can call us directly at (480) 737-0850 or submit the quote form on this page. We provide free in-person quotes throughout the East Valley.',
+      'You can call us directly at (480) 476-3731 or submit the quote form on this page. We provide free in-person quotes throughout the East Valley.',
   },
   {
     question: 'Do you offer interior and exterior window cleaning?',
@@ -38,7 +38,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: BUSINESS_INFO.name,
-  telephone: '+14807370850',
+  telephone: '+14804763731',
   areaServed: [
     { '@type': 'City', name: 'Mesa', addressRegion: 'AZ' },
     { '@type': 'City', name: 'Gilbert', addressRegion: 'AZ' },

@@ -4,7 +4,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Scottsdale window cleaning | $100 OFF | Arizona window cleaning Pros',
-  description: 'Professional window cleaning in Scottsdale, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
+  description: 'Professional window cleaning in Scottsdale, AZ. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 476-3731 for free estimate.',
   alternates: {
     canonical: '/scottsdale-window-washing',
   },
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: 'How quickly can you schedule in Scottsdale?',
-    answer: 'We offer same-day estimates and can often schedule service within 24-48 hours. Call us at (480) 737-0850 for fastest scheduling.',
+    answer: 'We offer same-day estimates and can often schedule service within 24-48 hours. Call us at (480) 476-3731 for fastest scheduling.',
   },
   {
     question: 'What if it rains after you clean my windows in Scottsdale?',
@@ -49,7 +49,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: BUSINESS_INFO.name,
-  telephone: '+14807370850',
+  telephone: '+14804763731',
   areaServed: {
     '@type': 'City',
     name: 'Scottsdale',
@@ -69,7 +69,7 @@ const schema = {
       provider: {
         '@type': 'LocalBusiness',
         name: BUSINESS_INFO.name,
-        telephone: '+14807370850',
+        telephone: '+14804763731',
       },
     },
   ],

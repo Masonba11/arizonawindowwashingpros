@@ -5,7 +5,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Contact Us | East Valley Window Cleaning | 20% OFF',
   description:
-    'Contact Arizona Window Cleaning Pros for East Valley window cleaning. Call (480) 737-0850 or request a free quote online. Serving Mesa, Gilbert, Chandler, Scottsdale, Tempe, Queen Creek, and San Tan Valley.',
+    'Contact Arizona Window Cleaning Pros for East Valley window cleaning. Call (480) 476-3731 or request a free quote online. Serving Mesa, Gilbert, Chandler, Scottsdale, Tempe, Queen Creek, and San Tan Valley.',
   alternates: {
     canonical: '/east-valley-contact-us',
   },
@@ -15,7 +15,7 @@ const faqs = [
   {
     question: 'How can I contact Arizona Window Cleaning Pros in the East Valley?',
     answer:
-      'You can call us at (480) 737-0850 or fill out the quote form on this page. We respond quickly and can schedule service throughout the East Valley.',
+      'You can call us at (480) 476-3731 or fill out the quote form on this page. We respond quickly and can schedule service throughout the East Valley.',
   },
   {
     question: 'Do you offer free in-person quotes?',
@@ -38,7 +38,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: BUSINESS_INFO.name,
-  telephone: '+14807370850',
+  telephone: '+14804763731',
   areaServed: [
     { '@type': 'City', name: 'Mesa', addressRegion: 'AZ' },
     { '@type': 'City', name: 'Gilbert', addressRegion: 'AZ' },

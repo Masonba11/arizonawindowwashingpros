@@ -64,7 +64,7 @@ const thirdPartyLoaderScript = `
     gtag('js', new Date());
     gtag('config', 'AW-17892178683');
     gtag('config', 'AW-17892178683/wcO-COye-vYbEPv109NC', {
-      phone_conversion_number: '480-737-0850',
+      phone_conversion_number: '480-476-3731',
     });
 
     !(function (f, b, e, v, n, t, s) {
