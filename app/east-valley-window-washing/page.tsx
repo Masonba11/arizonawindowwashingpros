@@ -4,7 +4,7 @@ import { BUSINESS_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'East Valley Window Cleaning | 20% OFF | Arizona Window Cleaning Pros',
-  description: 'Professional window cleaning throughout the East Valley, AZ. Serving Mesa, Gilbert, Chandler, Scottsdale, Tempe, Queen Creek & San Tan Valley. 20% off first service. Licensed, insured, streak-free guarantee. Call (480) 476-3731 for free estimate.',
+  description: 'Professional window cleaning throughout the East Valley, AZ. Serving Mesa, Gilbert, Chandler, Scottsdale, Tempe, Queen Creek & San Tan Valley. 20% off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
   alternates: {
     canonical: '/east-valley-window-washing',
   },
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: 'How quickly can you schedule in the East Valley?',
-    answer: 'We offer same-day estimates and can often schedule service within 24-48 hours throughout the East Valley. Call us at (480) 476-3731 for fastest scheduling.',
+    answer: 'We offer same-day estimates and can often schedule service within 24-48 hours throughout the East Valley. Call us at (480) 737-0850 for fastest scheduling.',
   },
   {
     question: 'What if it rains after you clean my windows?',
@@ -49,7 +49,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: BUSINESS_INFO.name,
-  telephone: '+14804763731',
+  telephone: '+14807370850',
   areaServed: [
     {
       '@type': 'City',
@@ -133,7 +133,7 @@ const schema = {
       provider: {
         '@type': 'LocalBusiness',
         name: BUSINESS_INFO.name,
-        telephone: '+14804763731',
+        telephone: '+14807370850',
       },
     },
   ],

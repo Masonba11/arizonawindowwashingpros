@@ -5,7 +5,7 @@ import { generateServiceCityFAQs } from '@/lib/serviceCityFAQs'
 
 export const metadata: Metadata = {
   title: 'Screen Cleaning in Mesa, AZ | $100 OFF | Arizona window cleaning Pros',
-  description: 'Professional screen cleaning in Mesa, Arizona. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 476-3731 for free estimate.',
+  description: 'Professional screen cleaning in Mesa, Arizona. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
   alternates: {
     canonical: '/screen-cleaning-mesa',
   },
@@ -17,7 +17,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: BUSINESS_INFO.name,
-  telephone: '+14804763731',
+  telephone: '+14807370850',
   areaServed: {
     '@type': 'City',
     name: 'Mesa',
@@ -37,7 +37,7 @@ const schema = {
       provider: {
         '@type': 'LocalBusiness',
         name: BUSINESS_INFO.name,
-        telephone: '+14804763731',
+        telephone: '+14807370850',
       },
     },
   ],

@@ -30,7 +30,7 @@ export function generateServiceFAQs(serviceName: string, city?: string): FAQ[] {
     },
     {
       question: 'How do I schedule?',
-      answer: 'Scheduling is easy! Call us at (480) 476-3731 or fill out our free quote form. We typically have same-week availability and will work with your schedule to find a convenient time.',
+      answer: 'Scheduling is easy! Call us at (480) 737-0850 or fill out our free quote form. We typically have same-week availability and will work with your schedule to find a convenient time.',
     },
     {
       question: 'What if I\'m not satisfied?',
@@ -67,7 +67,7 @@ export function generateLocationFAQs(city: string): FAQ[] {
     },
     {
       question: 'How do I schedule?',
-      answer: 'Scheduling is easy! Call us at (480) 476-3731 or fill out our free quote form. We typically have same-week availability and will work with your schedule to find a convenient time.',
+      answer: 'Scheduling is easy! Call us at (480) 737-0850 or fill out our free quote form. We typically have same-week availability and will work with your schedule to find a convenient time.',
     },
     {
       question: 'What if I\'m not satisfied?',

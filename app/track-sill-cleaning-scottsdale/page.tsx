@@ -5,7 +5,7 @@ import { generateServiceCityFAQs } from '@/lib/serviceCityFAQs'
 
 export const metadata: Metadata = {
   title: 'Track & Sill Cleaning in Scottsdale, AZ | $100 OFF | Arizona window cleaning Pros',
-  description: 'Professional track and sill cleaning in Scottsdale, Arizona. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 476-3731 for free estimate.',
+  description: 'Professional track and sill cleaning in Scottsdale, Arizona. $100 off first service. Licensed, insured, streak-free guarantee. Call (480) 737-0850 for free estimate.',
   alternates: {
     canonical: '/track-sill-cleaning-scottsdale',
   },
@@ -17,7 +17,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: BUSINESS_INFO.name,
-  telephone: '+14804763731',
+  telephone: '+14807370850',
   areaServed: {
     '@type': 'City',
     name: 'Scottsdale',
@@ -37,7 +37,7 @@ const schema = {
       provider: {
         '@type': 'LocalBusiness',
         name: BUSINESS_INFO.name,
-        telephone: '+14804763731',
+        telephone: '+14807370850',
       },
     },
   ],
