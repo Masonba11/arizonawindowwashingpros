@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { BUSINESS_INFO } from '@/lib/constants'
+import { BUSINESS_INFO, SITE_HERO_IMAGE } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
 import GoogleReviewsSlider from './GoogleReviewsSlider'
 
@@ -41,15 +41,13 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
       {/* Hero background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-image-optimized.jpg"
+          src={SITE_HERO_IMAGE}
           alt="Arizona Window Cleaning Pros"
           fill
           className="object-cover"
           priority
           quality={75}
           sizes="100vw"
-          placeholder="blur"
-          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         {/* Overlay for better text readability - dimmed */}
         <div className="absolute inset-0 bg-black/60"></div>

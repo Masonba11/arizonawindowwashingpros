@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { BUSINESS_INFO } from '@/lib/constants'
+import { BUSINESS_INFO, SITE_HERO_IMAGE } from '@/lib/constants'
 import CallSticker from '@/components/CallSticker'
 import SocialMediaSticker from '@/components/SocialMediaSticker'
 import GetFreeQuoteSticker from '@/components/GetFreeQuoteSticker'
@@ -31,7 +31,7 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
         {/* Image Background - Optimized */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-image-optimized.jpg"
+            src={SITE_HERO_IMAGE}
             alt="Arizona Window Washing Pros"
             fill
             className="object-cover"
@@ -248,7 +248,7 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
       {/* Hero background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-image-optimized.jpg"
+          src={SITE_HERO_IMAGE}
           alt="Arizona Window Washing Pros"
           fill
           className="object-cover"

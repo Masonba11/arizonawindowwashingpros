@@ -3,19 +3,25 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { BUSINESS_INFO } from '@/lib/constants'
+import { BUSINESS_INFO, SITE_HERO_IMAGE } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
 
-/** Premium ad landings only — clean modern glass (replaces legacy stock hero). */
-const HERO = '/premium-window-hero.jpg'
+const HERO = SITE_HERO_IMAGE
 const LOGO = '/AZWPlogo-Photoroom.png'
 
 export default function PremiumLandingHeader({ callEventLabel }: { callEventLabel: string }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 sm:py-4">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Image src={LOGO} alt={BUSINESS_INFO.name} width={140} height={48} className="h-10 w-auto sm:h-11" priority />
+          <Image
+            src={LOGO}
+            alt={BUSINESS_INFO.name}
+            width={220}
+            height={76}
+            className="h-12 w-auto sm:h-14 md:h-[3.75rem]"
+            priority
+          />
         </Link>
         <motion.a
           href={`tel:${BUSINESS_INFO.phoneFormatted}`}

@@ -33,17 +33,18 @@ export default function PremiumLandingVideo({
 
   return (
     <div className={`overflow-hidden rounded-2xl ${shell} ${className}`}>
-      <video
-        className="aspect-video w-full bg-black object-cover sm:aspect-[4/3] lg:aspect-video"
-        controls
-        playsInline
-        preload="metadata"
-        aria-label={title}
-      >
-        {/* H.264 MP4 — MOV/HEVC does not play in Chrome / most Android browsers */}
+      <div className="mx-auto w-full max-w-[260px] bg-black sm:max-w-[300px] md:max-w-[320px] lg:max-w-[340px] aspect-[3/4]">
+        <video
+          className="h-full w-full object-cover"
+          controls
+          playsInline
+          preload="metadata"
+          aria-label={title}
+        >
         <source src={src} type="video/mp4" />
         Your browser does not support embedded video.
-      </video>
+        </video>
+      </div>
       {(title || description) && (
         <div className={`px-4 py-3 sm:px-5 ${cap}`}>
           <p className={`text-sm font-bold ${titleCls}`}>{title}</p>

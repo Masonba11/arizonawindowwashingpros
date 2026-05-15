@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import type { AdLandingCityConfig } from '@/lib/adLandingConfig'
 import { buildAdLandingFaqs } from '@/lib/adLandingConfig'
-import { BUSINESS_INFO } from '@/lib/constants'
+import { BUSINESS_INFO, SITE_HERO_IMAGE } from '@/lib/constants'
 import ClickToCall from '@/components/ClickToCall'
 import AdLandingForm from './AdLandingForm'
 import AdLandingStickyCall from './AdLandingStickyCall'
 
 /** Local asset — avoids remote image optimization (common 500 source on some hosts). */
-const HERO_IMAGE = '/hero-image-optimized.jpg'
+const HERO_IMAGE = SITE_HERO_IMAGE
 
 const SERVICE_AREA_CITIES = [
   'Gilbert',

@@ -3,12 +3,6 @@ import { BUSINESS_INFO } from '@/lib/constants'
 
 export type PremiumWindowCleaningSlug = 'scottsdale-window-cleaning' | 'gilbert-window-cleaning'
 
-export interface PremiumTestimonial {
-  name: string
-  line: string
-  quote: string
-}
-
 export interface PremiumWindowCleaningConfig {
   slug: PremiumWindowCleaningSlug
   city: string
@@ -19,7 +13,6 @@ export interface PremiumWindowCleaningConfig {
   heroAudienceLines: string[]
   rodiBullets: string[]
   serviceIntro: string
-  testimonials: PremiumTestimonial[]
 }
 
 export const PREMIUM_WINDOW_CLEANING: Record<
@@ -48,32 +41,6 @@ export const PREMIUM_WINDOW_CLEANING: Record<
     ],
     serviceIntro:
       'From high-end residential estates to busy retail corridors in Scottsdale — we scale the same premium finish.',
-    testimonials: [
-      {
-        name: 'Jennifer M.',
-        line: 'North Scottsdale homeowner',
-        quote:
-          'Our floor-to-ceiling glass finally looks like the view we paid for. No spots where the sun hits at 5pm — that’s never happened with other cleaners.',
-      },
-      {
-        name: 'Marcus T.',
-        line: 'Old Town area restaurant',
-        quote:
-          'Front windows are our first impression. They show up on time, work fast between service, and the glass stays clearer longer.',
-      },
-      {
-        name: 'Elena R.',
-        line: 'Scottsdale office suite',
-        quote:
-          'We needed a vendor who could handle recurring exterior cleans without babysitting. Quotes are clear, crews are professional.',
-      },
-      {
-        name: 'Chris & Amanda K.',
-        line: 'DC Ranch',
-        quote:
-          'Two stories of glass + pool fence panels — done carefully, no mess. Already booked the next visit.',
-      },
-    ],
   },
   'gilbert-window-cleaning': {
     slug: 'gilbert-window-cleaning',
@@ -97,32 +64,6 @@ export const PREMIUM_WINDOW_CLEANING: Record<
     ],
     serviceIntro:
       'Gilbert families and local businesses trust us for straightforward pricing, respectful crews, and results you notice from the curb.',
-    testimonials: [
-      {
-        name: 'Heather L.',
-        line: 'Power Ranch',
-        quote:
-          'Kids fingerprints, dog nose prints — all gone. They were in and out while the baby napped. Huge win.',
-      },
-      {
-        name: 'Ryan P.',
-        line: 'Val Vista Lakes',
-        quote:
-          'Two-story home and they didn’t make me feel bad about how bad the tracks were. Honest quote, great work.',
-      },
-      {
-        name: 'Angie & Tom S.',
-        line: 'Gilbert family home',
-        quote:
-          'We do exterior every quarter now. Text reminders, easy scheduling, same friendly crew.',
-      },
-      {
-        name: 'Brian K.',
-        line: 'Gilbert storefront',
-        quote:
-          'Small retail strip — they hit every unit’s glass in one morning. Looks sharp for weekend traffic.',
-      },
-    ],
   },
 }
 

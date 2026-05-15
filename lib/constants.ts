@@ -29,6 +29,9 @@ export const BUSINESS_INFO = {
   },
 }
 
+/** Primary hero / above-the-fold image site-wide (source asset: `hero5:14.png` → `public/hero-5-14.png`). */
+export const SITE_HERO_IMAGE = '/hero-5-14.png'
+
 // Services
 export const SERVICES = [
   {

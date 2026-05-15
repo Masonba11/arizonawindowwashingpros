@@ -3,7 +3,7 @@ import Script from 'next/script'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Layout from '@/components/Layout'
-import { BUSINESS_INFO } from '@/lib/constants'
+import { BUSINESS_INFO, SITE_HERO_IMAGE } from '@/lib/constants'
 import { generateProfessionalServiceSchema } from '@/lib/schema'
 
 const inter = Inter({
@@ -108,7 +108,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* App Router: do not use <head> here — it conflicts with the Metadata API and can cause RSC 500s. */}
-        <link rel="preload" href="/hero-image-optimized.jpg" as="image" fetchPriority="high" />
+        <link rel="preload" href={SITE_HERO_IMAGE} as="image" fetchPriority="high" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="preconnect" href="https://elfsightcdn.com" />

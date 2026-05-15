@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { BUSINESS_INFO } from "@/lib/constants";
+import { BUSINESS_INFO, SITE_HERO_IMAGE } from "@/lib/constants";
 import ContactForm from "@/components/ContactForm";
 import GoogleReviewsSlider from "@/components/GoogleReviewsSlider";
 import CallSticker from "@/components/CallSticker";
@@ -55,7 +55,7 @@ function ConversionOptimizedHeroSection({
         <div className="absolute inset-0 z-0">
           {/* Priority fallback image for instant LCP */}
           <Image
-            src="/hero-image-optimized.jpg"
+            src={SITE_HERO_IMAGE}
             alt="Arizona Window Washing Pros"
             fill
             className="object-cover"
