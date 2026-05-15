@@ -6,7 +6,8 @@ import { motion } from 'framer-motion'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
 
-const HERO = '/hero-image-optimized.jpg'
+/** Premium ad landings only — clean modern glass (replaces legacy stock hero). */
+const HERO = '/premium-window-hero.jpg'
 const LOGO = '/AZWPlogo-Photoroom.png'
 
 export default function PremiumLandingHeader({ callEventLabel }: { callEventLabel: string }) {
@@ -35,7 +36,7 @@ export function PremiumHeroBackground() {
     <div className="absolute inset-0">
       <Image
         src={HERO}
-        alt=""
+        alt="Clean modern residential windows"
         fill
         className="object-cover"
         sizes="100vw"

@@ -40,7 +40,8 @@ export default function PremiumLandingVideo({
         preload="metadata"
         aria-label={title}
       >
-        <source src={src} type="video/quicktime" />
+        {/* H.264 MP4 — MOV/HEVC does not play in Chrome / most Android browsers */}
+        <source src={src} type="video/mp4" />
         Your browser does not support embedded video.
       </video>
       {(title || description) && (

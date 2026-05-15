@@ -74,9 +74,9 @@ const processSteps = [
 ]
 
 const LP_VIDEOS = {
-  rodi: '/landing-videos/danewaterfedpolesystem.MOV',
-  screen: '/landing-videos/danescreencleaner.mov',
-  squeegee: '/landing-videos/chansquegge.MOV',
+  rodi: '/landing-videos/danewaterfedpolesystem.mp4',
+  screen: '/landing-videos/danescreencleaner.mp4',
+  squeegee: '/landing-videos/chansquegge.mp4',
 } as const
 
 export default function PremiumWindowCleaningLanding({
