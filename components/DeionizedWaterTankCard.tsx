@@ -11,6 +11,7 @@ export default function DeionizedWaterTankCard() {
         <video
           className="block w-full h-auto align-top"
           controls
+          muted
           playsInline
           preload="metadata"
           aria-label="Our deionized water tank and filtration setup"

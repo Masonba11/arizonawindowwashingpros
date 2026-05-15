@@ -37,12 +37,13 @@ export default function PremiumLandingVideo({
         <video
           className="h-full w-full object-cover"
           controls
+          muted
           playsInline
           preload="metadata"
           aria-label={title}
         >
-        <source src={src} type="video/mp4" />
-        Your browser does not support embedded video.
+          <source src={src} type="video/mp4" />
+          Your browser does not support embedded video.
         </video>
       </div>
       {(title || description) && (

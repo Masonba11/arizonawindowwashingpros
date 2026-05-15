@@ -136,18 +136,19 @@ export default function AdLandingPage({ config }: { config: AdLandingCityConfig 
 
   return (
     <div className="min-h-screen bg-slate-50 text-gray-900 pb-[5.5rem] md:pb-0">
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-slate-900">
+      {/* Hero — extra dim + taller mobile frame so the photo reads correctly */}
+      <section className="relative min-h-[min(52svh,26rem)] overflow-hidden bg-slate-900 sm:min-h-0">
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE}
             alt="Arizona home with bright, clean windows"
             fill
-            className="object-cover opacity-40"
+            className="object-cover object-[center_18%] sm:object-center opacity-30 sm:opacity-32"
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/92 via-slate-950/82 to-slate-950" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="relative max-w-6xl mx-auto px-4 pt-10 pb-14 sm:pt-14 sm:pb-16 lg:py-20">
           <p className="text-center text-blue-200/90 text-xs font-semibold tracking-wide uppercase mb-3">

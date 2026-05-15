@@ -44,11 +44,12 @@ export function PremiumHeroBackground() {
         src={HERO}
         alt="Clean modern residential windows"
         fill
-        className="object-cover"
+        className="object-cover object-[center_20%] sm:object-[center_15%] md:object-center"
         sizes="100vw"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950/92 via-slate-900/85 to-blue-950/80" />
+      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950/94 via-slate-900/88 to-blue-950/82" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.22),transparent_55%)]" />
     </div>
   )

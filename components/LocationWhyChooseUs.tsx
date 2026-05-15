@@ -151,6 +151,7 @@ export default function LocationWhyChooseUs({
               <video
                 className="block w-full h-auto align-top"
                 controls
+                muted
                 playsInline
                 preload="metadata"
                 aria-labelledby={headingId}
