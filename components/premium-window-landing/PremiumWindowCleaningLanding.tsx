@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import PremiumLandingHeader, { PremiumHeroBackground, StarBurst } from './PremiumLandingHeader'
 import PremiumQuoteForm from './PremiumQuoteForm'
 import PremiumStickyBar from './PremiumStickyBar'
+import PremiumLandingVideo from './PremiumLandingVideo'
 import { FadeSection } from './motion'
 import type { PremiumWindowCleaningConfig } from '@/lib/premiumWindowCleaningAds'
 import { BUSINESS_INFO } from '@/lib/constants'
@@ -46,7 +47,7 @@ const services: {
   },
   {
     title: 'Screen Cleaning',
-    body: 'Remove dust and pollen so air flows and views pop.',
+    body: 'Professional-grade tools and cleaners — dust and pollen out, airflow and clarity in.',
     d: 'M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5',
   },
   {
@@ -71,6 +72,12 @@ const processSteps = [
   { n: '2', title: 'Schedule Your Cleaning', body: 'Pick a time that works. We arrive ready to work.' },
   { n: '3', title: 'Enjoy Spot-Free Windows', body: 'More light, sharper curb appeal, zero hassle.' },
 ]
+
+const LP_VIDEOS = {
+  rodi: '/landing-videos/danewaterfedpolesystem.MOV',
+  screen: '/landing-videos/danescreencleaner.mov',
+  squeegee: '/landing-videos/chansquegge.MOV',
+} as const
 
 export default function PremiumWindowCleaningLanding({
   config,
@@ -225,12 +232,20 @@ export default function PremiumWindowCleaningLanding({
       <section className="bg-gradient-to-b from-slate-900 to-slate-950 py-14 sm:py-20 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <FadeSection>
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <h2 className="text-2xl font-extrabold sm:text-3xl tracking-tight">Why our RO/DI system works better</h2>
-              <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
-                Purified water helps us rinse cleaner — without leaving the minerals behind that cause spots when the
-                Arizona sun hits your glass.
-              </p>
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14 mb-12">
+              <div className="text-center lg:text-left">
+                <h2 className="text-2xl font-extrabold sm:text-3xl tracking-tight">Why our RO/DI system works better</h2>
+                <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
+                  Purified water helps us rinse cleaner — without leaving the minerals behind that cause spots when the
+                  Arizona sun hits your glass.
+                </p>
+              </div>
+              <PremiumLandingVideo
+                variant="dark"
+                src={LP_VIDEOS.rodi}
+                title="Water-fed pole with RO/DI rinse"
+                description="See how we feed spot-fighting purified water straight to the glass for a controlled, professional finish."
+              />
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {rodiBullets.map((b, i) => (
@@ -267,6 +282,32 @@ export default function PremiumWindowCleaningLanding({
               Residential & commercial services
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-center text-slate-600 text-sm sm:text-base">{serviceIntro}</p>
+
+            <div className="mt-12 grid gap-8 rounded-3xl border border-slate-200/90 bg-white p-6 shadow-lg shadow-slate-200/50 sm:p-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Screens</p>
+                <h3 className="mt-2 text-xl font-extrabold tracking-tight text-slate-900 sm:text-2xl">
+                  Professional-grade screen cleaning
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                  We use dedicated screen tools and professional-grade cleaners to lift embedded dust and pollen — so
+                  airflow improves and your view stays crisp through Arizona seasons.
+                </p>
+                <a
+                  href="#premium-quote-top"
+                  className="mt-5 inline-flex text-sm font-bold text-blue-600 hover:text-blue-700"
+                >
+                  Add screens to your quote →
+                </a>
+              </div>
+              <PremiumLandingVideo
+                variant="light"
+                src={LP_VIDEOS.screen}
+                title="Screen cleaning in action"
+                description="A careful pass with the right product — without stressing frames or mesh."
+              />
+            </div>
+
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {services.map((s) => (
                 <motion.div
@@ -295,8 +336,40 @@ export default function PremiumWindowCleaningLanding({
         </div>
       </section>
 
+      {/* Mop & squeegee technique */}
+      <section className="border-y border-slate-100 bg-white py-14 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <FadeSection>
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">Technique</p>
+                <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+                  Mop &amp; squeegee, done right
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base max-w-xl">
+                  Traditional tools still matter. We pair proven mop-and-squeegee technique with purified rinses where
+                  it counts — so edges stay clean and the finish stays consistent pane to pane.
+                </p>
+                <a
+                  href="#premium-quote-top"
+                  className="mt-5 inline-flex text-sm font-bold text-blue-600 hover:text-blue-700"
+                >
+                  Request this level of detail →
+                </a>
+              </div>
+              <PremiumLandingVideo
+                variant="light"
+                src={LP_VIDEOS.squeegee}
+                title="Mop & squeegee finish work"
+                description="Controlled agitation and a sharp rubber pass — the classic combo that still delivers."
+              />
+            </div>
+          </FadeSection>
+        </div>
+      </section>
+
       {/* Process */}
-      <section className="bg-white py-14 sm:py-20 border-y border-slate-100">
+      <section className="border-y border-slate-100 bg-slate-50 py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <FadeSection>
             <h2 className="text-center text-2xl font-extrabold text-slate-900 sm:text-3xl tracking-tight mb-12">
