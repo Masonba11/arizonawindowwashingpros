@@ -1,10 +1,15 @@
-import AdLandingPage from '@/components/ad-landing/AdLandingPage'
-import { adLandingMetadata, getAdLandingConfig } from '@/lib/adLandingConfig'
+import PremiumWindowCleaningLanding from '@/components/premium-window-landing/PremiumWindowCleaningLanding'
+import {
+  getPremiumWindowCleaningConfig,
+  premiumWindowCleaningMetadata,
+} from '@/lib/premiumWindowCleaningAds'
 
 export const dynamic = 'force-static'
 
-export const metadata = adLandingMetadata('gilbert-window-cleaning')
+export const metadata = premiumWindowCleaningMetadata('gilbert-window-cleaning')
 
 export default function GilbertWindowCleaningLandingPage() {
-  return <AdLandingPage config={getAdLandingConfig('gilbert-window-cleaning')} />
+  return (
+    <PremiumWindowCleaningLanding config={getPremiumWindowCleaningConfig('gilbert-window-cleaning')} />
+  )
 }

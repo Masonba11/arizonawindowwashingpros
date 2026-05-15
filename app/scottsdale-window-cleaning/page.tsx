@@ -1,10 +1,15 @@
-import AdLandingPage from '@/components/ad-landing/AdLandingPage'
-import { adLandingMetadata, getAdLandingConfig } from '@/lib/adLandingConfig'
+import PremiumWindowCleaningLanding from '@/components/premium-window-landing/PremiumWindowCleaningLanding'
+import {
+  getPremiumWindowCleaningConfig,
+  premiumWindowCleaningMetadata,
+} from '@/lib/premiumWindowCleaningAds'
 
 export const dynamic = 'force-static'
 
-export const metadata = adLandingMetadata('scottsdale-window-cleaning')
+export const metadata = premiumWindowCleaningMetadata('scottsdale-window-cleaning')
 
 export default function ScottsdaleWindowCleaningLandingPage() {
-  return <AdLandingPage config={getAdLandingConfig('scottsdale-window-cleaning')} />
+  return (
+    <PremiumWindowCleaningLanding config={getPremiumWindowCleaningConfig('scottsdale-window-cleaning')} />
+  )
 }
