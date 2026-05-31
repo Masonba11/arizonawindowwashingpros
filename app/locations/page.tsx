@@ -91,7 +91,7 @@ export default function LocationsPage() {
 
       {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
+        <div className="container-custom max-w-5xl">
           <ContactForm />
         </div>
       </section>

@@ -37,20 +37,23 @@ export default function HeroVideo({ title, subtitle, children, city, service, fo
   }
 
   return (
-    <section className="relative section-padding overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center">
+    <section className="relative section-padding overflow-hidden min-h-[min(58svh,32rem)] sm:min-h-[500px] md:min-h-[600px] flex items-center">
       {/* Hero background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={SITE_HERO_IMAGE}
-          alt="Arizona Window Cleaning Pros"
-          fill
-          className="object-cover"
-          priority
-          quality={75}
-          sizes="100vw"
-        />
+      <div className="hero-bg-wrapper z-0">
+        <div className="hero-bg-zoom">
+          <Image
+            src={SITE_HERO_IMAGE}
+            alt="Arizona Window Cleaning Pros"
+            fill
+            className="hero-bg-image"
+            priority
+            quality={75}
+            sizes="100vw"
+          />
+        </div>
         {/* Overlay for better text readability - dimmed */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="hero-overlay-base"></div>
+        <div className="hero-overlay-mobile"></div>
       </div>
 
       {/* Content */}

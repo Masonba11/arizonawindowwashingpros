@@ -157,7 +157,7 @@ export default function AboutPage() {
 
 {/* Contact Form */}
       <section id="contact-form" className="section-padding bg-gray-50">
-        <div className="container-custom max-w-2xl">
+        <div className="container-custom max-w-5xl">
           <ContactForm />
         </div>
       </section>

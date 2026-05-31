@@ -27,20 +27,23 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
   return (
     <>
       {/* Hero Section with Image - Mobile: ends at form, Desktop: full section */}
-      <section className="relative overflow-hidden md:min-h-[450px] flex items-center pt-16 pb-8 md:pt-16 md:pb-12">
+      <section className="relative overflow-hidden min-h-[min(58svh,32rem)] md:min-h-[450px] flex items-center pt-16 pb-8 md:pt-16 md:pb-12">
         {/* Image Background - Optimized */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={SITE_HERO_IMAGE}
-            alt="Arizona Window Washing Pros"
-            fill
-            className="object-cover"
-            priority
-            quality={75}
-            sizes="100vw"
-          />
+        <div className="hero-bg-wrapper z-0">
+          <div className="hero-bg-zoom">
+            <Image
+              src={SITE_HERO_IMAGE}
+              alt="Arizona Window Washing Pros"
+              fill
+              className="hero-bg-image"
+              priority
+              quality={75}
+              sizes="100vw"
+            />
+          </div>
           {/* Dimmed overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="hero-overlay-base"></div>
+          <div className="hero-overlay-mobile"></div>
         </div>
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10 pt-0 md:pt-4 w-full">
@@ -244,19 +247,22 @@ function ConversionOptimizedHeroSection({ city, nearbyAreas, handleCallClick }: 
 // Standard hero section for other cities
 function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-20 md:pb-32">
+    <section className="relative overflow-hidden min-h-[min(58svh,32rem)] sm:min-h-[600px] md:min-h-[700px] flex items-center pt-20 pb-12 md:pt-20 md:pb-32">
       {/* Hero background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={SITE_HERO_IMAGE}
-          alt="Arizona Window Washing Pros"
-          fill
-          className="object-cover"
-          priority
-          quality={75}
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/50"></div>
+      <div className="hero-bg-wrapper z-0">
+        <div className="hero-bg-zoom">
+          <Image
+            src={SITE_HERO_IMAGE}
+            alt="Arizona Window Washing Pros"
+            fill
+            className="hero-bg-image"
+            priority
+            quality={75}
+            sizes="100vw"
+          />
+        </div>
+        <div className="hero-overlay-base"></div>
+        <div className="hero-overlay-mobile"></div>
       </div>
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
@@ -283,23 +289,23 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
           <div className="order-2 md:order-1 text-center md:text-left">
             {/* Trust Bullets */}
             <div className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8 justify-center md:justify-start">
-              <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
-                <svg className="w-4 h-4 md:w-5 md:h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 text-white text-sm md:text-base">
+                <svg className="w-4 h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="font-semibold">Licensed & Insured</span>
+                <span className="font-semibold drop-shadow-lg">Licensed & Insured</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
-                <svg className="w-4 h-4 md:w-5 md:h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 text-white text-sm md:text-base">
+                <svg className="w-4 h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="font-semibold">Free Estimates</span>
+                <span className="font-semibold drop-shadow-lg">Free Estimates</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-700 text-sm md:text-base">
-                <svg className="w-4 h-4 md:w-5 md:h-5 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center gap-2 text-white text-sm md:text-base">
+                <svg className="w-4 h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span className="font-semibold">Streak-Free Guarantee</span>
+                <span className="font-semibold drop-shadow-lg">Streak-Free Guarantee</span>
               </div>
             </div>
 
@@ -315,7 +321,7 @@ function StandardHeroSection({ city, nearbyAreas, handleCallClick }: HeroSection
               </a>
             </div>
 
-            <p className="text-base md:text-lg text-gray-600">
+            <p className="text-base md:text-lg text-white/90 drop-shadow-lg">
               Serving {city} and nearby areas: {nearbyAreas.join(', ')}
             </p>
           </div>

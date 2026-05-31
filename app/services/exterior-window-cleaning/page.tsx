@@ -191,7 +191,7 @@ export default function ExteriorWindowCleaningPage() {
       <FAQSection faqs={faqs} />
 
 <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
+        <div className="container-custom max-w-5xl">
           <ContactForm defaultService="Exterior Window Cleaning" />
         </div>
       </section>

@@ -42,13 +42,7 @@ function TrustPanel({ compact }: { compact: boolean }) {
     : 'rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 text-white p-7 md:p-8 shadow-xl border border-white/10'
 
   return (
-    <aside
-      className={
-        compact
-          ? 'md:w-[min(100%,17rem)] md:flex-shrink-0'
-          : 'lg:w-[min(100%,22rem)] lg:flex-shrink-0 lg:sticky lg:top-28'
-      }
-    >
+    <aside className="xl:w-[min(100%,20rem)] xl:flex-shrink-0 xl:sticky xl:top-28">
       <div className={shell}>
         <p className="text-amber-300/95 font-bold text-xs uppercase tracking-[0.12em] mb-2">
           Arizona&apos;s trusted crew
@@ -187,14 +181,13 @@ export default function ContactForm({
     }
   }
 
-  const outerClass =
-    compact
-      ? 'bg-white rounded-2xl shadow-2xl border-2 border-gray-200 pb-28 md:pb-6 overflow-hidden'
-      : 'card pb-28 md:pb-10 overflow-hidden'
+  const outerClass = compact
+    ? 'bg-white rounded-2xl shadow-2xl border-2 border-gray-200 pb-28 md:pb-6 overflow-hidden'
+    : 'card pb-28 md:pb-10 overflow-hidden'
 
   const innerClass = compact
-    ? 'p-6 flex flex-col gap-6 md:flex-row md:items-stretch md:gap-6'
-    : 'p-6 sm:p-8 md:p-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10'
+    ? 'p-5 sm:p-6 flex flex-col gap-4'
+    : 'p-6 sm:p-8 md:p-10 flex flex-col gap-8 xl:flex-row xl:items-start xl:gap-10'
 
   return (
     <div className={outerClass}>
@@ -224,7 +217,7 @@ export default function ContactForm({
           </div>
         ) : (
           <>
-            <TrustPanel compact={compact} />
+            {!compact && <TrustPanel compact={compact} />}
 
             <div className="min-w-0 flex-1">
               {showTitle && (
@@ -245,116 +238,118 @@ export default function ContactForm({
               )}
 
               <form onSubmit={handleSubmit} className={compact ? 'space-y-3' : 'space-y-4'}>
-                <div>
-                  <label
-                    htmlFor="name"
-                    className={
-                      compact
-                        ? 'block text-xs font-semibold text-gray-700 mb-1'
-                        : 'block text-sm font-semibold text-gray-700 mb-1'
-                    }
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    autoComplete="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={
-                      compact
-                        ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-                        : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
-                    }
-                  />
-                </div>
+                <div className={compact ? 'space-y-3' : 'grid grid-cols-1 sm:grid-cols-2 gap-4'}>
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className={
+                        compact
+                          ? 'block text-xs font-semibold text-gray-700 mb-1'
+                          : 'block text-sm font-semibold text-gray-700 mb-1'
+                      }
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      autoComplete="name"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className={
+                        compact
+                          ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500'
+                          : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
+                      }
+                    />
+                  </div>
 
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className={
-                      compact
-                        ? 'block text-xs font-semibold text-gray-700 mb-1'
-                        : 'block text-sm font-semibold text-gray-700 mb-1'
-                    }
-                  >
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    autoComplete="tel"
-                    inputMode="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className={
-                      compact
-                        ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-                        : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
-                    }
-                    placeholder="(480) 555-1234"
-                  />
-                </div>
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className={
+                        compact
+                          ? 'block text-xs font-semibold text-gray-700 mb-1'
+                          : 'block text-sm font-semibold text-gray-700 mb-1'
+                      }
+                    >
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      autoComplete="tel"
+                      inputMode="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className={
+                        compact
+                          ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500'
+                          : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
+                      }
+                      placeholder="(480) 555-1234"
+                    />
+                  </div>
 
-                <div>
-                  <label
-                    htmlFor="email"
-                    className={
-                      compact
-                        ? 'block text-xs font-semibold text-gray-700 mb-1'
-                        : 'block text-sm font-semibold text-gray-700 mb-1'
-                    }
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autoComplete="email"
-                    inputMode="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={
-                      compact
-                        ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-                        : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
-                    }
-                    placeholder="your@email.com"
-                  />
-                </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className={
+                        compact
+                          ? 'block text-xs font-semibold text-gray-700 mb-1'
+                          : 'block text-sm font-semibold text-gray-700 mb-1'
+                      }
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      autoComplete="email"
+                      inputMode="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className={
+                        compact
+                          ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500'
+                          : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
+                      }
+                      placeholder="your@email.com"
+                    />
+                  </div>
 
-                <div>
-                  <label
-                    htmlFor="city"
-                    className={
-                      compact
-                        ? 'block text-xs font-semibold text-gray-700 mb-1'
-                        : 'block text-sm font-semibold text-gray-700 mb-1'
-                    }
-                  >
-                    City
-                  </label>
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    autoComplete="address-level2"
-                    value={formData.city}
-                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                    placeholder="Enter your city"
-                    className={
-                      compact
-                        ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-                        : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
-                    }
-                  />
+                  <div>
+                    <label
+                      htmlFor="city"
+                      className={
+                        compact
+                          ? 'block text-xs font-semibold text-gray-700 mb-1'
+                          : 'block text-sm font-semibold text-gray-700 mb-1'
+                      }
+                    >
+                      City
+                    </label>
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      autoComplete="address-level2"
+                      value={formData.city}
+                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                      placeholder="Enter your city"
+                      className={
+                        compact
+                          ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500'
+                          : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
+                      }
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -377,7 +372,7 @@ export default function ContactForm({
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className={
                       compact
-                        ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+                        ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500'
                         : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
                     }
                     placeholder="Please describe the service you need (e.g., Exterior window cleaning, Interior cleaning, Screen cleaning, etc.)"
@@ -389,7 +384,7 @@ export default function ContactForm({
                   disabled={formStatus === 'submitting'}
                   className={
                     compact
-                      ? 'w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm'
+                      ? 'w-full btn-primary py-3 text-sm font-bold disabled:opacity-50 disabled:cursor-not-allowed'
                       : 'w-full btn-primary py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed'
                   }
                 >

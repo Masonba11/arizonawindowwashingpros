@@ -36,7 +36,7 @@ export default function ContactPage() {
 
       {/* Contact Form - Above the fold */}
       <section id="contact-form" className="section-padding -mt-8 bg-white">
-        <div className="container-custom max-w-3xl">
+        <div className="container-custom max-w-5xl">
           <ContactForm />
         </div>
       </section>

@@ -238,7 +238,7 @@ export default function HomePage() {
 
       {/* Contact Form Section */}
       <section id="contact-form" className="section-padding">
-        <div className="container-custom max-w-2xl">
+        <div className="container-custom max-w-5xl">
           <ContactForm />
         </div>
       </section>

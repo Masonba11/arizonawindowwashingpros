@@ -40,6 +40,70 @@
   .gradient-bg {
     @apply bg-gradient-to-br from-gray-50 to-white;
   }
+
+  .hero-bg-wrapper {
+    @apply absolute inset-0 overflow-hidden;
+  }
+
+  /* Even zoom-out on mobile; slightly more pull on the left so the team shifts right in frame */
+  .hero-bg-zoom {
+    position: absolute;
+    top: -14%;
+    right: -16%;
+    bottom: -14%;
+    left: -8%;
+  }
+
+  @media (min-width: 640px) {
+    .hero-bg-zoom {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .hero-bg-image {
+    object-fit: cover;
+    object-position: 38% center;
+  }
+
+  @media (min-width: 640px) {
+    .hero-bg-image {
+      object-position: center;
+    }
+  }
+
+  .hero-overlay-base {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0 0 0 / 0.32);
+  }
+
+  @media (min-width: 640px) {
+    .hero-overlay-base {
+      background-color: rgb(0 0 0 / 0.55);
+    }
+  }
+
+  /* Light top/bottom vignette on mobile — keeps text readable without darkening the whole photo */
+  .hero-overlay-mobile {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 0.35) 0%,
+      rgb(0 0 0 / 0.08) 45%,
+      rgb(0 0 0 / 0.08) 65%,
+      rgb(0 0 0 / 0.3) 100%
+    );
+  }
+
+  @media (min-width: 640px) {
+    .hero-overlay-mobile {
+      display: none;
+    }
+  }
 }
 
 

@@ -159,7 +159,7 @@ export default function MesaWindowWashingPage() {
 
       {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
+        <div className="container-custom max-w-5xl">
           <ContactForm defaultCity="Mesa" />
         </div>
       </section>

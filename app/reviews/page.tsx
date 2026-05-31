@@ -107,7 +107,7 @@ export default function ReviewsPage() {
 
 {/* CTA Section */}
       <section id="contact-form" className="section-padding bg-white">
-        <div className="container-custom max-w-2xl">
+        <div className="container-custom max-w-5xl">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4">Ready to Experience the Difference?</h2>
             <p className="text-xl text-gray-600">
