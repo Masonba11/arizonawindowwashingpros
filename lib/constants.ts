@@ -3,7 +3,7 @@ export const BUSINESS_INFO = {
   name: 'Arizona Window Washing Pros',
   phone: '(480) 737-0850',
   phoneFormatted: '4807370850',
-  email: 'info@arizonawindowwashingpros.com',
+  email: 'arizonawindowwashingpros@gmail.com',
   serviceArea: ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'San Tan Valley', 'AZ'],
   address: {
     street: 'Arizona',

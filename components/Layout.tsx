@@ -7,6 +7,7 @@ import CallSticker from './CallSticker'
 import GetFreeQuoteSticker from './GetFreeQuoteSticker'
 import SocialMediaSticker from './SocialMediaSticker'
 import { AD_LANDING_PATHS } from '@/lib/adLandingPaths'
+import { COMMERCIAL_LANDING } from '@/lib/commercialLanding'
 
 const LANDING_PAGES = [
   '/scottsdale-window-washing',
@@ -28,7 +29,7 @@ const SERVICE_CITY_PATTERNS = [
 ]
 
 /** Standalone pages: no header, footer, or floating stickers */
-const FORM_ONLY_PAGES = ['/form', ...AD_LANDING_PATHS]
+const FORM_ONLY_PAGES = ['/form', COMMERCIAL_LANDING.path, ...AD_LANDING_PATHS]
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
