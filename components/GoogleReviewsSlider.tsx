@@ -7,11 +7,14 @@ interface GoogleReviewsSliderProps {
   compact?: boolean
   /** Load Elfsight in development (e.g. ad landing previews) */
   alwaysLoadElfsight?: boolean
+  /** Hide built-in heading when the parent section provides its own */
+  hideHeading?: boolean
 }
 
 export default function GoogleReviewsSlider({
   compact = false,
   alwaysLoadElfsight = false,
+  hideHeading = false,
 }: GoogleReviewsSliderProps) {
   const enableElfsight = process.env.NODE_ENV === 'production' || alwaysLoadElfsight
   const [shouldLoad, setShouldLoad] = useState(false)
@@ -92,14 +95,16 @@ export default function GoogleReviewsSlider({
       {shouldLoad && enableElfsight && (
         <Script src="https://elfsightcdn.com/platform.js" strategy="afterInteractive" />
       )}
-      <section ref={containerRef} className="py-6 md:py-8 bg-white relative z-10 border-t border-gray-200">
+      <section ref={containerRef} className={`py-6 md:py-8 bg-white relative z-10 ${hideHeading ? '' : 'border-t border-gray-200'}`}>
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-4">
-            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
-              What Our Customers Say
-            </h2>
-            <p className="text-sm md:text-base text-gray-600">Real reviews from Google</p>
-          </div>
+          {!hideHeading && (
+            <div className="text-center mb-4">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">
+                What Our Customers Say
+              </h2>
+              <p className="text-sm md:text-base text-gray-600">Real reviews from Google</p>
+            </div>
+          )}
           
           {/* Google Reviews Widget */}
           <div className="w-full overflow-hidden rounded-lg shadow-lg bg-white">

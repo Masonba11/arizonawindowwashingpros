@@ -54,7 +54,7 @@ export default function CommercialLandingHeader() {
             href={COMMERCIAL_LANDING.formAnchor}
             className={`hidden rounded-lg bg-blue-600 px-3 py-2 text-xs font-bold text-white sm:inline md:px-4 md:text-sm hover:bg-blue-500 ${quoteGlow}`}
           >
-            Get a Free Quote
+            Get Free Quote
           </a>
           <a
             href={`tel:${COMMERCIAL_LANDING.phoneFormatted}`}

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { COMMERCIAL_LANDING } from '@/lib/commercialLanding'
+import { COMMERCIAL_ANCHOR_SCROLL, COMMERCIAL_LANDING } from '@/lib/commercialLanding'
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
 
 const CITIES = [
@@ -30,7 +30,15 @@ const PROPERTY_TYPES = [
   'Other Commercial',
 ] as const
 
-const FREQUENCIES = ['One-time', 'Weekly', 'Bi-weekly', 'Monthly', 'Custom Schedule'] as const
+const FREQUENCIES = [
+  'One-time',
+  'Weekly',
+  'Bi-weekly',
+  'Monthly',
+  'Bi-monthly',
+  'Quarterly',
+  'Custom Schedule',
+] as const
 
 interface CommercialQuoteFormProps {
   id?: string
@@ -42,7 +50,7 @@ const inputClass =
   'w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-amber-500 focus:outline-none focus:ring-0 transition'
 
 export default function CommercialQuoteForm({
-  id = 'commercial-quote-form',
+  id = 'quote',
   idPrefix = 'cq',
   variant = 'hero',
 }: CommercialQuoteFormProps) {
@@ -125,7 +133,7 @@ export default function CommercialQuoteForm({
   }
 
   return (
-    <form id={id} onSubmit={handleSubmit} className={`${shell} p-6 sm:p-8`}>
+    <form id={id} onSubmit={handleSubmit} className={`${shell} ${COMMERCIAL_ANCHOR_SCROLL} p-6 sm:p-8`}>
       <h2 className="text-center text-xl font-extrabold text-slate-900 sm:text-2xl">
         Request a Commercial Window Cleaning Quote
       </h2>

@@ -1,8 +1,14 @@
 import CommercialLandingHeader from './CommercialLandingHeader'
 import CommercialQuoteForm from './CommercialQuoteForm'
-import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
+import CommercialReviewsSection from './CommercialReviewsSection'
 import CommercialCallLink from './CommercialCallLink'
-import { COMMERCIAL_FAQS, COMMERCIAL_LANDING, SERVICE_AREA_CITIES } from '@/lib/commercialLanding'
+import {
+  COMMERCIAL_ANCHOR_SCROLL,
+  COMMERCIAL_FAQS,
+  COMMERCIAL_LANDING,
+  RECURRING_DISCOUNT_PLANS,
+  SERVICE_AREA_CITIES,
+} from '@/lib/commercialLanding'
 
 function StarRow({ className = 'text-amber-400' }: { className?: string }) {
   return (
@@ -26,7 +32,7 @@ function SectionShell({
   children: React.ReactNode
 }) {
   return (
-    <section id={id} className={`py-14 sm:py-20 ${className}`}>
+    <section id={id} className={`py-14 sm:py-20 ${COMMERCIAL_ANCHOR_SCROLL} ${className}`}>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">{children}</div>
     </section>
   )
@@ -119,25 +125,6 @@ const INDUSTRIES = [
   { title: 'Property Managers', body: 'One partner for recurring commercial window cleaning across your portfolio.' },
 ] as const
 
-const MAINTENANCE_PLANS = [
-  {
-    title: 'Weekly Cleaning',
-    body: 'Best for high-traffic storefronts and restaurants that need glass to look perfect every week.',
-  },
-  {
-    title: 'Bi-Weekly Cleaning',
-    body: 'Best for retail shops, gyms, and busy offices that want consistent curb appeal without weekly visits.',
-  },
-  {
-    title: 'Monthly Cleaning',
-    body: 'Best for offices, medical buildings, and lower-traffic properties that still need a professional shine.',
-  },
-  {
-    title: 'Custom Plans',
-    body: 'Best for property managers and multi-location businesses that need flexible Arizona commercial window cleaning routes.',
-  },
-] as const
-
 const TRUST_POINTS = [
   'Reliable Scheduling',
   'Professional Communication',
@@ -174,6 +161,15 @@ export default function CommercialWindowCleaningLanding() {
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 pb-10 pt-[5.75rem] sm:px-6 sm:pb-14 sm:pt-[6.25rem] lg:pb-16">
           {/* Trust strip */}
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-2 rounded-xl border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-center backdrop-blur-sm sm:justify-start">
+            <span className="rounded-full bg-amber-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-slate-950">
+              Recurring plans
+            </span>
+            <p className="text-sm font-semibold text-amber-100 sm:text-base">
+              Save up to 40% with recurring commercial window cleaning plans.
+            </p>
+          </div>
+
           <div className="mb-6 flex flex-wrap items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-center backdrop-blur-sm sm:justify-start">
             <StarRow />
             <p className="text-xs font-semibold text-white sm:text-sm">
@@ -214,7 +210,7 @@ export default function CommercialWindowCleaningLanding() {
                   href={formHref}
                   className="inline-flex min-h-[52px] items-center justify-center rounded-xl bg-amber-500 px-8 py-4 text-center text-base font-bold text-slate-950 shadow-lg shadow-amber-900/30 transition hover:bg-amber-400"
                 >
-                  Get a Free Quote
+                  Get Free Quote
                 </a>
                 <CommercialCallLink
                   eventSuffix="hero"
@@ -240,25 +236,14 @@ export default function CommercialWindowCleaningLanding() {
               </p>
             </div>
 
-            <div className="lg:sticky lg:top-24">
-              <CommercialQuoteForm id="commercial-quote-form" idPrefix="hero" variant="hero" />
+            <div className="lg:sticky lg:top-28">
+              <CommercialQuoteForm id="quote" idPrefix="hero" variant="hero" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Google Reviews */}
-      <div id="reviews">
-        <GoogleReviewsSlider compact={false} alwaysLoadElfsight />
-        <div className="bg-white pb-10 pt-2 text-center sm:pb-14">
-          <a
-            href={formHref}
-            className="inline-flex min-h-[48px] items-center justify-center rounded-xl bg-blue-600 px-8 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-blue-700"
-          >
-            Get the Same Clean Results for Your Business
-          </a>
-        </div>
-      </div>
+      <CommercialReviewsSection />
 
       {/* Why it matters */}
       <SectionShell className="bg-white border-b border-slate-100">
@@ -321,7 +306,7 @@ export default function CommercialWindowCleaningLanding() {
       </SectionShell>
 
       {/* Industries */}
-      <SectionShell id="industries" className="bg-white">
+      <SectionShell className="bg-white">
         <div className="text-center">
           <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
             Window Cleaning for Arizona Businesses
@@ -344,27 +329,36 @@ export default function CommercialWindowCleaningLanding() {
         </div>
       </SectionShell>
 
-      {/* Recurring plans */}
-      <SectionShell className="bg-gradient-to-b from-blue-950 to-slate-950 text-white">
+      {/* Recurring plans / discounts */}
+      <SectionShell id="plans" className="bg-gradient-to-b from-blue-950 to-slate-950 text-white">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
-            Weekly, Bi-Weekly, and Monthly Window Cleaning Plans
+            Save More With Recurring Commercial Window Cleaning
           </h2>
           <p className="mt-4 leading-relaxed text-slate-300">
-            For businesses that need consistent curb appeal, {COMMERCIAL_LANDING.name} offers recurring commercial window
-            cleaning plans. Whether you manage a storefront, restaurant, office, or plaza, recurring service keeps your
-            property looking clean without having to request one-time cleanings every month. Arizona commercial window
-            cleaning on autopilot is the smartest option for busy owners and property managers.
+            The more often your business stays on schedule, the more you save. Recurring window cleaning keeps your
+            storefront, office, restaurant, or commercial property looking clean year-round while helping you save on
+            every visit. Discounts apply to qualifying recurring plans — request a quote to confirm eligibility for
+            your property.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {MAINTENANCE_PLANS.map((plan) => (
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {RECURRING_DISCOUNT_PLANS.map((plan) => (
             <article
               key={plan.title}
-              className="rounded-2xl border border-white/15 bg-white/[0.06] p-6 backdrop-blur-sm"
+              className="relative rounded-2xl border border-white/15 bg-white/[0.06] p-5 backdrop-blur-sm"
             >
-              <h3 className="text-lg font-bold text-amber-300">{plan.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-300">{plan.body}</p>
+              {'badge' in plan && plan.badge ? (
+                <span className="absolute -top-2.5 right-3 rounded-full bg-amber-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-slate-950">
+                  {plan.badge}
+                </span>
+              ) : null}
+              <p className="text-2xl font-extrabold text-amber-300">{plan.discount}</p>
+              <h3 className="mt-2 text-base font-bold text-white">{plan.title}</h3>
+              <p className="mt-3 text-xs leading-relaxed text-slate-300">
+                <span className="font-semibold text-slate-200">Best for: </span>
+                {plan.bestFor}
+              </p>
             </article>
           ))}
         </div>
@@ -373,7 +367,7 @@ export default function CommercialWindowCleaningLanding() {
             href={formHref}
             className="inline-flex min-h-[48px] items-center justify-center rounded-xl bg-amber-500 px-8 py-3 text-sm font-bold text-slate-950 shadow-lg transition hover:bg-amber-400"
           >
-            Build My Maintenance Plan
+            Lock In My Recurring Discount
           </a>
           <CommercialCallLink
             eventSuffix="plans"
@@ -425,14 +419,14 @@ export default function CommercialWindowCleaningLanding() {
       </SectionShell>
 
       {/* Service areas */}
-      <SectionShell id="service-areas" className="bg-white border-t border-slate-100">
+      <SectionShell id="areas" className="bg-white border-t border-slate-100">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-            Commercial Window Cleaning Across Arizona
+            Commercial Window Cleaning Across Arizona &amp; the East Valley
           </h2>
           <p className="mt-4 text-slate-600 leading-relaxed">
             {COMMERCIAL_LANDING.name} serves commercial properties throughout Gilbert, Chandler, Queen Creek, San Tan
-            Valley, Mesa, Scottsdale, Tempe, Phoenix, Paradise Valley, and nearby Arizona communities.
+            Valley, Mesa, Scottsdale, Tempe, Phoenix, Paradise Valley, and nearby East Valley Arizona communities.
           </p>
         </div>
         <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -461,6 +455,42 @@ export default function CommercialWindowCleaningLanding() {
           ))}
         </dl>
       </SectionShell>
+
+      {/* Final CTA */}
+      <section className={`relative overflow-hidden py-16 sm:py-20 ${COMMERCIAL_ANCHOR_SCROLL}`}>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-900 to-slate-950" />
+        <div className="absolute inset-0 opacity-25 bg-[radial-gradient(circle_at_20%_30%,rgba(245,158,11,0.35),transparent_45%)]" />
+        <div className="relative z-10 mx-auto max-w-2xl px-4 text-center sm:px-6">
+          <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
+            Ready to Make Your Business Look Cleaner?
+          </h2>
+          <p className="mt-4 text-base text-slate-300 sm:text-lg">
+            Request a free commercial window cleaning quote from {COMMERCIAL_LANDING.name} today.
+          </p>
+          <p className="mt-3 text-sm font-semibold text-amber-300">
+            Ask about recurring service discounts up to 40% off.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href={formHref}
+              className="inline-flex min-h-[52px] items-center justify-center rounded-xl bg-amber-500 px-8 py-4 text-base font-bold text-slate-950 shadow-xl transition hover:bg-amber-400"
+            >
+              Get a Free Quote
+            </a>
+            <CommercialCallLink
+              eventSuffix="final"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-xl border-2 border-white px-8 py-4 text-base font-bold text-white transition hover:bg-white/10"
+            >
+              Call Now
+            </CommercialCallLink>
+          </div>
+          <p className="mt-6 text-lg font-bold text-white">
+            <CommercialCallLink eventSuffix="final_phone" className="hover:text-amber-300">
+              {COMMERCIAL_LANDING.phone}
+            </CommercialCallLink>
+          </p>
+        </div>
+      </section>
 
       <footer className="border-t border-slate-200 bg-white py-8 text-center text-sm text-slate-500">
         <p className="font-bold text-slate-800">{COMMERCIAL_LANDING.name}</p>
