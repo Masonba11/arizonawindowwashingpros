@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { BUSINESS_INFO } from '@/lib/constants'
 import { COMMERCIAL_LANDING } from '@/lib/commercialLanding'
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
 
@@ -72,7 +71,7 @@ export default function CommercialQuoteForm({
       const json = await submitWeb3FormsFromBrowser({
         name: form.name,
         phone: form.phone,
-        email: form.email || BUSINESS_INFO.email,
+        email: form.email,
         city: form.city || 'Arizona',
         service: `Commercial — ${form.propertyType || 'Property'}`,
         message: [

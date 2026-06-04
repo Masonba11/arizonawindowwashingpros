@@ -7,7 +7,7 @@
  * @see https://docs.web3forms.com/getting-started/troubleshooting
  */
 
-const FALLBACK_ACCESS_KEY = '0f32ed52-78cd-4ae4-8e56-df6c2b533b71'
+const FALLBACK_ACCESS_KEY = 'd7d10cb9-80ac-4561-8ce4-75872ef4f92c'
 
 function getAccessKey(): string {
   const fromEnv = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim()
