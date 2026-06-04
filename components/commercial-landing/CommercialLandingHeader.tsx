@@ -2,18 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { COMMERCIAL_LANDING } from '@/lib/commercialLanding'
 import { trackCallClick } from '@/lib/callTracking'
 import { phoneGlow, quoteGlow } from './glowStyles'
-
-const NAV = [
-  { href: '#services', label: 'Services' },
-  { href: '#industries', label: 'Industries' },
-  { href: '#reviews', label: 'Reviews' },
-  { href: '#service-areas', label: 'Service Areas' },
-  { href: '#faq', label: 'FAQ' },
-] as const
 
 const LOGO = '/AZWPlogo-Photoroom.png'
 
@@ -36,7 +27,7 @@ export default function CommercialLandingHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 sm:py-3">
-        <Link href="/" className="flex shrink-0 items-center min-w-0">
+        <div className="flex shrink-0 items-center min-w-0">
           <Image
             src={LOGO}
             alt={COMMERCIAL_LANDING.name}
@@ -45,23 +36,7 @@ export default function CommercialLandingHeader() {
             className="h-[4.25rem] w-auto sm:h-[5.25rem] md:h-24"
             priority
           />
-        </Link>
-
-        <nav className="hidden items-center gap-5 lg:flex" aria-label="Page sections">
-          {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-semibold transition ${
-                scrolled
-                  ? 'text-slate-600 hover:text-blue-700'
-                  : 'text-white/90 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]'
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+        </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <a
