@@ -1,7 +1,7 @@
 'use client'
 
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
-import { PINETOP_CONFIG } from '@/lib/pinetopShowLow'
+import { PINETOP_ANCHOR_SCROLL, PINETOP_CONFIG } from '@/lib/pinetopShowLow'
 
 /** Live Google reviews via Elfsight — real customer feedback, not static placeholders. */
 export default function PinetopReviewsSection({
@@ -12,8 +12,8 @@ export default function PinetopReviewsSection({
   showSubtitle?: boolean
 }) {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-6xl px-4 pt-12 sm:px-6 sm:pt-16">
+    <section id="reviews" className={`bg-white ${PINETOP_ANCHOR_SCROLL}`}>
+      <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 sm:pt-10">
         <div className="text-center">
           <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">{headline}</h2>
           {showSubtitle && (

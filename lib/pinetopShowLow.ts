@@ -15,6 +15,7 @@ export const PINETOP_CONFIG = {
   adCallEvent: 'pinetop_show_low_ad_call',
   adFormConversion: 'pinetop_show_low_ad_quote',
   seoCallEvent: 'pinetop_show_low_seo_call',
+  web3FormsAccessKey: 'f75947a5-1ebe-495f-b20c-03a4f4a4037b',
 } as const
 
 export const PINETOP_ANCHOR_SCROLL =

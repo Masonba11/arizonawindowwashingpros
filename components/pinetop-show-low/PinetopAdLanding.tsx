@@ -98,6 +98,8 @@ export default function PinetopAdLanding() {
         </div>
       </section>
 
+      <PinetopReviewsSection />
+
       <Section className="border-b border-emerald-100 bg-emerald-50">
         <h2 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
           Limited-Time Offer For Pinetop &amp; Show Low Residents
@@ -156,8 +158,6 @@ export default function PinetopAdLanding() {
           ))}
         </ul>
       </Section>
-
-      <PinetopReviewsSection />
 
       <Section className="bg-slate-50">
         <h2 className="text-center text-2xl font-extrabold text-slate-900 sm:text-3xl">FAQ</h2>

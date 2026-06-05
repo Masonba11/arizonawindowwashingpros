@@ -47,10 +47,12 @@ function normalizeWeb3FormsResult(raw: unknown): Web3FormsSubmitResult {
 }
 
 export async function submitWeb3FormsFromBrowser(
-  fields: Record<string, string>
+  fields: Record<string, string>,
+  options?: { accessKey?: string }
 ): Promise<Web3FormsSubmitResult> {
+  const keyOverride = options?.accessKey?.trim()
   const payload: Record<string, string> = {
-    access_key: getAccessKey(),
+    access_key: keyOverride && keyOverride.length > 0 ? keyOverride : getAccessKey(),
     ...fields,
   }
 

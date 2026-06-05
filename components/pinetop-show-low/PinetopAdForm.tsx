@@ -35,22 +35,25 @@ export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }
     e.preventDefault()
     setStatus('submitting')
     try {
-      const json = await submitWeb3FormsFromBrowser({
-        name: form.name,
-        phone: form.phone,
-        email: PINETOP_CONFIG.email,
-        city: form.city || 'White Mountains',
-        service: form.service || 'Window cleaning',
-        message: [
-          `Service needed: ${form.service}`,
-          form.message,
-          '',
-          'Lead: Pinetop/Show Low Google Ads LP',
-          'Offer: Free screen cleaning with window cleaning',
-        ].join('\n'),
-        subject: `Pinetop/Show Low quote — ${form.name}`,
-        from_name: `${PINETOP_CONFIG.name} — Pinetop Ad LP`,
-      })
+      const json = await submitWeb3FormsFromBrowser(
+        {
+          name: form.name,
+          phone: form.phone,
+          email: PINETOP_CONFIG.email,
+          city: form.city || 'White Mountains',
+          service: form.service || 'Window cleaning',
+          message: [
+            `Service needed: ${form.service}`,
+            form.message,
+            '',
+            'Lead: Pinetop/Show Low Google Ads LP',
+            'Offer: Free screen cleaning with window cleaning',
+          ].join('\n'),
+          subject: `Pinetop/Show Low quote — ${form.name}`,
+          from_name: `${PINETOP_CONFIG.name} — Pinetop Ad LP`,
+        },
+        { accessKey: PINETOP_CONFIG.web3FormsAccessKey }
+      )
       if (json.success) {
         setStatus('success')
         if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag) {
