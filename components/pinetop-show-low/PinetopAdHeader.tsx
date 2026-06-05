@@ -31,9 +31,9 @@ export default function PinetopAdHeader() {
           <Image
             src={LOGO}
             alt={PINETOP_CONFIG.name}
-            width={320}
-            height={100}
-            className="h-12 w-auto sm:h-14 md:h-16"
+            width={400}
+            height={120}
+            className="h-[4.25rem] w-auto sm:h-[5.25rem] md:h-24"
             priority
           />
         </div>
