@@ -53,7 +53,7 @@ export default function PinetopAdLanding() {
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-950">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_0%,rgba(16,185,129,0.15),transparent_55%)]" />
         </div>
-        <div className="relative z-10 mx-auto max-w-6xl px-4 pb-10 pt-[5.75rem] sm:px-6 sm:pb-14 sm:pt-[6.25rem]">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pb-10 pt-[6.5rem] sm:px-6 sm:pb-14 sm:pt-[7.25rem] md:pt-[7.75rem]">
           <div className="mb-4 inline-flex rounded-full border border-emerald-400/40 bg-emerald-500/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-emerald-100">
             Limited-time White Mountains offer
           </div>

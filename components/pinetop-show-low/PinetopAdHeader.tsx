@@ -26,14 +26,14 @@ export default function PinetopAdHeader() {
           : 'border-b border-white/10 bg-transparent'
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 sm:py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
         <div className="flex shrink-0 items-center min-w-0">
           <Image
             src={LOGO}
             alt={PINETOP_CONFIG.name}
-            width={400}
-            height={120}
-            className="h-[4.25rem] w-auto sm:h-[5.25rem] md:h-24"
+            width={520}
+            height={156}
+            className="h-20 w-auto sm:h-24 md:h-28 lg:h-32"
             priority
           />
         </div>
