@@ -61,7 +61,17 @@ export const SERVICES = [
 ]
 
 // Locations
-export const LOCATIONS = [
+export type Location = {
+  id: string
+  name: string
+  slug: string
+  keyword: string
+  description: string
+  /** When set, links to this path instead of /locations/{slug} */
+  path?: string
+}
+
+export const LOCATIONS: Location[] = [
   {
     id: 'mesa',
     name: 'Mesa',
@@ -111,7 +121,20 @@ export const LOCATIONS = [
     keyword: 'san tan valley window cleaning',
     description: 'Professional window cleaning services in San Tan Valley, Arizona.',
   },
+  {
+    id: 'pinetop-show-low',
+    name: 'Pinetop & Show Low',
+    slug: 'window-cleaning-pinetop-show-low',
+    path: '/window-cleaning-pinetop-show-low',
+    keyword: 'window cleaning pinetop show low',
+    description:
+      'Professional window cleaning in Pinetop, Show Low, Pinetop-Lakeside, and the White Mountains.',
+  },
 ]
+
+export function getLocationHref(location: Pick<Location, 'slug' | 'path'>): string {
+  return location.path ?? `/locations/${location.slug}`
+}
 
 // Cities for contact form dropdown
 export const CITIES = ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'San Tan Valley', 'Other']

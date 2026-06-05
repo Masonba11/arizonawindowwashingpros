@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
-import { BUSINESS_INFO } from '@/lib/constants'
-import { LOCATIONS, SERVICES } from '@/lib/constants'
+import { BUSINESS_INFO, LOCATIONS, SERVICES, getLocationHref } from '@/lib/constants'
+import { PINETOP_AD_PATH } from '@/lib/pinetopShowLow'
 import { getAllBlogPosts } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}${PINETOP_AD_PATH}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/reviews`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
@@ -60,10 +66,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // City pages
   const cityPages = LOCATIONS.map((location) => ({
-    url: `${baseUrl}/locations/${location.slug}`,
+    url: `${baseUrl}${getLocationHref(location)}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    priority: location.id === 'pinetop-show-low' ? 0.85 : 0.8,
   }))
 
   // Service pages

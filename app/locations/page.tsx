@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BUSINESS_INFO, LOCATIONS } from '@/lib/constants'
+import { BUSINESS_INFO, LOCATIONS, getLocationHref } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
@@ -39,7 +39,7 @@ export default function LocationsPage() {
             {LOCATIONS.map((location) => (
               <Link
                 key={location.id}
-                href={`/locations/${location.slug}`}
+                href={getLocationHref(location)}
                 className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-200"
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">{location.name} window cleaning</h2>

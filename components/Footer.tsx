@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { BUSINESS_INFO, SERVICES, LOCATIONS } from '@/lib/constants'
+import { BUSINESS_INFO, SERVICES, LOCATIONS, getLocationHref } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
 
 export default function Footer() {
@@ -70,7 +70,7 @@ export default function Footer() {
               {LOCATIONS.map((location) => (
                 <li key={location.id}>
                   <Link
-                    href={`/locations/${location.slug}`}
+                    href={getLocationHref(location)}
                     className="text-gray-400 hover:text-white transition-colors flex items-center space-x-2 group"
                   >
                     <svg className="w-4 h-4 text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">

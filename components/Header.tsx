@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { BUSINESS_INFO, SERVICES, LOCATIONS } from '@/lib/constants'
+import { BUSINESS_INFO, SERVICES, LOCATIONS, getLocationHref } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
 
 export default function Header() {
@@ -51,17 +51,19 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-large opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 overflow-hidden">
-                <div className="py-2">
-                  {SERVICES.map((service) => (
-                    <Link
-                      key={service.id}
-                      href={`/services/${service.slug}`}
-                      className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-transparent hover:text-primary-600 transition-all duration-200"
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
+              <div className="absolute top-full left-0 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="rounded-xl border border-gray-100 bg-white shadow-large overflow-hidden">
+                  <div className="py-2 max-h-[70vh] overflow-y-auto">
+                    {SERVICES.map((service) => (
+                      <Link
+                        key={service.id}
+                        href={`/services/${service.slug}`}
+                        className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-transparent hover:text-primary-600 transition-all duration-200"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -74,17 +76,19 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-large opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100 overflow-hidden">
-                <div className="py-2">
-                  {LOCATIONS.map((location) => (
-                    <Link
-                      key={location.id}
-                      href={`/locations/${location.slug}`}
-                      className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-transparent hover:text-primary-600 transition-all duration-200"
-                    >
-                      {location.name}
-                    </Link>
-                  ))}
+              <div className="absolute top-full left-0 w-64 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <div className="rounded-xl border border-gray-100 bg-white shadow-large overflow-hidden">
+                  <div className="py-2 max-h-[70vh] overflow-y-auto">
+                    {LOCATIONS.map((location) => (
+                      <Link
+                        key={location.id}
+                        href={getLocationHref(location)}
+                        className="block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-transparent hover:text-primary-600 transition-all duration-200"
+                      >
+                        {location.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -193,7 +197,7 @@ export default function Header() {
                     {LOCATIONS.map((location) => (
                       <Link
                         key={location.id}
-                        href={`/locations/${location.slug}`}
+                        href={getLocationHref(location)}
                         className="block px-4 py-2 text-sm text-gray-600 hover:bg-primary-50 hover:text-primary-600"
                         onClick={() => setMobileMenuOpen(false)}
                       >

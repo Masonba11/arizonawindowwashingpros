@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { LOCATIONS } from '@/lib/constants'
+import { LOCATIONS, getLocationHref } from '@/lib/constants'
 
 interface AreasWeServeLinksProps {
   currentCity?: string
@@ -18,7 +18,7 @@ export default function AreasWeServeLinks({ currentCity, className = '' }: Areas
         {filteredLocations.map((location) => (
           <Link
             key={location.id}
-            href={`/locations/${location.slug}`}
+            href={getLocationHref(location)}
             className="text-primary-600 hover:text-primary-700 hover:underline font-medium transition-colors"
           >
             {location.name}
