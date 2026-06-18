@@ -26,6 +26,7 @@ export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }
   const [form, setForm] = useState({
     name: '',
     phone: '',
+    email: '',
     city: '',
     service: '',
     message: '',
@@ -35,26 +36,37 @@ export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }
     e.preventDefault()
     setStatus('submitting')
     try {
-      const json = await submitWeb3FormsFromBrowser(
-        {
-          name: form.name,
-          phone: form.phone,
-          email: PINETOP_CONFIG.email,
-          city: form.city || 'White Mountains',
-          service: form.service || 'Window cleaning',
-          message: [
-            `Service needed: ${form.service}`,
-            form.message,
-            '',
-            'Lead: Pinetop/Show Low Google Ads LP',
-            'Offer: Free screen cleaning with window cleaning',
-          ].join('\n'),
-          subject: `Pinetop/Show Low quote — ${form.name}`,
-          from_name: `${PINETOP_CONFIG.name} — Pinetop Ad LP`,
-        },
-        { accessKey: PINETOP_CONFIG.web3FormsAccessKey }
+      const fields = {
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        city: form.city || 'White Mountains',
+        service: form.service || 'Window cleaning',
+        message: [
+          `Name: ${form.name}`,
+          `Phone: ${form.phone}`,
+          `Email: ${form.email}`,
+          `City: ${form.city || 'White Mountains'}`,
+          `Service needed: ${form.service}`,
+          '',
+          form.message,
+          '',
+          'Lead: Pinetop/Show Low Google Ads LP',
+          'Offer: Free screen cleaning with window cleaning',
+        ].join('\n'),
+        subject: `Pinetop/Show Low quote — ${form.name}`,
+        from_name: `${PINETOP_CONFIG.name} — Pinetop Ad LP`,
+      }
+
+      const submissions = await Promise.allSettled([
+        submitWeb3FormsFromBrowser(fields, { accessKey: PINETOP_CONFIG.web3FormsAccessKey }),
+        submitWeb3FormsFromBrowser(fields, { accessKey: PINETOP_CONFIG.web3FormsBackupAccessKey }),
+      ])
+      const submitted = submissions.some(
+        (result) => result.status === 'fulfilled' && result.value.success
       )
-      if (json.success) {
+
+      if (submitted) {
         setStatus('success')
         if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag) {
           const w = window as unknown as { gtag: (...a: unknown[]) => void }
@@ -68,6 +80,7 @@ export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }
         }
         setTimeout(() => router.push('/thank-you'), 1200)
       } else {
+        console.error('Pinetop Web3Forms submissions failed', submissions)
         setStatus('error')
       }
     } catch {
@@ -126,6 +139,21 @@ export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
             className={inputClass}
             placeholder={PINETOP_CONFIG.phone}
+          />
+        </div>
+        <div>
+          <label htmlFor={`${idPrefix}-email`} className="mb-1 block text-xs font-semibold text-slate-700">
+            Email *
+          </label>
+          <input
+            id={`${idPrefix}-email`}
+            type="email"
+            required
+            autoComplete="email"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            className={inputClass}
+            placeholder="your@email.com"
           />
         </div>
         <div>
