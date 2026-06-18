@@ -40,11 +40,9 @@ export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }
       className={`rounded-3xl border-2 border-emerald-400/50 bg-white p-6 shadow-[0_28px_80px_-16px_rgba(15,23,42,0.35)] ring-4 ring-emerald-400/15 sm:p-8 ${PINETOP_ANCHOR_SCROLL}`}
     >
       <input type="hidden" name="access_key" value={PINETOP_CONFIG.web3FormsAccessKey} />
-      <input type="hidden" name="subject" value="Pinetop/Show Low quote request" />
-      <input type="hidden" name="from_name" value={`${PINETOP_CONFIG.name} - Pinetop Ad LP`} />
+      <input type="hidden" name="subject" value="New Window Cleaning Quote Request" />
+      <input type="hidden" name="from_name" value={PINETOP_CONFIG.name} />
       <input type="hidden" name="redirect" value="https://arizonawindowwashingpros.com/thank-you" />
-      <input type="hidden" name="lead_source" value="Pinetop/Show Low Google Ads LP" />
-      <input type="hidden" name="offer" value="Free screen cleaning with window cleaning" />
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <p className="text-center text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">
