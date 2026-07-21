@@ -173,7 +173,19 @@ export default function WindowCleaningPinetopShowLowPage() {
             ))}
           </ul>
           <p className="mt-8 text-center text-gray-600">
-            Also serving the greater Phoenix metro. See our{' '}
+            Dedicated local pages:{' '}
+            <Link href="/window-cleaning-pinetop-lakeside-az" className="text-primary-600 font-semibold hover:underline">
+              Pinetop-Lakeside window cleaning
+            </Link>
+            ,{' '}
+            <Link href="/window-cleaning-show-low-az" className="text-primary-600 font-semibold hover:underline">
+              window cleaning in Show Low
+            </Link>
+            , and{' '}
+            <Link href="/window-cleaning-snowflake-az" className="text-primary-600 font-semibold hover:underline">
+              Snowflake window cleaning
+            </Link>
+            . Also serving the greater Phoenix metro. See our{' '}
             <Link href="/locations" className="text-primary-600 font-semibold hover:underline">
               service areas
             </Link>{' '}

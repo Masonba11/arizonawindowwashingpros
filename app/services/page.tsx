@@ -49,6 +49,16 @@ export default function ServicesPage() {
                 </span>
               </Link>
             ))}
+            <Link
+              href="/commercial-window-cleaning-arizona"
+              className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-200"
+            >
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">Commercial Window Cleaning</h2>
+              <p className="text-gray-600 mb-4">
+                Professional storefront and commercial glass cleaning for Arizona businesses.
+              </p>
+              <span className="text-primary-600 font-semibold hover:underline">Learn more →</span>
+            </Link>
           </div>
         </div>
       </section>

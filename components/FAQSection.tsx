@@ -2,14 +2,15 @@ import { FAQ } from '@/lib/faqs'
 
 interface FAQSectionProps {
   faqs: FAQ[]
+  title?: string
 }
 
-export default function FAQSection({ faqs }: FAQSectionProps) {
+export default function FAQSection({ faqs, title = 'Frequently Asked Questions' }: FAQSectionProps) {
   return (
     <section className="section-padding bg-gray-50">
       <div className="container-custom max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
-          Frequently Asked Questions
+          {title}
         </h2>
         <div className="space-y-6">
           {faqs.map((faq, index) => (

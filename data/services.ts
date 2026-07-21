@@ -57,6 +57,20 @@ export const services: Record<string, ServiceData> = {
       'Do you use special tools for track cleaning?',
     ],
   },
+  'residential-window-cleaning': {
+    serviceName: 'Residential Window Cleaning',
+    slug: 'residential-window-cleaning',
+    shortDescription:
+      'Complete residential window cleaning for Arizona homes, including interior, exterior, screens, tracks, and frames.',
+    longDescription:
+      'Residential window cleaning covers exterior glass, optional interior detailing, and add-on screen, track, sill, and frame cleaning for homes, cabins, and vacation properties.',
+    startingPrice: '$150',
+    faqQuestions: [
+      'What is included in residential window cleaning?',
+      'Do you clean interior and exterior windows?',
+      'Can I add screen and track cleaning?',
+    ],
+  },
 }
 
 export function getServiceData(serviceSlug: string): ServiceData | null {

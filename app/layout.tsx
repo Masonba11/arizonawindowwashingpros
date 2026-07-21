@@ -16,10 +16,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS_INFO.website),
   title: {
-    default: `${BUSINESS_INFO.name} | Window Cleaning in Gilbert, Queen Creek, Mesa, Chandler & Tempe`,
+    default: `${BUSINESS_INFO.name} | Window Cleaning in Arizona`,
     template: `%s | ${BUSINESS_INFO.name}`,
   },
-  description: `Professional exterior and interior window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler, Arizona. Expert window cleaning and screen cleaning. Starting at $150.`,
+  description: `Professional residential and commercial window cleaning from Arizona Window Washing Pros. Serving the East Valley and northern Arizona including Pinetop-Lakeside, Show Low, and Snowflake.`,
   icons: {
     icon: [{ url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' }],
     apple: '/favicon.ico',

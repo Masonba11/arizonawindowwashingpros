@@ -69,7 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${getLocationHref(location)}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
-    priority: location.id === 'pinetop-show-low' ? 0.85 : 0.8,
+    priority:
+      location.id === 'pinetop-lakeside' ||
+      location.id === 'show-low' ||
+      location.id === 'snowflake' ||
+      location.id === 'pinetop-show-low'
+        ? 0.9
+        : 0.8,
   }))
 
   // Service pages

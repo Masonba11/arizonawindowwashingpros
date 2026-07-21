@@ -93,6 +93,36 @@ export function generateProfessionalServiceSchema() {
         addressCountry: 'US',
       },
     },
+    {
+      '@type': 'Place',
+      name: 'Pinetop-Lakeside',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Pinetop-Lakeside',
+        addressRegion: 'AZ',
+        addressCountry: 'US',
+      },
+    },
+    {
+      '@type': 'Place',
+      name: 'Show Low',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Show Low',
+        addressRegion: 'AZ',
+        addressCountry: 'US',
+      },
+    },
+    {
+      '@type': 'Place',
+      name: 'Snowflake',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Snowflake',
+        addressRegion: 'AZ',
+        addressCountry: 'US',
+      },
+    },
   ]
 
   // Service area as GeoCircle (correct format: geoRadius is NUMBER in meters)
@@ -112,7 +142,7 @@ export function generateProfessionalServiceSchema() {
     '@type': 'ProfessionalService',
     '@id': `${BUSINESS_INFO.website}#organization`,
     name: 'Arizona Window Washing Pros', // Must match exactly
-    description: 'Professional window cleaning services in Gilbert, Queen Creek, Mesa, Chandler, Tempe, and Scottsdale, Arizona. Expert window cleaning, screen cleaning, and hard water stain removal using deionized water systems.',
+    description: 'Professional window cleaning services in Gilbert, Queen Creek, Mesa, Chandler, Tempe, Scottsdale, San Tan Valley, Pinetop-Lakeside, Show Low, and Snowflake, Arizona. Expert window cleaning, screen cleaning, and hard water stain removal using deionized water systems.',
     telephone: BUSINESS_INFO.phone,
     email: BUSINESS_INFO.email,
     url: BUSINESS_INFO.website,
@@ -139,6 +169,8 @@ export function generateProfessionalServiceSchema() {
       'Screen Cleaning',
       'Hard Water Stain Removal',
       'Track & Sill Cleaning',
+      'Residential Window Cleaning',
+      'Commercial Window Cleaning',
     ],
     knowsAbout: [
       'Window Cleaning',
@@ -146,7 +178,14 @@ export function generateProfessionalServiceSchema() {
       'Hard Water Stain Removal',
       'Screen Cleaning',
       'Residential Window Cleaning',
+      'Commercial Window Cleaning',
     ],
+    sameAs: [
+      BUSINESS_INFO.socialMedia.facebook,
+      BUSINESS_INFO.socialMedia.instagram,
+      BUSINESS_INFO.socialMedia.tiktok,
+      BUSINESS_INFO.socialMedia.youtube,
+    ].filter(Boolean),
   }
 }
 

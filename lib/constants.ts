@@ -4,7 +4,19 @@ export const BUSINESS_INFO = {
   phone: '(480) 737-0850',
   phoneFormatted: '4807370850',
   email: 'arizonawindowwashingpros@gmail.com',
-  serviceArea: ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'San Tan Valley', 'AZ'],
+  serviceArea: [
+    'Mesa',
+    'Gilbert',
+    'Queen Creek',
+    'Chandler',
+    'Scottsdale',
+    'Tempe',
+    'San Tan Valley',
+    'Pinetop-Lakeside',
+    'Show Low',
+    'Snowflake',
+    'AZ',
+  ],
   address: {
     street: 'Arizona',
     city: 'Mesa',
@@ -57,6 +69,13 @@ export const SERVICES = [
     name: 'Track & Sill Cleaning',
     slug: 'track-sill-cleaning',
     description: 'Deep cleaning of window tracks and sills to remove dirt, debris, and buildup.',
+  },
+  {
+    id: 'residential-window-cleaning',
+    name: 'Residential Window Cleaning',
+    slug: 'residential-window-cleaning',
+    description:
+      'Complete residential window cleaning for homes, including interior, exterior, screens, tracks, and frames.',
   },
 ]
 
@@ -130,6 +149,33 @@ export const LOCATIONS: Location[] = [
     description:
       'Professional window cleaning in Pinetop, Show Low, Pinetop-Lakeside, and the White Mountains.',
   },
+  {
+    id: 'pinetop-lakeside',
+    name: 'Pinetop-Lakeside',
+    slug: 'window-cleaning-pinetop-lakeside-az',
+    path: '/window-cleaning-pinetop-lakeside-az',
+    keyword: 'window cleaning pinetop-lakeside az',
+    description:
+      'Residential, cabin, and commercial window cleaning in Pinetop-Lakeside, Arizona.',
+  },
+  {
+    id: 'show-low',
+    name: 'Show Low',
+    slug: 'window-cleaning-show-low-az',
+    path: '/window-cleaning-show-low-az',
+    keyword: 'window cleaning show low az',
+    description:
+      'Residential and commercial window cleaning for homes, rentals, and storefronts in Show Low, AZ.',
+  },
+  {
+    id: 'snowflake',
+    name: 'Snowflake',
+    slug: 'window-cleaning-snowflake-az',
+    path: '/window-cleaning-snowflake-az',
+    keyword: 'window cleaning snowflake az',
+    description:
+      'Professional residential and commercial window cleaning for Snowflake, Arizona properties.',
+  },
 ]
 
 export function getLocationHref(location: Pick<Location, 'slug' | 'path'>): string {
@@ -137,5 +183,20 @@ export function getLocationHref(location: Pick<Location, 'slug' | 'path'>): stri
 }
 
 // Cities for contact form dropdown
-export const CITIES = ['Mesa', 'Gilbert', 'Queen Creek', 'Chandler', 'Scottsdale', 'Tempe', 'San Tan Valley', 'Other']
+export const CITIES = [
+  'Mesa',
+  'Gilbert',
+  'Queen Creek',
+  'Chandler',
+  'Scottsdale',
+  'Tempe',
+  'San Tan Valley',
+  'Pinetop-Lakeside',
+  'Pinetop',
+  'Show Low',
+  'Snowflake',
+  'Lakeside',
+  'Taylor',
+  'Other',
+]
 

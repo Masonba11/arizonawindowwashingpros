@@ -9,7 +9,8 @@ import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'Service Areas',
-  description: 'Window cleaning services throughout the East Valley. Serving Gilbert, Mesa, Chandler, Tempe, Queen Creek, Scottsdale, and San Tan Valley. Free quotes available.',
+  description:
+    'Window cleaning service areas across the East Valley and northern Arizona, including Pinetop-Lakeside, Show Low, Snowflake, Mesa, Gilbert, Chandler, and nearby communities. Free quotes available.',
   path: '/locations',
 })
 
@@ -18,7 +19,7 @@ export default function LocationsPage() {
     <>
       <HeroVideo
         title="Our Service Areas"
-        subtitle="Professional window cleaning services throughout the East Valley"
+        subtitle="Professional window cleaning services throughout the East Valley and northern Arizona"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -57,9 +58,12 @@ export default function LocationsPage() {
       <section className="bg-gray-50 section-padding">
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Serving the East Valley with Excellence</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Serving Arizona Communities with Excellence</h2>
             <p className="text-xl text-gray-700 mb-6">
-              Arizona window cleaning Pros is proud to serve homeowners and businesses throughout the East Valley, including Mesa, Gilbert, Queen Creek, and Chandler. As a locally owned and operated business, we understand the unique needs of Arizona residents and are committed to providing exceptional service in every community we serve.
+              Arizona Window Washing Pros is proud to serve homeowners and businesses throughout the East Valley and
+              northern Arizona, including Mesa, Gilbert, Queen Creek, Chandler, Pinetop-Lakeside, Show Low, and Snowflake.
+              As a locally owned and operated business, we are committed to providing exceptional service in every
+              community we serve.
             </p>
             <p className="text-gray-700 mb-6">
               Each area we serve has its own character and specific window cleaning challenges. Whether you&apos;re in the heart of Mesa, the growing community of Queen Creek, or anywhere in between, we bring the same level of professionalism, attention to detail, and customer service to every job.

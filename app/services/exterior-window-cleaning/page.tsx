@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BUSINESS_INFO, LOCATIONS, SERVICES } from '@/lib/constants'
+import { BUSINESS_INFO, LOCATIONS, SERVICES, getLocationHref } from '@/lib/constants'
 import ContactForm from '@/components/ContactForm'
 import FAQSection from '@/components/FAQSection'
 import GoogleReviewsSlider from '@/components/GoogleReviewsSlider'
@@ -134,7 +134,7 @@ export default function ExteriorWindowCleaningPage() {
               {LOCATIONS.map((location) => (
                 <Link
                   key={location.id}
-                  href={`/locations/${location.slug}`}
+                  href={getLocationHref(location)}
                   className="card card-hover text-center p-6 group"
                 >
                   <span className="text-primary-600 font-semibold group-hover:text-primary-700 transition-colors">
