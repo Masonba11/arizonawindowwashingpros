@@ -59,6 +59,24 @@ export default function ServicesPage() {
               </p>
               <span className="text-primary-600 font-semibold hover:underline">Learn more →</span>
             </Link>
+            {[
+              ['Cabin Window Cleaning', '/cabin-window-cleaning', 'Seasonal cabins and mountain retreats.'],
+              ['Vacation-Home Window Cleaning', '/vacation-home-window-cleaning', 'Pre-arrival and between-guest glass cleaning.'],
+              ['Storefront Window Cleaning', '/storefront-window-cleaning', 'Clean entry glass for local businesses.'],
+              ['Screen & Track Cleaning', '/screen-track-cleaning', 'Screens, tracks, sills, and frames.'],
+              ['Interior & Exterior Cleaning', '/interior-exterior-window-cleaning', 'Choose interior, exterior, or both.'],
+              ['White Mountains Coverage', '/white-mountains-window-cleaning', 'Regional service hub for northern Arizona.'],
+            ].map(([name, href, description]) => (
+              <Link
+                key={href}
+                href={href}
+                className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-200"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">{name}</h2>
+                <p className="text-gray-600 mb-4">{description}</p>
+                <span className="text-primary-600 font-semibold hover:underline">Learn more →</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

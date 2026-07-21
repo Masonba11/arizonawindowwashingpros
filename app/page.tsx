@@ -33,14 +33,27 @@ const NORTHERN_AZ_LINKS = [
     href: NORTHERN_AZ_PATHS.snowflake,
     description: 'Residential and commercial window cleaning in Snowflake.',
   },
+  {
+    name: 'White Mountains Window Cleaning',
+    href: NORTHERN_AZ_PATHS.whiteMountains,
+    description: 'Regional hub for White Mountains residential and commercial service.',
+  },
+] as const
+
+const SPECIALTY_HOME_LINKS = [
+  { name: 'Cabin Window Cleaning', href: '/cabin-window-cleaning' },
+  { name: 'Vacation-Home Window Cleaning', href: '/vacation-home-window-cleaning' },
+  { name: 'Storefront Window Cleaning', href: '/storefront-window-cleaning' },
+  { name: 'Screen & Track Cleaning', href: '/screen-track-cleaning' },
+  { name: 'Interior & Exterior Cleaning', href: '/interior-exterior-window-cleaning' },
 ] as const
 
 export default function HomePage() {
   return (
     <>
       <HeroVideo
-        title="Professional Window Cleaning Services"
-        subtitle="Crystal-clear windows for homes and businesses across the East Valley and northern Arizona. Expert service you can trust."
+        title="Professional Window Cleaning for Arizona Homes and Businesses"
+        subtitle="Crystal-clear windows across the East Valley and northern Arizona White Mountains. Expert residential and commercial service you can trust."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CallButton className="btn-primary text-lg" eventLabel="homepage_hero_call">
@@ -130,13 +143,13 @@ export default function HomePage() {
       <section className="section-padding bg-emerald-50 border-y border-emerald-100">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="section-title">Northern Arizona Service Areas</h2>
+            <h2 className="section-title">Window Cleaning in the White Mountains</h2>
             <p className="section-subtitle max-w-3xl mx-auto">
               Arizona Window Washing Pros provides residential and commercial window cleaning throughout
               Pinetop-Lakeside, Show Low, Snowflake, and nearby White Mountains communities.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {NORTHERN_AZ_LINKS.map((area) => (
               <Link key={area.href} href={area.href} className="card card-hover text-center group bg-white">
                 <div className="p-8">
@@ -146,6 +159,32 @@ export default function HomePage() {
                   <p className="text-gray-600 leading-relaxed">{area.description}</p>
                   <span className="mt-4 inline-block text-primary-600 font-semibold">Learn more →</span>
                 </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 rounded-2xl border border-emerald-200 bg-white p-6 text-center">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              Arizona Window Washing Pros Is Now Serving the White Mountains
+            </h3>
+            <p className="text-gray-600 mb-4">
+              We are expanding service and accepting appointments in Pinetop-Lakeside, Show Low, Snowflake, and nearby
+              communities.
+            </p>
+            <Link
+              href={NORTHERN_AZ_PATHS.expansion}
+              className="text-primary-600 font-semibold hover:underline"
+            >
+              Read the service expansion announcement →
+            </Link>
+          </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {SPECIALTY_HOME_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-lg border border-primary-200 bg-white px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-50"
+              >
+                {link.name}
               </Link>
             ))}
           </div>

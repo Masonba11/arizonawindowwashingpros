@@ -2,11 +2,11 @@ import { MetadataRoute } from 'next'
 import { BUSINESS_INFO, LOCATIONS, SERVICES, getLocationHref } from '@/lib/constants'
 import { PINETOP_AD_PATH } from '@/lib/pinetopShowLow'
 import { getAllBlogPosts } from '@/lib/blog'
+import { getAllSpecialtyPaths } from '@/lib/specialtyServicePages'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = BUSINESS_INFO.website
 
-  // Static pages
   const staticPages = [
     {
       url: baseUrl,
@@ -64,7 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // City pages
+  const specialtyPages = getAllSpecialtyPaths().map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
   const cityPages = LOCATIONS.map((location) => ({
     url: `${baseUrl}${getLocationHref(location)}`,
     lastModified: new Date(),
@@ -78,7 +84,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : 0.8,
   }))
 
-  // Service pages
   const servicePages = SERVICES.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
     lastModified: new Date(),
@@ -86,7 +91,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // Blog pages
   const blogPages = getAllBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.dateModified ? new Date(post.dateModified) : new Date(post.datePublished),
@@ -94,6 +98,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...cityPages, ...servicePages, ...blogPages]
+  return [...staticPages, ...specialtyPages, ...cityPages, ...servicePages, ...blogPages]
 }
-

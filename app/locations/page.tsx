@@ -50,6 +50,16 @@ export default function LocationsPage() {
                 </span>
               </Link>
             ))}
+            <Link
+              href="/white-mountains-window-cleaning"
+              className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow border border-gray-200"
+            >
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">White Mountains window cleaning</h2>
+              <p className="text-gray-600 mb-4">
+                Regional coverage hub for Pinetop-Lakeside, Show Low, Snowflake, and nearby communities.
+              </p>
+              <span className="text-primary-600 font-semibold hover:underline">Learn more →</span>
+            </Link>
           </div>
         </div>
       </section>

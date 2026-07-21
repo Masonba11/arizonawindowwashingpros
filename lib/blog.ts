@@ -1,3 +1,5 @@
+import { WM_BLOG_ARTICLES } from '@/lib/wmBlogArticles'
+
 export interface BlogPost {
   slug: string
   title: string
@@ -117,81 +119,41 @@ export const blogPosts: BlogPost[] = [
     category: 'Services',
     tags: ['screen cleaning', 'dust', 'Arizona'],
   },
-  // --- Northern Arizona draft articles (published: false until editorial review) ---
-  {
-    slug: 'how-often-should-you-clean-windows-in-northern-arizona',
-    title: '[DRAFT] How Often Should You Clean Your Windows in Northern Arizona?',
-    excerpt:
-      'DRAFT — Guidance on residential and vacation-home window cleaning cadence for northern Arizona communities such as Pinetop-Lakeside, Show Low, and Snowflake. Not published until reviewed.',
-    datePublished: '2026-06-18',
-    published: false,
-    author: 'Arizona Window Washing Pros',
-    category: 'Maintenance',
-    tags: ['northern Arizona', 'window cleaning frequency', 'Pinetop-Lakeside'],
-  },
-  {
-    slug: 'interior-vs-exterior-window-cleaning-what-is-included',
-    title: '[DRAFT] Interior vs. Exterior Window Cleaning: What Is Included?',
-    excerpt:
-      'DRAFT — Explains what typically comes with interior and exterior window cleaning, plus optional screens, tracks, and sills. Not published until reviewed.',
-    datePublished: '2026-06-18',
-    published: false,
-    author: 'Arizona Window Washing Pros',
-    category: 'Education',
-    tags: ['interior', 'exterior', 'what is included'],
-  },
-  {
-    slug: 'how-to-prepare-your-home-for-professional-window-cleaning',
-    title: '[DRAFT] How to Prepare Your Home for Professional Window Cleaning',
-    excerpt:
-      'DRAFT — Practical preparation tips before a professional window cleaning appointment. Not published until reviewed.',
-    datePublished: '2026-06-18',
-    published: false,
-    author: 'Arizona Window Washing Pros',
-    category: 'Tips',
-    tags: ['preparation', 'home tips'],
-  },
-  {
-    slug: 'window-cleaning-for-vacation-homes-and-cabins',
-    title: '[DRAFT] Window Cleaning for Vacation Homes and Cabins',
-    excerpt:
-      'DRAFT — How cabin and vacation-home owners can plan window cleaning around seasonal occupancy. Not published until reviewed.',
-    datePublished: '2026-06-18',
-    published: false,
-    author: 'Arizona Window Washing Pros',
-    category: 'Services',
-    tags: ['cabins', 'vacation homes', 'White Mountains'],
-  },
-  {
-    slug: 'why-professional-screen-and-track-cleaning-matters',
-    title: '[DRAFT] Why Professional Screen and Track Cleaning Matters',
-    excerpt:
-      'DRAFT — Why screens and tracks affect how clean windows look and how they operate. Not published until reviewed.',
-    datePublished: '2026-06-18',
-    published: false,
-    author: 'Arizona Window Washing Pros',
-    category: 'Services',
-    tags: ['screen cleaning', 'track cleaning'],
-  },
 ]
 
+const wmBlogPosts: BlogPost[] = WM_BLOG_ARTICLES.map((article) => ({
+  slug: article.slug,
+  title: article.title,
+  excerpt: article.excerpt,
+  datePublished: article.datePublished,
+  dateModified: article.dateModified,
+  author: 'Arizona Window Washing Pros',
+  published: true,
+  category: article.category,
+  tags: article.tags,
+}))
+
+export const allBlogPosts: BlogPost[] = [...blogPosts, ...wmBlogPosts]
+
 export function getAllBlogPosts(): BlogPost[] {
-  return blogPosts.filter(post => post.published)
+  return allBlogPosts.filter((post) => post.published)
 }
 
 export function getBlogPost(slug: string): BlogPost | undefined {
-  return blogPosts.find(post => post.slug === slug)
+  return allBlogPosts.find((post) => post.slug === slug)
 }
 
 export function getRelatedPosts(currentSlug: string, limit: number = 3): BlogPost[] {
   const currentPost = getBlogPost(currentSlug)
   if (!currentPost) return []
 
-  return blogPosts
-    .filter(post => post.slug !== currentSlug && post.published)
-    .filter(post => 
-      post.category === currentPost.category || 
-      post.tags?.some(tag => currentPost.tags?.includes(tag))
+  return allBlogPosts
+    .filter((post) => post.slug !== currentSlug && post.published)
+    .filter(
+      (post) =>
+        post.category === currentPost.category ||
+        post.tags?.some((tag) => currentPost.tags?.includes(tag))
     )
     .slice(0, limit)
 }
+

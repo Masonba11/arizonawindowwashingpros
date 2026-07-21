@@ -9,6 +9,11 @@ const nextConfig = {
         destination: '/locations/gilbert-window-washing',
         permanent: false,
       },
+      {
+        source: '/commercial-window-cleaning',
+        destination: '/commercial-window-cleaning-arizona',
+        permanent: true,
+      },
     ]
   },
   images: {

@@ -123,6 +123,15 @@ export function generateProfessionalServiceSchema() {
         addressCountry: 'US',
       },
     },
+    {
+      '@type': 'Place',
+      name: 'White Mountains',
+      address: {
+        '@type': 'PostalAddress',
+        addressRegion: 'AZ',
+        addressCountry: 'US',
+      },
+    },
   ]
 
   // Service area as GeoCircle (correct format: geoRadius is NUMBER in meters)
