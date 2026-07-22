@@ -10,7 +10,7 @@ import { generateMetadata } from '@/lib/seo'
 export const metadata = generateMetadata({
   title: 'Service Areas',
   description:
-    'Window cleaning service areas across the East Valley and northern Arizona, including Pinetop-Lakeside, Show Low, Snowflake, Mesa, Gilbert, Chandler, and nearby communities. Free quotes available.',
+    'Window cleaning service areas in Pinetop, Lakeside, Show Low, and Snowflake, Arizona. Residential and commercial window cleaning. Free quotes available.',
   path: '/locations',
 })
 
@@ -19,16 +19,16 @@ export default function LocationsPage() {
     <>
       <HeroVideo
         title="Our Service Areas"
-        subtitle="Professional window cleaning services throughout the East Valley and northern Arizona"
+        subtitle="Professional window cleaning in Pinetop, Lakeside, Show Low, and Snowflake"
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={`tel:${BUSINESS_INFO.phoneFormatted}`}
-            className="btn-primary text-lg"
-          >
+          <a href={`tel:${BUSINESS_INFO.phoneFormatted}`} className="btn-primary text-lg">
             Call Now: {BUSINESS_INFO.phone}
           </a>
-          <a href="#contact-form" className="btn-secondary text-lg bg-white text-primary-600 border-2 border-white hover:bg-primary-50">
+          <a
+            href="#contact-form"
+            className="btn-secondary text-lg bg-white text-primary-600 border-2 border-white hover:bg-primary-50"
+          >
             Get Free Quote
           </a>
         </div>
@@ -45,9 +45,7 @@ export default function LocationsPage() {
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">{location.name} window cleaning</h2>
                 <p className="text-gray-600 mb-4">{location.description}</p>
-                <span className="text-primary-600 font-semibold hover:underline">
-                  Learn more →
-                </span>
+                <span className="text-primary-600 font-semibold hover:underline">Learn more →</span>
               </Link>
             ))}
             <Link
@@ -56,7 +54,7 @@ export default function LocationsPage() {
             >
               <h2 className="text-2xl font-bold text-gray-900 mb-3">White Mountains window cleaning</h2>
               <p className="text-gray-600 mb-4">
-                Regional coverage hub for Pinetop-Lakeside, Show Low, Snowflake, and nearby communities.
+                Regional coverage hub for Pinetop, Lakeside, Show Low, and Snowflake.
               </p>
               <span className="text-primary-600 font-semibold hover:underline">Learn more →</span>
             </Link>
@@ -64,32 +62,31 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* Rich Content Section */}
       <section className="bg-gray-50 section-padding">
         <div className="container-custom max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Serving Arizona Communities with Excellence</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+              Serving the White Mountains with Excellence
+            </h2>
             <p className="text-xl text-gray-700 mb-6">
-              Arizona Window Washing Pros is proud to serve homeowners and businesses throughout the East Valley and
-              northern Arizona, including Mesa, Gilbert, Queen Creek, Chandler, Pinetop-Lakeside, Show Low, and Snowflake.
-              As a locally owned and operated business, we are committed to providing exceptional service in every
-              community we serve.
+              Arizona Window Washing Pros provides residential and commercial window cleaning in Pinetop, Lakeside,
+              Show Low, and Snowflake. We help homeowners, cabin owners, vacation properties, and local businesses keep
+              glass clear and well maintained.
             </p>
             <p className="text-gray-700 mb-6">
-              Each area we serve has its own character and specific window cleaning challenges. Whether you&apos;re in the heart of Mesa, the growing community of Queen Creek, or anywhere in between, we bring the same level of professionalism, attention to detail, and customer service to every job.
+              Whether you need a one-time clean, seasonal cabin preparation, or recurring storefront service, we make
+              it easy to request a free estimate and schedule an appointment.
             </p>
             <h3 className="text-2xl font-bold mb-4 mt-8">Local Knowledge, Professional Service</h3>
-            <p className="text-gray-700 mb-4">
-              Our familiarity with each area we serve means we understand local conditions, common issues, and the best approaches for each neighborhood. We know the best times to schedule service, how to navigate different property types, and what to expect from the local climate.
-            </p>
             <p className="text-gray-700">
-              No matter which East Valley community you call home, you can count on Arizona window cleaning Pros for reliable, professional window cleaning service. We&apos;re your neighbors, and we&apos;re committed to helping you maintain a beautiful home with crystal-clear windows.
+              Tell us about your property type and the services you need—exterior glass, interior detailing, screens,
+              tracks, sills, or frames—and we will help you choose a practical plan for your White Mountains home or
+              business.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Google Reviews Section */}
       <section className="section-padding bg-white">
         <div className="container-custom max-w-6xl">
           <div className="text-center mb-8">
@@ -100,10 +97,8 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <FAQSection faqs={generalFAQs} />
 
-      {/* Contact Form Section */}
       <section id="contact-form" className="section-padding bg-white">
         <div className="container-custom max-w-5xl">
           <ContactForm />
@@ -112,4 +107,3 @@ export default function LocationsPage() {
     </>
   )
 }
-

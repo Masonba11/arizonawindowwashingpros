@@ -422,11 +422,11 @@ export default function CommercialWindowCleaningLanding() {
       <SectionShell id="areas" className="bg-white border-t border-slate-100">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-            Commercial Window Cleaning Across Arizona &amp; the East Valley
+            Commercial Window Cleaning in the White Mountains
           </h2>
           <p className="mt-4 text-slate-600 leading-relaxed">
-            {COMMERCIAL_LANDING.name} serves commercial properties throughout Gilbert, Chandler, Queen Creek, San Tan
-            Valley, Mesa, Scottsdale, Tempe, Phoenix, Paradise Valley, and nearby East Valley Arizona communities.
+            {COMMERCIAL_LANDING.name} serves commercial properties in Pinetop, Lakeside, Show Low, and Snowflake,
+            Arizona.
           </p>
         </div>
         <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">

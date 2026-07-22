@@ -3,15 +3,37 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // Tools/widgets sometimes request /locations/<pathname>; Gilbert ads use /gilbert-window-cleaning
-      {
-        source: '/locations/gilbert-window-cleaning',
-        destination: '/locations/gilbert-window-washing',
-        permanent: false,
-      },
       {
         source: '/commercial-window-cleaning',
         destination: '/commercial-window-cleaning-arizona',
+        permanent: true,
+      },
+      // Former East Valley pages → White Mountains hub
+      {
+        source:
+          '/:prefix(exterior-window-cleaning|interior-window-cleaning|screen-cleaning|track-sill-cleaning)-:city(gilbert|mesa|chandler|scottsdale|tempe|queen-creek|san-tan-valley|east-valley)',
+        destination: '/white-mountains-window-cleaning',
+        permanent: true,
+      },
+      {
+        source:
+          '/:city(gilbert|mesa|chandler|scottsdale|tempe|queen-creek|san-tan-valley|east-valley)-window-:kind(washing|cleaning)',
+        destination: '/white-mountains-window-cleaning',
+        permanent: true,
+      },
+      {
+        source: '/east-valley-contact-us',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/east-valley-reviews',
+        destination: '/reviews',
+        permanent: true,
+      },
+      {
+        source: '/locations/:slug(mesa-window-washing|gilbert-window-washing|gilbert-window-cleaning|window-washing-queen-creek|chandler-window-washing|scottsdale-window-washing|tempe-window-washing|san-tan-valley-window-washing|east-valley-window-washing)',
+        destination: '/white-mountains-window-cleaning',
         permanent: true,
       },
     ]

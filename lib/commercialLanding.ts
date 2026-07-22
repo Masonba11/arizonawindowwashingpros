@@ -95,19 +95,13 @@ export const COMMERCIAL_FAQS = [
   {
     question: 'What areas do you serve?',
     answer:
-      'We serve Gilbert, Chandler, Queen Creek, San Tan Valley, Mesa, Scottsdale, Tempe, Phoenix, Paradise Valley, and surrounding East Valley Arizona areas.',
+      'We serve Pinetop, Lakeside, Show Low, and Snowflake, Arizona.',
   },
 ] as const
 
 export const SERVICE_AREA_CITIES = [
-  'Gilbert',
-  'Chandler',
-  'Queen Creek',
-  'San Tan Valley',
-  'Mesa',
-  'Scottsdale',
-  'Tempe',
-  'Phoenix',
-  'Paradise Valley',
-  'East Valley Arizona',
+  'Pinetop',
+  'Lakeside',
+  'Show Low',
+  'Snowflake',
 ] as const

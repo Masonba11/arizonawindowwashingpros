@@ -24,25 +24,20 @@ export const PINETOP_ANCHOR_SCROLL =
 
 export const PINETOP_SERVICE_AREAS = [
   'Pinetop',
-  'Pinetop-Lakeside',
-  'Show Low',
   'Lakeside',
-  'White Mountain',
-  'Taylor',
+  'Show Low',
   'Snowflake',
-  'Heber-Overgaard',
-  'Nearby White Mountains communities',
 ] as const
 
 export const PINETOP_AD_METADATA: Metadata = {
   title: 'Pinetop & Show Low Window Cleaning | Free Screen Cleaning Offer',
   description:
-    'Professional window cleaning in Pinetop, Show Low, Lakeside, and surrounding White Mountains areas. Free screen cleaning included for a limited time. Get a free quote today.',
+    'Professional window cleaning in Pinetop, Lakeside, Show Low, and Snowflake. Free screen cleaning included for a limited time. Get a free quote today.',
   alternates: { canonical: PINETOP_AD_PATH },
   openGraph: {
     title: 'Pinetop & Show Low Window Cleaning | Free Screen Cleaning Offer',
     description:
-      'Professional window cleaning in Pinetop, Show Low, Lakeside, and surrounding White Mountains areas. Free screen cleaning included for a limited time. Get a free quote today.',
+      'Professional window cleaning in Pinetop, Lakeside, Show Low, and Snowflake. Free screen cleaning included for a limited time. Get a free quote today.',
     type: 'website',
   },
 }

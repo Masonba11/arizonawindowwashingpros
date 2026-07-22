@@ -33,7 +33,7 @@ export const WHITE_MOUNTAINS_HUB: ContentLandingConfig = {
     {
       heading: 'Communities We Serve',
       paragraphs: [
-        'Our primary White Mountains focus includes Pinetop-Lakeside, Show Low, and Snowflake. Nearby communities such as Lakeside, Taylor, and other White Mountain areas may also be discussed when you request service—availability depends on scheduling and location.',
+        'Our White Mountains service area includes Pinetop, Lakeside, Show Low, and Snowflake. Request a free estimate to confirm availability for your property.',
         'Each primary city has its own page with local context. Use those pages when you want details tailored to a specific town, and use this hub when you are comparing options across the region or deciding which city page fits your property.',
       ],
       bullets: [
@@ -105,7 +105,7 @@ export const WHITE_MOUNTAINS_HUB: ContentLandingConfig = {
     {
       question: 'Do you provide window cleaning in the White Mountains?',
       answer:
-        'Yes. Arizona Window Washing Pros is accepting appointments for window cleaning in White Mountains communities including Pinetop-Lakeside, Show Low, Snowflake, and nearby areas where scheduling allows.',
+        'Yes. Arizona Window Washing Pros is accepting appointments for window cleaning in Pinetop, Lakeside, Show Low, and Snowflake.',
     },
     {
       question: 'Which cities have dedicated pages?',

@@ -16,7 +16,7 @@ export default function ContactCTA() {
           Ready for Crystal-Clear Windows?
         </h2>
         <p className="text-xl md:text-2xl mb-10 text-primary-100 max-w-2xl mx-auto">
-          Get your free quote today. We serve Mesa, Gilbert, Queen Creek, and Chandler.
+          Get your free quote today. We serve Pinetop, Lakeside, Show Low, and Snowflake.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a

@@ -11,9 +11,9 @@ import { generateMetadata } from '@/lib/seo'
 import { NORTHERN_AZ_PATHS } from '@/lib/northernArizona'
 
 export const metadata = generateMetadata({
-  title: 'Window Cleaning in Arizona | East Valley & Northern Arizona',
+  title: 'Window Cleaning in Pinetop, Lakeside, Show Low & Snowflake',
   description:
-    'Professional residential and commercial window cleaning from Arizona Window Washing Pros. Serving the East Valley and northern Arizona communities including Pinetop-Lakeside, Show Low, and Snowflake. Free quotes.',
+    'Professional residential and commercial window cleaning from Arizona Window Washing Pros. Serving Pinetop, Lakeside, Show Low, and Snowflake, Arizona. Free quotes.',
   path: '/',
 })
 
@@ -53,7 +53,7 @@ export default function HomePage() {
     <>
       <HeroVideo
         title="Professional Window Cleaning for Arizona Homes and Businesses"
-        subtitle="Crystal-clear windows across the East Valley and northern Arizona White Mountains. Expert residential and commercial service you can trust."
+        subtitle="Crystal-clear windows in Pinetop, Lakeside, Show Low, and Snowflake. Expert residential and commercial service you can trust."
       >
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CallButton className="btn-primary text-lg" eventLabel="homepage_hero_call">
@@ -196,7 +196,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="section-title">We Serve These Areas</h2>
             <p className="section-subtitle">
-              Professional window cleaning throughout the East Valley and northern Arizona
+              Professional window cleaning in Pinetop, Lakeside, Show Low, and Snowflake
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -308,8 +308,8 @@ export default function HomePage() {
                   <div>
                     <h3 className="text-xl font-bold mb-2 text-gray-900">Local Expertise</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Experience serving East Valley and northern Arizona communities with professional
-                      residential and commercial window cleaning.
+                      Experience serving White Mountains communities with professional residential and commercial
+                      window cleaning in Pinetop, Lakeside, Show Low, and Snowflake.
                     </p>
                   </div>
                 </div>
@@ -361,8 +361,8 @@ export default function HomePage() {
             <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 border border-primary-200">
               <p className="text-lg text-gray-700 leading-relaxed text-center">
                 <strong className="text-primary-700">{BUSINESS_INFO.name}</strong> provides residential and
-                commercial window cleaning for Arizona homes and businesses—including the East Valley and
-                northern Arizona service areas such as Pinetop-Lakeside, Show Low, and Snowflake.
+                commercial window cleaning for homes and businesses in Pinetop, Lakeside, Show Low, and Snowflake,
+                Arizona.
               </p>
             </div>
           </div>

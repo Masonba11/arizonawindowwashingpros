@@ -9,7 +9,7 @@ import { generateMetadata } from '@/lib/seo'
 
 export const metadata = generateMetadata({
   title: 'Contact Us',
-  description: `Contact ${BUSINESS_INFO.name} for professional window cleaning services in Mesa, Gilbert, Queen Creek, and Chandler. Call ${BUSINESS_INFO.phone} or request a free quote.`,
+  description: `Contact ${BUSINESS_INFO.name} for professional window cleaning services in Pinetop, Lakeside, Show Low, and Snowflake. Call ${BUSINESS_INFO.phone} or request a free quote.`,
   path: '/contact',
 })
 

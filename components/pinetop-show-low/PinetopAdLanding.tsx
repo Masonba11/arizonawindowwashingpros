@@ -149,8 +149,7 @@ export default function PinetopAdLanding() {
           Serving Pinetop, Show Low &amp; Nearby White Mountains Areas
         </h2>
         <p className="mt-4 max-w-3xl text-slate-600">
-          We are now booking window cleaning in Pinetop-Lakeside, Show Low, Lakeside, White Mountain, Taylor,
-          Snowflake, Heber-Overgaard, and nearby communities.
+          We are now booking window cleaning in Pinetop, Lakeside, Show Low, and Snowflake.
         </p>
         <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
           {PINETOP_SERVICE_AREAS.map((area) => (

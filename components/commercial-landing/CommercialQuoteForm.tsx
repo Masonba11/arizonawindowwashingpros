@@ -6,15 +6,10 @@ import { COMMERCIAL_ANCHOR_SCROLL, COMMERCIAL_LANDING } from '@/lib/commercialLa
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
 
 const CITIES = [
-  'Gilbert',
-  'Chandler',
-  'Queen Creek',
-  'San Tan Valley',
-  'Mesa',
-  'Scottsdale',
-  'Tempe',
-  'Phoenix',
-  'Paradise Valley',
+  'Pinetop',
+  'Lakeside',
+  'Show Low',
+  'Snowflake',
   'Other',
 ] as const
 

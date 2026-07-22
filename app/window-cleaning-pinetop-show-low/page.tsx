@@ -185,11 +185,11 @@ export default function WindowCleaningPinetopShowLowPage() {
             <Link href="/window-cleaning-snowflake-az" className="text-primary-600 font-semibold hover:underline">
               Snowflake window cleaning
             </Link>
-            . Also serving the greater Phoenix metro. See our{' '}
+            . See our{' '}
             <Link href="/locations" className="text-primary-600 font-semibold hover:underline">
               service areas
             </Link>{' '}
-            page for East Valley locations.
+            page for more details.
           </p>
         </div>
       </section>

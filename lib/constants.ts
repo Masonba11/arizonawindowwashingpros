@@ -5,13 +5,8 @@ export const BUSINESS_INFO = {
   phoneFormatted: '4807370850',
   email: 'arizonawindowwashingpros@gmail.com',
   serviceArea: [
-    'Mesa',
-    'Gilbert',
-    'Queen Creek',
-    'Chandler',
-    'Scottsdale',
-    'Tempe',
-    'San Tan Valley',
+    'Pinetop',
+    'Lakeside',
     'Pinetop-Lakeside',
     'Show Low',
     'Snowflake',
@@ -19,9 +14,9 @@ export const BUSINESS_INFO = {
   ],
   address: {
     street: 'Arizona',
-    city: 'Mesa',
+    city: 'Show Low',
     state: 'AZ',
-    zip: '85201',
+    zip: '85901',
   },
   hours: {
     monday: '7:00 AM - 6:00 PM',
@@ -92,71 +87,20 @@ export type Location = {
 
 export const LOCATIONS: Location[] = [
   {
-    id: 'mesa',
-    name: 'Mesa',
-    slug: 'mesa-window-washing',
-    keyword: 'mesa window cleaning',
-    description: 'Professional window cleaning services in Mesa, Arizona.',
-  },
-  {
-    id: 'gilbert',
-    name: 'Gilbert',
-    slug: 'gilbert-window-washing',
-    keyword: 'gilbert window cleaning',
-    description: 'Expert window cleaning in Gilbert, Arizona.',
-  },
-  {
-    id: 'queen-creek',
-    name: 'Queen Creek',
-    slug: 'window-washing-queen-creek',
-    keyword: 'window cleaning queen creek',
-    description: 'Top-rated window cleaning in Queen Creek, Arizona.',
-  },
-  {
-    id: 'chandler',
-    name: 'Chandler',
-    slug: 'chandler-window-washing',
-    keyword: 'chandler window cleaning',
-    description: 'Reliable window cleaning services in Chandler, Arizona.',
-  },
-  {
-    id: 'scottsdale',
-    name: 'Scottsdale',
-    slug: 'scottsdale-window-washing',
-    keyword: 'window cleaning scottsdale az',
-    description: 'Premium window cleaning services in Scottsdale, Arizona.',
-  },
-  {
-    id: 'tempe',
-    name: 'Tempe',
-    slug: 'tempe-window-washing',
-    keyword: 'tempe window cleaning',
-    description: 'Professional window cleaning services in Tempe, Arizona.',
-  },
-  {
-    id: 'san-tan-valley',
-    name: 'San Tan Valley',
-    slug: 'san-tan-valley-window-washing',
-    keyword: 'san tan valley window cleaning',
-    description: 'Professional window cleaning services in San Tan Valley, Arizona.',
-  },
-  {
-    id: 'pinetop-show-low',
-    name: 'Pinetop & Show Low',
-    slug: 'window-cleaning-pinetop-show-low',
-    path: '/window-cleaning-pinetop-show-low',
-    keyword: 'window cleaning pinetop show low',
-    description:
-      'Professional window cleaning in Pinetop, Show Low, Pinetop-Lakeside, and the White Mountains.',
-  },
-  {
-    id: 'pinetop-lakeside',
-    name: 'Pinetop-Lakeside',
+    id: 'pinetop',
+    name: 'Pinetop',
     slug: 'window-cleaning-pinetop-lakeside-az',
     path: '/window-cleaning-pinetop-lakeside-az',
-    keyword: 'window cleaning pinetop-lakeside az',
-    description:
-      'Residential, cabin, and commercial window cleaning in Pinetop-Lakeside, Arizona.',
+    keyword: 'window cleaning pinetop az',
+    description: 'Residential, cabin, and commercial window cleaning in Pinetop, Arizona.',
+  },
+  {
+    id: 'lakeside',
+    name: 'Lakeside',
+    slug: 'window-cleaning-pinetop-lakeside-az',
+    path: '/window-cleaning-pinetop-lakeside-az',
+    keyword: 'window cleaning lakeside az',
+    description: 'Window cleaning for homes, cabins, and businesses in Lakeside, Arizona.',
   },
   {
     id: 'show-low',
@@ -184,19 +128,11 @@ export function getLocationHref(location: Pick<Location, 'slug' | 'path'>): stri
 
 // Cities for contact form dropdown
 export const CITIES = [
-  'Mesa',
-  'Gilbert',
-  'Queen Creek',
-  'Chandler',
-  'Scottsdale',
-  'Tempe',
-  'San Tan Valley',
-  'Pinetop-Lakeside',
   'Pinetop',
+  'Lakeside',
+  'Pinetop-Lakeside',
   'Show Low',
   'Snowflake',
-  'Lakeside',
-  'Taylor',
   'Other',
 ]
 

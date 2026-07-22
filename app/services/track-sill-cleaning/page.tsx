@@ -156,7 +156,7 @@ export default function TrackSillCleaningPage() {
           <div className="content-section">
             <h2 className="text-3xl font-bold mb-6 text-gray-900">Track & Sill Cleaning in Your Area</h2>
             <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-              We provide track and sill cleaning services throughout the East Valley:
+              We provide track and sill cleaning services in Pinetop, Lakeside, Show Low, and Snowflake:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {LOCATIONS.map((location) => (

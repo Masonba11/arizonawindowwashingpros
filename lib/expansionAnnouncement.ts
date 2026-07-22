@@ -53,15 +53,13 @@ export const EXPANSION_ANNOUNCEMENT: ContentLandingConfig = {
     {
       heading: 'Communities We Now Serve',
       paragraphs: [
-        'We are now serving three primary communities with dedicated location pages: Pinetop-Lakeside, Show Low, and Snowflake. Those pages go deeper on local residential and commercial needs. This announcement is the broader “now serving” message for the expansion.',
-        'Nearby White Mountain communities such as Lakeside, Taylor, and other surrounding areas may also be discussed when you request service. Availability depends on location and scheduling, so include your community name when you ask for an estimate.',
+        'We are now serving four communities with dedicated location coverage: Pinetop, Lakeside, Show Low, and Snowflake. Those pages go deeper on local residential and commercial needs. This announcement is the broader “now serving” message for the expansion.',
         'For a regional overview that links homes, cabins, vacation properties, and businesses together, visit our White Mountains window cleaning hub. For town-specific details, use the city pages linked below.',
       ],
       bullets: [
-        'Pinetop-Lakeside — homes, cabins, and local businesses',
+        'Pinetop & Lakeside — homes, cabins, and local businesses',
         'Show Low — residential, rentals, and storefronts',
         'Snowflake — residential and commercial appointments',
-        'Nearby White Mountains communities by appointment',
       ],
     },
     {

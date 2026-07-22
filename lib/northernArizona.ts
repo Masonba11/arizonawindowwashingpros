@@ -72,7 +72,7 @@ export const NORTHERN_AZ_CITIES: Record<NorthernAzCityId, NorthernAzCityPage> = 
     intro: [
       'Arizona Window Washing Pros is now serving Pinetop-Lakeside with professional residential and commercial window cleaning. Whether you own a full-time home, a seasonal cabin, or a local business that needs presentable glass, we provide careful cleaning for the windows that shape how your property looks and feels.',
       'Pinetop-Lakeside properties often collect pollen, dust, and outdoor buildup that leave windows looking dull even when the rest of the home is well kept. Fingerprints and indoor film build up on interior panes, while dirty screens and tracks can make freshly washed glass still look hazy.',
-      'We offer exterior window cleaning, interior detailing when requested, and optional screen, track, sill, and frame cleaning. Homeowners, cabin owners, vacation-rental hosts, and business owners can request a free estimate and schedule around occupancy plans or business hours. We are expanding availability throughout the White Mountains, including Show Low, Snowflake, and Taylor.',
+      'We offer exterior window cleaning, interior detailing when requested, and optional screen, track, sill, and frame cleaning. Homeowners, cabin owners, vacation-rental hosts, and business owners can request a free estimate and schedule around occupancy plans or business hours. We serve Pinetop, Lakeside, Show Low, and Snowflake.',
     ],
     sections: [
       {
@@ -253,7 +253,7 @@ export const NORTHERN_AZ_CITIES: Record<NorthernAzCityId, NorthernAzCityPage> = 
       'Keep Show Low homes, rentals, and storefronts looking clear and well maintained. Arizona Window Washing Pros is accepting appointments throughout the area.',
     intro: [
       'Arizona Window Washing Pros is now serving Show Low with professional residential and commercial window cleaning. Property owners here often want windows that look clean from the curb and clear from inside—whether the property is a primary home, a rental that needs to look guest-ready, or a storefront that greets customers every day.',
-      'We provide exterior glass cleaning, interior detailing when requested, and optional screen, track, sill, and frame cleaning. Homeowners, property managers, vacation-rental hosts, and local business owners can request a free estimate and book a one-time refresh or a routine schedule. Serving Show Low also means coordinating with nearby communities such as Pinetop-Lakeside, Snowflake, and Taylor when you need service across more than one address.',
+      'We provide exterior glass cleaning, interior detailing when requested, and optional screen, track, sill, and frame cleaning. Homeowners, property managers, vacation-rental hosts, and local business owners can request a free estimate and book a one-time refresh or a routine schedule. Serving Show Low also means coordinating with Pinetop, Lakeside, and Snowflake when you need service across more than one address.',
       'Whether you are preparing a home for sale, resetting a rental between tenants, or keeping commercial entrance glass presentable, we make it simple to request an estimate and confirm the scope before work begins. We are accepting appointments and providing window cleaning throughout Show Low.',
     ],
     sections: [
@@ -423,7 +423,7 @@ export const NORTHERN_AZ_CITIES: Record<NorthernAzCityId, NorthernAzCityPage> = 
       'Arizona Window Washing Pros is accepting appointments for careful residential and commercial window cleaning throughout Snowflake.',
     intro: [
       'Arizona Window Washing Pros is now serving Snowflake with professional residential and commercial window cleaning. Properties with many windows can take significant time to clean well by hand. Larger homes, open living spaces, and commercial glass all benefit from a professional approach that covers exterior panes thoroughly and can include interior detailing when needed.',
-      'We help homeowners and small businesses keep glass clear with respectful, detail-focused service. Exterior cleaning, interior cleaning when requested, and optional screen, track, sill, and frame detailing are available based on what you select in your quote. Serving Snowflake also means coordinating with nearby White Mountains communities such as Show Low, Pinetop-Lakeside, and Taylor when you need availability across more than one town.',
+      'We help homeowners and small businesses keep glass clear with respectful, detail-focused service. Exterior cleaning, interior cleaning when requested, and optional screen, track, sill, and frame detailing are available based on what you select in your quote. Serving Snowflake also means coordinating with Show Low, Pinetop, and Lakeside when you need availability across more than one town.',
       'Whether you want a one-time reset before guests arrive, routine exterior maintenance throughout the year, or commercial glass that looks presentable to customers, requesting a free estimate is the simplest way to confirm scope and schedule. Expanding service in northern Arizona means we are opening availability for Snowflake appointments—providing window cleaning throughout the community without claiming a local staffed office unless that is confirmed separately.',
     ],
     sections: [
@@ -464,7 +464,7 @@ export const NORTHERN_AZ_CITIES: Record<NorthernAzCityId, NorthernAzCityPage> = 
         paragraphs: [
           'Small businesses and commercial properties in Snowflake also need clean glass for a professional appearance. We can clean storefront windows and other commercial glass as part of a one-time visit or an ongoing plan. Clean entrance glass helps local businesses look open and well maintained to customers and passersby.',
           'Business owners who want more information about commercial service can review our commercial window cleaning and storefront window cleaning pages, or contact us directly for a Snowflake estimate. Tell us about preferred days, whether interior glass should be included, and whether you want a recurring schedule.',
-          'Arizona Window Washing Pros is providing commercial window cleaning throughout Snowflake alongside residential service. Ask us if you are outside city limits or in a nearby community—we also serve Show Low, Pinetop-Lakeside, Taylor, and other White Mountains areas where we are accepting appointments.',
+          'Arizona Window Washing Pros is providing commercial window cleaning throughout Snowflake alongside residential service. Ask us if you are outside city limits—we also serve Show Low, Pinetop, and Lakeside.',
         ],
       },
       {

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: `${BUSINESS_INFO.name} | Window Cleaning in Arizona`,
     template: `%s | ${BUSINESS_INFO.name}`,
   },
-  description: `Professional residential and commercial window cleaning from Arizona Window Washing Pros. Serving the East Valley and northern Arizona including Pinetop-Lakeside, Show Low, and Snowflake.`,
+  description: `Professional residential and commercial window cleaning from Arizona Window Washing Pros. Serving Pinetop, Lakeside, Show Low, and Snowflake, Arizona.`,
   icons: {
     icon: [{ url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' }],
     apple: '/favicon.ico',

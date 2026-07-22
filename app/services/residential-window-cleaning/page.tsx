@@ -129,7 +129,7 @@ export default function ResidentialWindowCleaningPage() {
           </ul>
           <h2 className="text-3xl font-bold text-gray-900 mt-10 mb-4">Where We Provide Residential Service</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            We serve East Valley communities and northern Arizona areas including{' '}
+            We serve Pinetop, Lakeside, Show Low, and Snowflake, including{' '}
             <Link href={NORTHERN_AZ_PATHS.pinetopLakeside} className="text-primary-600 font-semibold hover:underline">
               Pinetop-Lakeside window cleaning
             </Link>

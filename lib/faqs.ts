@@ -18,7 +18,7 @@ export const generalFAQs: FAQ[] = [
   },
   {
     question: 'What areas do you serve?',
-    answer: 'We proudly serve Mesa, Gilbert, Queen Creek, Chandler, and surrounding areas in the East Valley of Arizona. If you\'re unsure if we service your area, please contact us and we\'ll be happy to help.',
+    answer: 'We proudly serve Pinetop, Lakeside, Show Low, and Snowflake, Arizona. If you\'re unsure if we service your area, please contact us and we\'ll be happy to help.',
   },
   {
     question: 'Do you clean window screens?',

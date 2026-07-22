@@ -103,7 +103,7 @@ export const CABIN_WINDOW_CLEANING: ContentLandingConfig = {
     {
       question: 'Do you clean cabin windows in the White Mountains?',
       answer:
-        'Yes. Arizona Window Washing Pros provides cabin window cleaning for properties in communities such as Pinetop-Lakeside, Show Low, Snowflake, and nearby White Mountains areas where we are accepting appointments.',
+        'Yes. Arizona Window Washing Pros provides cabin window cleaning for properties in Pinetop, Lakeside, Show Low, and Snowflake.',
     },
     {
       question: 'Can you clean a cabin before I arrive for the season?',
