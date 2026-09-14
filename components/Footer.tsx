@@ -19,7 +19,12 @@ export default function Footer() {
               />
             </Link>
             <div className="space-y-3">
-              <p className="text-gray-400">{BUSINESS_INFO.address.city}, {BUSINESS_INFO.address.state}</p>
+              <address className="text-gray-400 not-italic">
+                <span className="block">{BUSINESS_INFO.legalAddress.street}</span>
+                <span className="block">
+                  {BUSINESS_INFO.legalAddress.city}, {BUSINESS_INFO.legalAddress.state} {BUSINESS_INFO.legalAddress.zip}
+                </span>
+              </address>
               <p>
                 <a 
                   href={`tel:${BUSINESS_INFO.phoneFormatted}`} 
@@ -199,4 +204,3 @@ export default function Footer() {
     </footer>
   )
 }
-

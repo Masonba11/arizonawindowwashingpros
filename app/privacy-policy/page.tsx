@@ -184,6 +184,10 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="bg-gray-50 border-l-4 border-primary-600 p-6">
               <p className="text-gray-800 font-semibold mb-2">{BUSINESS_INFO.name}</p>
+              <address className="text-gray-700 not-italic mb-2">
+                {BUSINESS_INFO.legalAddress.street}<br />
+                {BUSINESS_INFO.legalAddress.city}, {BUSINESS_INFO.legalAddress.state} {BUSINESS_INFO.legalAddress.zip}
+              </address>
               <p className="text-gray-700 mb-2">
                 <a href={`tel:${BUSINESS_INFO.phoneFormatted}`} className="text-primary-600 hover:text-primary-700">
                   {BUSINESS_INFO.phone}
@@ -204,6 +208,5 @@ export default function PrivacyPolicyPage() {
     </div>
   )
 }
-
 
 

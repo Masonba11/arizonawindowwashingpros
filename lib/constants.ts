@@ -4,6 +4,12 @@ export const BUSINESS_INFO = {
   phone: '(480) 737-0850',
   phoneFormatted: '4807370850',
   email: 'arizonawindowwashingpros@gmail.com',
+  legalAddress: {
+    street: '20162 East Sonoqui Boulevard',
+    city: 'Queen Creek',
+    state: 'AZ',
+    zip: '85142',
+  },
   serviceArea: [
     'Pinetop',
     'Lakeside',
@@ -135,4 +141,3 @@ export const CITIES = [
   'Snowflake',
   'Other',
 ]
-
