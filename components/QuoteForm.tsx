@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { BUSINESS_INFO, SERVICES, CITIES } from '@/lib/constants'
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
+import SmsConsentField from '@/components/SmsConsentField'
+import { buildSmsConsentFields, formatSmsConsentMessageLine } from '@/lib/smsConsent'
 
 interface QuoteFormProps {
   defaultCity?: string
@@ -17,15 +19,14 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
     city: defaultCity,
     service: defaultService,
     notes: '',
-    textMe: false,
   })
+  const [smsConsent, setSmsConsent] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [formStarted, setFormStarted] = useState(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target
-    const checked = (e.target as HTMLInputElement).checked
+    const { name, value } = e.target
 
     if (!formStarted) {
       setFormStarted(true)
@@ -40,7 +41,7 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
 
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     }))
   }
 
@@ -55,13 +56,14 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
         digits.length > 0
           ? `${digits}@quote.noreply.com`
           : `quote-${Date.now()}@quote.noreply.com`
+      const consentFields = buildSmsConsentFields(smsConsent)
       const message =
         formData.notes ||
         `Quote request for ${formData.service || 'window cleaning'}`
       const fullMessage = [
         `City: ${formData.city}`,
         `Service: ${formData.service}`,
-        formData.textMe ? 'Prefers text for quote: yes' : 'Prefers text for quote: no',
+        formatSmsConsentMessageLine(smsConsent, consentFields.sms_consent_timestamp),
         '',
         message,
       ].join('\n')
@@ -75,6 +77,7 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
         message: fullMessage,
         subject: `Quote request — ${formData.name} — ${formData.city || 'AZ'}`,
         from_name: 'Arizona Window Washing Pros',
+        ...consentFields,
       })
 
       if (result.success) {
@@ -97,8 +100,8 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
           city: defaultCity,
           service: defaultService,
           notes: '',
-          textMe: false,
         })
+        setSmsConsent(false)
         setFormStarted(false)
       } else {
         setSubmitStatus('error')
@@ -153,6 +156,13 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
             className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
             placeholder="(480) 555-1234"
           />
+          <div className="mt-3">
+            <SmsConsentField
+              id="quote-sms-consent"
+              checked={smsConsent}
+              onChange={setSmsConsent}
+            />
+          </div>
         </div>
 
         <div>
@@ -212,24 +222,10 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
           />
         </div>
 
-        <div className="flex items-center">
-          <input
-            type="checkbox"
-            id="textMe"
-            name="textMe"
-            checked={formData.textMe}
-            onChange={handleInputChange}
-            className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
-          />
-          <label htmlFor="textMe" className="ml-2 text-sm text-gray-700">
-            Text me my quote
-          </label>
-        </div>
-
         {submitStatus === 'success' && (
           <div className="bg-green-50 border-2 border-green-500 rounded-lg p-4">
             <p className="text-green-800 font-semibold">
-              ✅ Thank you! We'll contact you within minutes during business hours.
+              ✅ Thank you! We&apos;ll contact you within minutes during business hours.
             </p>
           </div>
         )}
@@ -257,5 +253,3 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
     </div>
   )
 }
-
-

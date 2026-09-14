@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
+import SmsConsentField from '@/components/SmsConsentField'
+import { buildSmsConsentFields, formatSmsConsentMessageLine } from '@/lib/smsConsent'
 
 interface AdLandingFormProps {
   city: string
@@ -13,6 +15,7 @@ interface AdLandingFormProps {
 export default function AdLandingForm({ city, id = 'ad-quote-form' }: AdLandingFormProps) {
   const router = useRouter()
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [smsConsent, setSmsConsent] = useState(false)
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -24,15 +27,17 @@ export default function AdLandingForm({ city, id = 'ad-quote-form' }: AdLandingF
     e.preventDefault()
     setStatus('submitting')
     try {
+      const consentFields = buildSmsConsentFields(smsConsent)
       const json = await submitWeb3FormsFromBrowser({
         name: form.name,
         phone: form.phone,
         email: BUSINESS_INFO.email,
         city,
         service: form.service || 'Window cleaning',
-        message: `Address: ${form.address}\n\nService needed: ${form.service}\n\nLead: Google Ads LP (${city})\n\nReply using phone on file.`,
+        message: `Address: ${form.address}\n\nService needed: ${form.service}\n\nLead: Google Ads LP (${city})\n\n${formatSmsConsentMessageLine(smsConsent, consentFields.sms_consent_timestamp)}\n\nReply using phone on file.`,
         subject: `Ad LP quote — ${form.name} — ${city}`,
         from_name: 'Arizona Window Washing Pros — Ad LP',
+        ...consentFields,
       })
       if (json.success) {
         setStatus('success')
@@ -112,6 +117,14 @@ export default function AdLandingForm({ city, id = 'ad-quote-form' }: AdLandingF
             className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-gray-900 focus:border-blue-500 focus:ring-0 outline-none transition"
             placeholder="(480) 555-1234"
           />
+          <div className="mt-3">
+            <SmsConsentField
+              id="ad-sms-consent"
+              checked={smsConsent}
+              onChange={setSmsConsent}
+              variant="light"
+            />
+          </div>
         </div>
         <div>
           <label htmlFor="ad-address" className="block text-xs font-semibold text-gray-700 mb-1">

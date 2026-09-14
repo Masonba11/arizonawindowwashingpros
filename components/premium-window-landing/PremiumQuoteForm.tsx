@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
+import SmsConsentField from '@/components/SmsConsentField'
+import { buildSmsConsentFields, formatSmsConsentMessageLine } from '@/lib/smsConsent'
 
 interface PremiumQuoteFormProps {
   id: string
@@ -23,6 +25,7 @@ export default function PremiumQuoteForm({
 }: PremiumQuoteFormProps) {
   const router = useRouter()
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [smsConsent, setSmsConsent] = useState(false)
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -40,6 +43,7 @@ export default function PremiumQuoteForm({
     e.preventDefault()
     setStatus('submitting')
     try {
+      const consentFields = buildSmsConsentFields(smsConsent)
       const json = await submitWeb3FormsFromBrowser({
         name: form.name,
         phone: form.phone,
@@ -50,11 +54,13 @@ export default function PremiumQuoteForm({
           `Address: ${form.address}`,
           `Service needed: ${form.service}`,
           `Preferred date: ${form.preferredDate || 'Flexible'}`,
+          formatSmsConsentMessageLine(smsConsent, consentFields.sms_consent_timestamp),
           '',
           `Lead: Premium Google Ads LP (${city})`,
         ].join('\n'),
         subject: `Premium LP quote — ${form.name} — ${city}`,
         from_name: 'Arizona Window Washing Pros — Premium LP',
+        ...consentFields,
       })
       if (json.success) {
         setStatus('success')
@@ -176,6 +182,14 @@ export default function PremiumQuoteForm({
                   }`}
                   placeholder="(480) 555-1234"
                 />
+                <div className="mt-3">
+                  <SmsConsentField
+                    id={`${idPrefix}-sms-consent`}
+                    checked={smsConsent}
+                    onChange={setSmsConsent}
+                    variant={variant === 'glass' ? 'glass' : 'light'}
+                  />
+                </div>
               </div>
               <div>
                 <label

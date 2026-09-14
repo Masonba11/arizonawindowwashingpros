@@ -5,6 +5,8 @@ import { BUSINESS_INFO } from '@/lib/constants'
 import { useRouter } from 'next/navigation'
 import { trackCallClick } from '@/lib/callTracking'
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
+import SmsConsentField from '@/components/SmsConsentField'
+import { buildSmsConsentFields, formatSmsConsentMessageLine } from '@/lib/smsConsent'
 
 interface ContactFormProps {
   defaultCity?: string
@@ -126,6 +128,7 @@ export default function ContactForm({
     city: defaultCity || '',
     message: '',
   })
+  const [smsConsent, setSmsConsent] = useState(false)
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [submitErrorDetail, setSubmitErrorDetail] = useState<string | null>(null)
 
@@ -137,6 +140,14 @@ export default function ContactForm({
     try {
       const serviceLine =
         defaultService || formData.message || 'Not specified'
+      const consentFields = buildSmsConsentFields(smsConsent)
+      const messageWithConsent = [
+        formData.message || '',
+        '',
+        formatSmsConsentMessageLine(smsConsent, consentFields.sms_consent_timestamp),
+      ]
+        .filter(Boolean)
+        .join('\n')
 
       const result = await submitWeb3FormsFromBrowser({
         name: formData.name,
@@ -144,9 +155,10 @@ export default function ContactForm({
         email: formData.email,
         city: formData.city || 'Not specified',
         service: serviceLine,
-        message: formData.message || '',
+        message: messageWithConsent,
         subject: `New Contact Form Submission from ${formData.name}`,
         from_name: 'Arizona Window Washing Pros Website',
+        ...consentFields,
       })
 
       if (result.success) {
@@ -292,6 +304,15 @@ export default function ContactForm({
                           : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
                       }
                       placeholder="(480) 555-1234"
+                    />
+                  </div>
+
+                  <div className={compact ? '' : 'sm:col-span-2'}>
+                    <SmsConsentField
+                      id="contact-sms-consent"
+                      checked={smsConsent}
+                      onChange={setSmsConsent}
+                      variant={compact ? 'compact' : 'default'}
                     />
                   </div>
 

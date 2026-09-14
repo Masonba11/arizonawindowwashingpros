@@ -119,6 +119,14 @@ export default function Footer() {
                   <span>Privacy Policy</span>
                 </Link>
               </li>
+              <li>
+                <Link href="/terms-and-conditions" className="text-gray-400 hover:text-white transition-colors flex items-center space-x-2 group">
+                  <svg className="w-4 h-4 text-primary-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>Terms &amp; Conditions</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -172,8 +180,19 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700/50 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-sm mb-3">
             &copy; {new Date().getFullYear()} {BUSINESS_INFO.name}. All rights reserved.
+          </p>
+          <p className="text-gray-500 text-sm flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <span aria-hidden="true" className="text-gray-600">
+              |
+            </span>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+              Terms &amp; Conditions
+            </Link>
           </p>
         </div>
       </div>

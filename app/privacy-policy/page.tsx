@@ -105,13 +105,31 @@ export default function PrivacyPolicyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">SMS Communications</h2>
             <p className="text-gray-700 mb-4">
-              If you provide your phone number, you may receive text messages from us for service-related communications, including appointment confirmations, scheduling reminders, arrival notifications, and service updates. Message frequency varies depending on your service requests.
+              If you provide your phone number and opt in to SMS, you may receive recurring
+              informational and promotional text messages from {BUSINESS_INFO.name}, including quotes,
+              appointment updates, service reminders, and special offers. Message frequency varies.
+              Message and data rates may apply. Consent is not a condition of purchase.
             </p>
             <p className="text-gray-700 mb-4">
-              You can opt out of receiving text messages at any time by replying <strong>STOP</strong> to any message. For assistance, reply <strong>HELP</strong>.
+              Mobile information and SMS consent records will not be sold, rented, or shared with third
+              parties for their marketing purposes. This information may be shared only with service
+              providers needed to deliver messages (for example, SMS delivery platforms) and as otherwise
+              described in this Privacy Policy.
             </p>
             <p className="text-gray-700 mb-4">
-              For more information about our SMS communications, please see our <a href="/opt-in" className="text-primary-600 hover:text-primary-700 underline">SMS Communication Opt-In page</a>.
+              You may opt out of receiving text messages at any time by replying <strong>STOP</strong> to
+              any message. For assistance, reply <strong>HELP</strong>.
+            </p>
+            <p className="text-gray-700 mb-4">
+              For additional messaging terms, see our{' '}
+              <a href="/terms-and-conditions" className="text-primary-600 hover:text-primary-700 underline">
+                Terms &amp; Conditions
+              </a>
+              . For more information about SMS opt-in, see our{' '}
+              <a href="/opt-in" className="text-primary-600 hover:text-primary-700 underline">
+                SMS Communication Opt-In page
+              </a>
+              .
             </p>
           </section>
 

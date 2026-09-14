@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { COMMERCIAL_ANCHOR_SCROLL, COMMERCIAL_LANDING } from '@/lib/commercialLanding'
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
+import SmsConsentField from '@/components/SmsConsentField'
+import { buildSmsConsentFields, formatSmsConsentMessageLine } from '@/lib/smsConsent'
 
 const CITIES = [
   'Pinetop',
@@ -51,6 +53,7 @@ export default function CommercialQuoteForm({
 }: CommercialQuoteFormProps) {
   const router = useRouter()
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [smsConsent, setSmsConsent] = useState(false)
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -71,6 +74,7 @@ export default function CommercialQuoteForm({
     e.preventDefault()
     setStatus('submitting')
     try {
+      const consentFields = buildSmsConsentFields(smsConsent)
       const json = await submitWeb3FormsFromBrowser({
         name: form.name,
         phone: form.phone,
@@ -81,6 +85,7 @@ export default function CommercialQuoteForm({
           `Business: ${form.businessName}`,
           `Property type: ${form.propertyType}`,
           `Cleaning frequency: ${form.frequency}`,
+          formatSmsConsentMessageLine(smsConsent, consentFields.sms_consent_timestamp),
           '',
           form.message,
           '',
@@ -88,6 +93,7 @@ export default function CommercialQuoteForm({
         ].join('\n'),
         subject: `Commercial quote — ${form.businessName || form.name}`,
         from_name: `${COMMERCIAL_LANDING.name} — Commercial LP`,
+        ...consentFields,
       })
       if (json.success) {
         setStatus('success')
@@ -179,6 +185,14 @@ export default function CommercialQuoteForm({
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             className={inputClass}
             placeholder="you@business.com"
+          />
+        </div>
+        <div className="sm:col-span-2">
+          <SmsConsentField
+            id={`${idPrefix}-sms-consent`}
+            checked={smsConsent}
+            onChange={setSmsConsent}
+            variant="light"
           />
         </div>
         <div className="sm:col-span-2">

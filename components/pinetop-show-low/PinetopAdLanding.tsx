@@ -186,7 +186,15 @@ export default function PinetopAdLanding() {
         <p className="font-bold text-slate-900">{PINETOP_CONFIG.name}</p>
         <p className="mt-1"><a href={tel} className="font-semibold text-emerald-700 hover:underline">{PINETOP_CONFIG.phone}</a></p>
         <p className="mt-2 text-xs">Pinetop · Show Low · Lakeside · White Mountains · Fully insured</p>
-        <p className="mt-3"><a href="/privacy-policy" className="text-xs text-slate-500 hover:underline">Privacy Policy</a></p>
+        <p className="mt-3 text-xs flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <a href="/privacy-policy" className="text-slate-500 hover:underline">
+            Privacy Policy
+          </a>
+          <span aria-hidden="true">|</span>
+          <a href="/terms-and-conditions" className="text-slate-500 hover:underline">
+            Terms &amp; Conditions
+          </a>
+        </p>
       </footer>
     </div>
   )

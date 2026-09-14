@@ -1,5 +1,8 @@
 'use client'
 
+import { useRef, useState } from 'react'
+import SmsConsentField from '@/components/SmsConsentField'
+import { buildSmsConsentFields } from '@/lib/smsConsent'
 import { PINETOP_ANCHOR_SCROLL, PINETOP_CONFIG } from '@/lib/pinetopShowLow'
 
 const CITIES = [
@@ -18,7 +21,19 @@ const inputClass =
   'w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-0 transition'
 
 export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }) {
-  const trackSubmit = () => {
+  const [smsConsent, setSmsConsent] = useState(false)
+  const consentStatusRef = useRef<HTMLInputElement>(null)
+  const consentTimestampRef = useRef<HTMLInputElement>(null)
+
+  const handleSubmit = () => {
+    const consentFields = buildSmsConsentFields(smsConsent)
+    if (consentStatusRef.current) {
+      consentStatusRef.current.value = consentFields.sms_consent
+    }
+    if (consentTimestampRef.current) {
+      consentTimestampRef.current.value = consentFields.sms_consent_timestamp
+    }
+
     if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag) {
       const w = window as unknown as { gtag: (...a: unknown[]) => void }
       w.gtag('event', 'form_submit', {
@@ -36,13 +51,15 @@ export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }
       id="quote"
       action="https://api.web3forms.com/submit"
       method="POST"
-      onSubmit={trackSubmit}
+      onSubmit={handleSubmit}
       className={`rounded-3xl border-2 border-emerald-400/50 bg-white p-6 shadow-[0_28px_80px_-16px_rgba(15,23,42,0.35)] ring-4 ring-emerald-400/15 sm:p-8 ${PINETOP_ANCHOR_SCROLL}`}
     >
       <input type="hidden" name="access_key" value={PINETOP_CONFIG.web3FormsAccessKey} />
       <input type="hidden" name="subject" value="New Window Cleaning Quote Request" />
       <input type="hidden" name="from_name" value={PINETOP_CONFIG.name} />
       <input type="hidden" name="redirect" value="https://arizonawindowwashingpros.com/thank-you" />
+      <input ref={consentStatusRef} type="hidden" name="sms_consent" defaultValue="no" />
+      <input ref={consentTimestampRef} type="hidden" name="sms_consent_timestamp" defaultValue="" />
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <p className="text-center text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">
@@ -77,6 +94,14 @@ export default function PinetopAdForm({ idPrefix = 'pa' }: { idPrefix?: string }
             className={inputClass}
             placeholder={PINETOP_CONFIG.phone}
           />
+          <div className="mt-3">
+            <SmsConsentField
+              id={`${idPrefix}-sms-consent`}
+              checked={smsConsent}
+              onChange={setSmsConsent}
+              variant="light"
+            />
+          </div>
         </div>
         <div>
           <label htmlFor={`${idPrefix}-email`} className="mb-1 block text-xs font-semibold text-slate-700">

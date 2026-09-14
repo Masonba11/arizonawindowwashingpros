@@ -386,6 +386,15 @@ export default function PremiumWindowCleaningLanding({
         <p className="mt-2 text-xs max-w-md mx-auto px-4">
           Licensed & insured • {city} &amp; surrounding East Valley • Premium window cleaning
         </p>
+        <p className="mt-3 text-xs flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+          <a href="/privacy-policy" className="hover:text-slate-800 underline">
+            Privacy Policy
+          </a>
+          <span aria-hidden="true">|</span>
+          <a href="/terms-and-conditions" className="hover:text-slate-800 underline">
+            Terms &amp; Conditions
+          </a>
+        </p>
       </footer>
 
       <PremiumStickyBar callEventLabel={callEventLabel} />

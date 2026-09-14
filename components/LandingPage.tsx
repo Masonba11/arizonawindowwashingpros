@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { BUSINESS_INFO } from '@/lib/constants'
 import { trackCallClick } from '@/lib/callTracking'
 import { submitWeb3FormsFromBrowser } from '@/lib/web3formsClient'
+import SmsConsentField from '@/components/SmsConsentField'
+import { buildSmsConsentFields, formatSmsConsentMessageLine } from '@/lib/smsConsent'
 
 interface LandingPageProps {
   city: string
@@ -19,6 +21,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
     type: 'Residential',
     message: '',
   })
+  const [smsConsent, setSmsConsent] = useState(false)
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -29,15 +32,17 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
       const digits = formData.phone.replace(/\D/g, '')
       const email =
         digits.length > 0 ? `${digits}@noreply.com` : `lead-${Date.now()}@noreply.com`
+      const consentFields = buildSmsConsentFields(smsConsent)
 
       const result = await submitWeb3FormsFromBrowser({
         name: formData.name,
         phone: formData.phone,
         email,
         address: formData.address,
-        message: `Service Type: ${formData.type}\nAddress: ${formData.address}\nCity: ${city}\nSource: google_ads_landing\n\nMessage: ${formData.message || 'No additional message'}`,
+        message: `Service Type: ${formData.type}\nAddress: ${formData.address}\nCity: ${city}\nSource: google_ads_landing\n${formatSmsConsentMessageLine(smsConsent, consentFields.sms_consent_timestamp)}\n\nMessage: ${formData.message || 'No additional message'}`,
         subject: `New Lead: ${formData.type} Window Cleaning - ${city}`,
         from_name: 'Arizona Window Washing Pros',
+        ...consentFields,
       })
 
       if (result.success) {
@@ -51,6 +56,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
           }
         }
         setFormData({ name: '', phone: '', address: '', type: 'Residential', message: '' })
+        setSmsConsent(false)
       } else {
         console.error('Form submission failed:', result)
         setFormStatus('error')
@@ -126,6 +132,14 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="(480) 555-1234"
                 />
+                <div className="mt-3">
+                  <SmsConsentField
+                    id="landing-sms-consent"
+                    checked={smsConsent}
+                    onChange={setSmsConsent}
+                    variant="light"
+                  />
+                </div>
               </div>
               <div>
                 <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-1">

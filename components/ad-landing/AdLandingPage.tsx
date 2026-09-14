@@ -359,6 +359,15 @@ export default function AdLandingPage({ config }: { config: AdLandingCityConfig 
           <p className="mt-4 text-xs text-gray-500 max-w-md mx-auto leading-relaxed">
             Gilbert, Chandler, Queen Creek, Mesa, Scottsdale, Tempe &amp; surrounding East Valley.
           </p>
+          <p className="mt-4 text-xs text-gray-500 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <a href="/privacy-policy" className="hover:text-gray-800 underline">
+              Privacy Policy
+            </a>
+            <span aria-hidden="true">|</span>
+            <a href="/terms-and-conditions" className="hover:text-gray-800 underline">
+              Terms &amp; Conditions
+            </a>
+          </p>
         </div>
       </footer>
 
