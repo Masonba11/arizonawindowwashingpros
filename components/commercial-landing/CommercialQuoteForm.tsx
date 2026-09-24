@@ -169,7 +169,7 @@ export default function CommercialQuoteForm({
             value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
             className={inputClass}
-            placeholder="480-737-0850"
+            placeholder="928-235-5934"
           />
         </div>
         <div>

@@ -23,7 +23,7 @@ export const CABIN_WINDOW_CLEANING: ContentLandingConfig = {
   path: SPECIALTY_PATHS.cabin,
   title: 'Cabin Window Cleaning',
   description:
-    'Professional cabin window cleaning for White Mountains properties. Interior, exterior, screens, tracks, sills and frames. Call (480) 737-0850 for a free quote.',
+    'Professional cabin window cleaning for White Mountains properties. Interior, exterior, screens, tracks, sills and frames. Call (928) 235-5934 for a free quote.',
   h1: 'Cabin Window Cleaning for White Mountains Properties',
   heroSubtitle:
     'Arizona Window Washing Pros cleans cabins and mountain retreats so glass looks clear when you arrive and stays guest-ready between visits.',
@@ -33,7 +33,7 @@ export const CABIN_WINDOW_CLEANING: ContentLandingConfig = {
   intro: [
     'Cabins collect a different kind of window buildup than everyday suburban homes. Pollen, dust, pine debris, and long stretches without occupancy can leave glass cloudy and screens dull. Arizona Window Washing Pros provides cabin window cleaning for owners who want clear views without spending their limited mountain time scrubbing panes.',
     'Whether your cabin is a quiet weekend escape, a seasonal second home, or a rental that welcomes guests through the year, we can schedule exterior cleaning, interior detailing, and optional screen, track, sill, and frame work based on what the property needs.',
-    'We serve cabin owners throughout northern Arizona communities such as Pinetop-Lakeside, Show Low, and Snowflake. Call (480) 737-0850 or request a free estimate online to discuss timing around your next arrival or guest turnover.',
+    'We serve cabin owners throughout northern Arizona communities such as Pinetop-Lakeside, Show Low, and Snowflake. Call (928) 235-5934 or request a free estimate online to discuss timing around your next arrival or guest turnover.',
   ],
   sections: [
     {
@@ -86,7 +86,7 @@ export const CABIN_WINDOW_CLEANING: ContentLandingConfig = {
     {
       heading: 'How the Estimate Process Works',
       paragraphs: [
-        'Requesting a cabin window cleaning estimate is straightforward. Call or text (480) 737-0850, or submit the form on this page with your city, cabin type, approximate window count, and whether you need interior glass, exterior glass, screens, or track detailing.',
+        'Requesting a cabin window cleaning estimate is straightforward. Call or text (928) 235-5934, or submit the form on this page with your city, cabin type, approximate window count, and whether you need interior glass, exterior glass, screens, or track detailing.',
         'We follow up with a free estimate based on the information you provide. Once you approve the scope, we schedule a visit that fits your arrival plans or rental turnover whenever availability allows.',
       ],
     },
@@ -133,12 +133,12 @@ export const CABIN_WINDOW_CLEANING: ContentLandingConfig = {
     {
       question: 'How do I get a free cabin window cleaning quote?',
       answer:
-        'Call or text (480) 737-0850, or use the quote form on this page. Include your location, property type, and the services you want so we can prepare an estimate.',
+        'Call or text (928) 235-5934, or use the quote form on this page. Include your location, property type, and the services you want so we can prepare an estimate.',
     },
   ],
   finalCtaHeading: 'Request a Cabin Window Cleaning Quote',
   finalCtaCopy:
-    'Ready for clearer cabin glass? Call Arizona Window Washing Pros at (480) 737-0850 or send a free estimate request today.',
+    'Ready for clearer cabin glass? Call Arizona Window Washing Pros at (928) 235-5934 or send a free estimate request today.',
   relatedLinks: [
     ...northernCityLinks,
     { label: 'Vacation-home window cleaning', href: SPECIALTY_PATHS.vacationHome },
@@ -154,7 +154,7 @@ export const VACATION_HOME_WINDOW_CLEANING: ContentLandingConfig = {
   path: SPECIALTY_PATHS.vacationHome,
   title: 'Vacation Home Window Cleaning',
   description:
-    'Vacation home and seasonal property window cleaning in Arizona’s White Mountains. Interior, exterior, screens and tracks. Call (480) 737-0850 for a free quote.',
+    'Vacation home and seasonal property window cleaning in Arizona’s White Mountains. Interior, exterior, screens and tracks. Call (928) 235-5934 for a free quote.',
   h1: 'Vacation Home Window Cleaning',
   heroSubtitle:
     'Keep second homes and seasonal properties looking clear with professional window cleaning timed around arrivals, guests, and vacant stretches.',
@@ -164,7 +164,7 @@ export const VACATION_HOME_WINDOW_CLEANING: ContentLandingConfig = {
   intro: [
     'Vacation homes do not get daily attention the way primary residences do. Between trips, windows collect outdoor dust, fingerprints linger after guest stays, and screens gather pollen that makes even clean glass look dull. Arizona Window Washing Pros provides vacation home window cleaning designed around seasonal use rather than weekly household routines.',
     'Owners who live elsewhere often want a simple way to book service before they arrive, after guests leave, or when a property manager is preparing the home for the next stay. We offer exterior cleaning, interior detailing when access is available, and optional screen, track, sill, and frame cleaning.',
-    'If your vacation property is in Pinetop-Lakeside, Show Low, Snowflake, or another White Mountains community we serve, call (480) 737-0850 or request a free quote to discuss timing and scope.',
+    'If your vacation property is in Pinetop-Lakeside, Show Low, Snowflake, or another White Mountains community we serve, call (928) 235-5934 or request a free quote to discuss timing and scope.',
   ],
   sections: [
     {
@@ -219,7 +219,7 @@ export const VACATION_HOME_WINDOW_CLEANING: ContentLandingConfig = {
     {
       heading: 'How the Estimate Process Works',
       paragraphs: [
-        'Call or text Arizona Window Washing Pros at (480) 737-0850, or submit the quote form with your vacation property’s location, approximate window count, and preferred services. Mention pre-arrival, post-guest, or vacancy timing so we understand the goal of the visit.',
+        'Call or text Arizona Window Washing Pros at (928) 235-5934, or submit the quote form with your vacation property’s location, approximate window count, and preferred services. Mention pre-arrival, post-guest, or vacancy timing so we understand the goal of the visit.',
         'We provide a free estimate based on the details you share. After you approve the scope, we schedule service according to availability and your property calendar.',
       ],
     },
@@ -261,12 +261,12 @@ export const VACATION_HOME_WINDOW_CLEANING: ContentLandingConfig = {
     {
       question: 'How do I request a vacation-home estimate?',
       answer:
-        'Call or text (480) 737-0850, or use the form on this page. Include city, property type, and whether you need interior, exterior, screens, or track cleaning.',
+        'Call or text (928) 235-5934, or use the form on this page. Include city, property type, and whether you need interior, exterior, screens, or track cleaning.',
     },
   ],
   finalCtaHeading: 'Get a Vacation Home Window Cleaning Estimate',
   finalCtaCopy:
-    'Planning a trip or guest turnover? Call (480) 737-0850 or request a free quote from Arizona Window Washing Pros.',
+    'Planning a trip or guest turnover? Call (928) 235-5934 or request a free quote from Arizona Window Washing Pros.',
   relatedLinks: [
     ...northernCityLinks,
     { label: 'Cabin window cleaning', href: SPECIALTY_PATHS.cabin },
@@ -282,7 +282,7 @@ export const STOREFRONT_WINDOW_CLEANING: ContentLandingConfig = {
   path: SPECIALTY_PATHS.storefront,
   title: 'Storefront Window Cleaning',
   description:
-    'Commercial storefront window cleaning for Arizona businesses. Exterior and interior glass, entry doors, and recurring plans. Call (480) 737-0850 for a free quote.',
+    'Commercial storefront window cleaning for Arizona businesses. Exterior and interior glass, entry doors, and recurring plans. Call (928) 235-5934 for a free quote.',
   h1: 'Storefront Window Cleaning for Local Businesses',
   heroSubtitle:
     'Keep entry glass and display windows looking clear so customers see a well-maintained business from the sidewalk and the parking lot.',
@@ -292,7 +292,7 @@ export const STOREFRONT_WINDOW_CLEANING: ContentLandingConfig = {
   intro: [
     'Storefront glass is one of the first things customers notice. Fingerprints, dust, and outdoor film can make even a carefully run business look tired before anyone walks through the door. Arizona Window Washing Pros provides storefront window cleaning for businesses that want a cleaner first impression.',
     'We clean exterior storefront glass, and we can include interior glass and entry doors when those surfaces are part of your quote. Service is available as a one-time refresh or as part of a recurring commercial schedule that fits your business hours.',
-    'Businesses in Show Low, Pinetop-Lakeside, Snowflake, and other communities we serve can call (480) 737-0850 or request a free commercial estimate online.',
+    'Businesses in Show Low, Pinetop-Lakeside, Snowflake, and other communities we serve can call (928) 235-5934 or request a free commercial estimate online.',
   ],
   sections: [
     {
@@ -347,7 +347,7 @@ export const STOREFRONT_WINDOW_CLEANING: ContentLandingConfig = {
     {
       heading: 'How the Quote Process Works',
       paragraphs: [
-        'Call or text (480) 737-0850, or submit the form with your business name, city, and whether you need exterior glass, interior glass, entry doors, or a recurring schedule. We provide a free estimate based on the information you share.',
+        'Call or text (928) 235-5934, or submit the form with your business name, city, and whether you need exterior glass, interior glass, entry doors, or a recurring schedule. We provide a free estimate based on the information you share.',
         'Once you approve the quote, we schedule service at a time that works for your business whenever availability allows. Flexible timing is often important for commercial clients, and we plan around that when we can.',
       ],
     },
@@ -389,12 +389,12 @@ export const STOREFRONT_WINDOW_CLEANING: ContentLandingConfig = {
     {
       question: 'How do I get a storefront window cleaning quote?',
       answer:
-        'Call or text (480) 737-0850, or use the form on this page with your business location and service needs. We will follow up with a free estimate.',
+        'Call or text (928) 235-5934, or use the form on this page with your business location and service needs. We will follow up with a free estimate.',
     },
   ],
   finalCtaHeading: 'Request a Storefront Window Cleaning Quote',
   finalCtaCopy:
-    'Ready for clearer business glass? Call Arizona Window Washing Pros at (480) 737-0850 or send a free commercial estimate request.',
+    'Ready for clearer business glass? Call Arizona Window Washing Pros at (928) 235-5934 or send a free commercial estimate request.',
   relatedLinks: [
     ...northernCityLinks,
     { label: 'Commercial window cleaning', href: '/commercial-window-cleaning-arizona' },
@@ -409,7 +409,7 @@ export const SCREEN_TRACK_CLEANING: ContentLandingConfig = {
   path: SPECIALTY_PATHS.screenTrack,
   title: 'Screen and Track Cleaning',
   description:
-    'Window screen, track, sill and frame cleaning to finish the job after glass washing. Call Arizona Window Washing Pros at (480) 737-0850 for a free quote.',
+    'Window screen, track, sill and frame cleaning to finish the job after glass washing. Call Arizona Window Washing Pros at (928) 235-5934 for a free quote.',
   h1: 'Window Screen, Track, Sill and Frame Cleaning',
   heroSubtitle:
     'Detail the full window system—not just the glass—with professional screen, track, sill, and frame cleaning from Arizona Window Washing Pros.',
@@ -419,7 +419,7 @@ export const SCREEN_TRACK_CLEANING: ContentLandingConfig = {
   intro: [
     'Freshly cleaned glass can still look unfinished if dusty screens and gritty tracks remain in place. Screen and track cleaning completes the window system so daylight looks clearer and sliding windows feel better maintained.',
     'Arizona Window Washing Pros offers window screen cleaning along with track, sill, and frame detailing as optional services that pair with residential, cabin, vacation-home, and commercial glass cleaning. These services focus on cleaning—not repair, restoration, or replacement.',
-    'Homeowners and businesses in Pinetop-Lakeside, Show Low, Snowflake, and other communities we serve can call (480) 737-0850 to add screens and tracks to a free window cleaning estimate.',
+    'Homeowners and businesses in Pinetop-Lakeside, Show Low, Snowflake, and other communities we serve can call (928) 235-5934 to add screens and tracks to a free window cleaning estimate.',
   ],
   sections: [
     {
@@ -473,7 +473,7 @@ export const SCREEN_TRACK_CLEANING: ContentLandingConfig = {
     {
       heading: 'How the Estimate Process Works',
       paragraphs: [
-        'Call or text (480) 737-0850, or use the form on this page. Note how many screens you have, whether tracks and sills need attention, and whether glass cleaning should be included in the same visit.',
+        'Call or text (928) 235-5934, or use the form on this page. Note how many screens you have, whether tracks and sills need attention, and whether glass cleaning should be included in the same visit.',
         'We provide a free estimate based on your property details. Once approved, we schedule the appointment and complete the selected detailing services as part of your window cleaning visit.',
       ],
     },
@@ -515,12 +515,12 @@ export const SCREEN_TRACK_CLEANING: ContentLandingConfig = {
     {
       question: 'How do I add screen and track cleaning to my estimate?',
       answer:
-        'Call or text (480) 737-0850, or note screens, tracks, sills, and frames on the quote form when you request service.',
+        'Call or text (928) 235-5934, or note screens, tracks, sills, and frames on the quote form when you request service.',
     },
   ],
   finalCtaHeading: 'Add Screen and Track Cleaning to Your Quote',
   finalCtaCopy:
-    'Want a more complete window clean? Call Arizona Window Washing Pros at (480) 737-0850 or request a free estimate today.',
+    'Want a more complete window clean? Call Arizona Window Washing Pros at (928) 235-5934 or request a free estimate today.',
   relatedLinks: [
     ...northernCityLinks,
     { label: 'Interior and exterior window cleaning', href: SPECIALTY_PATHS.interiorExterior },
@@ -536,7 +536,7 @@ export const INTERIOR_EXTERIOR_WINDOW_CLEANING: ContentLandingConfig = {
   path: SPECIALTY_PATHS.interiorExterior,
   title: 'Interior and Exterior Window Cleaning',
   description:
-    'Complete interior and exterior window cleaning for Arizona homes and businesses. Optional screens, tracks and frames. Call (480) 737-0850 for a free quote.',
+    'Complete interior and exterior window cleaning for Arizona homes and businesses. Optional screens, tracks and frames. Call (928) 235-5934 for a free quote.',
   h1: 'Interior and Exterior Window Cleaning',
   heroSubtitle:
     'Clear glass inside and out with professional interior detailing and exterior window cleaning from Arizona Window Washing Pros.',
@@ -546,7 +546,7 @@ export const INTERIOR_EXTERIOR_WINDOW_CLEANING: ContentLandingConfig = {
   intro: [
     'Interior and exterior window cleaning is the most complete way to restore clarity to a home or business. Exterior service removes outdoor buildup; interior detailing clears fingerprints and indoor film that exterior work alone cannot reach.',
     'Arizona Window Washing Pros offers exterior-only, interior-only, and combined packages so you can match the visit to your goals and access. Optional screen, track, sill, and frame cleaning can finish the detailing when you want the full window system addressed.',
-    'Whether you need a full clean for a primary residence, cabin, vacation home, or storefront, call (480) 737-0850 or request a free estimate for interior and exterior window cleaning.',
+    'Whether you need a full clean for a primary residence, cabin, vacation home, or storefront, call (928) 235-5934 or request a free estimate for interior and exterior window cleaning.',
   ],
   sections: [
     {
@@ -594,7 +594,7 @@ export const INTERIOR_EXTERIOR_WINDOW_CLEANING: ContentLandingConfig = {
     {
       heading: 'How the Estimate Process Works',
       paragraphs: [
-        'Call or text Arizona Window Washing Pros at (480) 737-0850, or submit the quote form with your city, property type, approximate number of windows, and whether you need interior glass, exterior glass, or both. Mention screens and tracks if you want those included.',
+        'Call or text Arizona Window Washing Pros at (928) 235-5934, or submit the quote form with your city, property type, approximate number of windows, and whether you need interior glass, exterior glass, or both. Mention screens and tracks if you want those included.',
         'We follow up with a free estimate. After you approve the scope, we schedule the appointment and complete the selected interior and exterior services.',
       ],
     },
@@ -636,12 +636,12 @@ export const INTERIOR_EXTERIOR_WINDOW_CLEANING: ContentLandingConfig = {
     {
       question: 'How do I request an interior and exterior estimate?',
       answer:
-        'Call or text (480) 737-0850, or use the form on this page with your location and service preferences. We provide a free estimate.',
+        'Call or text (928) 235-5934, or use the form on this page with your location and service preferences. We provide a free estimate.',
     },
   ],
   finalCtaHeading: 'Request an Interior and Exterior Window Cleaning Quote',
   finalCtaCopy:
-    'Want clearer glass inside and out? Call Arizona Window Washing Pros at (480) 737-0850 or send a free estimate request today.',
+    'Want clearer glass inside and out? Call Arizona Window Washing Pros at (928) 235-5934 or send a free estimate request today.',
   relatedLinks: [
     ...northernCityLinks,
     { label: 'Screen and track cleaning', href: SPECIALTY_PATHS.screenTrack },

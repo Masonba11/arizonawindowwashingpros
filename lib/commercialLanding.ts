@@ -3,8 +3,8 @@ import { BUSINESS_INFO } from '@/lib/constants'
 
 export const COMMERCIAL_LANDING = {
   name: BUSINESS_INFO.name,
-  phone: '480-737-0850',
-  phoneDisplay: '480-737-0850',
+  phone: BUSINESS_INFO.phone,
+  phoneDisplay: BUSINESS_INFO.phone,
   phoneFormatted: BUSINESS_INFO.phoneFormatted,
   email: BUSINESS_INFO.email,
   path: '/commercial-window-cleaning-arizona',

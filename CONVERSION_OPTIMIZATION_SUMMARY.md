@@ -202,7 +202,7 @@ import { generateServiceFAQs } from '@/lib/enhancedFAQs' // or generateLocationF
 ### Required Customizations:
 
 1. **Phone Number** ✅
-   - Already set in `lib/constants.ts`: `(480) 737-0850`
+   - Already set in `lib/constants.ts`: `(928) 235-5934`
    - Used throughout all components
 
 2. **Business Name** ✅

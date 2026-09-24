@@ -115,7 +115,7 @@ export default function AdLandingForm({ city, id = 'ad-quote-form' }: AdLandingF
             value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}
             className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-gray-900 focus:border-blue-500 focus:ring-0 outline-none transition"
-            placeholder="(480) 555-1234"
+            placeholder="(928) 555-1234"
           />
           <div className="mt-3">
             <SmsConsentField

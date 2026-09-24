@@ -180,7 +180,7 @@ export default function PremiumQuoteForm({
                       ? 'border-white/20 bg-white/10 text-white placeholder:text-slate-400 focus:border-blue-300 focus:ring-blue-400/40'
                       : 'border-slate-200 bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:ring-blue-500/30'
                   }`}
-                  placeholder="(480) 555-1234"
+                  placeholder="(928) 555-1234"
                 />
                 <div className="mt-3">
                   <SmsConsentField

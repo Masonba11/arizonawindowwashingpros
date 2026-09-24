@@ -130,7 +130,7 @@ export default function LandingPage({ city, nearbyAreas, faqs }: LandingPageProp
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="(480) 555-1234"
+                  placeholder="(928) 555-1234"
                 />
                 <div className="mt-3">
                   <SmsConsentField

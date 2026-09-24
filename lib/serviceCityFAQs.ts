@@ -100,7 +100,7 @@ export function generateServiceCityFAQs(service: string, city: string) {
     },
     {
       question: `How quickly can you schedule ${service.toLowerCase()} in ${city}?`,
-      answer: `We offer same-day estimates and can often schedule service within 24-48 hours in ${city}. Call us at (480) 737-0850 for fastest scheduling.`,
+      answer: `We offer same-day estimates and can often schedule service within 24-48 hours in ${city}. Call us at (928) 235-5934 for fastest scheduling.`,
     },
     {
       question: `Do you offer recurring service in ${city}?`,

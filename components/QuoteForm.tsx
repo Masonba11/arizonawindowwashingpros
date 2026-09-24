@@ -154,7 +154,7 @@ export default function QuoteForm({ defaultCity = '', defaultService = '', compa
             value={formData.phone}
             onChange={handleInputChange}
             className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"
-            placeholder="(480) 555-1234"
+            placeholder="(928) 555-1234"
           />
           <div className="mt-3">
             <SmsConsentField

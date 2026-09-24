@@ -154,7 +154,7 @@ export const NORTHERN_AZ_CITIES: Record<NorthernAzCityId, NorthernAzCityPage> = 
       {
         heading: 'How the Estimate Process Works',
         paragraphs: [
-          'Call or text (480) 737-0850, or submit the quote form on this page with your city, property type, and service needs. Share approximate window count or home size if known, number of stories, whether you want interior and/or exterior cleaning, and any screens or tracks that need attention.',
+          'Call or text (928) 235-5934, or submit the quote form on this page with your city, property type, and service needs. Share approximate window count or home size if known, number of stories, whether you want interior and/or exterior cleaning, and any screens or tracks that need attention.',
           'We follow up with a free estimate based on the details you provide. Once you approve the scope, we schedule a convenient appointment and complete the selected services. Exterior-only cleaning can often be completed without you present when access is arranged. Interior cleaning typically requires access inside the home.',
           'If access notes matter—gates, pets, multi-story glass, cabin keys, or preferred arrival times—include those details so we can plan smoothly. We are fully insured and keep the quote process straightforward for homeowners, cabin owners, and local businesses throughout Pinetop-Lakeside.',
         ],
@@ -195,7 +195,7 @@ export const NORTHERN_AZ_CITIES: Record<NorthernAzCityId, NorthernAzCityPage> = 
       {
         question: 'How do I receive an estimate?',
         answer:
-          'Call or text (480) 737-0850, or submit the quote form on this page with your city, property type, and service needs. We will follow up with a free estimate.',
+          'Call or text (928) 235-5934, or submit the quote form on this page with your city, property type, and service needs. We will follow up with a free estimate.',
       },
       {
         question: 'Can I schedule a one-time cleaning?',
@@ -367,7 +367,7 @@ export const NORTHERN_AZ_CITIES: Record<NorthernAzCityId, NorthernAzCityPage> = 
       {
         question: 'How can I request an estimate?',
         answer:
-          'Call or text (480) 737-0850, or use the form on this page. Share your city, approximate property size or window count if known, whether you want interior and/or exterior cleaning, and any screens or tracks that need attention.',
+          'Call or text (928) 235-5934, or use the form on this page. Share your city, approximate property size or window count if known, whether you want interior and/or exterior cleaning, and any screens or tracks that need attention.',
       },
       {
         question: 'Do you clean large homes with many windows?',
@@ -534,7 +534,7 @@ export const NORTHERN_AZ_CITIES: Record<NorthernAzCityId, NorthernAzCityPage> = 
       {
         question: 'Can I receive a free estimate?',
         answer:
-          'Yes. Call or text (480) 737-0850, or fill out the quote form on this page with your contact details and service needs. We will follow up with a free estimate.',
+          'Yes. Call or text (928) 235-5934, or fill out the quote form on this page with your contact details and service needs. We will follow up with a free estimate.',
       },
       {
         question: 'Do you provide one-time window cleaning?',

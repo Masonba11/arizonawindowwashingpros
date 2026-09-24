@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 export function generateCityLandingMetadata(city: string): Metadata {
   return {
     title: `${city} Window Cleaning | $100 Off | Arizona Window Cleaning Pros`,
-    description: `Professional ${city} window cleaning services. $100 off first service. Licensed & insured. Free estimates. Call (480) 737-0850 for same-day service.`,
+    description: `Professional ${city} window cleaning services. $100 off first service. Licensed & insured. Free estimates. Call (928) 235-5934 for same-day service.`,
     alternates: {
       canonical: `${BUSINESS_INFO.website}/${city.toLowerCase()}-window-washing`,
     },

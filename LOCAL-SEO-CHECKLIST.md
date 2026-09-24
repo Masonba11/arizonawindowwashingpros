@@ -5,7 +5,7 @@ Manual actions the business owner must complete outside the website.
 ## Google Business Profile
 
 - [ ] Confirm correct business name: Arizona Window Washing Pros
-- [ ] Confirm correct phone number: (480) 737-0850
+- [ ] Confirm correct phone number: (928) 235-5934
 - [ ] Confirm primary category (Window Cleaning Service or closest match)
 - [ ] Add secondary categories only if accurate
 - [ ] Add service areas: Pinetop-Lakeside, Show Low, Snowflake, and nearby communities you truly serve

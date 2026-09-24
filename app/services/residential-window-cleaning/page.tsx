@@ -34,7 +34,7 @@ const faqs = [
   {
     question: 'How do I get a residential estimate?',
     answer:
-      'Call or text (480) 737-0850, or submit the quote form on this page with your city and service needs.',
+      'Call or text (928) 235-5934, or submit the quote form on this page with your city and service needs.',
   },
 ]
 

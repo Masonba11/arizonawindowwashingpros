@@ -303,7 +303,7 @@ export default function ContactForm({
                           ? 'w-full px-3 py-3 text-base border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500'
                           : 'w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition'
                       }
-                      placeholder="(480) 555-1234"
+                      placeholder="(928) 555-1234"
                     />
                   </div>
 

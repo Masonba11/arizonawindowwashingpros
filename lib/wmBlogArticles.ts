@@ -88,7 +88,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "Requesting an estimate",
         paragraphs: [
-          "Call or text Arizona Window Washing Pros at (480) 737-0850, or use the contact form on our website. Include your Pinetop-Lakeside address or nearby community, property type, approximate window count, and whether you need exterior glass, interior glass, screens, or tracks.",
+          "Call or text Arizona Window Washing Pros at (928) 235-5934, or use the contact form on our website. Include your Pinetop-Lakeside address or nearby community, property type, approximate window count, and whether you need exterior glass, interior glass, screens, or tracks.",
           "We provide free estimates and help you choose a scope that matches how the property is used. Whether you need a one-time refresh or help planning seasonal cleanings, clear communication makes scheduling straightforward.",
         ],
       },
@@ -169,7 +169,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "Estimate process",
         paragraphs: [
-          "Call or text (480) 737-0850, or request a free estimate online. Include the community, whether the property is a cabin, vacation home, or rental, approximate window count, stories, and the services you want.",
+          "Call or text (928) 235-5934, or request a free estimate online. Include the community, whether the property is a cabin, vacation home, or rental, approximate window count, stories, and the services you want.",
           "We confirm availability for White Mountains appointments and follow up with a free estimate based on the scope you describe. Clear details about access and timing help every seasonal visit go smoothly. Dedicated cabin and vacation-home service pages explain those use cases in more depth if you are still deciding what to book.",
         ],
       },
@@ -254,7 +254,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "How to request an accurate estimate",
         paragraphs: [
-          "Call or text Arizona Window Washing Pros at (480) 737-0850, or use our contact page. Include your Show Low address or nearby community, approximate number of windows, whether you need interior glass, exterior glass, or both, and any screens, tracks, sills, or frames you want cleaned.",
+          "Call or text Arizona Window Washing Pros at (928) 235-5934, or use our contact page. Include your Show Low address or nearby community, approximate number of windows, whether you need interior glass, exterior glass, or both, and any screens, tracks, sills, or frames you want cleaned.",
           "Mention stories, access notes, and property type—home, cabin, vacation rental, or business. The most accurate way to determine the cost is to request an estimate. We follow up with clear pricing for the scope you describe and schedule according to availability.",
           "If you are comparing options, ask what is included rather than chasing a number without context. A transparent scope is more useful than a vague low figure that leaves out half the glass you care about.",
           "Ready to get a number that matches your Show Low property? Reach out with the details above and we will put together a free estimate without invented averages or vague ranges.",
@@ -343,7 +343,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "Request service",
         paragraphs: [
-          "Call or text Arizona Window Washing Pros at (480) 737-0850, or request a free estimate online. Include your cabin’s community, approximate window count, interior versus exterior needs, and any screen or track detailing you want.",
+          "Call or text Arizona Window Washing Pros at (928) 235-5934, or request a free estimate online. Include your cabin’s community, approximate window count, interior versus exterior needs, and any screen or track detailing you want.",
           "Preparation does not have to be complicated. A clear scope, safe access, and a few minutes of decluttering around the glass are usually enough for a productive cabin window-cleaning appointment.",
           "If you are opening for the season or preparing for guests, say so when you call so timing and scope can match the trip.",
           "Communities across the White Mountains, including Pinetop-Lakeside, Show Low, and Snowflake, can be noted in your request so scheduling reflects your actual location.",
@@ -432,7 +432,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "Requesting an estimate",
         paragraphs: [
-          "Call or text Arizona Window Washing Pros at (480) 737-0850, or use the contact form. Mention that you are opening the cabin for the season, your location among communities such as Pinetop-Lakeside, Show Low, or Snowflake, and the services you want—exterior, interior, screens, or tracks.",
+          "Call or text Arizona Window Washing Pros at (928) 235-5934, or use the contact form. Mention that you are opening the cabin for the season, your location among communities such as Pinetop-Lakeside, Show Low, or Snowflake, and the services you want—exterior, interior, screens, or tracks.",
           "We provide a free estimate and help you choose a scope that matches a seasonal reopen. Clear glass is one of the simplest upgrades you can make before cabin season begins.",
           "Browse our cabin window cleaning page for more detail on seasonal properties, then request your estimate when you have dates in mind.",
         ],
@@ -513,7 +513,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "Requesting service",
         paragraphs: [
-          "If post-rain glass looks dull or spotted, call or text Arizona Window Washing Pros at (480) 737-0850. Tell us your community, whether the property is a home, cabin, or business, and whether you need exterior cleaning or a broader scope.",
+          "If post-rain glass looks dull or spotted, call or text Arizona Window Washing Pros at (928) 235-5934. Tell us your community, whether the property is a home, cabin, or business, and whether you need exterior cleaning or a broader scope.",
           "We provide free estimates and help you schedule exterior window cleaning when conditions are workable. Clear glass after the weather passes is often a better plan than waiting for the next rain to fix the last one.",
           "Local pages for Pinetop-Lakeside, Show Low, and Snowflake are useful if you want community-specific service details before you request your estimate.",
           "If you manage several properties, a quick photo of the worst elevation after a storm is enough to decide whether to book exterior service now or wait until the next planned visit.",
@@ -596,7 +596,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "How to request an estimate",
         paragraphs: [
-          "Call or text (480) 737-0850, or request a free estimate online. Tell us whether you want exterior, interior, or both, and whether screens, tracks, sills, or frames should be included.",
+          "Call or text (928) 235-5934, or request a free estimate online. Tell us whether you want exterior, interior, or both, and whether screens, tracks, sills, or frames should be included.",
           "Include your community—such as Pinetop-Lakeside, Show Low, or Snowflake—property type, and approximate window count. We will follow up with a free estimate for the exact scope you need.",
           "If you are undecided, describe the problem in plain language: outdoor haze, indoor fingerprints, dusty screens, or a full seasonal reopen. We will translate that into a clear service recommendation.",
           "Bring photos if helpful, especially for multi-story cabins or storefronts with mixed glass types. Visual context speeds up an accurate free estimate and reduces back-and-forth about what you want cleaned.",
@@ -687,7 +687,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "Contact information",
         paragraphs: [
-          "Call or text Arizona Window Washing Pros at (480) 737-0850, or request a free estimate through our contact page. Include your Show Low business address, preferred timing, and whether you need exterior storefront cleaning, interior glass, or both.",
+          "Call or text Arizona Window Washing Pros at (928) 235-5934, or request a free estimate through our contact page. Include your Show Low business address, preferred timing, and whether you need exterior storefront cleaning, interior glass, or both.",
           "We serve commercial properties as part of our White Mountains expansion and will help you choose a one-time visit or a routine plan that fits how your business operates.",
           "For broader commercial context, see our storefront and commercial service pages, then reach out when you are ready to schedule.",
           "Same-week needs happen—mention urgency when you call and we will discuss the soonest workable appointment for your Show Low location.",
@@ -779,7 +779,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
       {
         heading: "Requesting an estimate",
         paragraphs: [
-          "Call or text Arizona Window Washing Pros at (480) 737-0850, or use the contact page. Include your city—such as Pinetop-Lakeside, Show Low, or Snowflake—approximate window count, and whether you need interior glass, exterior glass, screens, or tracks.",
+          "Call or text Arizona Window Washing Pros at (928) 235-5934, or use the contact page. Include your city—such as Pinetop-Lakeside, Show Low, or Snowflake—approximate window count, and whether you need interior glass, exterior glass, screens, or tracks.",
           "We provide free estimates for pre-listing window cleaning. Clear glass is one of the simplest presentation upgrades before you sell.",
           "Mention that the home is being prepared for market so we can help prioritize the surfaces buyers will notice first.",
           "If you are selling a vacation cabin rather than a primary residence, say so. Vacancy patterns and access details change how we schedule pre-listing cleaning.",
@@ -872,7 +872,7 @@ export const WM_BLOG_ARTICLES: WmBlogArticle[] = [
         heading: "How to choose a scope and request service",
         paragraphs: [
           "Match the scope to your goal. Exterior-only service suits outdoor film and limited indoor access. Interior detailing suits smudged indoor glass. Combined service suits seasonal openings, pre-listing prep, and full property refreshes. Add screens and tracks when those surfaces look neglected.",
-          "Call or text Arizona Window Washing Pros at (480) 737-0850, or use the contact page. Include your community in the White Mountains region, property type, and the inclusions you want. We provide a free estimate before work begins so you know exactly what is included.",
+          "Call or text Arizona Window Washing Pros at (928) 235-5934, or use the contact page. Include your community in the White Mountains region, property type, and the inclusions you want. We provide a free estimate before work begins so you know exactly what is included.",
           "Whether you manage a Show Low storefront, a Pinetop-Lakeside cabin, or a Snowflake residence, the same principle applies: define the glass and detailing you care about, then book that scope with confidence.",
           "Free estimates exist so you never have to guess what is included. Ask questions before the visit, approve the scope in writing when provided, and expect the appointment to follow that agreement.",
         ],

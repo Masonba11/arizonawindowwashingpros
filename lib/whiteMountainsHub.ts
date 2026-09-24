@@ -9,7 +9,7 @@ export const WHITE_MOUNTAINS_HUB: ContentLandingConfig = {
   path: '/white-mountains-window-cleaning',
   title: 'White Mountains Window Cleaning',
   description:
-    'Professional window cleaning throughout Arizona’s White Mountains, including Pinetop-Lakeside, Show Low and Snowflake. Request a free quote at (480) 737-0850.',
+    'Professional window cleaning throughout Arizona’s White Mountains, including Pinetop-Lakeside, Show Low and Snowflake. Request a free quote at (928) 235-5934.',
   h1: 'Professional Window Cleaning in Arizona’s White Mountains',
   heroSubtitle:
     'Arizona Window Washing Pros provides residential and commercial window cleaning across White Mountains communities—clear glass for homes, cabins, vacation properties, and local businesses.',
@@ -19,7 +19,7 @@ export const WHITE_MOUNTAINS_HUB: ContentLandingConfig = {
   intro: [
     'The White Mountains region draws full-time residents, seasonal cabin owners, vacation renters, and local businesses—all of whom benefit from clear, well-maintained windows. Arizona Window Washing Pros is accepting appointments for professional window cleaning throughout this northern Arizona service area.',
     'This page is your regional starting point. It explains the types of properties we clean and how our services fit mountain living, then points you to dedicated city pages for Pinetop-Lakeside, Show Low, and Snowflake when you want location-specific details.',
-    'Whether you need a one-time refresh or help planning seasonal cleaning for a second home, call (480) 737-0850 or request a free estimate. We will help you choose a practical scope for exterior glass, interior detailing, and optional screens, tracks, sills, and frames.',
+    'Whether you need a one-time refresh or help planning seasonal cleaning for a second home, call (928) 235-5934 or request a free estimate. We will help you choose a practical scope for exterior glass, interior detailing, and optional screens, tracks, sills, and frames.',
   ],
   sections: [
     {
@@ -88,7 +88,7 @@ export const WHITE_MOUNTAINS_HUB: ContentLandingConfig = {
     {
       heading: 'Request a Free Estimate',
       paragraphs: [
-        'Call or text Arizona Window Washing Pros at (480) 737-0850, or use the form on this page. Include your community, property type—home, cabin, vacation rental, or business—and whether you need interior glass, exterior glass, screens, or tracks.',
+        'Call or text Arizona Window Washing Pros at (928) 235-5934, or use the form on this page. Include your community, property type—home, cabin, vacation rental, or business—and whether you need interior glass, exterior glass, screens, or tracks.',
         'We follow up with a free estimate and schedule service according to availability. Clear communication and a defined scope help every White Mountains appointment go smoothly.',
       ],
     },
@@ -130,12 +130,12 @@ export const WHITE_MOUNTAINS_HUB: ContentLandingConfig = {
     {
       question: 'How do I request a White Mountains window cleaning quote?',
       answer:
-        'Call or text (480) 737-0850, or submit the form on this page with your community and service needs. We will follow up with a free estimate.',
+        'Call or text (928) 235-5934, or submit the form on this page with your community and service needs. We will follow up with a free estimate.',
     },
   ],
   finalCtaHeading: 'Request a Free White Mountains Window Cleaning Quote',
   finalCtaCopy:
-    'Serving homes, cabins, vacation properties, and businesses across the White Mountains. Call (480) 737-0850 or request your free estimate today.',
+    'Serving homes, cabins, vacation properties, and businesses across the White Mountains. Call (928) 235-5934 or request your free estimate today.',
   relatedLinks: [
     { label: 'Window cleaning in Pinetop-Lakeside', href: NORTHERN_AZ_PATHS.pinetopLakeside },
     { label: 'Window cleaning in Show Low', href: NORTHERN_AZ_PATHS.showLow },
