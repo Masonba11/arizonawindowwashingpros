@@ -184,6 +184,22 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="border-t border-gray-700/50 pt-6 pb-6 text-center">
+          <h3 className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-2">
+            Local Business Resources
+          </h3>
+          <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
+            Looking for remodeling or construction services in the White Mountains? Visit{' '}
+            <a
+              href="https://sublimedesignandbuildllc.com/"
+              className="text-gray-300 underline underline-offset-2 hover:text-white transition-colors"
+            >
+              Sublime Design &amp; Build
+            </a>
+            , serving Show Low, Pinetop-Lakeside, Snowflake, and surrounding Arizona communities.
+          </p>
+        </div>
+
         <div className="border-t border-gray-700/50 pt-8 text-center">
           <p className="text-gray-400 text-sm mb-3">
             &copy; {new Date().getFullYear()} {BUSINESS_INFO.name}. All rights reserved.
